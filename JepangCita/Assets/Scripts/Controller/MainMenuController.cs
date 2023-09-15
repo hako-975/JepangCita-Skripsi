@@ -30,6 +30,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private GameObject quitPanel;
 
+    private bool windowOn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,7 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && windowOn)
         {
             CloseButton();
         }
@@ -61,9 +63,12 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator AnimationSettings()
     {
+        windowOn = true;
+
         DisabledAllPanel();
         panel.GetComponent<Animator>().SetTrigger("Show");
         settingsPanel.SetActive(true);
+        settingsPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
     }
 
@@ -74,6 +79,8 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator AnimationHint()
     {
+        windowOn = true;
+
         DisabledAllPanel();
         panel.GetComponent<Animator>().SetTrigger("Show");
         creditsPanel.SetActive(true);
@@ -87,6 +94,8 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator AnimationQuit()
     {
+        windowOn = true;
+
         DisabledAllPanel();
         panel.GetComponent<Animator>().SetTrigger("Show");
         quitPanel.SetActive(true);
@@ -100,6 +109,8 @@ public class MainMenuController : MonoBehaviour
 
     private IEnumerator AnimationClose()
     {
+        windowOn = false;
+
         panel.GetComponent<Animator>().SetTrigger("Hide");
         yield return null;
     }
