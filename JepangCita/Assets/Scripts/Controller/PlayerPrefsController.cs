@@ -61,6 +61,28 @@ public class PlayerPrefsController : MonoBehaviour
     }
     #endregion
 
+    #region Character
+    public void SetCharacterName(string name)
+    {
+        PlayerPrefs.SetString("CharacterName", name);
+    }
+
+    public void GetCharacterName()
+    {
+        PlayerPrefs.GetString("CharacterName", "Nama");
+    }
+
+    public void SetCharacterSelection(string character)
+    {
+        PlayerPrefs.SetString("CharacterSelection", character);
+    }
+
+    public bool IsHasCharacterSelection()
+    {
+        return PlayerPrefs.HasKey("CharacterSelection");
+    }
+    #endregion
+
     #region Settings
     public int GetMusicVolume()
     {
