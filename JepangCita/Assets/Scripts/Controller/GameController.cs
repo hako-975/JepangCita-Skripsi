@@ -44,9 +44,24 @@ public class GameController : MonoBehaviour
     private bool windowSettings = false;
     private bool windowMainMenu = false;
 
+    [SerializeField]
+    private GameObject playerBoyPrefabs;
+
+    [SerializeField]
+    private GameObject playerGirlPrefabs;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefsController.instance.GetCharacterSelection() == "Girl")
+        {
+            Instantiate(playerGirlPrefabs);
+        }
+        else
+        {
+            Instantiate(playerBoyPrefabs);
+        }
+
         pauseButton.onClick.AddListener(PauseButton);
         resumeButton.onClick.AddListener(ResumeButton);
         settingsButton.onClick.AddListener(SettingsButton);

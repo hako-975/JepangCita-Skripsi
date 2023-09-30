@@ -77,6 +77,11 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetString("CharacterSelection", character);
     }
 
+    public string GetCharacterSelection()
+    {
+        return PlayerPrefs.GetString("CharacterSelection");
+    }
+
     public bool IsHasCharacterSelection()
     {
         return PlayerPrefs.HasKey("CharacterSelection");

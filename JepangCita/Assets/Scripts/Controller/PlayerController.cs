@@ -3,9 +3,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cam;
-    
-    [SerializeField]
     private GameObject spawnPoint;
 
     [SerializeField]
@@ -32,10 +29,13 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     bool isWalking = false;
+    
+    private GameObject cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera"); 
         cc = GetComponent<CharacterController>();
 
         animator = GetComponentInChildren<Animator>();

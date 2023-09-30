@@ -53,7 +53,14 @@ public class MainMenuController : MonoBehaviour
 
     private void PlayButton()
     {
-        PlayerPrefsController.instance.SetNextScene("Gameplay");
+        if (PlayerPrefsController.instance.IsHasCharacterSelection())
+        {
+            PlayerPrefsController.instance.SetNextScene("Gameplay");
+        }
+        else
+        {
+            PlayerPrefsController.instance.SetNextScene("CharacterSelection");
+        }
     }
 
     private void SettingsButton()
