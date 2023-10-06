@@ -157,6 +157,18 @@ public class PlayerPrefsController : MonoBehaviour
         return GetDateMonth();
     }
 
+    public int SetDateYear(int date)
+    {
+        PlayerPrefs.SetInt("DateYear", date);
+        return GetDateYear();
+    }
+
+    public int GetDateYear()
+    {
+        return PlayerPrefs.GetInt("DateYear", 2023);
+    }
+
+   
     public int GetHour()
     {
         return PlayerPrefs.GetInt("Hour", 6);

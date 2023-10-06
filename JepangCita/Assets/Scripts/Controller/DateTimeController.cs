@@ -11,63 +11,84 @@ public class DateTimeController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI timeText;
 
-    
     private readonly string localeName = "id-ID";
     float realSecondCounter;
     float realSecondsPerGameMinute;
     int gameHour;
     int gameMinute;
-    int displayHour;
-    string dateDay;
+    int gameDay;
+    int gameMonth;
+    int gameYear;
 
     // Start is called before the first frame update
     void Start()
     {
-        DateTime specificDate = new DateTime(2023, PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
-        CultureInfo cultureInfo = new CultureInfo(localeName);
-        
-        dateDay = specificDate.ToString("dd dddd", cultureInfo);
-        dateDayText.text = dateDay;
+        gameYear = PlayerPrefsController.instance.GetDateYear();
+        gameMonth = PlayerPrefsController.instance.GetDateMonth();
+        gameDay = PlayerPrefsController.instance.GetDateDay();
 
-        gameHour = 6; // Jam awal dalam game (misalnya, pukul 12 PM)
-        gameMinute = 0; // Menit awal dalam game
-        realSecondsPerGameMinute = 1f; // 1 menit dunia nyata = 1 jam dunia game
+        UpdateDateText(gameYear, gameMonth, gameDay);
+
+        gameHour = PlayerPrefsController.instance.GetHour();
+        gameMinute = PlayerPrefsController.instance.GetMinute();
+        realSecondsPerGameMinute = 1f;
         realSecondCounter = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Perbarui perhitungan waktu berdasarkan waktu nyata
+        // Update time based on real-time
         realSecondCounter += Time.deltaTime;
 
-        // Cek apakah sudah waktunya menambahkan satu menit game
+        // Check if it's time to add one game minute
         if (realSecondCounter >= realSecondsPerGameMinute)
         {
             realSecondCounter -= realSecondsPerGameMinute;
 
-            // Tambahkan satu menit dalam game
+            // Add one game minute
             gameMinute++;
             if (gameMinute >= 60)
             {
                 gameMinute = 0;
                 gameHour++;
+                PlayerPrefsController.instance.SetHour(gameHour);
                 if (gameHour > 23)
                 {
                     gameHour = 0;
-                    
-                    PlayerPrefsController.instance.SetDateDay(PlayerPrefsController.instance.GetDateDay() + 1);
-                        
-                    DateTime specificDate = new DateTime(2023, PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
-                    CultureInfo cultureInfo = new CultureInfo(localeName);
+                    gameDay++;
 
-                    dateDay = specificDate.ToString("dd dddd", cultureInfo);
-                    dateDayText.text = dateDay;
+                    PlayerPrefsController.instance.SetDateDay(gameDay);
+
+                    // Check if the day exceeds 31
+                    if (gameDay > DateTime.DaysInMonth(gameYear, gameMonth))
+                    {
+                        gameDay = 1;
+                        gameMonth++;
+                        PlayerPrefsController.instance.SetDateMonth(gameMonth);
+                        // Check if the month exceeds 12
+                        if (gameMonth > 12)
+                        {
+                            gameMonth = 1;
+                            gameYear++;
+                            PlayerPrefsController.instance.SetDateYear(gameYear);
+                        }
+                    }
+
+                    UpdateDateText(gameYear, gameMonth, gameDay);
                 }
             }
         }
 
-        // Tampilkan waktu dalam teks
+        // Display the time in text
         timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
+    }
+
+    // Update the date text in your UI
+    private void UpdateDateText(int gameYear, int gameMonth, int gameDay)
+    {
+        DateTime specificDate = new DateTime(gameYear, gameMonth, gameDay);
+        CultureInfo cultureInfo = new CultureInfo(localeName);
+        dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
     }
 }
