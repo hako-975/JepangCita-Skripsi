@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7132509160934890199}
   turnSmoothTime: 0.1
-  movementSpeed: 4
+  movementSpeed: 3
   maxFallZone: -10
 --- !u!1 &3724420681025304112
 GameObject:

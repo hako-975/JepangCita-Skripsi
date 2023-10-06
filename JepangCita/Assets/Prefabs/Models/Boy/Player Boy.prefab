@@ -4464,8 +4464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b893f49bf13dd9a4599fa00cc485d022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   spawnPoint: {fileID: 8721664773927580072}
   turnSmoothTime: 0.1
-  movementSpeed: 4
+  movementSpeed: 3
   maxFallZone: -10
