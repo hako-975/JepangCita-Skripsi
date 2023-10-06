@@ -134,6 +134,50 @@ public class PlayerPrefsController : MonoBehaviour
     }
     #endregion
 
+    #region Calendar
+    public int GetDateDay()
+    {
+        return PlayerPrefs.GetInt("DateDay", 1);
+    }
+
+    public int SetDateDay(int date)
+    {
+        PlayerPrefs.SetInt("DateDay", date);
+        return GetDateDay();
+    }
+
+    public int GetDateMonth()
+    {
+        return PlayerPrefs.GetInt("DateMonth", 1);
+    }
+
+    public int SetDateMonth(int date)
+    {
+        PlayerPrefs.SetInt("DateMonth", date);
+        return GetDateMonth();
+    }
+
+    public int GetHour()
+    {
+        return PlayerPrefs.GetInt("Hour", 6);
+    }
+
+    public int SetHour(int hour)
+    {
+        return PlayerPrefs.GetInt("Hour", hour);
+    }
+
+    public int GetMinute()
+    {
+        return PlayerPrefs.GetInt("Minute", 0);
+    }
+
+    public int SetMinute(int minute)
+    {
+        return PlayerPrefs.GetInt("Minute", minute);
+    }
+    #endregion
+
     public void DeleteKey(string key)
     {
         PlayerPrefs.DeleteKey(key);
