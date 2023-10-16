@@ -135,6 +135,8 @@ public class PlayerPrefsController : MonoBehaviour
     #endregion
 
     #region Calendar
+    public string localeName = "id-ID";
+
     public int GetDateDay()
     {
         return PlayerPrefs.GetInt("DateDay", 1);
@@ -176,7 +178,8 @@ public class PlayerPrefsController : MonoBehaviour
 
     public int SetHour(int hour)
     {
-        return PlayerPrefs.GetInt("Hour", hour);
+        PlayerPrefs.SetInt("Hour", hour);
+        return GetHour();
     }
 
     public int GetMinute()
@@ -186,7 +189,8 @@ public class PlayerPrefsController : MonoBehaviour
 
     public int SetMinute(int minute)
     {
-        return PlayerPrefs.GetInt("Minute", minute);
+        PlayerPrefs.SetInt("Minute", minute);
+        return GetMinute();
     }
     #endregion
 

@@ -11,7 +11,6 @@ public class DateTimeController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI timeText;
 
-    private readonly string localeName = "id-ID";
     float realSecondCounter;
     float realSecondsPerGameMinute;
     int gameHour;
@@ -48,6 +47,7 @@ public class DateTimeController : MonoBehaviour
 
             // Add one game minute
             gameMinute++;
+            PlayerPrefsController.instance.SetMinute(gameMinute);
             if (gameMinute >= 60)
             {
                 gameMinute = 0;
@@ -88,7 +88,7 @@ public class DateTimeController : MonoBehaviour
     private void UpdateDateText(int gameYear, int gameMonth, int gameDay)
     {
         DateTime specificDate = new DateTime(gameYear, gameMonth, gameDay);
-        CultureInfo cultureInfo = new CultureInfo(localeName);
+        CultureInfo cultureInfo = new CultureInfo(PlayerPrefsController.instance.localeName);
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
     }
 }
