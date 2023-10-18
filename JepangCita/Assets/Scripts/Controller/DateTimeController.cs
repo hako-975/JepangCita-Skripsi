@@ -53,7 +53,7 @@ public class DateTimeController : MonoBehaviour
                 gameMinute = 0;
                 gameHour++;
                 PlayerPrefsController.instance.SetHour(gameHour);
-                if (gameHour > 23)
+                if (gameHour > 23) //23
                 {
                     gameHour = 0;
                     gameDay++;
