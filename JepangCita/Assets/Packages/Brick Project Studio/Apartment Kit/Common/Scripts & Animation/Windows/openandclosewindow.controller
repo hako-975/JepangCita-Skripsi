@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Closingwindow
+  m_Name: Closing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Openingwindow
+  m_Name: Opening
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -140,10 +140,10 @@ AnimatorStateMachine:
     m_Position: {x: 168, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8593886585669108114}
-    m_Position: {x: 454.85242, y: 73.75317, z: 0}
+    m_Position: {x: 390, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3197075693443135502}
-    m_Position: {x: 669.30383, y: 296.2215, z: 0}
+    m_Position: {x: 400, y: 280, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
