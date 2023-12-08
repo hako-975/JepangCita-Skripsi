@@ -40,6 +40,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject mainMenuPanel;
 
+    [SerializeField]
+    private GameObject actionsPanel;
+
     private bool windowPause = false;
     private bool windowSettings = false;
     private bool windowMainMenu = false;
@@ -106,6 +109,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         windowPause = true;
         pausePanel.GetComponent<Animator>().SetTrigger("Show");
+        actionsPanel.SetActive(false);
         yield return null;
     }
 
@@ -119,6 +123,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         windowPause = false;
         pausePanel.GetComponent<Animator>().SetTrigger("Hide");
+        actionsPanel.SetActive(true);
         yield return null;
     }
 
