@@ -28,9 +28,16 @@ public class DeskAction : MonoBehaviour
     [SerializeField]
     private Animator laptopAnimator;
 
+    private GameObject player;
+
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+
         deskCanvas.SetActive(false);
         deskPanel.SetActive(false);
 
@@ -40,6 +47,8 @@ public class DeskAction : MonoBehaviour
 
     private void ShutdownButton()
     {
+        playerController.canMove = true;
+
         canvas.GetComponent<CanvasGroup>().alpha = 1;
         canvas.GetComponent<CanvasGroup>().interactable = true;
         canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -60,6 +69,8 @@ public class DeskAction : MonoBehaviour
 
     private void ActionButton()
     {
+        playerController.canMove = false;
+
         canvas.GetComponent<CanvasGroup>().alpha = 0;
         canvas.GetComponent<CanvasGroup>().interactable = false;
         canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;

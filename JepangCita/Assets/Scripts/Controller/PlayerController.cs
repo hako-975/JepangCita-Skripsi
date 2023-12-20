@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     
     private GameObject cam;
 
+    public bool canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,8 +61,11 @@ public class PlayerController : MonoBehaviour
             cc.enabled = true;
         }
 
-        horizontal = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
-        vertical = Input.GetAxisRaw("Vertical") + joystick.Vertical;
+        if (canMove)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
+            vertical = Input.GetAxisRaw("Vertical") + joystick.Vertical;
+        }
 
         if (velocity.y < 0f)
         {

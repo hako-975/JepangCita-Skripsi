@@ -43,8 +43,8 @@ public class CharacterSelectionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boyCharacter.GetComponent<Animator>().SetTrigger("IsSitting");
-        girlCharacter.GetComponent<Animator>().SetTrigger("IsSitting");
+        boyCharacter.GetComponent<Animator>().SetTrigger("IsSittingDesk");
+        girlCharacter.GetComponent<Animator>().SetTrigger("IsSittingSofa");
 
         leftButton.onClick.AddListener(OnLeftButtonClick);
         rightButton.onClick.AddListener(OnRightButtonClick);

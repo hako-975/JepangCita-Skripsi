@@ -39,17 +39,34 @@ public class DeskPanel : MonoBehaviour
     
     private GameObject mailApps;
 
+    [Header("Browsers")]
+    [SerializeField]
+    private Button browserButton;
+
+    [SerializeField]
+    private GameObject browserPanel;
+
+    [SerializeField]
+    private Sprite browserIcon;
+
+    private bool browserOpened;
+
+    private GameObject browserApps;
+
     // Start is called before the first frame update
     void Start()
     {
         calendarPanel.SetActive(false);
         mailPanel.SetActive(false);
+        browserPanel.SetActive(false);
 
         calendarPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenCalendarButton(true); });
         mailPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMailButton(true); });
+        browserPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenBrowserButton(true); });
 
         calendarButton.onClick.AddListener(delegate { OpenCalendarButton(false); });
         mailButton.onClick.AddListener(delegate { OpenMailButton(false); });
+        browserButton.onClick.AddListener(delegate { OpenBrowserButton(false); });
     }
 
     private void OpenCalendarButton(bool alreadyOpen = false)
@@ -144,6 +161,53 @@ public class DeskPanel : MonoBehaviour
     private IEnumerator AnimationCloseMail()
     {
         mailPanel.GetComponent<Animator>().SetTrigger("Hide");
+        yield return null;
+    }
+
+    private void OpenBrowserButton(bool alreadyOpen = false)
+    {
+        if (!alreadyOpen)
+        {
+            StartCoroutine(AnimationOpenBrowser());
+        }
+
+        if (!browserOpened)
+        {
+            browserApps = Instantiate(openedAppPrefabs, leftTaskbar.transform);
+            browserApps.GetComponent<OpenedApp>().icon.sprite = browserIcon;
+        }
+
+        int lastIndex = browserPanel.transform.parent.childCount - 1;
+        browserPanel.transform.SetSiblingIndex(lastIndex);
+        browserApps.GetComponent<OpenedApp>().GetComponent<Button>().onClick.AddListener(delegate { OpenBrowserButton(false); });
+        ToggleAllOffTaskbar();
+        browserApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f, 0.4902f);
+        browserOpened = true;
+    }
+
+    private IEnumerator AnimationOpenBrowser()
+    {
+        browserPanel.SetActive(true);
+        browserPanel.GetComponent<Animator>().SetTrigger("Show");
+        yield return null;
+    }
+
+    public void MinimizeBrowserButton()
+    {
+        StartCoroutine(AnimationCloseBrowser());
+        ToggleAllOffTaskbar();
+    }
+
+    public void CloseBrowserButton()
+    {
+        StartCoroutine(AnimationCloseBrowser());
+        Destroy(browserApps);
+        browserOpened = false;
+    }
+
+    private IEnumerator AnimationCloseBrowser()
+    {
+        browserPanel.GetComponent<Animator>().SetTrigger("Hide");
         yield return null;
     }
 
