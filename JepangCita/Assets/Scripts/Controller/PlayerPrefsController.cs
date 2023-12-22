@@ -67,9 +67,9 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetString("CharacterName", name);
     }
 
-    public void GetCharacterName()
+    public string GetCharacterName()
     {
-        PlayerPrefs.GetString("CharacterName", "Nama");
+        return PlayerPrefs.GetString("CharacterName", "Nama");
     }
 
     public void SetCharacterSelection(string character)
@@ -191,6 +191,60 @@ public class PlayerPrefsController : MonoBehaviour
     {
         PlayerPrefs.SetInt("Minute", minute);
         return GetMinute();
+    }
+    #endregion
+
+    #region JepangCitaAccount
+    public void SetFullnameJepangCita(string name)
+    {
+        PlayerPrefs.SetString("Fullname", name);
+    }
+
+    public string GetFullnameJepangCita()
+    {
+        return PlayerPrefs.GetString("Fullname", "Nama");
+    }
+
+    public void SetEmailJepangCita(string email)
+    {
+        PlayerPrefs.SetString("Email", email);
+    }
+
+    public string GetEmailJepangCita()
+    {
+        return PlayerPrefs.GetString("Email", "member@jepangcita.com");
+    }
+
+    public void SetPasswordJepangCita(string password)
+    {
+        PlayerPrefs.SetString("Password", password);
+    }
+
+    public string GetPasswordJepangCita()
+    {
+        return PlayerPrefs.GetString("Password", "123456");
+    }
+    #endregion
+
+    #region JepangCitaDashboard
+    public void SetMateriNumberLearned(int number)
+    {
+        PlayerPrefs.SetInt("MateriNumberLearned", number);
+    }
+
+    public int GetMateriNumberLearned()
+    {
+        return PlayerPrefs.GetInt("MateriNumberLearned", 0);
+    }
+
+    public void SetLatestScore(int number)
+    {
+        PlayerPrefs.SetInt("LatestScore", number);
+    }
+
+    public int GetLatestScore()
+    {
+        return PlayerPrefs.GetInt("LatestScore", 0);
     }
     #endregion
 
