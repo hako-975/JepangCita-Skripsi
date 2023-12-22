@@ -72,12 +72,9 @@ public class SearchInputBrowser : MonoBehaviour
                 panelToShow = notFoundPanel;
             }
 
-            nextPanel = currentPanel;
-            if (currentPanel != panelToShow)
-            {
-                currentPanel = panelToShow;
-                UpdatePanel();
-            }
+            // logic
+            nextPanel = panelToShow;
+            UpdatePanel();
         }
     }
 
@@ -109,21 +106,6 @@ public class SearchInputBrowser : MonoBehaviour
 
     private void UpdatePanel()
     {
-        if (currentPanel == jepangCitaPanel)
-        {
-            urlInput.text = "https://jepangcita.com/";
-        }
-        else if (currentPanel == mainPanel)
-        {
-            urlInput.text = "https://temukan.com/";
-        }
-
-        StartCoroutine(AnimationCloseWeb(nextPanel));
-        StartCoroutine(AnimationOpenWeb(currentPanel));
-    }
-
-    private void Backward()
-    {
         if (nextPanel == jepangCitaPanel)
         {
             urlInput.text = "https://jepangcita.com/";
@@ -135,5 +117,20 @@ public class SearchInputBrowser : MonoBehaviour
 
         StartCoroutine(AnimationCloseWeb(currentPanel));
         StartCoroutine(AnimationOpenWeb(nextPanel));
+    }
+
+    private void Backward()
+    {
+        if (currentPanel == jepangCitaPanel)
+        {
+            urlInput.text = "https://jepangcita.com/";
+        }
+        else if (currentPanel == mainPanel)
+        {
+            urlInput.text = "https://temukan.com/";
+        }
+
+        StartCoroutine(AnimationCloseWeb(nextPanel));
+        StartCoroutine(AnimationOpenWeb(currentPanel));
     }
 }
