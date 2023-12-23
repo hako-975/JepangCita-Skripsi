@@ -27,11 +27,21 @@ public class BrowserPanel : MonoBehaviour
     [SerializeField]
     private GameObject jepangCitaLoginPanel;
 
+    // Dashboard
     [SerializeField]
     private GameObject jepangCitaDashboardPanel;
+    
+    [SerializeField]
+    private GameObject jepangCitaJadwalPanel;
+
+    [SerializeField]
+    private GameObject jepangCitaMateriPanel;
 
     [SerializeField]
     private GameObject notFoundPanel;
+
+    
+
 
     [Header("Buttons")]
     [SerializeField]
@@ -67,27 +77,60 @@ public class BrowserPanel : MonoBehaviour
 
         if (IsJepangCitaInput(input))
         {
-            urlInput.text = "https://jepangcita.com/";
             panelToShow = jepangCitaPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaDashboardPanel;
+            }
         }
         else if (IsJepangCitaDashboardInput(input))
         {
-            urlInput.text = "https://jepangcita.com/dashboard";
-            panelToShow = jepangCitaDashboardPanel;
+            panelToShow = jepangCitaPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaDashboardPanel;
+            } 
+        }
+        else if (IsJepangCitaJadwalInput(input))
+        {
+            panelToShow = jepangCitaPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaJadwalPanel;
+            }
+        }
+        else if (IsJepangCitaMateriInput(input))
+        {
+            panelToShow = jepangCitaPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaMateriPanel;
+            }
         }
         else if (IsJepangCitaRegisterInput(input))
         {
-            urlInput.text = "https://jepangcita.com/register";
             panelToShow = jepangCitaRegisterPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaDashboardPanel;
+            }
         }
         else if (IsJepangCitaLoginInput(input))
         {
-            urlInput.text = "https://jepangcita.com/login";
             panelToShow = jepangCitaLoginPanel;
+            
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaDashboardPanel;
+            }
         }
         else if (IsTemukanInput(input))
         {
-            urlInput.text = "https://temukan.com/";
             panelToShow = mainPanel;
         }
         else
@@ -109,6 +152,14 @@ public class BrowserPanel : MonoBehaviour
         {
             return false;
         }
+        else if (lowercaseInput.Contains("httpsjepangcitacomjadwal") || lowercaseInput.Contains("jepangcitacomjadwal"))
+        {
+            return false;
+        }
+        else if (lowercaseInput.Contains("httpsjepangcitacommateri") || lowercaseInput.Contains("jepangcitacommateri"))
+        {
+            return false;
+        }
         else if (lowercaseInput.Contains("httpsjepangcitacomlogin") || lowercaseInput.Contains("jepangcitacomlogin"))
         {
             return false;
@@ -124,6 +175,18 @@ public class BrowserPanel : MonoBehaviour
     {
         string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
         return lowercaseInput.Contains("jepangcitadashboard") || lowercaseInput.Contains("jepang cita dashboard") || lowercaseInput.Contains("jepangcitacomdashboard") || lowercaseInput.Contains("httpsjepangcitacomdashboard");
+    }
+
+    private bool IsJepangCitaJadwalInput(string input)
+    {
+        string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
+        return lowercaseInput.Contains("jepangcitajadwal") || lowercaseInput.Contains("jepang cita jadwal") || lowercaseInput.Contains("jepangcitacomjadwal") || lowercaseInput.Contains("httpsjepangcitacomjadwal");
+    }
+
+    private bool IsJepangCitaMateriInput(string input)
+    {
+        string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
+        return lowercaseInput.Contains("jepangcitamateri") || lowercaseInput.Contains("jepang cita materi") || lowercaseInput.Contains("jepangcitacommateri") || lowercaseInput.Contains("httpsjepangcitacommateri");
     }
 
     private bool IsJepangCitaRegisterInput(string input)
@@ -183,7 +246,6 @@ public class BrowserPanel : MonoBehaviour
         UpdateUrlInputText();
     }
 
-
     private void Backward()
     {
         if (panelHistory.Count > 1)
@@ -231,6 +293,14 @@ public class BrowserPanel : MonoBehaviour
         {
             urlInput.text = "https://jepangcita.com/dashboard";
         }
+        else if (currentPanel == jepangCitaJadwalPanel)
+        {
+            urlInput.text = "https://jepangcita.com/jadwal";
+        }
+        else if (currentPanel == jepangCitaMateriPanel)
+        {
+            urlInput.text = "https://jepangcita.com/materi";
+        }
         else if (currentPanel == jepangCitaLoginPanel)
         {
             urlInput.text = "https://jepangcita.com/login";
@@ -262,6 +332,22 @@ public class BrowserPanel : MonoBehaviour
 
     public void OnLoginNavButtonClick()
     {
+        OnInputEndEdit("https://jepangcita.com/login");
+    }
+
+    public void OnJadwalNavButtonClick()
+    {
+        OnInputEndEdit("https://jepangcita.com/jadwal");
+    }
+
+    public void OnMateriNavButtonClick()
+    {
+        OnInputEndEdit("https://jepangcita.com/materi");
+    }
+
+    public void OnLogoutNavButtonClick()
+    {
+        PlayerPrefsController.instance.SetCredentialJepangCita(0);
         OnInputEndEdit("https://jepangcita.com/login");
     }
 }

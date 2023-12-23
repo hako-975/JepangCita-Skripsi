@@ -3,24 +3,20 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
-public class RegisterPanel : MonoBehaviour
+public class LoginPanel : MonoBehaviour
 {
     [SerializeField]
     private BrowserPanel browserPanel;
 
     [Header("Inputs")]
     [SerializeField]
-    private TMP_InputField fullnameInput;
-    [SerializeField]
     private TMP_InputField emailInput;
     [SerializeField]
     private TMP_InputField passwordInput;
-    [SerializeField]
-    private TMP_InputField confirmPasswordInput;
 
     [Header("Buttons")]
     [SerializeField]
-    private Button registerButton;
+    private Button loginButton;
 
     [Header("Panels")]
     [SerializeField]
@@ -39,37 +35,28 @@ public class RegisterPanel : MonoBehaviour
     {
         failedPanel.SetActive(false);
         succeedPanel.SetActive(false);
-        
-        fullnameInput.text = PlayerPrefsController.instance.GetCharacterName();
-        registerButton.onClick.AddListener(RegisterAccount);
+
+        loginButton.onClick.AddListener(LoginAccount);
     }
 
-    private void RegisterAccount()
+    private void LoginAccount()
     {
-        if (PlayerPrefsController.instance.GetEmailJepangCita() != "member@jepangcita.com")
+        if (PlayerPrefsController.instance.GetEmailJepangCita() != emailInput.text)
         {
-            messageFailed.text = "Anda sudah pernah mendaftar sebelumnya! Dengan email: " + PlayerPrefsController.instance.GetEmailJepangCita();
+            messageFailed.text = "Email atau Password salah!";
             StartCoroutine(ShowAndHidePanelCoroutine(failedPanel));
             return;
         }
-        else if (passwordInput.text != confirmPasswordInput.text)
+        else if (PlayerPrefsController.instance.GetPasswordJepangCita() != passwordInput.text)
         {
-            messageFailed.text = "Password dan Confirm Password harus sama!";
-            StartCoroutine(ShowAndHidePanelCoroutine(failedPanel));
-            return;
-        } 
-        else if (emailInput.text == PlayerPrefsController.instance.GetEmailJepangCita())
-        {
-            messageFailed.text = "Email sudah terdaftar! Silahkan Login!";
+            messageFailed.text = "Email atau Password salah!";
             StartCoroutine(ShowAndHidePanelCoroutine(failedPanel));
             return;
         }
         else
         {
-            PlayerPrefsController.instance.SetFullnameJepangCita(fullnameInput.text);
-            PlayerPrefsController.instance.SetEmailJepangCita(emailInput.text);
-            PlayerPrefsController.instance.SetPasswordJepangCita(passwordInput.text);
-            messageSucceed.text = "Akun berhasil didaftarkan! Silahkan Login!";
+            messageSucceed.text = "Berhasil Login!";
+            PlayerPrefsController.instance.SetCredentialJepangCita(1);
             StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel));
             return;
         }
@@ -82,12 +69,12 @@ public class RegisterPanel : MonoBehaviour
         panel.GetComponent<Animator>().SetTrigger("Show");
 
         yield return new WaitForSeconds(2f);
-        
+
         panel.GetComponent<Animator>().SetTrigger("Hide");
 
         if (panel == succeedPanel)
         {
-            browserPanel.OnLoginNavButtonClick();
+            browserPanel.OnDashboardNavButtonClick();
         }
     }
 }

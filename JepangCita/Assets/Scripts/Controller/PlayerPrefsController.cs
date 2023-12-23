@@ -195,6 +195,16 @@ public class PlayerPrefsController : MonoBehaviour
     #endregion
 
     #region JepangCitaAccount
+    public void SetCredentialJepangCita(int boolean)
+    {
+        PlayerPrefs.SetInt("Credential", boolean);
+    }
+
+    public int GetCredentialJepangCita()
+    {
+        return PlayerPrefs.GetInt("Credential", 0);
+    }
+
     public void SetFullnameJepangCita(string name)
     {
         PlayerPrefs.SetString("Fullname", name);
@@ -247,6 +257,56 @@ public class PlayerPrefsController : MonoBehaviour
         return PlayerPrefs.GetInt("LatestScore", 0);
     }
     #endregion
+
+    #region SentMail
+    public int IdMailGenerator()
+    {
+        PlayerPrefs.SetInt("IdMail", PlayerPrefs.GetInt("IdMail", 0) + 1);
+        return PlayerPrefs.GetInt("IdMail");
+    }
+
+    public int GetCountSentMail()
+    {
+        return PlayerPrefs.GetInt("IdMail");
+    }
+
+    public void SetSentMail(string to, string subject, string message, string date)
+    {
+        // kepada, subjek, pesan, tanggal
+        PlayerPrefs.SetString("SentMail" + IdMailGenerator(), to + "?>?" + subject + "?>?" + message + "?>?" + date);
+    }
+
+    public string GetSentMail(int id)
+    {
+        return PlayerPrefs.GetString("SentMail" + id);
+    }
+    #endregion
+
+    #region DraftMail
+    public int IdDraftMailGenerator()
+    {
+        PlayerPrefs.SetInt("idDraftMail", PlayerPrefs.GetInt("idDraftMail", 0) + 1);
+        return PlayerPrefs.GetInt("idDraftMail");
+    }
+
+    public int GetCountDraftMail()
+    {
+        return PlayerPrefs.GetInt("idDraftMail");
+    }
+
+    public void SetDraftMail(string to, string subject, string message, string date)
+    {
+        // kepada, subjek, pesan, tanggal
+        PlayerPrefs.SetString("DraftMail" + IdDraftMailGenerator(), to + "?>?" + subject + "?>?" + message + "?>?" + date);
+    }
+
+    public string GetDraftMail(int id)
+    {
+        return PlayerPrefs.GetString("DraftMail" + id);
+    }
+
+    #endregion
+
 
     public void DeleteKey(string key)
     {
