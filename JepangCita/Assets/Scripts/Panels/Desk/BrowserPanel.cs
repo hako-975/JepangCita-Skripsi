@@ -27,6 +27,12 @@ public class BrowserPanel : MonoBehaviour
     [SerializeField]
     private GameObject jepangCitaLoginPanel;
 
+    [SerializeField]
+    private GameObject jepangCitaResetPasswordPanel;
+
+    [SerializeField]
+    private GameObject jepangCitaChangePasswordPanel;
+
     // Dashboard
     [SerializeField]
     private GameObject jepangCitaDashboardPanel;
@@ -36,6 +42,7 @@ public class BrowserPanel : MonoBehaviour
 
     [SerializeField]
     private GameObject jepangCitaMateriPanel;
+
 
     [SerializeField]
     private GameObject notFoundPanel;
@@ -129,6 +136,24 @@ public class BrowserPanel : MonoBehaviour
                 panelToShow = jepangCitaDashboardPanel;
             }
         }
+        else if (IsJepangCitaResetPasswordInput(input))
+        {
+            panelToShow = jepangCitaResetPasswordPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
+            {
+                panelToShow = jepangCitaDashboardPanel;
+            }
+        }
+        else if (IsJepangCitaChangePasswordInput(input))
+        {
+            panelToShow = jepangCitaPanel;
+
+            if (PlayerPrefsController.instance.GetCredentialJepangCita() == 2)
+            {
+                panelToShow = jepangCitaChangePasswordPanel;
+            }
+        }
         else if (IsTemukanInput(input))
         {
             panelToShow = mainPanel;
@@ -161,6 +186,14 @@ public class BrowserPanel : MonoBehaviour
             return false;
         }
         else if (lowercaseInput.Contains("httpsjepangcitacomlogin") || lowercaseInput.Contains("jepangcitacomlogin"))
+        {
+            return false;
+        }
+        else if (lowercaseInput.Contains("httpsjepangcitacomresetpassword") || lowercaseInput.Contains("jepangcitacomresetpassword"))
+        {
+            return false;
+        }
+        else if (lowercaseInput.Contains("httpsjepangcitacomchangepassword") || lowercaseInput.Contains("jepangcitacomchangepassword"))
         {
             return false;
         }
@@ -199,6 +232,18 @@ public class BrowserPanel : MonoBehaviour
     {
         string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
         return lowercaseInput.Contains("jepangcitalogin") || lowercaseInput.Contains("jepang cita login") || lowercaseInput.Contains("jepangcitacomlogin") || lowercaseInput.Contains("httpsjepangcitacomlogin");
+    }
+
+    private bool IsJepangCitaResetPasswordInput(string input)
+    {
+        string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
+        return lowercaseInput.Contains("jepangcitaresetpassword") || lowercaseInput.Contains("jepang cita resetpassword") || lowercaseInput.Contains("jepangcitacomresetpassword") || lowercaseInput.Contains("httpsjepangcitacomresetpassword");
+    }
+
+    private bool IsJepangCitaChangePasswordInput(string input)
+    {
+        string lowercaseInput = Regex.Replace(input, "[^a-zA-Z0-9]", "").Trim().ToLower();
+        return lowercaseInput.Contains("jepangcitachangepassword") || lowercaseInput.Contains("jepang cita changepassword") || lowercaseInput.Contains("jepangcitacomchangepassword") || lowercaseInput.Contains("httpsjepangcitacomchangepassword");
     }
 
     private bool IsTemukanInput(string input)
@@ -305,6 +350,14 @@ public class BrowserPanel : MonoBehaviour
         {
             urlInput.text = "https://jepangcita.com/login";
         }
+        else if (currentPanel == jepangCitaResetPasswordPanel)
+        {
+            urlInput.text = "https://jepangcita.com/resetpassword";
+        }
+        else if (currentPanel == jepangCitaChangePasswordPanel)
+        {
+            urlInput.text = "https://jepangcita.com/changepassword";
+        }
         else if (currentPanel == jepangCitaRegisterPanel)
         {
             urlInput.text = "https://jepangcita.com/register";
@@ -343,6 +396,16 @@ public class BrowserPanel : MonoBehaviour
     public void OnMateriNavButtonClick()
     {
         OnInputEndEdit("https://jepangcita.com/materi");
+    }
+
+    public void OnResetPasswordButtonClick()
+    {
+        OnInputEndEdit("https://jepangcita.com/resetpassword");
+    }
+
+    public void OnChangePasswordButtonClick()
+    {
+        OnInputEndEdit("https://jepangcita.com/changepassword");
     }
 
     public void OnLogoutNavButtonClick()

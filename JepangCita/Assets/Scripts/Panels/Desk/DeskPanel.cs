@@ -164,7 +164,7 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
-    private void OpenBrowserButton(bool alreadyOpen = false)
+    public void OpenBrowserButton(bool alreadyOpen = false)
     {
         if (!alreadyOpen)
         {

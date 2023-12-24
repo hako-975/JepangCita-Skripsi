@@ -282,6 +282,29 @@ public class PlayerPrefsController : MonoBehaviour
     }
     #endregion
 
+    #region InboxMail
+    public int IdInboxMailGenerator()
+    {
+        PlayerPrefs.SetInt("IdInboxMail", PlayerPrefs.GetInt("IdInboxMail", 0) + 1);
+        return PlayerPrefs.GetInt("IdInboxMail");
+    }
+
+    public int GetCountInboxMail()
+    {
+        return PlayerPrefs.GetInt("IdInboxMail");
+    }
+
+    public void SetInboxMail(string to, string subject, string message, string date, bool isChangePassword)
+    {
+        PlayerPrefs.SetString("InboxMail" + IdInboxMailGenerator(), to + "?>?" + subject + "?>?" + message + "?>?" + date + "?>?" + isChangePassword);
+    }
+
+    public string GetInboxMail(int id)
+    {
+        return PlayerPrefs.GetString("InboxMail" + id);
+    }
+    #endregion
+
     #region DraftMail
     public int IdDraftMailGenerator()
     {
@@ -307,6 +330,30 @@ public class PlayerPrefsController : MonoBehaviour
 
     #endregion
 
+    #region TrashMail
+    public int IdTrashMailGenerator()
+    {
+        PlayerPrefs.SetInt("idTrashMail", PlayerPrefs.GetInt("idTrashMail", 0) + 1);
+        return PlayerPrefs.GetInt("idTrashMail");
+    }
+
+    public int GetCountTrashMail()
+    {
+        return PlayerPrefs.GetInt("idTrashMail");
+    }
+
+    public void SetTrashMail(string to, string subject, string message, string date)
+    {
+        // kepada, subjek, pesan, tanggal
+        PlayerPrefs.SetString("TrashMail" + IdTrashMailGenerator(), to + "?>?" + subject + "?>?" + message + "?>?" + date);
+    }
+
+    public string GetTrashMail(int id)
+    {
+        return PlayerPrefs.GetString("TrashMail" + id);
+    }
+
+    #endregion
 
     public void DeleteKey(string key)
     {
