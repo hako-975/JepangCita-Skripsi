@@ -18,11 +18,15 @@ public class SofaAction : MonoBehaviour
 
     private PlayerController playerController;
 
+    private ActionController actionController;
+
     private bool sit;
 
     // Start is called before the first frame update
     void Start()
     {
+        actionController = GetComponentInParent<ActionController>();
+
         sit = false;
 
         sofaCanvas.SetActive(false);
@@ -130,6 +134,7 @@ public class SofaAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             sofaCanvas.SetActive(true);
+            actionController.canvas = sofaCanvas;
         }
     }
 

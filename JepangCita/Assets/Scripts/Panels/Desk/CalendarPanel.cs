@@ -14,7 +14,14 @@ public class CalendarPanel : MonoBehaviour
     Button monthYearRightButton;
 
     [SerializeField]
+    Sprite pinIcon;
+
+    [SerializeField]
+    Sprite transparentIcon;
+
+    [SerializeField]
     Button[] calendarDayButtons;
+    
 
     int gameMonth;
     int gameYear;
@@ -22,6 +29,8 @@ public class CalendarPanel : MonoBehaviour
     int startDay;
     int dayNumber;
     int lastActiveButtonIndex;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +110,21 @@ public class CalendarPanel : MonoBehaviour
         // main date
         for (int day = startDay; day < daysInCalendar; day++)
         {
-            calendarDayButtons[day].GetComponent<CalendarDayButton>().tanggalText.text = dayNumber.ToString();
+            CalendarDayButton calendarNow;
+            calendarNow = calendarDayButtons[day].GetComponent<CalendarDayButton>();
+            calendarNow.tanggalText.text = dayNumber.ToString();
+
+            // Check if it's the current day and month
+            if (dayNumber == PlayerPrefsController.instance.GetDateDay() && gameMonth == PlayerPrefsController.instance.GetDateMonth())
+            {
+                calendarNow.eventIcon.sprite = pinIcon;
+            }
+            else
+            {
+                calendarNow.eventIcon.sprite = transparentIcon;
+            }
+
+
             calendarDayButtons[day].interactable = true;
 
             dayNumber++;
@@ -119,6 +142,7 @@ public class CalendarPanel : MonoBehaviour
             if (i < daysInCalendar)
             {
                 calendarDayButtons[i].interactable = false;
+                calendarDayButtons[i].GetComponent<CalendarDayButton>().eventIcon.sprite = transparentIcon;
             }
         }
 

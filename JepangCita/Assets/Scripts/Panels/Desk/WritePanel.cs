@@ -64,7 +64,7 @@ public class WritePanel : MonoBehaviour
             return;
         }
 
-        DateTime currentDateTime = DateTime.Now;
+        DateTime currentDateTime = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
         string dateSent = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"));
 
         // kepada, subjek, pesan, tanggal
@@ -77,7 +77,7 @@ public class WritePanel : MonoBehaviour
     {
         if (toInput.text != "" || subjectInput.text != "" || messageInput.text != "")
         {
-            DateTime currentDateTime = DateTime.Now;
+            DateTime currentDateTime = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
             string dateSent = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"));
 
             // kepada, subjek, pesan, tanggal

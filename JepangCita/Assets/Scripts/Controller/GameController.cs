@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
     private GameObject mainMenuPanel;
 
     [SerializeField]
-    private GameObject actionsPanel;
+    private ActionController actionsPanel;
 
     private bool windowPause = false;
     private bool windowSettings = false;
@@ -109,11 +109,11 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         windowPause = true;
         pausePanel.GetComponent<Animator>().SetTrigger("Show");
-        actionsPanel.SetActive(false);
+        actionsPanel.DeactiveCanvasAction();
         yield return null;
     }
 
-    private void ResumeButton()
+    public void ResumeButton()
     {
         StartCoroutine(AnimationResume());
     }
@@ -123,7 +123,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         windowPause = false;
         pausePanel.GetComponent<Animator>().SetTrigger("Hide");
-        actionsPanel.SetActive(true);
+        actionsPanel.ActiveCanvasAction();
         yield return null;
     }
 

@@ -12,11 +12,15 @@ public class ObjectAction : MonoBehaviour
     [SerializeField]
     private Animator objectAnimatior;
 
+    private ActionController actionController;
+
     private bool open;
 
     // Start is called before the first frame update
     void Start()
     {
+        actionController = GetComponentInParent<ActionController>();
+
         open = false;
 
         objectCanvas.SetActive(false);
@@ -43,6 +47,7 @@ public class ObjectAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             objectCanvas.SetActive(true);
+            actionController.canvas = objectCanvas;
         }
     }
 

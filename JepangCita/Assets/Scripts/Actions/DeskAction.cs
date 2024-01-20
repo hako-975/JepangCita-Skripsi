@@ -28,14 +28,17 @@ public class DeskAction : MonoBehaviour
     [SerializeField]
     private Animator laptopAnimator;
 
+    private ActionController actionController;
+
     private GameObject player;
 
     private PlayerController playerController;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        actionController = GetComponentInParent<ActionController>();
         playerController = player.GetComponent<PlayerController>();
 
         deskCanvas.SetActive(false);
@@ -94,7 +97,8 @@ public class DeskAction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            deskCanvas.SetActive(true); 
+            deskCanvas.SetActive(true);
+            actionController.canvas = deskCanvas;
         }
     }
 

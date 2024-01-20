@@ -40,7 +40,7 @@ public class ResetPasswordPanel : MonoBehaviour
             "\n\n" + "Arigatou," +
             "\n" + "JepangCita Tim";
 
-        DateTime currentDateTime = DateTime.Now;
+        DateTime currentDateTime = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
         string dateSent = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"));
 
         PlayerPrefsController.instance.SetInboxMail("noreply@jepangcita.com", "Jepang Cita Reset Password", message, dateSent, true);
