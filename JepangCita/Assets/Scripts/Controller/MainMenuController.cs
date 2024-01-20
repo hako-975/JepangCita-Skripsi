@@ -49,6 +49,10 @@ public class MainMenuController : MonoBehaviour
         {
             CloseButton();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && windowOn == false)
+        {
+            QuitButton();
+        }
     }
 
     private void PlayButton()

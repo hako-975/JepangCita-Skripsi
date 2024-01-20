@@ -47,25 +47,21 @@ public class DateTimeController : MonoBehaviour
 
             // Add one game minute
             gameMinute++;
-            PlayerPrefsController.instance.SetMinute(gameMinute);
-            if (gameMinute >= 60)
+            if (gameMinute > 59)
             {
                 gameMinute = 0;
                 gameHour++;
-                PlayerPrefsController.instance.SetHour(gameHour);
-                if (gameHour > 23) //23
+                if (gameHour > 23) 
                 {
                     gameHour = 0;
                     gameDay++;
 
-                    PlayerPrefsController.instance.SetDateDay(gameDay);
 
                     // Check if the day exceeds 31
                     if (gameDay > DateTime.DaysInMonth(gameYear, gameMonth))
                     {
                         gameDay = 1;
                         gameMonth++;
-                        PlayerPrefsController.instance.SetDateMonth(gameMonth);
                         // Check if the month exceeds 12
                         if (gameMonth > 12)
                         {
@@ -73,11 +69,19 @@ public class DateTimeController : MonoBehaviour
                             gameYear++;
                             PlayerPrefsController.instance.SetDateYear(gameYear);
                         }
+
+                        PlayerPrefsController.instance.SetDateMonth(gameMonth);
                     }
+
+                    PlayerPrefsController.instance.SetDateDay(gameDay);
 
                     UpdateDateText(gameYear, gameMonth, gameDay);
                 }
+
+                PlayerPrefsController.instance.SetHour(gameHour);
             }
+
+            PlayerPrefsController.instance.SetMinute(gameMinute);
         }
 
         // Display the time in text
