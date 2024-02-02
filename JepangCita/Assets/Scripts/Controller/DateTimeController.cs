@@ -10,6 +10,9 @@ public class DateTimeController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI timeText;
+    
+    [SerializeField]
+    private Light directionalLight;
 
     float realSecondCounter;
     float realSecondsPerGameMinute;
@@ -18,6 +21,7 @@ public class DateTimeController : MonoBehaviour
     int gameDay;
     int gameMonth;
     int gameYear;
+
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +90,8 @@ public class DateTimeController : MonoBehaviour
 
         // Display the time in text
         timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
+        
+        UpdateSunRotation();
     }
 
     // Update the date text in your UI
@@ -94,5 +100,13 @@ public class DateTimeController : MonoBehaviour
         DateTime specificDate = new DateTime(gameYear, gameMonth, gameDay);
         CultureInfo cultureInfo = new CultureInfo(PlayerPrefsController.instance.localeName);
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
+    }
+
+    // Update the rotation of the directional light (sun) based on the current time
+    private void UpdateSunRotation()
+    {
+        float zenithHour = 6f; 
+        float rotationAngle = ((gameHour - zenithHour) * 60f + gameMinute) / (24f * 60f) * 360f;
+        directionalLight.transform.rotation = Quaternion.Euler(new Vector3(rotationAngle, 90f, 0f));
     }
 }
