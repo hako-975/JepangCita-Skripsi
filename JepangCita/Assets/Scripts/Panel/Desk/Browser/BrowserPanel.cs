@@ -47,8 +47,6 @@ public class BrowserPanel : MonoBehaviour
     [SerializeField]
     private GameObject notFoundPanel;
 
-    
-
 
     [Header("Buttons")]
     [SerializeField]
@@ -63,8 +61,13 @@ public class BrowserPanel : MonoBehaviour
     private readonly Stack<GameObject> panelHistory = new Stack<GameObject>();
     private readonly Stack<GameObject> panelFuture = new Stack<GameObject>();
 
+    private MateriPanel materiPanel;
+
+
     void Start()
     {
+        materiPanel = jepangCitaMateriPanel.GetComponent<MateriPanel>();
+
         goBackwardButton.interactable = false;
         goForwardButton.interactable = false;
 
@@ -116,6 +119,7 @@ public class BrowserPanel : MonoBehaviour
             if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
             {
                 panelToShow = jepangCitaMateriPanel;
+                materiPanel.BackToMateriPanel();
             }
         }
         else if (IsJepangCitaRegisterInput(input))

@@ -4,10 +4,15 @@ using UnityEngine.UI;
 public class MateriPanel : MonoBehaviour
 {
     [Header("Panels")]
+    public GameObject materiPanel;
     [SerializeField]
-    private GameObject materiPanel;
+    private GameObject contentHuruf;
     [SerializeField]
-    private GameObject hurufPanel;
+    private GameObject contentHiragana;
+    [SerializeField]
+    private GameObject contentKatakana;
+    [SerializeField]
+    private GameObject contentAngka;
 
     [Header("Buttons")]
     [SerializeField]
@@ -26,20 +31,24 @@ public class MateriPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        btnHuruf.onClick.AddListener(delegate { OpenPanel(hurufPanel); });
+        BackToMateriPanel();
+        btnHuruf.onClick.AddListener(delegate { OpenPanel(contentHuruf); });
+        btnAngka.onClick.AddListener(delegate { OpenPanel(contentAngka); });
     }
 
     private void OpenPanel(GameObject panel)
     {
-        CloseAllPanel();
+        BackToMateriPanel();
         materiPanel.SetActive(false);
         panel.SetActive(true);
     }
 
-
-    private void CloseAllPanel()
+    public void BackToMateriPanel()
     {
-        hurufPanel.SetActive(false);
+        contentHuruf.SetActive(false);
+        contentHiragana.SetActive(false);
+        contentKatakana.SetActive(false);
+        contentAngka.SetActive(false);
         materiPanel.SetActive(true);
     }
 }

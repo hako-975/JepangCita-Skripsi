@@ -109,7 +109,12 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         windowPause = true;
         pausePanel.GetComponent<Animator>().SetTrigger("Show");
-        actionsPanel.DeactiveCanvasAction();
+        
+        if (!actionsPanel.isActionActive)
+        {
+            actionsPanel.DeactiveCanvasAction();
+        }
+
         yield return null;
     }
 

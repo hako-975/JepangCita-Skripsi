@@ -7,9 +7,13 @@ public class ActionController : MonoBehaviour
 
     public GameObject canvas;
 
+    [HideInInspector]
+    public bool isActionActive = false;
+
     public void ActiveCanvasAction()
     {
         canvas.SetActive(true);
+        isActionActive = true;
     }
 
     public void DeactiveCanvasAction()
@@ -18,5 +22,7 @@ public class ActionController : MonoBehaviour
         {
             canvasAction[i].SetActive(false);
         }
+     
+        isActionActive = false;
     }
 }

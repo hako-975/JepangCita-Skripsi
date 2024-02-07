@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -20,6 +21,9 @@ public class HurufPanel : MonoBehaviour
     [SerializeField]
     private GameObject contentKatakana;
     
+    [SerializeField]
+    private GameObject contentAngka;
+
     [Header("Hiragana")]
     [SerializeField]
     private Button[] hurufHiraganaButtons;
@@ -43,6 +47,11 @@ public class HurufPanel : MonoBehaviour
 
     [SerializeField]
     private Button btnMenuKatakana;
+
+    [SerializeField]
+    private GameObject scrollViewContent;
+
+    private Vector2 scrollPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +90,7 @@ public class HurufPanel : MonoBehaviour
         previewHurufPanel.paragraph.text = paragraph;
         previewHurufPanel.videoPlayer.clip = videoClip;
         previewHurufPanel.closeButton.onClick.AddListener(delegate { CloseContentHiraganaButton(previewHurufPanel.gameObject); });
+        scrollPosition = scrollViewContent.GetComponent<ScrollRect>().normalizedPosition;
         CloseAllContent();
     }
 
@@ -91,6 +101,7 @@ public class HurufPanel : MonoBehaviour
         previewHurufPanel.paragraph.text = paragraph;
         previewHurufPanel.videoPlayer.clip = videoClip;
         previewHurufPanel.closeButton.onClick.AddListener(delegate { CloseContentKatakanaButton(previewHurufPanel.gameObject); });
+        scrollPosition = scrollViewContent.GetComponent<ScrollRect>().normalizedPosition;
         CloseAllContent();
     }
 
@@ -99,6 +110,7 @@ public class HurufPanel : MonoBehaviour
         contentHuruf.SetActive(false);
         contentHiragana.SetActive(false);
         contentKatakana.SetActive(false);
+        contentAngka.SetActive(false);
     }
 
     private void CloseContentHiraganaButton(GameObject previewHurufPanel)
@@ -106,6 +118,7 @@ public class HurufPanel : MonoBehaviour
         CloseAllContent();
         Destroy(previewHurufPanel);
         contentHiragana.SetActive(true);
+        StartCoroutine(RestoreScroll());
     }
 
     private void CloseContentKatakanaButton(GameObject previewHurufPanel)
@@ -113,6 +126,7 @@ public class HurufPanel : MonoBehaviour
         CloseAllContent();
         Destroy(previewHurufPanel);
         contentKatakana.SetActive(true);
+        StartCoroutine(RestoreScroll());
     }
 
     private void OpenMenuHiragana()
@@ -125,6 +139,13 @@ public class HurufPanel : MonoBehaviour
     {
         CloseAllContent();
         contentKatakana.SetActive(true);
+    }
+
+    private IEnumerator RestoreScroll()
+    {
+        yield return null;
+
+        scrollViewContent.GetComponent<ScrollRect>().normalizedPosition = scrollPosition;
     }
 
 }
