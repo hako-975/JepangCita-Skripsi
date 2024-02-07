@@ -33,7 +33,9 @@ public class DeskAction : MonoBehaviour
     private GameObject player;
 
     private PlayerController playerController;
-    
+
+    bool isActiveDesk = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +50,19 @@ public class DeskAction : MonoBehaviour
         actionButton.onClick.AddListener(ActionButton);
     }
 
+    void Update()
+    {
+        if (isActiveDesk)
+        {
+            deskCanvas.SetActive(true);
+            deskPanel.SetActive(true);
+        }
+    }
+
     private void ShutdownButton()
     {
+        isActiveDesk = false;
+
         playerController.canMove = true;
 
         canvas.GetComponent<CanvasGroup>().alpha = 1;
@@ -90,7 +103,9 @@ public class DeskAction : MonoBehaviour
     private IEnumerator WaitDeskPanelOpen()
     {
         yield return new WaitForSeconds(1f);
+        deskCanvas.SetActive(true);
         deskPanel.SetActive(true);
+        isActiveDesk = true;
     }
 
     private void OnTriggerEnter(Collider other)

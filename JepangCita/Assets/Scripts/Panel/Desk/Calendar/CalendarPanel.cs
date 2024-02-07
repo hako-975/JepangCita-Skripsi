@@ -30,7 +30,9 @@ public class CalendarPanel : MonoBehaviour
     int dayNumber;
     int lastActiveButtonIndex;
 
-    
+    int currentDay;
+    int currentMonth;
+    int currentYear;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +77,10 @@ public class CalendarPanel : MonoBehaviour
 
     private void UpdateCalendar()
     {
+        currentDay = PlayerPrefsController.instance.GetDateDay();
+        currentMonth = PlayerPrefsController.instance.GetDateMonth();
+        currentYear = PlayerPrefsController.instance.GetDateYear();
+
         if (gameYear > 2023 || (gameYear == 2023 && gameMonth > 1))
         {
             monthYearLeftButton.interactable = true;
@@ -85,7 +91,7 @@ public class CalendarPanel : MonoBehaviour
         }
 
         monthYearText.text = new DateTime(gameYear, gameMonth, 1).ToString("MMMM yyyy");
-        
+
         DateTime firstDayAtMonthAndYear = new DateTime(gameYear, gameMonth, 1);
         startDay = (int)firstDayAtMonthAndYear.DayOfWeek;
         dayNumber = 1;
@@ -105,6 +111,7 @@ public class CalendarPanel : MonoBehaviour
 
             calendarDayButtons[i].GetComponent<CalendarDayButton>().tanggalText.text = (dayInPreviousMonth - startDay + i + 1).ToString();
             calendarDayButtons[i].interactable = false;
+            calendarDayButtons[i].GetComponent<CalendarDayButton>().eventIcon.sprite = transparentIcon;
         }
 
         // main date
@@ -113,18 +120,13 @@ public class CalendarPanel : MonoBehaviour
             CalendarDayButton calendarNow;
             calendarNow = calendarDayButtons[day].GetComponent<CalendarDayButton>();
             calendarNow.tanggalText.text = dayNumber.ToString();
-
-            // Check if it's the current day and month
-            if (dayNumber == PlayerPrefsController.instance.GetDateDay() && gameMonth == PlayerPrefsController.instance.GetDateMonth())
+            
+            calendarNow.eventIcon.sprite = transparentIcon;
+            if (dayNumber == currentDay && gameMonth == currentMonth && gameYear == currentYear)
             {
                 calendarNow.eventIcon.sprite = pinIcon;
             }
-            else
-            {
-                calendarNow.eventIcon.sprite = transparentIcon;
-            }
-
-
+        
             calendarDayButtons[day].interactable = true;
 
             dayNumber++;
