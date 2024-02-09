@@ -8,21 +8,7 @@ public class HurufPanel : MonoBehaviour
     [SerializeField]
     private GameObject previewHurufPanelPrefabs;
 
-    [Header("Content")]
-    [SerializeField]
-    private GameObject content;
-
-    [SerializeField]
-    private GameObject contentHuruf;
-
-    [SerializeField]
-    private GameObject contentHiragana;
-    
-    [SerializeField]
-    private GameObject contentKatakana;
-    
-    [SerializeField]
-    private GameObject contentAngka;
+    private MateriPanel materiPanel;
 
     [Header("Hiragana")]
     [SerializeField]
@@ -48,14 +34,15 @@ public class HurufPanel : MonoBehaviour
     [SerializeField]
     private Button btnMenuKatakana;
 
-    [SerializeField]
-    private GameObject scrollViewContent;
+    
 
     private Vector2 scrollPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        materiPanel = GetComponent<MateriPanel>();
+
         hurufHiraganaStrings = new string[]
         {
             "Huruf Hiragana - (a) - あ", "Huruf Hiragana - (i) - い", "Huruf Hiragana - (u) - う", "Huruf Hiragana - (e) - え", "Huruf Hiragana - (o) - お", "Huruf Hiragana - (ka) - か", "Huruf Hiragana - (ki) - き", "Huruf Hiragana - (ku) - く", "Huruf Hiragana - (ke) - け", "Huruf Hiragana - (ko) - こ", "Huruf Hiragana - (sa) - さ", "Huruf Hiragana - (shi) - し", "Huruf Hiragana - (su) - す", "Huruf Hiragana - (se) - せ", "Huruf Hiragana - (so) - そ", "Huruf Hiragana - (ta) - た", "Huruf Hiragana - (chi) - ち", "Huruf Hiragana - (tsu) - つ", "Huruf Hiragana - (te) - て", "Huruf Hiragana - (to) - と", "Huruf Hiragana - (na) - な", "Huruf Hiragana - (ni) - に", "Huruf Hiragana - (nu) - ぬ", "Huruf Hiragana - (ne) - ね", "Huruf Hiragana - (no) - の", "Huruf Hiragana - (ha) - は", "Huruf Hiragana - (hi) - ひ", "Huruf Hiragana - (fu) - ふ", "Huruf Hiragana - (he) - へ", "Huruf Hiragana - (ho) - ほ", "Huruf Hiragana - (ma) - ま", "Huruf Hiragana - (mi) - み", "Huruf Hiragana - (mu) - む", "Huruf Hiragana - (me) - め", "Huruf Hiragana - (mo) - も", "Huruf Hiragana - (ya) - や", "Huruf Hiragana - (yu) - ゆ", "Huruf Hiragana - (yo) - よ", "Huruf Hiragana - (ra) - ら", "Huruf Hiragana - (ri) - り", "Huruf Hiragana - (ru) - る", "Huruf Hiragana - (re) - れ", "Huruf Hiragana - (ro) - ろ", "Huruf Hiragana - (wa) - わ", "Huruf Hiragana - (wo) - を", "Huruf Hiragana - (n) - ん"
@@ -85,39 +72,54 @@ public class HurufPanel : MonoBehaviour
 
     private void OpenPreviewHiraganaButton(string paragraph, VideoClip videoClip)
     {
-        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, content.transform);
+        materiPanel.headingText.text = paragraph;
+        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
         PreviewHurufPanel previewHurufPanel = previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
-        previewHurufPanel.paragraph.text = paragraph;
         previewHurufPanel.videoPlayer.clip = videoClip;
-        previewHurufPanel.closeButton.onClick.AddListener(delegate { CloseContentHiraganaButton(previewHurufPanel.gameObject); });
-        scrollPosition = scrollViewContent.GetComponent<ScrollRect>().normalizedPosition;
+        materiPanel.closeButton.onClick.RemoveAllListeners();
+        materiPanel.closeButton.onClick.AddListener(delegate { CloseContentHiraganaButton(previewHurufPanel.gameObject); });
+        scrollPosition = materiPanel.scrollViewContent.normalizedPosition;
         CloseAllContent();
     }
 
     private void OpenPreviewKatakanaButton(string paragraph, VideoClip videoClip)
     {
-        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, content.transform);
+        materiPanel.headingText.text = paragraph;
+        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
         PreviewHurufPanel previewHurufPanel = previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
-        previewHurufPanel.paragraph.text = paragraph;
         previewHurufPanel.videoPlayer.clip = videoClip;
-        previewHurufPanel.closeButton.onClick.AddListener(delegate { CloseContentKatakanaButton(previewHurufPanel.gameObject); });
-        scrollPosition = scrollViewContent.GetComponent<ScrollRect>().normalizedPosition;
+        materiPanel.closeButton.onClick.RemoveAllListeners();
+        materiPanel.closeButton.onClick.AddListener(delegate { CloseContentKatakanaButton(previewHurufPanel.gameObject); });
+        scrollPosition = materiPanel.scrollViewContent.normalizedPosition;
         CloseAllContent();
     }
 
     private void CloseAllContent()
     {
-        contentHuruf.SetActive(false);
-        contentHiragana.SetActive(false);
-        contentKatakana.SetActive(false);
-        contentAngka.SetActive(false);
+        materiPanel.contentHuruf.SetActive(false);
+        materiPanel.contentHiragana.SetActive(false);
+        materiPanel.contentKatakana.SetActive(false);
+        materiPanel.contentAngka.SetActive(false);
+        materiPanel.contentWaktu.SetActive(false);
+        materiPanel.contentKataGanti.SetActive(false);
+        materiPanel.contentKataBenda.SetActive(false);
+        materiPanel.contentKataKerja.SetActive(false);
+        materiPanel.contentKataSifat.SetActive(false);
+        materiPanel.contentKataKeterangan.SetActive(false);
+        materiPanel.contentKataTanya.SetActive(false);
+        materiPanel.contentKataHubung.SetActive(false);
+        materiPanel.contentKataSeru.SetActive(false);
+        materiPanel.contentPerkenalanDiri.SetActive(false);
     }
 
     private void CloseContentHiraganaButton(GameObject previewHurufPanel)
     {
         CloseAllContent();
         Destroy(previewHurufPanel);
-        contentHiragana.SetActive(true);
+        materiPanel.contentHiragana.SetActive(true);
+        materiPanel.closeButton.onClick.RemoveAllListeners();
+        materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
+
         StartCoroutine(RestoreScroll());
     }
 
@@ -125,27 +127,31 @@ public class HurufPanel : MonoBehaviour
     {
         CloseAllContent();
         Destroy(previewHurufPanel);
-        contentKatakana.SetActive(true);
+        materiPanel.contentKatakana.SetActive(true);
+        materiPanel.closeButton.onClick.RemoveAllListeners();
+        materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
         StartCoroutine(RestoreScroll());
     }
 
     private void OpenMenuHiragana()
     {
         CloseAllContent();
-        contentHiragana.SetActive(true);
+        materiPanel.headingText.text = "Materi - Huruf Hiragana";
+        materiPanel.contentHiragana.SetActive(true);
     }
 
     private void OpenMenuKatakana()
     {
         CloseAllContent();
-        contentKatakana.SetActive(true);
+        materiPanel.headingText.text = "Materi - Huruf Katakana";
+        materiPanel.contentKatakana.SetActive(true);
     }
 
     private IEnumerator RestoreScroll()
     {
         yield return null;
 
-        scrollViewContent.GetComponent<ScrollRect>().normalizedPosition = scrollPosition;
+        materiPanel.scrollViewContent.normalizedPosition = scrollPosition;
     }
 
 }
