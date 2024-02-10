@@ -1394,7 +1394,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, kata tanya sering disebut sebagai \"\u7591\u554F\u8A5E\"
     (gimonshi) adalah kata-kata yang digunakan untuk membentuk pertanyaan dalam bahasa
     Jepang. Mereka mencakup kata-kata seperti \"siapa\", \"apa\", \"kapan\", \"mengapa\",
@@ -14245,7 +14245,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, \u526F\u8A5E (fukushi) adalah bagian dari tata bahasa
     Jepang yang berfungsi untuk memberikan informasi tambahan tentang kata kerja,
     kata sifat, atau kata keterangan lainnya. Mereka sering digunakan untuk menjelaskan
@@ -16621,7 +16621,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, kata kerja disebut \"\u52D5\u8A5E\" (doushi). Kata
     kerja ini memiliki fungsi yang mirip dengan kata kerja dalam bahasa lainnya,
     yaitu untuk menyatakan tindakan, keadaan, atau peristiwa. Kata kerja dalam bahasa
@@ -25207,7 +25207,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Kata benda dalam bahasa Jepang dikenal sebagai \"\u540D\u8A5E\" (meishi).
     Ini mencakup segala sesuatu dari benda, tempat, orang, atau konsep yang dapat
     diidentifikasi atau dirujuk dalam percakapan. Berikut adalah beberapa contoh
@@ -25792,7 +25792,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: 'Katakana adalah aksara Jepang yang memiliki beberapa fungsi utama, termasuk
     menulis kata-kata asing, nama asing, mengekspresikan suara atau onomatopeia,
     memberikan penekanan dalam teks, digunakan dalam desain grafis, dan sebagai alat
@@ -29375,7 +29375,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "\n\rDakuon (20 Huruf):\r\nDakuon adalah huruf katakana yang memiliki tambahan
     dakuten di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk seperti
     dua buah garis kecil yang serong dari kiri atas ke kanan bawah (\") dan disebut
@@ -31215,6 +31215,7 @@ MonoBehaviour:
   btnPerkenalanDiri: {fileID: 1292804687}
   headingText: {fileID: 1297139463}
   closeButton: {fileID: 712188574}
+  previewHurufPanelInstantiate: {fileID: 0}
 --- !u!95 &776694961
 Animator:
   serializedVersion: 5
@@ -35085,7 +35086,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, \"\u611F\u52D5\u8A5E\" (kandoushi) adalah kata-kata
     yang digunakan untuk mengekspresikan perasaan atau emosi seseorang dalam berbagai
     situasi. Mereka seringkali tidak mempunyai makna yang konkret atau definitif,
@@ -37264,7 +37265,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "\n\rDakuon (20 Huruf):\r\nDakuon adalah huruf hiragana yang memiliki tambahan
     dakuten di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk seperti
     dua buah garis kecil yang serong dari kiri atas ke kanan bawah (\") dan disebut
@@ -42020,7 +42021,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Kata ganti dalam bahasa Jepang, atau \"daimeishi\" (\u4EE3\u540D\u8A5E),
     adalah kata yang menggantikan atau mewakili orang, benda, atau hal lain dalam
     percakapan. Penggunaan kata ganti membantu menghindari pengulangan kata-kata
@@ -42275,7 +42276,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, ekspresi waktu dapat diekspresikan menggunakan beberapa
     kata kunci. Berikut adalah beberapa materi waktu yang umum digunakan dalam bahasa
     Jepang:\r\n\r\nWaktu:\r\nWaktu : \u6642\u9593 (Jikan)\r\nMenit : \u5206 (Fun/Pun)\r\nDetik
@@ -43955,8 +43956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -87.5}
-  m_SizeDelta: {x: 0, y: -175}
+  m_AnchoredPosition: {x: 5, y: -87.5}
+  m_SizeDelta: {x: -10, y: -175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094387032
 MonoBehaviour:
@@ -57060,8 +57061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 30
-    m_Right: 15
+    m_Left: 0
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
@@ -61578,7 +61579,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, \u81EA\u5DF1\u7D39\u4ECB (jikoshoukai) adalah frasa
     dalam bahasa Jepang yang secara harfiah berarti \"perkenalan diri sendiri\" atau
     \"self-introduction\" dalam bahasa Inggris. Ini mengacu pada tindakan atau proses
@@ -62289,7 +62290,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, kata sifat atau \"keiyou-doushi\" (\u5F62\u5BB9\u52D5\u8A5E)
     adalah kata yang digunakan untuk menggambarkan atau memberikan deskripsi tentang
     sebuah benda, keadaan, atau orang. Kata sifat ini memiliki beberapa karakteristik
@@ -71391,7 +71392,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Dalam bahasa Jepang, \"\u63A5\u7D9A\u8A5E\" (setsuzokushi) mengacu pada
     kata-kata atau frasa yang digunakan untuk menghubungkan klausa atau frase dalam
     sebuah kalimat. Fungsinya mirip dengan konjungsi dalam bahasa Inggris. \r\n\r\nBerikut
@@ -74957,7 +74958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 817.5, y: 0}
+  m_AnchoredPosition: {x: 787.5, y: 0}
   m_SizeDelta: {x: 1575, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1884773096
@@ -77185,7 +77186,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
+    m_LineSpacing: 1.5
   m_Text: "Angka 1-10:\r\n1 : \u4E00 (ichi)\r\n2 : \u4E8C (ni)\r\n3 : \u4E09 (san)\r\n4
     : \u56DB (shi/yon)\r\n5 : \u4E94 (go)\r\n6 : \u516D (roku)\r\n7 : \u4E03 (shichi/nana)\r\n8
     : \u516B (hachi)\r\n9 : \u4E5D (kyuu)\r\n10 : \u5341 (juu)\r\n\r\nAngka belasan:\r\n11
@@ -78047,9 +78048,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970394251}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1970394257
 MonoBehaviour:
@@ -83109,8 +83110,8 @@ RectTransform:
   m_Father: {fileID: 1820814360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 787.5, y: -419.60184}
   m_SizeDelta: {x: 1575, y: 679.2037}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -83160,10 +83161,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
-  m_Text: "Huruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar \u3042
-    (a) sampai \u3093 (n), 20 huruf teng-teng (\u201C) yang disebut dengan Dakuon,
-    5 huruf maru (o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi
+    m_LineSpacing: 1.5
+  m_Text: "\nHuruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar
+    \u3042 (a) sampai \u3093 (n), 20 huruf teng-teng (\u201C) yang disebut dengan
+    Dakuon, 5 huruf maru (o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi
     \u3083 (ya) - \u3085 (yu) - \u3087 (yo) kecil yang disebut dengan Youon. \n\nHiragana
     merupakan salah satu dari dua aksara Jepang yang berperan dalam menulis kata-kata
     asli Jepang, partikel, dan akhiran kata. Digunakan untuk membaca dan menyusun

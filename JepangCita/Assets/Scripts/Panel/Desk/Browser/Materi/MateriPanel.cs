@@ -58,6 +58,9 @@ public class MateriPanel : MonoBehaviour
     public TextMeshProUGUI headingText;
     public Button closeButton;
 
+    [HideInInspector]
+    public GameObject previewHurufPanelInstantiate;
+
     // Start is called before the first frame update
     void Start()
     {

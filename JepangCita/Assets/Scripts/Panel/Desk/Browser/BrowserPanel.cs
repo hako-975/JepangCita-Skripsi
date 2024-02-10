@@ -85,6 +85,13 @@ public class BrowserPanel : MonoBehaviour
     {
         GameObject panelToShow;
 
+        if (materiPanel.previewHurufPanelInstantiate != null)
+        {
+            Destroy(materiPanel.previewHurufPanelInstantiate);
+            materiPanel.closeButton.onClick.RemoveAllListeners();
+            materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
+        }
+
         if (IsJepangCitaInput(input))
         {
             panelToShow = jepangCitaPanel;

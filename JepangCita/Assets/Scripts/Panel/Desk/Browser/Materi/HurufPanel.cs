@@ -34,9 +34,10 @@ public class HurufPanel : MonoBehaviour
     [SerializeField]
     private Button btnMenuKatakana;
 
-    
-
     private Vector2 scrollPosition;
+    
+    private PreviewHurufPanel previewHurufPanel;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -73,8 +74,8 @@ public class HurufPanel : MonoBehaviour
     private void OpenPreviewHiraganaButton(string paragraph, VideoClip videoClip)
     {
         materiPanel.headingText.text = paragraph;
-        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
-        PreviewHurufPanel previewHurufPanel = previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
+        materiPanel.previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
+        previewHurufPanel = materiPanel.previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
         previewHurufPanel.videoPlayer.clip = videoClip;
         materiPanel.closeButton.onClick.RemoveAllListeners();
         materiPanel.closeButton.onClick.AddListener(delegate { CloseContentHiraganaButton(previewHurufPanel.gameObject); });
@@ -85,8 +86,8 @@ public class HurufPanel : MonoBehaviour
     private void OpenPreviewKatakanaButton(string paragraph, VideoClip videoClip)
     {
         materiPanel.headingText.text = paragraph;
-        GameObject previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
-        PreviewHurufPanel previewHurufPanel = previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
+        materiPanel.previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
+        previewHurufPanel = materiPanel.previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
         previewHurufPanel.videoPlayer.clip = videoClip;
         materiPanel.closeButton.onClick.RemoveAllListeners();
         materiPanel.closeButton.onClick.AddListener(delegate { CloseContentKatakanaButton(previewHurufPanel.gameObject); });
