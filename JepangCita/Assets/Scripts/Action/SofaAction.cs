@@ -134,7 +134,8 @@ public class SofaAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             sofaCanvas.SetActive(true);
-            actionController.canvas = sofaCanvas;
+            actionController.canvasTrigger = sofaCanvas;
+            actionController.isTriggerEntered = true;
         }
     }
 
@@ -143,6 +144,7 @@ public class SofaAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             sofaCanvas.SetActive(false);
+            actionController.isTriggerEntered = false;
         }
     }
 }

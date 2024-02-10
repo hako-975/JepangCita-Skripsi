@@ -22,6 +22,8 @@ public class DateTimeController : MonoBehaviour
     int gameMonth;
     int gameYear;
 
+    float gameHourStartSun;
+    float gameMinuteStartSun;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,9 @@ public class DateTimeController : MonoBehaviour
         UpdateDateText(gameYear, gameMonth, gameDay);
 
         gameHour = PlayerPrefsController.instance.GetHour();
+        gameHourStartSun = gameHour;
         gameMinute = PlayerPrefsController.instance.GetMinute();
+        gameMinuteStartSun = gameMinute;
         realSecondsPerGameMinute = 1f;
         realSecondCounter = 0f;
     }
@@ -102,11 +106,16 @@ public class DateTimeController : MonoBehaviour
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
     }
 
-    // Update the rotation of the directional light (sun) based on the current time
     private void UpdateSunRotation()
     {
-        float zenithHour = 6f; 
-        float rotationAngle = ((gameHour - zenithHour) * 60f + gameMinute) / (24f * 60f) * 360f;
+        // Calculate total elapsed time in seconds
+        float startTime = gameMinuteStartSun + (gameHourStartSun * 60f);
+        float totalSeconds = Time.time + startTime;
+        // Calculate rotation angle based on current time
+        float zenithHour = 6f;
+        float rotationAngle = (totalSeconds - zenithHour * 60f) / (24f * 60f) * 360f;
+        // Apply rotation to directional light
         directionalLight.transform.rotation = Quaternion.Euler(new Vector3(rotationAngle, 90f, 0f));
     }
+
 }

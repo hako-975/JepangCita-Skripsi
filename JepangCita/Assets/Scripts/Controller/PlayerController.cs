@@ -3,14 +3,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject spawnPoint;
-
-    [SerializeField]
     private float turnSmoothTime = 0.1f;
     [SerializeField]
     private float movementSpeed = 4f;
     [SerializeField]
-    private float maxFallZone = -100f;
+    private float maxFallZone = -5f;
 
     // -9.81 * 30
     private readonly float gravity = -294.3f;
@@ -44,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         // set posisi awal karakter
         cc.enabled = false;
-        cc.transform.position = spawnPoint.transform.position;
+        cc.transform.position = Vector3.up * 0.5f;
         cc.enabled = true;
 
         joystick = FindAnyObjectByType<Joystick>();
@@ -54,10 +51,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // cek karakter jatuh
-        if (cc.transform.position.y < maxFallZone)
+        if (transform.position.y < maxFallZone)
         {
+            velocity.y = -2f;
             cc.enabled = false;
-            cc.transform.position = spawnPoint.transform.position;
+            cc.transform.position = Vector3.up * 0.5f;
             cc.enabled = true;
         }
 
@@ -65,11 +63,6 @@ public class PlayerController : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
             vertical = Input.GetAxisRaw("Vertical") + joystick.Vertical;
-        }
-
-        if (velocity.y < 0f)
-        {
-            velocity.y = -2f;
         }
 
         move = new Vector3(horizontal, 0f, vertical).normalized;

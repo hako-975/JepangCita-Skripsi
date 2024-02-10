@@ -111,7 +111,8 @@ public class DeskAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             deskCanvas.SetActive(true);
-            actionController.canvas = deskCanvas;
+            actionController.canvasTrigger = deskCanvas;
+            actionController.isTriggerEntered = true;
         }
     }
 
@@ -121,6 +122,7 @@ public class DeskAction : MonoBehaviour
         {
             deskPanel.SetActive(false);
             deskCanvas.SetActive(false);
+            actionController.isTriggerEntered = false;
         }
     }
 }

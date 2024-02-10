@@ -4,14 +4,18 @@ public class ActionController : MonoBehaviour
 {
     public GameObject[] canvasAction;
 
-    public GameObject canvas;
+    [HideInInspector]
+    public GameObject canvasTrigger;
+
+    [HideInInspector]
+    public bool isTriggerEntered = false;
 
     [HideInInspector]
     public bool deskIsActive = false;
 
     public void ActiveCanvasAction()
     {
-        canvas.SetActive(true);
+        canvasTrigger.SetActive(isTriggerEntered);
     }
 
     public void DeactiveCanvasAction()

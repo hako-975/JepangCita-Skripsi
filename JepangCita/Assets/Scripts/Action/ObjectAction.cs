@@ -47,7 +47,8 @@ public class ObjectAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             objectCanvas.SetActive(true);
-            actionController.canvas = objectCanvas;
+            actionController.canvasTrigger = objectCanvas;
+            actionController.isTriggerEntered = true;
         }
     }
 
@@ -56,6 +57,7 @@ public class ObjectAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             objectCanvas.SetActive(false);
+            actionController.isTriggerEntered = false;
         }
     }
 }
