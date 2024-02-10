@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,6 +43,12 @@ public class MailPanel : MonoBehaviour
     [SerializeField]
     private GameObject detailMessagePanel;
 
+    [Header("Alert Panels")]
+    public GameObject succeedPanel;
+    public TextMeshProUGUI messageSucceed;
+    public GameObject failedPanel;
+    public TextMeshProUGUI messageFailed;
+
     [Header("Message")]
     [SerializeField]
     private GameObject contentMessage;
@@ -49,12 +56,15 @@ public class MailPanel : MonoBehaviour
     [SerializeField]
     private GameObject detailMessagePrefabs;
 
+    [SerializeField]
+    private GameObject noMessagePrefabs;
+
     // Start is called before the first frame update
     void Start()
     {
         InboxNavButton();
 
-        writePanel.SetActive(false);
+        writePanel.GetComponent<Animator>().SetTrigger("Hide");
 
         writeNavButton.onClick.AddListener(WriteNavButton);
         inboxNavButton.onClick.AddListener(InboxNavButton);
@@ -65,7 +75,7 @@ public class MailPanel : MonoBehaviour
 
     private void WriteNavButton()
     {
-        StartCoroutine(AnimationOpenMail(writePanel));
+        writePanel.GetComponent<Animator>().SetTrigger("Show");
     }
 
     private void InboxNavButton()
@@ -158,11 +168,24 @@ public class MailPanel : MonoBehaviour
             
             messageButtonComponent.GetComponent<Button>().onClick.AddListener(delegate { OpenMail(id, panel, separatedData[0], separatedData[1], separatedData[2], separatedData[3], isChangedPassword); });
         }
+
+        StartCoroutine(CheckChildCountNextFrame(panel));
+    }
+
+    IEnumerator CheckChildCountNextFrame(GameObject panel)
+    {
+        // Wait for the end of the frame
+        yield return new WaitForEndOfFrame();
+        if (panel.transform.childCount < 1)
+        {
+            Instantiate(noMessagePrefabs, panel.transform);
+        }
     }
 
     private void OpenMail(int id, GameObject panel, string sender, string title, string message, string date, string isChangedPasswordString)
     {
-        StartCoroutine(AnimationOpenMail(detailMessagePanel));
+        detailMessagePanel.SetActive(true);
+
         foreach (Transform child in contentMessage.transform)
         {
             Destroy(child.gameObject);
@@ -177,10 +200,18 @@ public class MailPanel : MonoBehaviour
 
         bool.TryParse(isChangedPasswordString, out bool isChangedPassword);
 
+        detailMessage.changePasswordButton.gameObject.SetActive(false);
         if (isChangedPassword)
         {
-            detailMessage.changePasswordPanel.SetActive(true);
+            detailMessage.changePasswordButton.gameObject.SetActive(true);
             detailMessage.changePasswordButton.onClick.AddListener(ChangePassword);
+        }
+        
+        detailMessage.editButton.gameObject.SetActive(false);
+        if (panel == draftPanel)
+        {
+            detailMessage.editButton.gameObject.SetActive(true);
+            detailMessage.editButton.onClick.AddListener(delegate { EditDraft(id, sender, title, message); });
         }
 
         detailMessage.deleteButton.onClick.AddListener(delegate { DeleteMail(id, panel, sender, title, message); });
@@ -193,29 +224,41 @@ public class MailPanel : MonoBehaviour
         browserPanel.GetComponent<BrowserPanel>().OnChangePasswordButtonClick();
     }
 
+    private void EditDraft(int id, string sender, string title, string message)
+    {
+        PlayerPrefsController.instance.DeleteDraftMail(id);
+        writePanel.GetComponent<Animator>().SetTrigger("Show");
+        WritePanel writePanelScript = writePanel.GetComponent<WritePanel>();
+        writePanelScript.toInput.text = sender;
+        writePanelScript.subjectInput.text = title;
+        writePanelScript.messageInput.text = message;
+    }
+
     private void DeleteMail(int id, GameObject panel, string sender, string title, string message)
     {
         if (panel == inboxPanel)
         {
             PlayerPrefsController.instance.DeleteInboxMail(id);
             TrashMail(sender, title, message);
+            InboxNavButton();
         }
         else if (panel == sentPanel)
         {
             PlayerPrefsController.instance.DeleteSentMail(id);
             TrashMail(sender, title, message);
+            SentNavButton();
         }
         else if (panel == draftPanel)
         {
             PlayerPrefsController.instance.DeleteDraftMail(id);
             TrashMail(sender, title, message);
+            DraftNavButton();
         }
         else if (panel == trashPanel)
         {
             PlayerPrefsController.instance.DeleteTrashMail(id);
+            TrashNavButton();
         }
-
-        TrashNavButton();
     }
 
     private void TrashMail(string sender, string title, string message)
@@ -229,27 +272,39 @@ public class MailPanel : MonoBehaviour
 
     private void DisabledAllPanel()
     {
-        StartCoroutine(AnimationCloseMail(detailMessagePanel));
+        detailMessagePanel.SetActive(false);
         inboxPanel.SetActive(false);
         sentPanel.SetActive(false);
         draftPanel.SetActive(false);
         trashPanel.SetActive(false);
-    }
-
-    private IEnumerator AnimationOpenMail(GameObject panel)
-    {
-        panel.SetActive(true);
-        panel.GetComponent<Animator>().SetTrigger("Show");;
-        yield return null;
-    }
-
-    private IEnumerator AnimationCloseMail(GameObject panel)
-    {
+        
         foreach (Transform child in contentMessage.transform)
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public IEnumerator ShowAndHidePanelCoroutine(GameObject writePanel, GameObject panel, bool isSent)
+    {
+        panel.SetActive(true);
+
+        writePanel.GetComponent<Animator>().SetTrigger("Hide");
+
+        panel.GetComponent<Animator>().SetTrigger("Show");
+
+        if (panel == succeedPanel)
+        {
+            if (isSent)
+            {
+                SentNavButton();
+            }
+            else
+            {
+                DraftNavButton();
+            }
+        }
+
+        yield return new WaitForSeconds(2f);
         panel.GetComponent<Animator>().SetTrigger("Hide");
-        yield return null;
     }
 }

@@ -51,7 +51,7 @@ public class ResetPasswordPanel : MonoBehaviour
     {
         panel.SetActive(true);
 
-        panel.GetComponent<Animator>().SetTrigger("Show");;
+        panel.GetComponent<Animator>().SetTrigger("Show");
 
         yield return new WaitForSeconds(3f);
 

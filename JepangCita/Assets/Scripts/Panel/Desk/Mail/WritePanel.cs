@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Globalization;
-using System.Collections;
 
 public class WritePanel : MonoBehaviour
 {
@@ -14,22 +13,9 @@ public class WritePanel : MonoBehaviour
     private Button closeButton;
 
     [Header("Inputs")]
-    [SerializeField]
-    private TMP_InputField toInput;
-    [SerializeField]
-    private TMP_InputField subjectInput;
-    [SerializeField]
-    private TMP_InputField messageInput;
-
-    [Header("Panels")]
-    [SerializeField]
-    private GameObject succeedPanel;
-    [SerializeField]
-    private TextMeshProUGUI messageSucceed;
-    [SerializeField]
-    private GameObject failedPanel;
-    [SerializeField]
-    private TextMeshProUGUI messageFailed;
+    public TMP_InputField toInput;
+    public TMP_InputField subjectInput;
+    public TMP_InputField messageInput;
 
     [SerializeField]
     private MailPanel mailPanel;
@@ -45,22 +31,22 @@ public class WritePanel : MonoBehaviour
     {
         if (toInput.text == "")
         {
-            messageFailed.text = "Input Kepada harus diisi!";
-            StartCoroutine(ShowAndHidePanelCoroutine(failedPanel, true));
+            mailPanel.messageFailed.text = "Input Kepada harus diisi!";
+            StartCoroutine(mailPanel.ShowAndHidePanelCoroutine(gameObject, mailPanel.failedPanel, true));
             return;
         }
 
         if (subjectInput.text == "")
         {
-            messageFailed.text = "Input Subjek harus diisi!";
-            StartCoroutine(ShowAndHidePanelCoroutine(failedPanel, true));
+            mailPanel.messageFailed.text = "Input Subjek harus diisi!";
+            StartCoroutine(mailPanel.ShowAndHidePanelCoroutine(gameObject, mailPanel.failedPanel, true));
             return;
         }
 
         if (messageInput.text == "")
         {
-            messageFailed.text = "Input Pesan harus diisi!";
-            StartCoroutine(ShowAndHidePanelCoroutine(failedPanel, true));
+            mailPanel.messageFailed.text = "Input Pesan harus diisi!";
+            StartCoroutine(mailPanel.ShowAndHidePanelCoroutine(gameObject, mailPanel.failedPanel, true));
             return;
         }
 
@@ -69,8 +55,18 @@ public class WritePanel : MonoBehaviour
 
         // kepada, subjek, pesan, tanggal
         PlayerPrefsController.instance.SetSentMail(toInput.text, subjectInput.text, messageInput.text, dateSent);
-        messageSucceed.text = "Pesan berhasil terikirim!";
-        StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel, true));
+        mailPanel.messageSucceed.text = "Pesan berhasil terikirim!";
+
+        EmptyInput();
+
+        StartCoroutine(mailPanel.ShowAndHidePanelCoroutine(gameObject, mailPanel.succeedPanel, true));
+    }
+
+    private void EmptyInput()
+    {
+        toInput.text = "";
+        subjectInput.text = "";
+        messageInput.text = "";
     }
 
     private void CloseButton()
@@ -82,37 +78,15 @@ public class WritePanel : MonoBehaviour
 
             // kepada, subjek, pesan, tanggal
             PlayerPrefsController.instance.SetDraftMail(toInput.text, subjectInput.text, messageInput.text, dateSent);
-            messageSucceed.text = "Pesan tersimpan di draf!";
-            StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel, false));
+            mailPanel.messageSucceed.text = "Pesan tersimpan di draf!";
+
+            EmptyInput();
+
+            StartCoroutine(mailPanel.ShowAndHidePanelCoroutine(gameObject, mailPanel.succeedPanel, false));
         }
         else
         {
-            GetComponent<Animator>().SetTrigger("Hide");
+            gameObject.GetComponent<Animator>().SetTrigger("Hide");
         }
-    }
-
-    IEnumerator ShowAndHidePanelCoroutine(GameObject panel, bool isSent)
-    {
-        panel.SetActive(true);
-
-        panel.GetComponent<Animator>().SetTrigger("Show");;
-
-        if (panel == succeedPanel)
-        {
-            GetComponent<Animator>().SetTrigger("Hide");
-
-            if (isSent)
-            {
-                mailPanel.SentNavButton();
-            }
-            else
-            {
-                mailPanel.DraftNavButton();
-            }
-        }
-
-        yield return new WaitForSeconds(2f);
-
-        panel.GetComponent<Animator>().SetTrigger("Hide");
     }
 }

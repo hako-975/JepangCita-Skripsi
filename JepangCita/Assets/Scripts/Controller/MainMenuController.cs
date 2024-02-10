@@ -77,9 +77,9 @@ public class MainMenuController : MonoBehaviour
         windowOn = true;
 
         DisabledAllPanel();
-        panel.GetComponent<Animator>().SetTrigger("Show");;
+        panel.GetComponent<Animator>().SetTrigger("Show");
         settingsPanel.SetActive(true);
-        settingsPanel.GetComponent<Animator>().SetTrigger("Show");;
+        settingsPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
     }
 
@@ -93,7 +93,7 @@ public class MainMenuController : MonoBehaviour
         windowOn = true;
 
         DisabledAllPanel();
-        panel.GetComponent<Animator>().SetTrigger("Show");;
+        panel.GetComponent<Animator>().SetTrigger("Show");
         creditsPanel.SetActive(true);
         yield return null;
     }
@@ -108,7 +108,7 @@ public class MainMenuController : MonoBehaviour
         windowOn = true;
 
         DisabledAllPanel();
-        panel.GetComponent<Animator>().SetTrigger("Show");;
+        panel.GetComponent<Animator>().SetTrigger("Show");
         quitPanel.SetActive(true);
         yield return null;
     }

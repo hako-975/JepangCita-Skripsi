@@ -11,7 +11,7 @@ public class DetailMessage : MonoBehaviour
     public TextMeshProUGUI dateMail;
 
     [Header("Buttons")]
-    public GameObject changePasswordPanel;
     public Button changePasswordButton;
+    public Button editButton;
     public Button deleteButton;
 }

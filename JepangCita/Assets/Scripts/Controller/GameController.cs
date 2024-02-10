@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 0f;
         windowPause = true;
-        pausePanel.GetComponent<Animator>().SetTrigger("Show");;
+        pausePanel.GetComponent<Animator>().SetTrigger("Show");
         actionController.DeactiveCanvasAction();
         yield return null;
     }
@@ -139,7 +139,7 @@ public class GameController : MonoBehaviour
     {
         windowSettings = true;
         settingsPanel.SetActive(true);
-        settingsPanel.GetComponent<Animator>().SetTrigger("Show");;
+        settingsPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
     }
 
@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour
     {
         windowMainMenu = true;
         mainMenuPanel.SetActive(true);
-        mainMenuPanel.GetComponent<Animator>().SetTrigger("Show");;
+        mainMenuPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
     }
 
