@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,6 +41,8 @@ public class MailPanel : MonoBehaviour
     private DeskPanel deskPanel;
     [SerializeField]
     private GameObject detailMessagePanel;
+
+    [Header("Message")]
     [SerializeField]
     private GameObject contentMessage;
 
@@ -68,26 +71,52 @@ public class MailPanel : MonoBehaviour
     private void InboxNavButton()
     {
         DisabledAllPanel();
+
+        inboxNavButton.GetComponent<Image>().color = Color.white;
+        
+        sentNavButton.GetComponent<Image>().color = Color.grey;
+        draftNavButton.GetComponent<Image>().color = Color.grey;
+        trashNavButton.GetComponent<Image>().color = Color.grey;
+
         ShowMessage(inboxPanel, PlayerPrefsController.instance.GetCountInboxMail(), i => PlayerPrefsController.instance.GetInboxMail(i));
     }
 
     public void SentNavButton()
     {
         DisabledAllPanel();
+
+        sentNavButton.GetComponent<Image>().color = Color.white;
+
+        inboxNavButton.GetComponent<Image>().color = Color.grey;
+        draftNavButton.GetComponent<Image>().color = Color.grey;
+        trashNavButton.GetComponent<Image>().color = Color.grey;
+
         ShowMessage(sentPanel, PlayerPrefsController.instance.GetCountSentMail(), i => PlayerPrefsController.instance.GetSentMail(i));
-
     }
-
 
     public void DraftNavButton()
     {
         DisabledAllPanel();
+
+        draftNavButton.GetComponent<Image>().color = Color.white;
+
+        inboxNavButton.GetComponent<Image>().color = Color.grey;
+        sentNavButton.GetComponent<Image>().color = Color.grey;
+        trashNavButton.GetComponent<Image>().color = Color.grey;
+
         ShowMessage(draftPanel, PlayerPrefsController.instance.GetCountDraftMail(), i => PlayerPrefsController.instance.GetDraftMail(i));
     }
 
     private void TrashNavButton()
     {
         DisabledAllPanel();
+
+        trashNavButton.GetComponent<Image>().color = Color.white;
+
+        inboxNavButton.GetComponent<Image>().color = Color.grey;
+        sentNavButton.GetComponent<Image>().color = Color.grey;
+        draftNavButton.GetComponent<Image>().color = Color.grey;
+
         ShowMessage(trashPanel, PlayerPrefsController.instance.GetCountTrashMail(), i => PlayerPrefsController.instance.GetTrashMail(i));
     }
 
@@ -106,8 +135,13 @@ public class MailPanel : MonoBehaviour
             GameObject messageButton = Instantiate(messageButtonPrefabs, panel.transform);
             MessageButton messageButtonComponent = messageButton.GetComponent<MessageButton>();
             string dataMail = getDataMail(i);
-
             string[] separatedData = dataMail.Split(new string[] { "?>?" }, StringSplitOptions.None);
+
+            if (separatedData[0] == "deleted" && separatedData[1] == "deleted" && separatedData[2] == "deleted" && separatedData[3] == "deleted")
+            {
+                Destroy(messageButton);
+                continue;
+            }
 
             messageButtonComponent.senderMail.text = separatedData[0];
             messageButtonComponent.titleMail.text = separatedData[1];
@@ -119,12 +153,14 @@ public class MailPanel : MonoBehaviour
             {
                 isChangedPassword = separatedData[4];
             }
-            // if not draft panel
-            messageButtonComponent.GetComponent<Button>().onClick.AddListener(delegate { OpenMail(panel, separatedData[0], separatedData[1], separatedData[2], separatedData[3], isChangedPassword); });
+
+            int id = i;
+            
+            messageButtonComponent.GetComponent<Button>().onClick.AddListener(delegate { OpenMail(id, panel, separatedData[0], separatedData[1], separatedData[2], separatedData[3], isChangedPassword); });
         }
     }
 
-    private void OpenMail(GameObject panel, string sender, string title, string message, string date, string isChangedPasswordString)
+    private void OpenMail(int id, GameObject panel, string sender, string title, string message, string date, string isChangedPasswordString)
     {
         StartCoroutine(AnimationOpenMail(detailMessagePanel));
         foreach (Transform child in contentMessage.transform)
@@ -147,7 +183,7 @@ public class MailPanel : MonoBehaviour
             detailMessage.changePasswordButton.onClick.AddListener(ChangePassword);
         }
 
-        detailMessage.deleteButton.onClick.AddListener(delegate { DeleteMail(panel); });
+        detailMessage.deleteButton.onClick.AddListener(delegate { DeleteMail(id, panel, sender, title, message); });
     }
 
     private void ChangePassword()
@@ -157,12 +193,38 @@ public class MailPanel : MonoBehaviour
         browserPanel.GetComponent<BrowserPanel>().OnChangePasswordButtonClick();
     }
 
-    private void DeleteMail(GameObject panel)
+    private void DeleteMail(int id, GameObject panel, string sender, string title, string message)
     {
         if (panel == inboxPanel)
         {
-
+            PlayerPrefsController.instance.DeleteInboxMail(id);
+            TrashMail(sender, title, message);
         }
+        else if (panel == sentPanel)
+        {
+            PlayerPrefsController.instance.DeleteSentMail(id);
+            TrashMail(sender, title, message);
+        }
+        else if (panel == draftPanel)
+        {
+            PlayerPrefsController.instance.DeleteDraftMail(id);
+            TrashMail(sender, title, message);
+        }
+        else if (panel == trashPanel)
+        {
+            PlayerPrefsController.instance.DeleteTrashMail(id);
+        }
+
+        TrashNavButton();
+    }
+
+    private void TrashMail(string sender, string title, string message)
+    {
+        DateTime currentDateTime = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay(), PlayerPrefsController.instance.GetHour(), PlayerPrefsController.instance.GetMinute(), 0);
+        string dateSent = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"));
+
+        // kepada, subjek, pesan, tanggal
+        PlayerPrefsController.instance.SetTrashMail(sender, title, message, dateSent);
     }
 
     private void DisabledAllPanel()

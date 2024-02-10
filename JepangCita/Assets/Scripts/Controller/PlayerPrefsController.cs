@@ -280,6 +280,11 @@ public class PlayerPrefsController : MonoBehaviour
     {
         return PlayerPrefs.GetString("SentMail" + id);
     }
+
+    public void DeleteSentMail(int id)
+    {
+        PlayerPrefs.SetString("SentMail" + id, "deleted" + "?>?" + "deleted" + "?>?" + "deleted" + "?>?" + "deleted");
+    }
     #endregion
 
     #region InboxMail
@@ -302,6 +307,11 @@ public class PlayerPrefsController : MonoBehaviour
     public string GetInboxMail(int id)
     {
         return PlayerPrefs.GetString("InboxMail" + id);
+    }
+
+    public void DeleteInboxMail(int id)
+    {
+        PlayerPrefs.SetString("InboxMail" + id, "deleted" + "?>?" + "deleted" + "?>?" + "deleted" + "?>?" + "deleted");
     }
     #endregion
 
@@ -328,6 +338,10 @@ public class PlayerPrefsController : MonoBehaviour
         return PlayerPrefs.GetString("DraftMail" + id);
     }
 
+    public void DeleteDraftMail(int id)
+    {
+        PlayerPrefs.SetString("DraftMail" + id, "deleted" + "?>?" + "deleted" + "?>?" + "deleted" + "?>?" + "deleted");
+    }
     #endregion
 
     #region TrashMail
@@ -353,6 +367,10 @@ public class PlayerPrefsController : MonoBehaviour
         return PlayerPrefs.GetString("TrashMail" + id);
     }
 
+    public void DeleteTrashMail(int id)
+    {
+        PlayerPrefs.SetString("TrashMail" + id, "deleted" + "?>?" + "deleted" + "?>?" + "deleted" + "?>?" + "deleted");
+    }
     #endregion
 
 

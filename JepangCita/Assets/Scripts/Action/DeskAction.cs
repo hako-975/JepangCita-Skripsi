@@ -55,7 +55,7 @@ public class DeskAction : MonoBehaviour
         if (isActiveDesk)
         {
             deskCanvas.SetActive(true);
-            deskPanel.SetActive(true);
+            Time.timeScale = 1f;
         }
     }
 
@@ -85,6 +85,7 @@ public class DeskAction : MonoBehaviour
 
     private void ActionButton()
     {
+        isActiveDesk = true;
         playerController.canMove = false;
 
         canvas.GetComponent<CanvasGroup>().alpha = 0;
@@ -105,7 +106,6 @@ public class DeskAction : MonoBehaviour
         yield return new WaitForSeconds(1f);
         deskCanvas.SetActive(true);
         deskPanel.SetActive(true);
-        isActiveDesk = true;
     }
 
     private void OnTriggerEnter(Collider other)

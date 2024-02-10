@@ -94,7 +94,14 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                PauseButton();
+                for (int i = 0; i < actionsPanel.canvasAction.Length; i++)
+                {
+                    
+                    if (!actionsPanel.canvasAction[i].activeSelf)
+                    {
+                        PauseButton();
+                    }
+                }
             }
         }
     }
@@ -109,12 +116,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         windowPause = true;
         pausePanel.GetComponent<Animator>().SetTrigger("Show");
-        
-        if (!actionsPanel.isActionActive)
-        {
-            actionsPanel.DeactiveCanvasAction();
-        }
-
+        actionsPanel.DeactiveCanvasAction();
         yield return null;
     }
 
