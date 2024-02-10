@@ -94,7 +94,7 @@ public class DeskPanel : MonoBehaviour
     private IEnumerator AnimationOpenCalendar()
     {
         calendarPanel.SetActive(true);
-        calendarPanel.GetComponent<Animator>().SetTrigger("Show");
+        calendarPanel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 
@@ -141,7 +141,7 @@ public class DeskPanel : MonoBehaviour
     private IEnumerator AnimationOpenMail()
     {
         mailPanel.SetActive(true);
-        mailPanel.GetComponent<Animator>().SetTrigger("Show");
+        mailPanel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 
@@ -188,7 +188,7 @@ public class DeskPanel : MonoBehaviour
     private IEnumerator AnimationOpenBrowser()
     {
         browserPanel.SetActive(true);
-        browserPanel.GetComponent<Animator>().SetTrigger("Show");
+        browserPanel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 

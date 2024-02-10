@@ -95,7 +95,7 @@ public class WritePanel : MonoBehaviour
     {
         panel.SetActive(true);
 
-        panel.GetComponent<Animator>().SetTrigger("Show");
+        panel.GetComponent<Animator>().SetTrigger("Show");;
 
         if (panel == succeedPanel)
         {

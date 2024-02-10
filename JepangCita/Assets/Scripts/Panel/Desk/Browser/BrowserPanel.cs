@@ -266,7 +266,7 @@ public class BrowserPanel : MonoBehaviour
     private IEnumerator AnimationOpenWeb(GameObject panel)
     {
         panel.SetActive(true);
-        panel.GetComponent<Animator>().SetTrigger("Show");
+        panel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 

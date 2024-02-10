@@ -239,7 +239,7 @@ public class MailPanel : MonoBehaviour
     private IEnumerator AnimationOpenMail(GameObject panel)
     {
         panel.SetActive(true);
-        panel.GetComponent<Animator>().SetTrigger("Show");
+        panel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 

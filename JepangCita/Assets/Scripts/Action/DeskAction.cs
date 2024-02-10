@@ -33,9 +33,7 @@ public class DeskAction : MonoBehaviour
     private GameObject player;
 
     private PlayerController playerController;
-
-    bool isActiveDesk = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +50,7 @@ public class DeskAction : MonoBehaviour
 
     void Update()
     {
-        if (isActiveDesk)
+        if (actionController.deskIsActive)
         {
             deskCanvas.SetActive(true);
             Time.timeScale = 1f;
@@ -61,7 +59,7 @@ public class DeskAction : MonoBehaviour
 
     private void ShutdownButton()
     {
-        isActiveDesk = false;
+        actionController.deskIsActive = false;
 
         playerController.canMove = true;
 
@@ -85,7 +83,7 @@ public class DeskAction : MonoBehaviour
 
     private void ActionButton()
     {
-        isActiveDesk = true;
+        actionController.deskIsActive = true;
         playerController.canMove = false;
 
         canvas.GetComponent<CanvasGroup>().alpha = 0;

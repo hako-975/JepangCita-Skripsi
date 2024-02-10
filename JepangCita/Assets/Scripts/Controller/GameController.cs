@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
     private GameObject mainMenuPanel;
 
     [SerializeField]
-    private ActionController actionsPanel;
+    private ActionController actionController;
 
     private bool windowPause = false;
     private bool windowSettings = false;
@@ -94,13 +94,9 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                for (int i = 0; i < actionsPanel.canvasAction.Length; i++)
+                if (!actionController.deskIsActive)
                 {
-                    
-                    if (!actionsPanel.canvasAction[i].activeSelf)
-                    {
-                        PauseButton();
-                    }
+                    PauseButton();
                 }
             }
         }
@@ -115,8 +111,8 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 0f;
         windowPause = true;
-        pausePanel.GetComponent<Animator>().SetTrigger("Show");
-        actionsPanel.DeactiveCanvasAction();
+        pausePanel.GetComponent<Animator>().SetTrigger("Show");;
+        actionController.DeactiveCanvasAction();
         yield return null;
     }
 
@@ -130,7 +126,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         windowPause = false;
         pausePanel.GetComponent<Animator>().SetTrigger("Hide");
-        actionsPanel.ActiveCanvasAction();
+        actionController.ActiveCanvasAction();
         yield return null;
     }
 
@@ -143,7 +139,7 @@ public class GameController : MonoBehaviour
     {
         windowSettings = true;
         settingsPanel.SetActive(true);
-        settingsPanel.GetComponent<Animator>().SetTrigger("Show");
+        settingsPanel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 
@@ -156,7 +152,7 @@ public class GameController : MonoBehaviour
     {
         windowMainMenu = true;
         mainMenuPanel.SetActive(true);
-        mainMenuPanel.GetComponent<Animator>().SetTrigger("Show");
+        mainMenuPanel.GetComponent<Animator>().SetTrigger("Show");;
         yield return null;
     }
 

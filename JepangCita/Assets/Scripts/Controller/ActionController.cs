@@ -6,6 +6,9 @@ public class ActionController : MonoBehaviour
 
     public GameObject canvas;
 
+    [HideInInspector]
+    public bool deskIsActive = false;
+
     public void ActiveCanvasAction()
     {
         canvas.SetActive(true);
