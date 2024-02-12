@@ -53,20 +53,37 @@ public class DeskPanel : MonoBehaviour
 
     private GameObject browserApps;
 
+    [Header("Musics")]
+    [SerializeField]
+    private Button musicButton;
+
+    [SerializeField]
+    private GameObject musicPanel;
+
+    [SerializeField]
+    private Sprite musicIcon;
+
+    private bool musicOpened;
+
+    private GameObject musicApps;
+
     // Start is called before the first frame update
     void Start()
     {
         calendarPanel.SetActive(false);
         mailPanel.SetActive(false);
         browserPanel.SetActive(false);
+        musicPanel.SetActive(false);
 
         calendarPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenCalendarButton(true); });
         mailPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMailButton(true); });
         browserPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenBrowserButton(true); });
+        musicPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMusicButton(true); });
 
         calendarButton.onClick.AddListener(delegate { OpenCalendarButton(false); });
         mailButton.onClick.AddListener(delegate { OpenMailButton(false); });
         browserButton.onClick.AddListener(delegate { OpenBrowserButton(false); });
+        musicButton.onClick.AddListener(delegate { OpenMusicButton(false); });
     }
 
     private void OpenCalendarButton(bool alreadyOpen = false)
@@ -211,6 +228,54 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
+    private void OpenMusicButton(bool alreadyOpen = false)
+    {
+        if (!alreadyOpen)
+        {
+            StartCoroutine(AnimationOpenMusic());
+        }
+
+        if (!musicOpened)
+        {
+            musicApps = Instantiate(openedAppPrefabs, leftTaskbar.transform);
+            musicApps.GetComponent<OpenedApp>().icon.sprite = musicIcon;
+        }
+
+        int lastIndex = musicPanel.transform.parent.childCount - 1;
+        musicPanel.transform.SetSiblingIndex(lastIndex);
+        musicApps.GetComponent<OpenedApp>().GetComponent<Button>().onClick.AddListener(delegate { OpenMusicButton(false); });
+        ToggleAllOffTaskbar();
+        musicApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f, 0.4902f);
+
+        musicOpened = true;
+    }
+
+    private IEnumerator AnimationOpenMusic()
+    {
+        musicPanel.SetActive(true);
+        musicPanel.GetComponent<Animator>().SetTrigger("Show");
+        yield return null;
+    }
+
+    public void MinimizeMusicButton()
+    {
+        StartCoroutine(AnimationCloseMusic());
+        ToggleAllOffTaskbar();
+    }
+
+    public void CloseMusicButton()
+    {
+        StartCoroutine(AnimationCloseMusic());
+        Destroy(musicApps);
+        musicOpened = false;
+    }
+
+    private IEnumerator AnimationCloseMusic()
+    {
+        musicPanel.GetComponent<Animator>().SetTrigger("Hide");
+        yield return null;
+    }
+
     private void ToggleAllOffTaskbar()
     {
         if (calendarApps)
@@ -226,6 +291,11 @@ public class DeskPanel : MonoBehaviour
         if (browserApps)
         {
             browserApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
+
+        if (musicApps)
+        {
+            musicApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
         }
     }
 }
