@@ -1,9 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SofaAction : MonoBehaviour
 {
+    [SerializeField]
+    private AudioMixerGroup soundMixer;
+
+    [SerializeField]
+    private AudioClip sitClip;
+
+    [SerializeField]
+    private AudioClip standClip;
+
     [SerializeField]
     private GameObject sofaCanvas;
 
@@ -46,8 +56,14 @@ public class SofaAction : MonoBehaviour
 
         playerTransform = player.GetComponent<Transform>();
 
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.volume = 1f;
+        audioSource.outputAudioMixerGroup = soundMixer;
+
         if (sit == false)
         {
+            StartCoroutine(PlayAndDestroy(sitClip));
             playerController.canMove = false;
 
             player.GetComponent<CharacterController>().enabled = false;
@@ -62,6 +78,7 @@ public class SofaAction : MonoBehaviour
         }
         else
         {
+            StartCoroutine(PlayAndDestroy(standClip));
             playerController.canMove = true;
 
             playerAnimator.SetBool("IsSitting", false);
@@ -72,6 +89,16 @@ public class SofaAction : MonoBehaviour
         }
 
         StartCoroutine(WaitShowActionButton());
+    }
+
+    IEnumerator PlayAndDestroy(AudioClip clip)
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clip;
+        yield return new WaitForSeconds(1.35f);
+        audioSource.Play();
+        yield return new WaitForSeconds(clip.length + 0.1f);
+        Destroy(audioSource);
     }
 
     IEnumerator WaitShowActionButton()

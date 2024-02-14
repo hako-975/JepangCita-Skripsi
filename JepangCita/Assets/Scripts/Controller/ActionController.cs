@@ -15,7 +15,10 @@ public class ActionController : MonoBehaviour
 
     public void ActiveCanvasAction()
     {
-        canvasTrigger.SetActive(isTriggerEntered);
+        if (canvasTrigger != null)
+        {
+            canvasTrigger.SetActive(isTriggerEntered);
+        }
     }
 
     public void DeactiveCanvasAction()
