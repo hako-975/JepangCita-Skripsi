@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class HurufPanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioMixerGroup soundMixer;
+    [SerializeField]
+    private AudioClip clipPositive;
+
     [SerializeField]
     private GameObject previewHurufPanelPrefabs;
 
@@ -73,6 +82,8 @@ public class HurufPanel : MonoBehaviour
 
     private void OpenPreviewHiraganaButton(string paragraph, VideoClip videoClip)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         materiPanel.headingText.text = paragraph;
         materiPanel.previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
         previewHurufPanel = materiPanel.previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
@@ -85,6 +96,8 @@ public class HurufPanel : MonoBehaviour
 
     private void OpenPreviewKatakanaButton(string paragraph, VideoClip videoClip)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         materiPanel.headingText.text = paragraph;
         materiPanel.previewHurufPanelInstantiate = Instantiate(previewHurufPanelPrefabs, materiPanel.content.transform);
         previewHurufPanel = materiPanel.previewHurufPanelInstantiate.GetComponent<PreviewHurufPanel>();
@@ -119,7 +132,7 @@ public class HurufPanel : MonoBehaviour
         Destroy(previewHurufPanel);
         materiPanel.contentHiragana.SetActive(true);
         materiPanel.closeButton.onClick.RemoveAllListeners();
-        materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
+        materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
 
         StartCoroutine(RestoreScroll());
     }
@@ -130,12 +143,14 @@ public class HurufPanel : MonoBehaviour
         Destroy(previewHurufPanel);
         materiPanel.contentKatakana.SetActive(true);
         materiPanel.closeButton.onClick.RemoveAllListeners();
-        materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
+        materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
         StartCoroutine(RestoreScroll());
     }
 
     private void OpenMenuHiragana()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         CloseAllContent();
         materiPanel.headingText.text = "Materi - Huruf Hiragana";
         materiPanel.contentHiragana.SetActive(true);
@@ -143,6 +158,8 @@ public class HurufPanel : MonoBehaviour
 
     private void OpenMenuKatakana()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         CloseAllContent();
         materiPanel.headingText.text = "Materi - Huruf Katakana";
         materiPanel.contentKatakana.SetActive(true);

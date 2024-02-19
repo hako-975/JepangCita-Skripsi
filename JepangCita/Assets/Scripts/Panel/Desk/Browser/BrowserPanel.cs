@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class BrowserPanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Inputs")]
     [SerializeField]
     private TMP_InputField urlInput;
@@ -63,7 +66,6 @@ public class BrowserPanel : MonoBehaviour
 
     private MateriPanel materiPanel;
 
-
     void Start()
     {
         materiPanel = jepangCitaMateriPanel.GetComponent<MateriPanel>();
@@ -83,13 +85,15 @@ public class BrowserPanel : MonoBehaviour
 
     private void OnInputEndEdit(string input)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         GameObject panelToShow;
 
         if (materiPanel.previewHurufPanelInstantiate != null)
         {
             Destroy(materiPanel.previewHurufPanelInstantiate);
             materiPanel.closeButton.onClick.RemoveAllListeners();
-            materiPanel.closeButton.onClick.AddListener(materiPanel.BackToMateriPanel);
+            materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
         }
 
         if (IsJepangCitaInput(input))
@@ -304,6 +308,8 @@ public class BrowserPanel : MonoBehaviour
 
     private void Backward()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (panelHistory.Count > 1)
         {
             panelFuture.Push(currentPanel);
@@ -323,6 +329,8 @@ public class BrowserPanel : MonoBehaviour
 
     private void Forward()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (panelFuture.Count > 0)
         {
             panelHistory.Push(currentPanel);

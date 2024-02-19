@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Buttons")]
     [SerializeField]
     private Button playButton;
@@ -16,6 +19,15 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField]
     private Button quitButton;
+
+    [SerializeField]
+    private Button closeSettingsButton;
+
+    [SerializeField]
+    private Button closeCreditsButton;
+
+    [SerializeField]
+    private Button closeQuitButton;
 
     [Header("Panels")]
     [SerializeField]
@@ -37,9 +49,11 @@ public class MainMenuController : MonoBehaviour
     {
         playButton.onClick.AddListener(PlayButton);
         settingsButton.onClick.AddListener(SettingsButton);
-        creditsButton.onClick.AddListener(HintButton);
+        creditsButton.onClick.AddListener(CreditsButton);
         quitButton.onClick.AddListener(QuitButton);
-
+        closeSettingsButton.onClick.AddListener(CloseButton);
+        closeCreditsButton.onClick.AddListener(CloseButton);
+        closeQuitButton.onClick.AddListener(CloseButton);
     }
 
     // Update is called once per frame
@@ -57,6 +71,15 @@ public class MainMenuController : MonoBehaviour
 
     private void PlayButton()
     {
+        soundController.StartButtonSound(gameObject);
+
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(2f);
+
         if (PlayerPrefsController.instance.IsHasCharacterSelection())
         {
             PlayerPrefsController.instance.SetNextScene("Gameplay");
@@ -69,6 +92,7 @@ public class MainMenuController : MonoBehaviour
 
     private void SettingsButton()
     {
+        soundController.PositiveButtonSound(gameObject);
         StartCoroutine(AnimationSettings());
     }
 
@@ -83,12 +107,13 @@ public class MainMenuController : MonoBehaviour
         yield return null;
     }
 
-    private void HintButton()
+    private void CreditsButton()
     {
-        StartCoroutine(AnimationHint());
+        soundController.PositiveButtonSound(gameObject);
+        StartCoroutine(AnimationCredits());
     }
 
-    private IEnumerator AnimationHint()
+    private IEnumerator AnimationCredits()
     {
         windowOn = true;
 
@@ -100,6 +125,7 @@ public class MainMenuController : MonoBehaviour
 
     private void QuitButton()
     {
+        soundController.PositiveButtonSound(gameObject);
         StartCoroutine(AnimationQuit());
     }
 
@@ -113,8 +139,10 @@ public class MainMenuController : MonoBehaviour
         yield return null;
     }
 
-    public void CloseButton()
+    private void CloseButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationClose());
     }
 
@@ -135,6 +163,8 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitButtonYes()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         Debug.Log("Keluar Permainan");
         Application.Quit();
     }

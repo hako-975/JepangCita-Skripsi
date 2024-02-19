@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class MusicPanel : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private AudioClip[] listMusic;
 
     [SerializeField]
@@ -76,6 +79,7 @@ public class MusicPanel : MonoBehaviour
         shuffleButton.onClick.AddListener(ToggleShuffle);
 
         sliderMusic.onValueChanged.AddListener(OnSliderMusicChanged);
+        volumeMusic.onValueChanged.AddListener(SetMusicVolume);
     }
 
     void Update()
@@ -129,6 +133,8 @@ public class MusicPanel : MonoBehaviour
 
     private void PreviousMusic()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (musicIndex > 0)
         {
             PlayMusic(listMusic[musicIndex - 1], musicIndex - 1);
@@ -153,6 +159,8 @@ public class MusicPanel : MonoBehaviour
 
     private void PlayPauseMusic()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (isPlaying)
         {
             playPauseButton.GetComponent<Image>().sprite = playIcon;
@@ -169,6 +177,8 @@ public class MusicPanel : MonoBehaviour
 
     private void NextMusic()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (musicIndex == listMusic.Length - 1)
         {
             PlayMusic(listMusic[0], 0);
@@ -181,6 +191,8 @@ public class MusicPanel : MonoBehaviour
 
     private void ToggleRepeat()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (isRepeat)
         {
             isRepeat = false;
@@ -195,6 +207,8 @@ public class MusicPanel : MonoBehaviour
 
     private void ToggleShuffle()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         for (int i = listMusic.Length - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i + 1);
@@ -215,9 +229,9 @@ public class MusicPanel : MonoBehaviour
         ShowListMusic();
     }
 
-    public void SetMusicVolume(float musicVolume)
+    private void SetMusicVolume(float musicVolume)
     {
-        float calValue = -50 + musicVolume / 2;
+        float calValue = -80 + musicVolume / 1.25f;
         musicMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
     }

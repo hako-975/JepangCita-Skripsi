@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class MateriPanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     public ScrollRect scrollViewContent;
 
     [Header("Panels")]
@@ -79,11 +82,12 @@ public class MateriPanel : MonoBehaviour
         btnKataSeru.onClick.AddListener(delegate { OpenPanel(contentKataSeru); });
         btnPerkenalanDiri.onClick.AddListener(delegate { OpenPanel(contentPerkenalanDiri); });
         closeButton.onClick.RemoveAllListeners();
-        closeButton.onClick.AddListener(BackToMateriPanel);
+        closeButton.onClick.AddListener(delegate { BackToMateriPanel(true); });
     }
 
     private void OpenPanel(GameObject panel)
     {
+        soundController.PositiveButtonSound(gameObject);
         BackToMateriPanel();
         materiPanel.SetActive(false);
         headingText.text = InsertSpaces(panel.name);
@@ -110,8 +114,13 @@ public class MateriPanel : MonoBehaviour
         return result.Trim();
     }
 
-    public void BackToMateriPanel()
+    public void BackToMateriPanel(bool isSound = false)
     {
+        if (isSound)
+        {
+            soundController.NegativeButtonSound(gameObject);
+        }
+
         contentHuruf.SetActive(false);
         contentHiragana.SetActive(false);
         contentKatakana.SetActive(false);

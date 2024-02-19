@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class SettingsController : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private Button resetButton;
 
     [SerializeField]
@@ -46,6 +49,11 @@ public class SettingsController : MonoBehaviour
         touchSensitivity = FindObjectOfType<CinemachineCoreInput>();
 
         resetButton.onClick.AddListener(ResetButton);
+
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        soundSlider.onValueChanged.AddListener(SetSoundVolume);
+        sensitivityCameraSlider.onValueChanged.AddListener(SetSensitivityCamera);
+        zoomCameraSlider.onValueChanged.AddListener(SetZoomCamera);
     }
 
     // Update is called once per frame
@@ -80,26 +88,34 @@ public class SettingsController : MonoBehaviour
 
     public void SetMusicVolume(float musicVolume)
     {
-        float calValue = -50 + musicVolume / 2;
+        soundController.PositiveButtonSound(gameObject);
+
+        float calValue = -80 + musicVolume / 1.25f;
         musicMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
     }
 
     public void SetSoundVolume(float soundVolume)
     {
-        float calValue = -50 + soundVolume / 2;
+        soundController.PositiveButtonSound(gameObject);
+
+        float calValue = -80 + soundVolume / 1.25f;
         soundMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetSoundVolume((int)soundVolume);
     }
 
     public void SetSensitivityCamera(float sensitivityCamera)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         touchSensitivity.touchSensitivity = sensitivityCamera;
         PlayerPrefsController.instance.SetSensitivityCamera((int)sensitivityCamera);
     }
 
     public void SetZoomCamera(float zoomCamera)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         cinemachineFreeLook.m_CommonLens = true;
         cinemachineFreeLook.m_Lens.FieldOfView = zoomCamera;
         PlayerPrefsController.instance.SetZoomCamera((int)zoomCamera);
@@ -107,10 +123,11 @@ public class SettingsController : MonoBehaviour
 
     private void ResetButton()
     {
+        soundController.ResetButtonSound(gameObject);
+
         PlayerPrefsController.instance.DeleteKey("MusicVolume");
         PlayerPrefsController.instance.DeleteKey("SoundVolume");
         PlayerPrefsController.instance.DeleteKey("SensitivityCamera");
         PlayerPrefsController.instance.DeleteKey("ZoomCamera");
     }
-
 }

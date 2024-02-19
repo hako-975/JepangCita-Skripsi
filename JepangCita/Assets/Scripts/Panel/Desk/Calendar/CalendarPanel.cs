@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CalendarPanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Month Year")]
     [SerializeField]
     TextMeshProUGUI monthYearText;
@@ -34,6 +37,8 @@ public class CalendarPanel : MonoBehaviour
     int currentMonth;
     int currentYear;
 
+    int dayPin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +56,20 @@ public class CalendarPanel : MonoBehaviour
         UpdateCalendar();
     }
 
+    void Update()
+    {
+        currentDay = PlayerPrefsController.instance.GetDateDay();
+        if (dayPin < currentDay)
+        {
+            UpdateCalendar();
+        }
+    }
+
+
     private void MonthYearLeftButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+        
         gameMonth--;
         if (gameMonth < 1)
         {
@@ -65,6 +82,8 @@ public class CalendarPanel : MonoBehaviour
 
     private void MonthYearRightButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         gameMonth++;
         if (gameMonth > 12)
         {
@@ -124,6 +143,7 @@ public class CalendarPanel : MonoBehaviour
             calendarNow.eventIcon.sprite = transparentIcon;
             if (dayNumber == currentDay && gameMonth == currentMonth && gameYear == currentYear)
             {
+                dayPin = currentDay;
                 calendarNow.eventIcon.sprite = pinIcon;
             }
         

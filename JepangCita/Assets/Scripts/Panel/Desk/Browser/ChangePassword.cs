@@ -6,6 +6,9 @@ using System.Collections;
 public class ChangePassword : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private BrowserPanel browserPanel;
 
     [Header("Inputs")]
@@ -40,6 +43,8 @@ public class ChangePassword : MonoBehaviour
 
     private void ChangePasswordJepangCita()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (passwordInput.text != confirmPasswordInput.text)
         {
             messageFailed.text = "Password dan Confirm Password harus sama!";

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class CharacterSelectionController : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private GameObject boyCharacter;
 
     [SerializeField]
@@ -66,6 +69,8 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void OnLeftButtonClick()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         currentGirl = true;
         leftButton.gameObject.SetActive(false);
         rightButton.gameObject.SetActive(true);
@@ -74,6 +79,8 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void OnRightButtonClick()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         currentGirl = false;
         leftButton.gameObject.SetActive(true);
         rightButton.gameObject.SetActive(false);
@@ -82,6 +89,8 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void OnSelectCharacterButtonClick()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         backButton.gameObject.SetActive(true);
 
         if (currentGirl)
@@ -103,6 +112,8 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void OnBackButtonClick()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         backButton.gameObject.SetActive(false);
         selectCharacterButton.gameObject.SetActive(true);
 
@@ -122,7 +133,10 @@ public class CharacterSelectionController : MonoBehaviour
 
     private void OnSubmitButtonClick()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         PlayerPrefsController.instance.SetCharacterName(nameInputField.text);
+
         if (currentGirl)
         {
             PlayerPrefsController.instance.SetCharacterSelection("Girl");

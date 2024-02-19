@@ -7,6 +7,9 @@ using System.Globalization;
 
 public class ResetPasswordPanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Inputs")]
     [SerializeField]
     private TMP_InputField emailInput;
@@ -33,6 +36,8 @@ public class ResetPasswordPanel : MonoBehaviour
 
     private void ResetPassword()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         messageSucceed.text = "Cek e-mail untuk melakukan reset password!";
         string message = "Konnichiwa " + PlayerPrefsController.instance.GetFullnameJepangCita() + "," +
             "\n\n" + "Anda telah meminta untuk reset password Anda. Klik tombol di bawah untuk membuat password baru." +

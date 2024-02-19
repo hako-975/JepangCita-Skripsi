@@ -6,6 +6,9 @@ using System.Collections;
 public class RegisterPanel : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private BrowserPanel browserPanel;
 
     [Header("Inputs")]
@@ -46,6 +49,8 @@ public class RegisterPanel : MonoBehaviour
 
     private void RegisterAccount()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (PlayerPrefsController.instance.GetEmailJepangCita() != "member@jepangcita.com")
         {
             messageFailed.text = "Anda sudah pernah mendaftar sebelumnya! Dengan email: " + PlayerPrefsController.instance.GetEmailJepangCita();

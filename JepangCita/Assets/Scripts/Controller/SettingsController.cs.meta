@@ -3,7 +3,19 @@ guid: 3192022e3361fda49820cecf2b41c909
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - soundController: {fileID: 7376794955168324652, guid: 1658bb9f428546c408bd20f07f25b036, type: 3}
+  - resetButton: {instanceID: 0}
+  - musicMixer: {fileID: 24100000, guid: 5a59fef7eb1411b4488bb11e7e261e51, type: 2}
+  - soundMixer: {fileID: 24100000, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}
+  - textValueMusic: {instanceID: 0}
+  - textValueSound: {instanceID: 0}
+  - textValueSensitivity: {instanceID: 0}
+  - textValueZoom: {instanceID: 0}
+  - musicSlider: {instanceID: 0}
+  - soundSlider: {instanceID: 0}
+  - sensitivityCameraSlider: {instanceID: 0}
+  - zoomCameraSlider: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

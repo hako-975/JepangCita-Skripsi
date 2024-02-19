@@ -6,16 +6,7 @@ using UnityEngine.UI;
 public class DeskAction : MonoBehaviour
 {
     [SerializeField]
-    private AudioMixerGroup soundMixer;
-
-    [SerializeField]
-    private AudioClip openClip;
-
-    [SerializeField]
-    private AudioClip closeClip;
-
-    [SerializeField]
-    private AudioClip shutdownClip;
+    private SoundController soundController;
 
     [SerializeField]
     private Camera mainCam;
@@ -72,9 +63,8 @@ public class DeskAction : MonoBehaviour
 
     private void ShutdownButton()
     {
+        soundController.ShutdownSound(gameObject);
         actionController.deskIsActive = false;
-        StartCoroutine(PlayAndDestroy(shutdownClip));
-
         playerController.canMove = true;
 
         canvas.GetComponent<CanvasGroup>().alpha = 1;
@@ -90,6 +80,8 @@ public class DeskAction : MonoBehaviour
 
     private IEnumerator WaitLaptopClose()
     {
+        yield return new WaitForSeconds(0.5f);
+        soundController.CloseSound(gameObject);
         yield return new WaitForSeconds(1f);
         actionCam.gameObject.SetActive(false);
         mainCam.gameObject.SetActive(true);
@@ -97,6 +89,8 @@ public class DeskAction : MonoBehaviour
 
     private void ActionButton()
     {
+        soundController.OpenSound(gameObject);
+
         actionController.deskIsActive = true;
         playerController.canMove = false;
 
@@ -110,8 +104,6 @@ public class DeskAction : MonoBehaviour
 
         actionCam.gameObject.SetActive(true);
 
-        StartCoroutine(PlayAndDestroy(openClip));
-
         laptopAnimator.SetTrigger("LaptopOpen");
 
         StartCoroutine(WaitDeskPanelOpen());
@@ -122,30 +114,6 @@ public class DeskAction : MonoBehaviour
         yield return new WaitForSeconds(1f);
         deskCanvas.SetActive(true);
         deskPanel.SetActive(true);
-    }
-
-    IEnumerator PlayAndDestroy(AudioClip clip)
-    {
-        AudioSource audioSourceAdd = gameObject.AddComponent<AudioSource>();
-        audioSourceAdd.playOnAwake = false;
-        audioSourceAdd.volume = 1f;
-        audioSourceAdd.outputAudioMixerGroup = soundMixer;
-
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clip;
-        if (clip.name == shutdownClip.name)
-        {
-            audioSource.Play();
-            yield return new WaitForSeconds(clip.length + 0.1f);
-            audioSource.clip = closeClip;
-        }
-        else
-        {
-            yield return new WaitForSeconds(0.5f);
-        }
-        audioSource.Play();
-        yield return new WaitForSeconds(clip.length + 0.1f);
-        Destroy(audioSource);
     }
 
     private void OnTriggerEnter(Collider other)

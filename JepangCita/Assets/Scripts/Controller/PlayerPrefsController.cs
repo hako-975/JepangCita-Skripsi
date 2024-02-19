@@ -91,7 +91,7 @@ public class PlayerPrefsController : MonoBehaviour
     #region Settings
     public int GetMusicVolume()
     {
-        return PlayerPrefs.GetInt("MusicVolume", 100);
+        return PlayerPrefs.GetInt("MusicVolume", 80);
     }
 
     public int SetMusicVolume(int musicVolume)
@@ -102,7 +102,7 @@ public class PlayerPrefsController : MonoBehaviour
 
     public int GetSoundVolume()
     {
-        return PlayerPrefs.GetInt("SoundVolume", 100);
+        return PlayerPrefs.GetInt("SoundVolume", 80);
     }
 
     public int SetSoundVolume(int soundEffectVolume)

@@ -6,6 +6,9 @@ using System.Collections;
 public class LoginPanel : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private BrowserPanel browserPanel;
 
     [Header("Inputs")]
@@ -41,6 +44,8 @@ public class LoginPanel : MonoBehaviour
 
     private void LoginAccount()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (PlayerPrefsController.instance.GetEmailJepangCita() != emailInput.text)
         {
             messageFailed.text = "Email atau Password salah!";

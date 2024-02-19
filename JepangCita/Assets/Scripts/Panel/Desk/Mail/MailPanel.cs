@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class MailPanel : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private ScrollRect scrollRect;
 
     [Header("Buttons")]
@@ -75,11 +78,15 @@ public class MailPanel : MonoBehaviour
 
     private void WriteNavButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         writePanel.GetComponent<Animator>().SetTrigger("Show");
     }
 
     private void InboxNavButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         DisabledAllPanel();
 
         inboxNavButton.GetComponent<Image>().color = Color.white;
@@ -93,6 +100,8 @@ public class MailPanel : MonoBehaviour
 
     public void SentNavButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         DisabledAllPanel();
 
         sentNavButton.GetComponent<Image>().color = Color.white;
@@ -106,6 +115,8 @@ public class MailPanel : MonoBehaviour
 
     public void DraftNavButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         DisabledAllPanel();
 
         draftNavButton.GetComponent<Image>().color = Color.white;
@@ -119,6 +130,8 @@ public class MailPanel : MonoBehaviour
 
     private void TrashNavButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         DisabledAllPanel();
 
         trashNavButton.GetComponent<Image>().color = Color.white;
@@ -184,6 +197,8 @@ public class MailPanel : MonoBehaviour
 
     private void OpenMail(int id, GameObject panel, string sender, string title, string message, string date, string isChangedPasswordString)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         detailMessagePanel.SetActive(true);
 
         foreach (Transform child in contentMessage.transform)
@@ -219,6 +234,8 @@ public class MailPanel : MonoBehaviour
 
     private void ChangePassword()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         PlayerPrefsController.instance.SetCredentialJepangCita(2);
         deskPanel.OpenBrowserButton(false);
         browserPanel.GetComponent<BrowserPanel>().OnChangePasswordButtonClick();
@@ -226,6 +243,8 @@ public class MailPanel : MonoBehaviour
 
     private void EditDraft(int id, string sender, string title, string message)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         PlayerPrefsController.instance.DeleteDraftMail(id);
         writePanel.GetComponent<Animator>().SetTrigger("Show");
         WritePanel writePanelScript = writePanel.GetComponent<WritePanel>();
@@ -236,6 +255,8 @@ public class MailPanel : MonoBehaviour
 
     private void DeleteMail(int id, GameObject panel, string sender, string title, string message)
     {
+        soundController.TrashButtonSound(gameObject);
+
         if (panel == inboxPanel)
         {
             PlayerPrefsController.instance.DeleteInboxMail(id);

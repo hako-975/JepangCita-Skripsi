@@ -1,18 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SofaAction : MonoBehaviour
 {
     [SerializeField]
-    private AudioMixerGroup soundMixer;
-
-    [SerializeField]
-    private AudioClip sitClip;
-
-    [SerializeField]
-    private AudioClip standClip;
+    private SoundController soundController;
 
     [SerializeField]
     private GameObject sofaCanvas;
@@ -56,14 +49,8 @@ public class SofaAction : MonoBehaviour
 
         playerTransform = player.GetComponent<Transform>();
 
-        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.volume = 1f;
-        audioSource.outputAudioMixerGroup = soundMixer;
-
         if (sit == false)
         {
-            StartCoroutine(PlayAndDestroy(sitClip));
             playerController.canMove = false;
 
             player.GetComponent<CharacterController>().enabled = false;
@@ -78,7 +65,6 @@ public class SofaAction : MonoBehaviour
         }
         else
         {
-            StartCoroutine(PlayAndDestroy(standClip));
             playerController.canMove = true;
 
             playerAnimator.SetBool("IsSitting", false);
@@ -91,16 +77,6 @@ public class SofaAction : MonoBehaviour
         StartCoroutine(WaitShowActionButton());
     }
 
-    IEnumerator PlayAndDestroy(AudioClip clip)
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clip;
-        yield return new WaitForSeconds(1.35f);
-        audioSource.Play();
-        yield return new WaitForSeconds(clip.length + 0.1f);
-        Destroy(audioSource);
-    }
-
     IEnumerator WaitShowActionButton()
     {
         yield return new WaitForSeconds(2f);
@@ -109,7 +85,9 @@ public class SofaAction : MonoBehaviour
 
     IEnumerator WaitSitToStand()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(1f);
+        soundController.FootstepSound(gameObject);
+
         player.GetComponent<CharacterController>().enabled = true;
 
         Vector3 startPosition = playerTransform.position;
@@ -135,6 +113,8 @@ public class SofaAction : MonoBehaviour
     IEnumerator WaitAnimStandToSit()
     {
         yield return new WaitForSeconds(1f);
+        
+        soundController.SitSound(gameObject);
 
         Vector3 startPosition = playerTransform.position;
         Vector3 targetPosition = new Vector3(-7.5f, 0.1f, playerTransform.position.z);

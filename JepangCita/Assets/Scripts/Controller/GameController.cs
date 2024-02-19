@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Buttons")]
     [SerializeField]
     private Button pauseButton;
@@ -17,6 +20,9 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private Button mainMenuButton;
+
+    [SerializeField]
+    private Button closePauseButton;
 
     [SerializeField]
     private Button closeSettingsButton;
@@ -70,6 +76,8 @@ public class GameController : MonoBehaviour
         settingsButton.onClick.AddListener(SettingsButton);
         mainMenuButton.onClick.AddListener(MainMenuButton);
         goToMainMenuButton.onClick.AddListener(GoToMainMenuButton);
+        
+        closePauseButton.onClick.AddListener(ResumeButton);
         closeSettingsButton.onClick.AddListener(CloseSettingsButton);
         closeMainMenuButton.onClick.AddListener(CloseMainMenuButton);
         cancelMainMenuButton.onClick.AddListener(CloseMainMenuButton);
@@ -104,6 +112,7 @@ public class GameController : MonoBehaviour
 
     private void PauseButton()
     {
+        soundController.PositiveButtonSound(gameObject);
         StartCoroutine(AnimationPause());
     }
 
@@ -116,8 +125,10 @@ public class GameController : MonoBehaviour
         yield return null;
     }
 
-    public void ResumeButton()
+    private void ResumeButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         StartCoroutine(AnimationResume());
     }
 
@@ -132,6 +143,8 @@ public class GameController : MonoBehaviour
 
     private void SettingsButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         StartCoroutine(AnimationSettings());
     }
 
@@ -145,6 +158,8 @@ public class GameController : MonoBehaviour
 
     private void MainMenuButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         StartCoroutine(AnimationMainMenu());
     }
 
@@ -158,6 +173,8 @@ public class GameController : MonoBehaviour
 
     private void CloseSettingsButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseSettings());
     }
 
@@ -170,6 +187,8 @@ public class GameController : MonoBehaviour
 
     private void CloseMainMenuButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseMainMenu());
     }
 
@@ -182,6 +201,8 @@ public class GameController : MonoBehaviour
 
     private void GoToMainMenuButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         PlayerPrefsController.instance.SetNextScene("MainMenu");
     }
 }

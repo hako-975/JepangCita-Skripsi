@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class DeskPanel : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private GameObject openedAppPrefabs;
 
     [SerializeField]
@@ -13,6 +16,13 @@ public class DeskPanel : MonoBehaviour
     [Header("Calendars")]
     [SerializeField]
     private Button calendarButton;
+    [SerializeField]
+    private Button minimizeCalendarButton;
+    [SerializeField]
+    private Button closeCalendarButton;
+
+    [SerializeField]
+    private Button calendarButtonTaskbar;
 
     [SerializeField]
     private GameObject calendarPanel;
@@ -24,11 +34,14 @@ public class DeskPanel : MonoBehaviour
     
     private GameObject calendarApps;
 
-
     [Header("Mails")]
     [SerializeField]
     private Button mailButton;
-    
+    [SerializeField]
+    private Button minimizeMailButton;
+    [SerializeField]
+    private Button closeMailButton;
+
     [SerializeField]
     private GameObject mailPanel;
 
@@ -42,6 +55,10 @@ public class DeskPanel : MonoBehaviour
     [Header("Browsers")]
     [SerializeField]
     private Button browserButton;
+    [SerializeField]
+    private Button minimizeBrowserButton;
+    [SerializeField]
+    private Button closeBrowserButton;
 
     [SerializeField]
     private GameObject browserPanel;
@@ -56,6 +73,10 @@ public class DeskPanel : MonoBehaviour
     [Header("Musics")]
     [SerializeField]
     private Button musicButton;
+    [SerializeField]
+    private Button minimizeMusicButton;
+    [SerializeField]
+    private Button closeMusicButton;
 
     [SerializeField]
     private GameObject musicPanel;
@@ -81,13 +102,27 @@ public class DeskPanel : MonoBehaviour
         musicPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMusicButton(true); });
 
         calendarButton.onClick.AddListener(delegate { OpenCalendarButton(false); });
+        calendarButtonTaskbar.onClick.AddListener(delegate { OpenCalendarButton(false); });
         mailButton.onClick.AddListener(delegate { OpenMailButton(false); });
         browserButton.onClick.AddListener(delegate { OpenBrowserButton(false); });
         musicButton.onClick.AddListener(delegate { OpenMusicButton(false); });
+
+        minimizeCalendarButton.onClick.AddListener(MinimizeCalendarButton);
+        minimizeMailButton.onClick.AddListener(MinimizeMailButton);
+        minimizeBrowserButton.onClick.AddListener(MinimizeBrowserButton);
+        minimizeMusicButton.onClick.AddListener(MinimizeMusicButton);
+
+        closeCalendarButton.onClick.AddListener(CloseCalendarButton);
+        closeMailButton.onClick.AddListener(CloseMailButton);
+        closeBrowserButton.onClick.AddListener(CloseBrowserButton);
+        closeMusicButton.onClick.AddListener(CloseMusicButton);
+
     }
 
     private void OpenCalendarButton(bool alreadyOpen = false)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (!alreadyOpen)
         {
             StartCoroutine(AnimationOpenCalendar());
@@ -115,14 +150,17 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
-    public void MinimizeCalendarButton()
+    private void MinimizeCalendarButton()
     {
+        soundController.MinimizeButtonSound(gameObject);
         StartCoroutine(AnimationCloseCalendar());
         ToggleAllOffTaskbar();
     }
 
-    public void CloseCalendarButton()
+    private void CloseCalendarButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseCalendar());
         Destroy(calendarApps);
         calendarOpened = false;
@@ -136,6 +174,8 @@ public class DeskPanel : MonoBehaviour
 
     private void OpenMailButton(bool alreadyOpen = false)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (!alreadyOpen)
         {
             StartCoroutine(AnimationOpenMail());
@@ -162,14 +202,18 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
-    public void MinimizeMailButton()
+    private void MinimizeMailButton()
     {
+        soundController.MinimizeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseMail());
         ToggleAllOffTaskbar();
     }
 
-    public void CloseMailButton()
+    private void CloseMailButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseMail());
         Destroy(mailApps);
         mailOpened = false;
@@ -181,8 +225,11 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
+    // public karena terkoneksi dengan mail
     public void OpenBrowserButton(bool alreadyOpen = false)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (!alreadyOpen)
         {
             StartCoroutine(AnimationOpenBrowser());
@@ -209,14 +256,18 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
-    public void MinimizeBrowserButton()
+    private void MinimizeBrowserButton()
     {
+        soundController.MinimizeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseBrowser());
         ToggleAllOffTaskbar();
     }
 
-    public void CloseBrowserButton()
+    private void CloseBrowserButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseBrowser());
         Destroy(browserApps);
         browserOpened = false;
@@ -230,6 +281,8 @@ public class DeskPanel : MonoBehaviour
 
     private void OpenMusicButton(bool alreadyOpen = false)
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (!alreadyOpen)
         {
             StartCoroutine(AnimationOpenMusic());
@@ -257,14 +310,18 @@ public class DeskPanel : MonoBehaviour
         yield return null;
     }
 
-    public void MinimizeMusicButton()
+    private void MinimizeMusicButton()
     {
+        soundController.MinimizeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseMusic());
         ToggleAllOffTaskbar();
     }
 
-    public void CloseMusicButton()
+    private void CloseMusicButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         StartCoroutine(AnimationCloseMusic());
         Destroy(musicApps);
         musicOpened = false;

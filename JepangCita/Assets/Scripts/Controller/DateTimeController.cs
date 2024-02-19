@@ -14,8 +14,8 @@ public class DateTimeController : MonoBehaviour
     [SerializeField]
     private Light directionalLight;
 
-    float realSecondCounter;
-    float realSecondsPerGameMinute;
+    public float realSecondCounter;
+    public float realSecondsPerGameMinute;
     int gameHour;
     int gameMinute;
     int gameDay;

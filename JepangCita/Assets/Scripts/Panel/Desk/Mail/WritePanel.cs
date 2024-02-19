@@ -6,6 +6,9 @@ using System.Globalization;
 
 public class WritePanel : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     [Header("Buttons")]
     [SerializeField]
     private Button sentButton;
@@ -29,6 +32,8 @@ public class WritePanel : MonoBehaviour
 
     private void SentButton()
     {
+        soundController.PositiveButtonSound(gameObject);
+
         if (toInput.text == "")
         {
             mailPanel.messageFailed.text = "Input Kepada harus diisi!";
@@ -71,6 +76,8 @@ public class WritePanel : MonoBehaviour
 
     private void CloseButton()
     {
+        soundController.NegativeButtonSound(gameObject);
+
         if (toInput.text != "" || subjectInput.text != "" || messageInput.text != "")
         {
             DateTime currentDateTime = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay(), PlayerPrefsController.instance.GetHour(), PlayerPrefsController.instance.GetMinute(), 0);

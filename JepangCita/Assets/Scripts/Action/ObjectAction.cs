@@ -1,18 +1,10 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class ObjectAction : MonoBehaviour
 {
     [SerializeField]
-    private AudioMixerGroup soundMixer;
-
-    [SerializeField]
-    private AudioClip openClip;
-
-    [SerializeField]
-    private AudioClip closeClip;
+    private SoundController soundController;
 
     [SerializeField]
     private GameObject objectCanvas;
@@ -41,32 +33,19 @@ public class ObjectAction : MonoBehaviour
 
     private void ActionButton()
     {
-        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.volume = 1f;
-        audioSource.outputAudioMixerGroup = soundMixer;
-
         if (open == false)
         {
             objectAnimatior.Play("Opening");
-            StartCoroutine(PlayAndDestroy(openClip));
+            soundController.OpenSound(gameObject);
             open = true;
         }
         else
         {
             objectAnimatior.Play("Closing");
-            StartCoroutine(PlayAndDestroy(closeClip));
+            soundController.CloseSound(gameObject);
+
             open = false;
         }
-    }
-
-    IEnumerator PlayAndDestroy(AudioClip clip)
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clip;
-        audioSource.Play();
-        yield return new WaitForSeconds(clip.length+0.1f);
-        Destroy(audioSource);
     }
 
     private void OnTriggerEnter(Collider other)
