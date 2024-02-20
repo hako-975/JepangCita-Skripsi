@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 9189065509065776646}
   - component: {fileID: 9189065509065776645}
   - component: {fileID: 9189065509065776644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mattress_Apt_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9189065509065776643
 Transform:
@@ -108,12 +108,12 @@ GameObject:
   - component: {fileID: 9189065509120254493}
   - component: {fileID: 9189065509120254495}
   - component: {fileID: 9189065509120254494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sheet_Apt_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9189065509120254493
 Transform:
@@ -190,12 +190,12 @@ GameObject:
   - component: {fileID: 9189065509477827619}
   - component: {fileID: 9189065509477827618}
   - component: {fileID: 9189065509477827617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillow_Apt_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9189065509477827616
 Transform:
@@ -285,13 +285,12 @@ GameObject:
   - component: {fileID: 9189065510491252738}
   - component: {fileID: 9189065510491252737}
   - component: {fileID: 9189065510491252736}
-  - component: {fileID: 9189065510491252751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bed_Apt_01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9189065510491252739
 Transform:
@@ -370,16 +369,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2571526, y: 0.39456296, z: 1.5710046}
   m_Center: {x: -0.00000047683716, y: 0.19728148, z: -0.0051732063}
---- !u!65 &9189065510491252751
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189065510491252750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16218007, y: 1.4632657, z: 1.5710046}
-  m_Center: {x: -1.5474868, y: 0.7316328, z: -0.0051732063}

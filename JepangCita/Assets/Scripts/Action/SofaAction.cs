@@ -65,8 +65,6 @@ public class SofaAction : MonoBehaviour
         }
         else
         {
-            playerController.canMove = true;
-
             playerAnimator.SetBool("IsSitting", false);
 
             StartCoroutine(WaitSitToStand());
@@ -86,6 +84,8 @@ public class SofaAction : MonoBehaviour
     IEnumerator WaitSitToStand()
     {
         yield return new WaitForSeconds(1f);
+        playerTransform.transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
+
         soundController.FootstepSound(gameObject);
 
         player.GetComponent<CharacterController>().enabled = true;
@@ -107,12 +107,15 @@ public class SofaAction : MonoBehaviour
             yield return null;
         }
 
+        playerController.canMove = true;
+
         playerTransform.position = targetPosition;
     }
 
     IEnumerator WaitAnimStandToSit()
     {
         yield return new WaitForSeconds(1f);
+        playerTransform.transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
         
         soundController.SitSound(gameObject);
 

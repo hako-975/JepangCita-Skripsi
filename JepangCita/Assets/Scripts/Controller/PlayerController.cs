@@ -64,6 +64,11 @@ public class PlayerController : MonoBehaviour
             horizontal = Input.GetAxisRaw("Horizontal") + joystick.Horizontal;
             vertical = Input.GetAxisRaw("Vertical") + joystick.Vertical;
         }
+        else
+        {
+            horizontal = 0;
+            vertical = 0;
+        }
 
         move = new Vector3(horizontal, 0f, vertical).normalized;
 

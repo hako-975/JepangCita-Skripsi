@@ -16,14 +16,17 @@ public class DateTimeController : MonoBehaviour
 
     public float realSecondCounter;
     public float realSecondsPerGameMinute;
-    int gameHour;
-    int gameMinute;
-    int gameDay;
-    int gameMonth;
-    int gameYear;
-
-    float gameHourStartSun;
-    float gameMinuteStartSun;
+    
+    [HideInInspector]
+    public int gameHour;
+    [HideInInspector]
+    public int gameMinute;
+    [HideInInspector]
+    public int gameDay;
+    [HideInInspector]
+    public int gameMonth;
+    [HideInInspector]
+    public int gameYear;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +34,9 @@ public class DateTimeController : MonoBehaviour
         gameYear = PlayerPrefsController.instance.GetDateYear();
         gameMonth = PlayerPrefsController.instance.GetDateMonth();
         gameDay = PlayerPrefsController.instance.GetDateDay();
-
-        UpdateDateText(gameYear, gameMonth, gameDay);
-
         gameHour = PlayerPrefsController.instance.GetHour();
-        gameHourStartSun = gameHour;
         gameMinute = PlayerPrefsController.instance.GetMinute();
-        gameMinuteStartSun = gameMinute;
+        UpdateDateText(gameYear, gameMonth, gameDay, gameHour, gameMinute);
         realSecondsPerGameMinute = 1f;
         realSecondCounter = 0f;
     }
@@ -83,7 +82,7 @@ public class DateTimeController : MonoBehaviour
 
                     PlayerPrefsController.instance.SetDateDay(gameDay);
 
-                    UpdateDateText(gameYear, gameMonth, gameDay);
+                    UpdateDateText(gameYear, gameMonth, gameDay, gameHour, gameMinute);
                 }
 
                 PlayerPrefsController.instance.SetHour(gameHour);
@@ -94,23 +93,30 @@ public class DateTimeController : MonoBehaviour
 
         // Display the time in text
         timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
-        
+
         UpdateSunRotation();
     }
 
     // Update the date text in your UI
-    private void UpdateDateText(int gameYear, int gameMonth, int gameDay)
+    public void UpdateDateText(int gameYear, int gameMonth, int gameDay, int gameHour, int gameMinute)
     {
         DateTime specificDate = new DateTime(gameYear, gameMonth, gameDay);
         CultureInfo cultureInfo = new CultureInfo(PlayerPrefsController.instance.localeName);
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
+        timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
     }
 
-    private void UpdateSunRotation()
+    public void UpdateSunRotation(bool isReset = false)
     {
         // Calculate total elapsed time in seconds
-        float startTime = gameMinuteStartSun + (gameHourStartSun * 60f);
-        float totalSeconds = Time.time + startTime;
+        float startTime = PlayerPrefsController.instance.GetMinute() + (PlayerPrefsController.instance.GetHour() * 60f);
+        float totalSeconds = Time.deltaTime + startTime;
+
+        if (isReset)
+        {
+            totalSeconds -= startTime;
+        }
+        
         // Calculate rotation angle based on current time
         float zenithHour = 6f;
         float rotationAngle = (totalSeconds - zenithHour * 60f) / (24f * 60f) * 360f;
