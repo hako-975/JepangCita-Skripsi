@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class MusicPanel : MonoBehaviour
@@ -9,16 +8,10 @@ public class MusicPanel : MonoBehaviour
     private SoundController soundController;
 
     [SerializeField]
-    private AudioClip[] listMusic;
-
-    [SerializeField]
     private GameObject contentListMusic;
 
     [SerializeField]
     private GameObject buttonMusicPrefabs;
-
-    [SerializeField]
-    private AudioMixer musicMixer;
 
     [SerializeField]
     private MusicController musicController;
@@ -31,17 +24,7 @@ public class MusicPanel : MonoBehaviour
 
     private AudioSource audioSource;
 
-    [Header("Controls")]
-    [SerializeField]
-    private TextMeshProUGUI titleMusic;
-    [SerializeField]
-    private Slider sliderMusic;
-    [SerializeField]
-    private TextMeshProUGUI currentTime;
-    [SerializeField]
-    private TextMeshProUGUI lengthTime;
-    [SerializeField]
-    private Slider volumeMusic;
+    [Header("Buttons")]
     [SerializeField]
     private Button backwardStepButton;
     [SerializeField]
@@ -53,22 +36,27 @@ public class MusicPanel : MonoBehaviour
     [SerializeField]
     private Button shuffleButton;
 
+    [Header("Controls")]
+    [SerializeField]
+    private TextMeshProUGUI titleMusic;
+    [SerializeField]
+    private Slider sliderMusic;
+    [SerializeField]
+    private TextMeshProUGUI currentTime;
+    [SerializeField]
+    private TextMeshProUGUI lengthTime;
+    [SerializeField]
+    private Slider volumeMusic;
+
     private bool isPlaying = false;
-
-    private bool isRepeat = true;
-
-    private int musicIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = musicController.GetComponent<AudioSource>();
-        isPlaying = audioSource.isPlaying;
-        PlayPauseIcon();
 
-        titleMusic.text = audioSource.clip.name;
-        sliderMusic.maxValue = audioSource.clip.length;
-        lengthTime.text = FormatTime(audioSource.clip.length);
+        isPlaying = audioSource.isPlaying;
+        UpdateUI();
 
         ShowListMusic();
 
@@ -88,12 +76,10 @@ public class MusicPanel : MonoBehaviour
         sliderMusic.value = audioSource.time;
         currentTime.text = FormatTime(audioSource.time);
 
-        if (isRepeat == false)
+        if (musicController.updateUI)
         {
-            if (audioSource.time >= audioSource.clip.length - 1f)
-            {
-                NextMusic();
-            }
+            UpdateUI();
+            musicController.updateUI = false;
         }
     }
 
@@ -104,12 +90,12 @@ public class MusicPanel : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        for (int i = 0; i < listMusic.Length; i++)
+        for (int i = 0; i < musicController.listMusic.Length; i++)
         {
             GameObject musicInstantiate = Instantiate(buttonMusicPrefabs, contentListMusic.transform);
             int index = i;
-            musicInstantiate.GetComponent<Button>().onClick.AddListener(delegate { PlayMusic(listMusic[index], index); });
-            musicInstantiate.GetComponent<ButtonMusic>().titleMusic.text = listMusic[index].name;
+            musicInstantiate.GetComponent<Button>().onClick.AddListener(delegate { PlayMusic(musicController.listMusic[index], index); });
+            musicInstantiate.GetComponent<ButtonMusic>().titleMusic.text = musicController.listMusic[index].name;
         }
     }
 
@@ -120,32 +106,29 @@ public class MusicPanel : MonoBehaviour
 
     private void PlayMusic(AudioClip music, int currentIndex)
     {
-        musicIndex = currentIndex;
+        musicController.musicIndex = currentIndex;
         audioSource.time = 0f;
-        titleMusic.text = music.name;
-        sliderMusic.maxValue = music.length;
-        lengthTime.text = FormatTime(music.length);
         audioSource.clip = music;
         audioSource.Play();
         isPlaying = true;
-        PlayPauseIcon();
+        UpdateUI();
     }
 
     private void PreviousMusic()
     {
         soundController.PositiveButtonSound(gameObject);
 
-        if (musicIndex > 0)
+        if (musicController.musicIndex > 0)
         {
-            PlayMusic(listMusic[musicIndex - 1], musicIndex - 1);
+            PlayMusic(musicController.listMusic[musicController.musicIndex - 1], musicController.musicIndex - 1);
         }
         else
         {
-            PlayMusic(listMusic[listMusic.Length - 1], listMusic.Length - 1);
+            PlayMusic(musicController.listMusic[musicController.listMusic.Length - 1], musicController.listMusic.Length - 1);
         }
     }
 
-    private void PlayPauseIcon()
+    private void UpdateUI()
     {
         if (isPlaying)
         {
@@ -155,6 +138,19 @@ public class MusicPanel : MonoBehaviour
         {
             playPauseButton.GetComponent<Image>().sprite = playIcon;
         }
+
+        if (PlayerPrefsController.instance.GetBoolIsRepeatMusic() == 0)
+        {
+            repeatButton.GetComponent<Image>().color = Color.grey;
+        }
+        else
+        {
+            repeatButton.GetComponent<Image>().color = Color.white;
+        }
+
+        titleMusic.text = audioSource.clip.name;
+        sliderMusic.maxValue = audioSource.clip.length;
+        lengthTime.text = FormatTime(audioSource.clip.length);
     }
 
     private void PlayPauseMusic()
@@ -179,13 +175,13 @@ public class MusicPanel : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
-        if (musicIndex == listMusic.Length - 1)
+        if (musicController.musicIndex == musicController.listMusic.Length - 1)
         {
-            PlayMusic(listMusic[0], 0);
+            PlayMusic(musicController.listMusic[0], 0);
         }
         else
         {
-            PlayMusic(listMusic[musicIndex + 1], musicIndex + 1);
+            PlayMusic(musicController.listMusic[musicController.musicIndex + 1], musicController.musicIndex + 1);
         }
     }
 
@@ -193,15 +189,15 @@ public class MusicPanel : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
-        if (isRepeat)
+        if (PlayerPrefsController.instance.GetBoolIsRepeatMusic() == 1)
         {
-            isRepeat = false;
+            PlayerPrefsController.instance.SetBoolIsRepeatMusic(0);
             repeatButton.GetComponent<Image>().color = Color.grey;
         }
         else
         {
+            PlayerPrefsController.instance.SetBoolIsRepeatMusic(1);
             repeatButton.GetComponent<Image>().color = Color.white;
-            isRepeat = true;
         }
     }
 
@@ -209,19 +205,19 @@ public class MusicPanel : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
-        for (int i = listMusic.Length - 1; i > 0; i--)
+        for (int i = musicController.listMusic.Length - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i + 1);
-            AudioClip temp = listMusic[i];
-            listMusic[i] = listMusic[randomIndex];
-            listMusic[randomIndex] = temp;
+            AudioClip temp = musicController.listMusic[i];
+            musicController.listMusic[i] = musicController.listMusic[randomIndex];
+            musicController.listMusic[randomIndex] = temp;
         }
 
-        for (int i = 0; i < listMusic.Length; i++)
+        for (int i = 0; i < musicController.listMusic.Length; i++)
         {
-            if (listMusic[i] == audioSource.clip)
+            if (musicController.listMusic[i] == audioSource.clip)
             {
-                musicIndex = i;
+                musicController.musicIndex = i;
                 break;
             }
         }
@@ -232,7 +228,7 @@ public class MusicPanel : MonoBehaviour
     private void SetMusicVolume(float musicVolume)
     {
         float calValue = -80 + musicVolume / 1.25f;
-        musicMixer.SetFloat("volume", calValue);
+        musicController.musicMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
     }
 

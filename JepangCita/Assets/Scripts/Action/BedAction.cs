@@ -164,6 +164,10 @@ public class BedAction : MonoBehaviour
         {
             bedCanvas.SetActive(false);
             transition.gameObject.SetActive(false);
+            sleepPanel.GetComponent<CanvasGroup>().alpha = 0;
+            sleepPanel.GetComponent<CanvasGroup>().interactable = false;
+            sleepPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+
             canvas.GetComponent<CanvasGroup>().alpha = 1;
             actionController.isTriggerEntered = false;
         }

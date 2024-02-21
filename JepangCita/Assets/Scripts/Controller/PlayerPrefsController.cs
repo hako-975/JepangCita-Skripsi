@@ -132,6 +132,17 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetInt("ZoomCamera", zoomCamera);
         return GetZoomCamera();
     }
+
+    public int GetBoolIsRepeatMusic()
+    {
+        return PlayerPrefs.GetInt("IsRepeatMusic", 0);
+    }
+
+    public int SetBoolIsRepeatMusic(int boolean)
+    {
+        PlayerPrefs.SetInt("IsRepeatMusic", boolean);
+        return GetBoolIsRepeatMusic();
+    }
     #endregion
 
     #region Calendar
