@@ -416,6 +416,19 @@ public class PlayerPrefsController : MonoBehaviour
     }
     #endregion
 
+    #region Attendance
+    public void SetAttendance(string day, string date, string attendance)
+    {
+        // attendance = hadir, bolos
+        PlayerPrefs.SetString("Attendance" + date, day + "?>?" + date + "?>?" + attendance);
+    }
+
+    public string GetAttendance(string date)
+    {
+        return PlayerPrefs.GetString("Attendance" + date);
+    }
+    #endregion
+
     public void DeleteKey(string key)
     {
         PlayerPrefs.DeleteKey(key);

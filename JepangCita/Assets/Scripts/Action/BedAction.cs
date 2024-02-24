@@ -45,6 +45,8 @@ public class BedAction : MonoBehaviour
 
         dateTimeController = canvas.GetComponentInChildren<DateTimeController>();
 
+        transition.gameObject.SetActive(false);
+
         bedCanvas.SetActive(false);
 
         actionButton.onClick.AddListener(ActionButton);
@@ -113,6 +115,8 @@ public class BedAction : MonoBehaviour
         transition.SetTrigger("Open");
 
         yield return new WaitForSeconds(4f);
+        transition.gameObject.SetActive(false);
+
         canvas.GetComponent<CanvasGroup>().alpha = 1;
 
         player.GetComponent<PlayerController>().canMove = true;
@@ -155,7 +159,6 @@ public class BedAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             bedCanvas.SetActive(true);
-            transition.gameObject.SetActive(true);
             actionController.canvasTrigger = bedCanvas;
             actionController.isTriggerEntered = true;
         }

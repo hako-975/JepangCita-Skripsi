@@ -63,8 +63,6 @@ public class MateriPanel : MonoBehaviour
 
     [HideInInspector]
     public GameObject previewHurufPanelInstantiate;
-    
-    Vector2 normalizedPosition;
 
     // Start is called before the first frame update
     void Start()
