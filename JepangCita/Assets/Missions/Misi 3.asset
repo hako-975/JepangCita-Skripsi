@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e4c1b93a62daf408f19c52b038a764, type: 3}
+  m_Name: Misi 3
+  m_EditorClassIdentifier: 
+  titleMission: 'Misi 3: Tidur Yang Cukup'
+  detailMission: 'Detail Misi:
+
+    Ingat besok ada jadwal untuk mengikuti kelas,
+    tidurlah yang cukup dan jangan sampai terlambat!
+
+
+    Pergi ke kasur untuk tidur.'

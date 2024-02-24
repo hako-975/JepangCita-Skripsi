@@ -17,7 +17,10 @@ public class SoundController : MonoBehaviour
     [SerializeField]
     private AudioClip trashButtonSound;
 
+
     [Header("Environment")]
+    [SerializeField]
+    private AudioClip missionSucceedSound;
     [SerializeField]
     private AudioClip openSound;
     [SerializeField]
@@ -78,6 +81,11 @@ public class SoundController : MonoBehaviour
     public void TrashButtonSound(GameObject gameObject)
     {
         AudioSourceComponent(gameObject, trashButtonSound);
+    }
+
+    public void MissionSucceedSound(GameObject gameObject)
+    {
+        AudioSourceComponent(gameObject, missionSucceedSound);
     }
 
     public void OpenSound(GameObject gameObject)

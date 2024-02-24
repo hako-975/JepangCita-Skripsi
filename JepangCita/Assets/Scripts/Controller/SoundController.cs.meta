@@ -10,6 +10,7 @@ MonoImporter:
   - resetButtonSound: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
   - minimizeButtonSound: {fileID: 8300000, guid: 6d93b0a4d6262184fab88b1840b8af95, type: 3}
   - trashButtonSound: {fileID: 8300000, guid: 6e33ddb37488d2d4192b1d657d3ee8e6, type: 3}
+  - missionSucceedSound: {fileID: 8300000, guid: c5d5e169cd661e14787dca99e5e0fd24, type: 3}
   - openSound: {fileID: 8300000, guid: 53a62cc0c102f79479c9ea77473277c5, type: 3}
   - closeSound: {fileID: 8300000, guid: 2cd18c9df7cd3e640a717d575adc26ce, type: 3}
   - shutdownSound: {fileID: 8300000, guid: 9d37cc1f6edfd914f9a53ecee1e9cdeb, type: 3}

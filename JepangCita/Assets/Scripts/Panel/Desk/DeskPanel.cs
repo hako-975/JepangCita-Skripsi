@@ -13,6 +13,24 @@ public class DeskPanel : MonoBehaviour
     [SerializeField]
     private GameObject leftTaskbar;
 
+    [Header("Missions")]
+    [SerializeField]
+    private Button missionButton;
+    [SerializeField]
+    private Button minimizeMissionButton;
+    [SerializeField]
+    private Button closeMissionButton;
+
+    [SerializeField]
+    private GameObject missionPanel;
+
+    [SerializeField]
+    private Sprite missionIcon;
+
+    private bool missionOpened;
+
+    private GameObject missionApps;
+
     [Header("Calendars")]
     [SerializeField]
     private Button calendarButton;
@@ -91,32 +109,88 @@ public class DeskPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        missionPanel.SetActive(false);
         calendarPanel.SetActive(false);
         mailPanel.SetActive(false);
         browserPanel.SetActive(false);
         musicPanel.SetActive(false);
 
+        missionPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMissionButton(true); });
         calendarPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenCalendarButton(true); });
         mailPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMailButton(true); });
         browserPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenBrowserButton(true); });
         musicPanel.GetComponent<Button>().onClick.AddListener(delegate { OpenMusicButton(true); });
 
+        missionButton.onClick.AddListener(delegate { OpenMissionButton(false); });
         calendarButton.onClick.AddListener(delegate { OpenCalendarButton(false); });
         calendarButtonTaskbar.onClick.AddListener(delegate { OpenCalendarButton(false); });
         mailButton.onClick.AddListener(delegate { OpenMailButton(false); });
         browserButton.onClick.AddListener(delegate { OpenBrowserButton(false); });
         musicButton.onClick.AddListener(delegate { OpenMusicButton(false); });
 
+        minimizeMissionButton.onClick.AddListener(MinimizeMissionButton);
         minimizeCalendarButton.onClick.AddListener(MinimizeCalendarButton);
         minimizeMailButton.onClick.AddListener(MinimizeMailButton);
         minimizeBrowserButton.onClick.AddListener(MinimizeBrowserButton);
         minimizeMusicButton.onClick.AddListener(MinimizeMusicButton);
 
+        closeMissionButton.onClick.AddListener(CloseMissionButton);
         closeCalendarButton.onClick.AddListener(CloseCalendarButton);
         closeMailButton.onClick.AddListener(CloseMailButton);
         closeBrowserButton.onClick.AddListener(CloseBrowserButton);
         closeMusicButton.onClick.AddListener(CloseMusicButton);
 
+    }
+    private void OpenMissionButton(bool alreadyOpen = false)
+    {
+        soundController.PositiveButtonSound(gameObject);
+
+        if (!alreadyOpen)
+        {
+            StartCoroutine(AnimationOpenMission());
+        }
+
+        if (!missionOpened)
+        {
+            missionApps = Instantiate(openedAppPrefabs, leftTaskbar.transform);
+            missionApps.GetComponent<OpenedApp>().icon.sprite = missionIcon;
+        }
+
+        int lastIndex = missionPanel.transform.parent.childCount - 1;
+        missionPanel.transform.SetSiblingIndex(lastIndex);
+        missionApps.GetComponent<OpenedApp>().GetComponent<Button>().onClick.AddListener(delegate { OpenMissionButton(false); });
+        ToggleAllOffTaskbar();
+        missionApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f, 0.4902f);
+
+        missionOpened = true;
+    }
+    private IEnumerator AnimationOpenMission()
+    {
+        missionPanel.SetActive(true);
+        missionPanel.GetComponent<Animator>().SetTrigger("Show");
+        yield return null;
+    }
+
+    private void MinimizeMissionButton()
+    {
+        soundController.MinimizeButtonSound(gameObject);
+        StartCoroutine(AnimationCloseMission());
+        ToggleAllOffTaskbar();
+    }
+
+    private void CloseMissionButton()
+    {
+        soundController.NegativeButtonSound(gameObject);
+
+        StartCoroutine(AnimationCloseMission());
+        Destroy(missionApps);
+        missionOpened = false;
+    }
+
+    private IEnumerator AnimationCloseMission()
+    {
+        missionPanel.GetComponent<Animator>().SetTrigger("Hide");
+        yield return null;
     }
 
     private void OpenCalendarButton(bool alreadyOpen = false)
@@ -335,6 +409,11 @@ public class DeskPanel : MonoBehaviour
 
     private void ToggleAllOffTaskbar()
     {
+        if (missionApps)
+        {
+            missionApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
+
         if (calendarApps)
         {
             calendarApps.GetComponent<OpenedApp>().GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);

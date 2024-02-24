@@ -60,6 +60,9 @@ public class BedAction : MonoBehaviour
     private void SleepButton()
     {
         soundController.PositiveButtonSound(gameObject);
+        // misi ketiga
+        PlayerPrefsController.instance.SetMission(2, soundController);
+
         StartCoroutine(AnimationCloseSleepPanel());
 
         actionButton.gameObject.SetActive(false);

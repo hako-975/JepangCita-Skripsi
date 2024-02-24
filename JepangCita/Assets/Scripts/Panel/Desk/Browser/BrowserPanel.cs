@@ -121,6 +121,8 @@ public class BrowserPanel : MonoBehaviour
             if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
             {
                 panelToShow = jepangCitaJadwalPanel;
+                // misi kedua
+                PlayerPrefsController.instance.SetMission(1, soundController);
             }
         }
         else if (IsJepangCitaMateriInput(input))

@@ -46,6 +46,38 @@ public class PlayerPrefsController : MonoBehaviour
         }
     }
 
+    #region Mission
+    public int GetMission()
+    {
+        return PlayerPrefs.GetInt("Mission", 0);
+    }
+
+    public void SetMission(int missionTo, SoundController soundController)
+    {
+        if (GetMission() == missionTo)
+        {
+            // ubah misi saat ini menjadi misi
+            PlayerPrefs.SetInt("Mission", missionTo+1);
+            Debug.Log(GetMission());
+            SetUpdateMission(1);
+            soundController.MissionSucceedSound(gameObject);
+        }
+    }
+
+    public int GetUpdateMission()
+    {
+        return PlayerPrefs.GetInt("UpdateMission");
+    }
+    
+    public int SetUpdateMission(int boolean)
+    {
+        PlayerPrefs.SetInt("UpdateMission", boolean);
+        return GetMission();
+    }
+
+
+    #endregion
+
     #region Scene
     public string GetNextScene()
     {
@@ -383,8 +415,6 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetString("TrashMail" + id, "deleted" + "?>?" + "deleted" + "?>?" + "deleted" + "?>?" + "deleted");
     }
     #endregion
-
-
 
     public void DeleteKey(string key)
     {

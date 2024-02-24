@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,9 @@ public class GameController : MonoBehaviour
     private SoundController soundController;
 
     [Header("Buttons")]
+    [SerializeField]
+    private Button missionButton;
+
     [SerializeField]
     private Button pauseButton;
 
@@ -19,6 +23,9 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private Button mainMenuButton;
+
+    [SerializeField]
+    private Button closeMissionButton;
 
     [SerializeField]
     private Button closePauseButton;
@@ -37,6 +44,9 @@ public class GameController : MonoBehaviour
 
     [Header("Panels")]
     [SerializeField]
+    private GameObject missionPanel;
+
+    [SerializeField]
     private GameObject pausePanel;
 
     [SerializeField]
@@ -48,19 +58,37 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private ActionController actionController;
 
+    private bool windowMission = false;
     private bool windowPause = false;
     private bool windowSettings = false;
     private bool windowMainMenu = false;
-
+    
+    [Header("Prefabs")]
     [SerializeField]
     private GameObject playerBoyPrefabs;
 
     [SerializeField]
     private GameObject playerGirlPrefabs;
 
+    [Header("Mission Text")]
+    [SerializeField]
+    private TextMeshProUGUI[] titleMissionText;
+    [SerializeField]
+    private TextMeshProUGUI[] detailMissionText;
+
+    string titleMission;
+    string detailMission;
+
+
+    [Header("Mission List")]
+    [SerializeField]
+    private Mission[] missionList;
+
     // Start is called before the first frame update
     void Start()
     {
+        Mission();
+
         if (PlayerPrefsController.instance.GetCharacterSelection() == "Girl")
         {
             Instantiate(playerGirlPrefabs);
@@ -70,12 +98,14 @@ public class GameController : MonoBehaviour
             Instantiate(playerBoyPrefabs);
         }
 
+        missionButton.onClick.AddListener(MissionButton);
         pauseButton.onClick.AddListener(PauseButton);
         resumeButton.onClick.AddListener(ResumeButton);
         settingsButton.onClick.AddListener(SettingsButton);
         mainMenuButton.onClick.AddListener(MainMenuButton);
         goToMainMenuButton.onClick.AddListener(GoToMainMenuButton);
         
+        closeMissionButton.onClick.AddListener(ResumeMissionButton);
         closePauseButton.onClick.AddListener(ResumeButton);
         closeSettingsButton.onClick.AddListener(CloseSettingsButton);
         closeMainMenuButton.onClick.AddListener(CloseMainMenuButton);
@@ -85,6 +115,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefsController.instance.GetUpdateMission() == 1)
+        {
+            Mission();
+            PlayerPrefsController.instance.SetUpdateMission(0);
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (windowSettings)
@@ -99,6 +135,10 @@ public class GameController : MonoBehaviour
             {
                 ResumeButton();
             }
+            else if (windowMission)
+            {
+                ResumeMissionButton();
+            }
             else
             {
                 if (!actionController.deskIsActive)
@@ -109,10 +149,48 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Mission()
+    {
+        titleMission = "Tidak ada Misi";
+        detailMission = "Tidak ada Misi";
+        for (int i = 0; i < missionList.Length; i++)
+        {
+            if (PlayerPrefsController.instance.GetMission() == i)
+            {
+                titleMission = missionList[i].titleMission;
+                detailMission = missionList[i].detailMission;
+                break;
+            }
+        }
+
+        for (int i = 0; i < titleMissionText.Length; i++)
+        {
+            titleMissionText[i].text = titleMission;
+            detailMissionText[i].text = detailMission;
+        }
+    }
+
+    private void MissionButton()
+    {
+        soundController.PositiveButtonSound(gameObject);
+        missionPanel.SetActive(true);
+        StartCoroutine(AnimationMission());
+    }
+
     private void PauseButton()
     {
         soundController.PositiveButtonSound(gameObject);
+        pausePanel.SetActive(true);
         StartCoroutine(AnimationPause());
+    }
+
+    private IEnumerator AnimationMission()
+    {
+        Time.timeScale = 0f;
+        windowMission = true;
+        missionPanel.GetComponent<Animator>().SetTrigger("Show");
+        actionController.DeactiveCanvasAction();
+        yield return null;
     }
 
     private IEnumerator AnimationPause()
@@ -129,6 +207,21 @@ public class GameController : MonoBehaviour
         soundController.PositiveButtonSound(gameObject);
 
         StartCoroutine(AnimationResume());
+    }
+    private void ResumeMissionButton()
+    {
+        soundController.PositiveButtonSound(gameObject);
+
+        StartCoroutine(AnimationResumeMission());
+    }
+
+    private IEnumerator AnimationResumeMission()
+    {
+        Time.timeScale = 1f;
+        windowMission = false;
+        missionPanel.GetComponent<Animator>().SetTrigger("Hide");
+        actionController.ActiveCanvasAction();
+        yield return null;
     }
 
     private IEnumerator AnimationResume()

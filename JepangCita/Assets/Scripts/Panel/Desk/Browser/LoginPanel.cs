@@ -60,6 +60,9 @@ public class LoginPanel : MonoBehaviour
         }
         else
         {
+            // jika misi pertama 0 index pertama
+            PlayerPrefsController.instance.SetMission(0, soundController);
+
             messageSucceed.text = "Berhasil Login!";
             PlayerPrefsController.instance.SetCredentialJepangCita(1);
             StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel));
