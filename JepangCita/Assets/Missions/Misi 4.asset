@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e4c1b93a62daf408f19c52b038a764, type: 3}
+  m_Name: Misi 4
+  m_EditorClassIdentifier: 
+  titleMission: 'Misi 4: Hadiri Kelas Tepat Waktu'
+  detailMission: "Detail Misi:\nMulailah dengan keluar dari rumah dan menuju tempat
+    les. Pastikan untuk tiba tepat waktu dan siap untuk mengikuti pembelajaran. Fokuslah
+    pada penjelasan yang diberikan oleh guru dengan seksama, amati setiap detail
+    yang disampaikan. Selain itu, pastikan untuk menjaga sikap yang baik dan hormat
+    terhadap guru serta sesama teman belajar. Dengan melakukan hal ini, kamu dapat
+    memaksimalkan manfaat dari waktu yang dihabiskan di tempat les dan meningkatkan
+    pemahamanmu terhadap materi yang dipelajari.\r"

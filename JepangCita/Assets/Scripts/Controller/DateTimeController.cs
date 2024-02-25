@@ -6,6 +6,9 @@ using UnityEngine;
 public class DateTimeController : MonoBehaviour
 {
     [SerializeField]
+    private SoundController soundController;
+
+    [SerializeField]
     private TextMeshProUGUI dateDayText;
 
     [SerializeField]
@@ -104,6 +107,8 @@ public class DateTimeController : MonoBehaviour
         CultureInfo cultureInfo = new CultureInfo(PlayerPrefsController.instance.localeName);
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
         timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
+        // alternative misi ketiga
+        PlayerPrefsController.instance.SetMission(2, soundController);
     }
 
     public void UpdateSunRotation(bool isReset = false)
