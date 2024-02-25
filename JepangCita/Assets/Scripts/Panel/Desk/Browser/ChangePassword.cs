@@ -48,6 +48,7 @@ public class ChangePassword : MonoBehaviour
         if (passwordInput.text != confirmPasswordInput.text)
         {
             messageFailed.text = "Password dan Confirm Password harus sama!";
+
             StartCoroutine(ShowAndHidePanelCoroutine(failedPanel));
             return;
         }

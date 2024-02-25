@@ -64,6 +64,12 @@ public class DeskAction : MonoBehaviour
     private void ShutdownButton()
     {
         soundController.ShutdownSound(gameObject);
+
+        StartCoroutine(WaitLaptopClose());
+    }
+
+    private IEnumerator WaitLaptopClose()
+    {
         actionController.deskIsActive = false;
         playerController.canMove = true;
 
@@ -74,12 +80,6 @@ public class DeskAction : MonoBehaviour
         actionButton.gameObject.SetActive(true);
         deskPanel.SetActive(false);
         laptopAnimator.SetTrigger("LaptopClose");
-
-        StartCoroutine(WaitLaptopClose());
-    }
-
-    private IEnumerator WaitLaptopClose()
-    {
         yield return new WaitForSeconds(0.5f);
         soundController.CloseSound(gameObject);
         yield return new WaitForSeconds(1f);
@@ -91,6 +91,11 @@ public class DeskAction : MonoBehaviour
     {
         soundController.OpenSound(gameObject);
 
+        StartCoroutine(WaitDeskPanelOpen());
+    }
+
+    private IEnumerator WaitDeskPanelOpen()
+    {
         actionController.deskIsActive = true;
         playerController.canMove = false;
 
@@ -99,18 +104,12 @@ public class DeskAction : MonoBehaviour
         canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
         mainCam.gameObject.SetActive(false);
-        
+
         actionButton.gameObject.SetActive(false);
 
         actionCam.gameObject.SetActive(true);
 
         laptopAnimator.SetTrigger("LaptopOpen");
-
-        StartCoroutine(WaitDeskPanelOpen());
-    }
-
-    private IEnumerator WaitDeskPanelOpen()
-    {
         yield return new WaitForSeconds(1f);
         deskCanvas.SetActive(true);
         deskPanel.SetActive(true);

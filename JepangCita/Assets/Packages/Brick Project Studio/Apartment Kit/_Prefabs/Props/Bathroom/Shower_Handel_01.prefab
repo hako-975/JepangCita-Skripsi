@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9105235693961311738}
   - component: {fileID: 1787038266450248739}
   - component: {fileID: 6543412781371592306}
-  - component: {fileID: 417335433974673834}
   m_Layer: 0
   m_Name: Shower_Handel_01
   m_TagString: Untagged
@@ -83,19 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &417335433974673834
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417335433974673845}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.042308625, y: 0.35033578, z: 0.35033578}
-  m_Center: {x: 0.021279452, y: 0, z: 0}
 --- !u!1 &1738449564401191413
 GameObject:
   m_ObjectHideFlags: 0

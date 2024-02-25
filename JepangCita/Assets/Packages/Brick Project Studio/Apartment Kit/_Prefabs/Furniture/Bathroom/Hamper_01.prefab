@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 4312640497911476532}
   - component: {fileID: 8906236682411471944}
   - component: {fileID: 625481971148334283}
-  - component: {fileID: 625481971148334276}
-  - component: {fileID: 625481971148334277}
   m_Layer: 0
   m_Name: HamperFlap
   m_TagString: Untagged
@@ -86,7 +84,7 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &625481971148334283
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,38 +97,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &625481971148334276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625481971148334278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f1c4265d2e233469ca3a33b18036d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FlipL: {fileID: 625481971148334283}
-  open: 0
-  Player: {fileID: 0}
---- !u!65 &625481971148334277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625481971148334278}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.80114573, y: 0.02982318, z: 0.7960416}
-  m_Center: {x: 0.39977112, y: -0.0023766872, z: -0.00000011920929}
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8213366066681267145
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +114,7 @@ GameObject:
   - component: {fileID: 5087282295778432624}
   - component: {fileID: 2990241193788969245}
   - component: {fileID: 2584024763547512178}
-  - component: {fileID: 8213366066681267144}
+  - component: {fileID: 4351996012153241482}
   m_Layer: 0
   m_Name: Hamper_01
   m_TagString: Untagged
@@ -214,8 +186,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8213366066681267144
-MeshCollider:
+--- !u!65 &4351996012153241482
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,7 +196,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2656629169798860591, guid: 651d77a525480c84e9327ec0894c0da1, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.7960415, y: 1.1371568, z: 0.79604155}
+  m_Center: {x: 0, y: 0.5685784, z: -0.000000029802322}

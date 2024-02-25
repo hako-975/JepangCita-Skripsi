@@ -255,9 +255,7 @@ GameObject:
   - component: {fileID: 8846547429667711314}
   - component: {fileID: 1151362412957822383}
   - component: {fileID: 4796863765522520134}
-  - component: {fileID: 5386436854384878195}
   - component: {fileID: 5386436854384878192}
-  - component: {fileID: 5386436854384878193}
   m_Layer: 0
   m_Name: Door.R
   m_TagString: Untagged
@@ -329,19 +327,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5386436854384878195
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386436854384878198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12727205, y: 3.6130939, z: 0.9950217}
-  m_Center: {x: 0.058708914, y: -3.650358e-15, z: -0.49751303}
 --- !u!95 &5386436854384878192
 Animator:
   serializedVersion: 5
@@ -363,21 +348,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5386436854384878193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386436854384878198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 5386436854384878192}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &5478849095728045706
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,9 +440,7 @@ GameObject:
   - component: {fileID: 5664983601005310446}
   - component: {fileID: 7810165004938874251}
   - component: {fileID: 3325793644376910917}
-  - component: {fileID: 5483040691484923745}
   - component: {fileID: 5483040691484923750}
-  - component: {fileID: 5483040691484923751}
   m_Layer: 0
   m_Name: Door.L
   m_TagString: Untagged
@@ -544,19 +512,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5483040691484923745
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483040691484923748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.12989847, y: 3.6130939, z: 0.9950218}
-  m_Center: {x: 0.06002207, y: -0.00000011920929, z: 0.49751148}
 --- !u!95 &5483040691484923750
 Animator:
   serializedVersion: 5
@@ -578,21 +533,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5483040691484923751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5483040691484923748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose: {fileID: 5483040691484923750}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &7357539887146149274
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,11 +626,7 @@ GameObject:
   - component: {fileID: 5434180270621396412}
   - component: {fileID: 5577525277476491866}
   - component: {fileID: 3237601505444334696}
-  - component: {fileID: 1371964870683151145}
-  - component: {fileID: 9024009249137971892}
-  - component: {fileID: 1327399085286355976}
-  - component: {fileID: 5292986115831016892}
-  - component: {fileID: 9185818289304450371}
+  - component: {fileID: 6782693912364839815}
   m_Layer: 0
   m_Name: Dresser Closet_01
   m_TagString: Untagged
@@ -764,7 +700,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1371964870683151145
+--- !u!65 &6782693912364839815
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -775,57 +711,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.050534256, y: 3.6130936, z: 1.9918191}
-  m_Center: {x: -0.5549519, y: 1.8065468, z: 6.003373e-14}
---- !u!65 &9024009249137971892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851711041489694631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1604373, y: 0.13605225, z: 1.9918191}
-  m_Center: {x: -0.00000011920929, y: 0.068026125, z: 3.289897e-17}
---- !u!65 &1327399085286355976
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851711041489694631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1604373, y: 0.051348686, z: 1.9918191}
-  m_Center: {x: -0.00000011920929, y: 3.587419, z: 3.027698e-15}
---- !u!65 &5292986115831016892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851711041489694631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1604373, y: 3.6130936, z: 0.032395784}
-  m_Center: {x: -0.00000011920892, y: 1.8065468, z: 0.9797203}
---- !u!65 &9185818289304450371
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851711041489694631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1604373, y: 3.6130936, z: 0.033844296}
-  m_Center: {x: -0.00000011920964, y: 1.8065468, z: -0.9789949}
+  m_Size: {x: 1.1604375, y: 3.6130936, z: 1.9918194}
+  m_Center: {x: -0.00000011920929, y: 1.8065468, z: 0}

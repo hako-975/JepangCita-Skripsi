@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 7539685877391431759}
   - component: {fileID: 6530084820508184456}
   - component: {fileID: 8728400212845966394}
-  - component: {fileID: 2085779863}
   - component: {fileID: 2085779862}
-  - component: {fileID: 2085779861}
   m_Layer: 0
   m_Name: Door_R.003
   m_TagString: Untagged
@@ -85,22 +83,9 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2085779863
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140791054482062205}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.036133673, y: 0.9132023, z: 0.660075}
-  m_Center: {x: -0.018066479, y: -0.00000013411045, z: -0.32800505}
 --- !u!95 &2085779862
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,25 +98,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2085779861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140791054482062205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 2085779862}
-  open: 0
-  Player: {fileID: 0}
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2264037214399854906
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +115,6 @@ GameObject:
   - component: {fileID: 1296854310998549613}
   - component: {fileID: 5981312398670442002}
   - component: {fileID: 930671007284499683}
-  - component: {fileID: 1304516290}
   m_Layer: 0
   m_Name: Sink_01
   m_TagString: Untagged
@@ -214,20 +185,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1304516290
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2264037214399854906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8281742534907519844, guid: 2a83511a782a6aa4dafed1f5a2bd3803, type: 3}
 --- !u!1 &2356017850120201989
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +278,7 @@ GameObject:
   - component: {fileID: 8959475919031283266}
   - component: {fileID: 5506400091662956956}
   - component: {fileID: 1010528763243940918}
-  - component: {fileID: 1530711580}
+  - component: {fileID: 8644740566304961752}
   m_Layer: 0
   m_Name: Counter_Sink_01
   m_TagString: Untagged
@@ -394,8 +351,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1530711580
-MeshCollider:
+--- !u!65 &8644740566304961752
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -404,10 +361,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3510253688445849407, guid: 2a83511a782a6aa4dafed1f5a2bd3803, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.9928671, y: 0.07261567, z: 1.3611429}
+  m_Center: {x: 0.033180177, y: 0.037350975, z: 0.09856632}
 --- !u!1 &3856869419681601904
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +538,6 @@ GameObject:
   - component: {fileID: 2305875522382251628}
   - component: {fileID: 6192327525446938990}
   - component: {fileID: 2430513093863330857}
-  - component: {fileID: 6895661885431181520}
   m_Layer: 0
   m_Name: Cabinet_Base_Sink_01
   m_TagString: Untagged
@@ -657,20 +612,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6895661885431181520
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5820748979278948837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6041596989059598143, guid: 2a83511a782a6aa4dafed1f5a2bd3803, type: 3}
 --- !u!1 &6459493246525791013
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,9 +866,7 @@ GameObject:
   - component: {fileID: 1263626154634194932}
   - component: {fileID: 6149639015678644670}
   - component: {fileID: 9130681740521821245}
-  - component: {fileID: 17990687}
   - component: {fileID: 17990686}
-  - component: {fileID: 17990685}
   m_Layer: 0
   m_Name: Door_L.006
   m_TagString: Untagged
@@ -999,22 +938,9 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &17990687
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8787687360872524886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.036133733, y: 0.9132023, z: 0.660075}
-  m_Center: {x: -0.018066863, y: 0.000000074505806, z: 0.32800528}
 --- !u!95 &17990686
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1027,22 +953,9 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &17990685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8787687360872524886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose: {fileID: 17990686}
-  open: 0
-  Player: {fileID: 0}
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

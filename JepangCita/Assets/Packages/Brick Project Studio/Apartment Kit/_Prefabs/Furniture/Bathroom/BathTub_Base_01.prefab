@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3209985534107503491}
   - component: {fileID: 8491856453150602090}
   - component: {fileID: 8969302608968954616}
-  - component: {fileID: 609126468041172476}
   m_Layer: 0
   m_Name: GlassWall_01
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &609126468041172476
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609126468041172477}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6738837, y: 2.203347, z: 0.023218542}
-  m_Center: {x: -0.00000008940697, y: 1.1016735, z: -0.0000001792796}
 --- !u!1 &703964251201245500
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +92,6 @@ GameObject:
   - component: {fileID: 9123529967632243323}
   - component: {fileID: 6611176152109816902}
   - component: {fileID: 3441229937547172273}
-  - component: {fileID: 703964251201245475}
   m_Layer: 0
   m_Name: GlassWall_02
   m_TagString: Untagged
@@ -177,19 +162,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &703964251201245475
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703964251201245500}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.017352276, y: 2.2033472, z: 1.751122}
-  m_Center: {x: 0.00000021327287, y: 1.1016734, z: -0.0000003874302}
 --- !u!1 &2805616125457797558
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +173,7 @@ GameObject:
   - component: {fileID: 9160075805504388056}
   - component: {fileID: 3745576625610789257}
   - component: {fileID: 2742047375368240822}
-  - component: {fileID: 2805616125457797557}
+  - component: {fileID: 7415823900732399377}
   m_Layer: 0
   m_Name: BathTub_Base_01
   m_TagString: Untagged
@@ -274,8 +246,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2805616125457797557
-MeshCollider:
+--- !u!65 &7415823900732399377
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -284,10 +256,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1198459610376458595, guid: 651d77a525480c84e9327ec0894c0da1, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.7272938, y: 0.897501, z: 3.3681417}
+  m_Center: {x: 0, y: 0.44875044, z: 0}
 --- !u!1 &3776548339571156591
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,9 +432,7 @@ GameObject:
   - component: {fileID: 8763845279505977736}
   - component: {fileID: 1943858554354909737}
   - component: {fileID: 1941518076457073655}
-  - component: {fileID: 6976062566496198566}
   - component: {fileID: 6976062566496198567}
-  - component: {fileID: 6976062566496198565}
   m_Layer: 0
   m_Name: GlassDoor
   m_TagString: Untagged
@@ -535,19 +504,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6976062566496198566
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6976062566496198560}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.023218222, y: 2.2033472, z: 1.7461019}
-  m_Center: {x: 0, y: 1.1016734, z: -0.00000008940697}
 --- !u!95 &6976062566496198567
 Animator:
   serializedVersion: 5
@@ -569,21 +525,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6976062566496198565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6976062566496198560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c60bbd51801dd3749be2ffa1cd525074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose: {fileID: 6976062566496198567}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &8462704623004020780
 GameObject:
   m_ObjectHideFlags: 0

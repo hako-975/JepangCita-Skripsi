@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: 3140448489512610173}
   - component: {fileID: 8144649912656790230}
   - component: {fileID: 7932477987371438233}
-  - component: {fileID: 5006834288570464545}
   m_Layer: 0
   m_Name: Lamp_BR_01
   m_TagString: Untagged
@@ -411,19 +410,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5006834288570464545
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5006834288570464544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33688265, y: 0.27372393, z: 1.2290152}
-  m_Center: {x: 0.16844127, y: 0, z: 0}
 --- !u!1 &6380652267169381739
 GameObject:
   m_ObjectHideFlags: 0

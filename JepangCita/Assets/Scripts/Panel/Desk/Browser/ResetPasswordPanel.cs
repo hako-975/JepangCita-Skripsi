@@ -38,10 +38,15 @@ public class ResetPasswordPanel : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
+        StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel));
+    }
+
+    IEnumerator ShowAndHidePanelCoroutine(GameObject panel)
+    {
         messageSucceed.text = "Cek e-mail untuk melakukan reset password!";
         string message = "Konnichiwa " + PlayerPrefsController.instance.GetFullnameJepangCita() + "," +
             "\n\n" + "Anda telah meminta untuk reset password Anda. Klik tombol di bawah untuk membuat password baru." +
-            "\n" + "Jika Anda belum meminta untuk reset password, harap abaikan email ini. Anda tidak perlu melakukan apa pun untuk memastikan akun Anda aman." + 
+            "\n" + "Jika Anda belum meminta untuk reset password, harap abaikan email ini. Anda tidak perlu melakukan apa pun untuk memastikan akun Anda aman." +
             "\n\n" + "Arigatou," +
             "\n" + "JepangCita Tim";
 
@@ -49,11 +54,7 @@ public class ResetPasswordPanel : MonoBehaviour
         string dateSent = currentDateTime.ToString("dddd, dd MMMM yyyy, HH:mm", new CultureInfo("id-ID"));
 
         PlayerPrefsController.instance.SetInboxMail("noreply@jepangcita.com", "Jepang Cita Reset Password", message, dateSent, true);
-        StartCoroutine(ShowAndHidePanelCoroutine(succeedPanel));
-    }
 
-    IEnumerator ShowAndHidePanelCoroutine(GameObject panel)
-    {
         panel.SetActive(true);
 
         panel.GetComponent<Animator>().SetTrigger("Show");

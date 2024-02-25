@@ -130,10 +130,8 @@ public class HurufPanel : MonoBehaviour
     {
         CloseAllContent();
         Destroy(previewHurufPanel);
+        materiPanel.headingText.text = "Materi - Huruf Hiragana";
         materiPanel.contentHiragana.SetActive(true);
-        materiPanel.closeButton.onClick.RemoveAllListeners();
-        materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
-
         StartCoroutine(RestoreScroll());
     }
 
@@ -141,9 +139,8 @@ public class HurufPanel : MonoBehaviour
     {
         CloseAllContent();
         Destroy(previewHurufPanel);
+        materiPanel.headingText.text = "Materi - Huruf Katakana";
         materiPanel.contentKatakana.SetActive(true);
-        materiPanel.closeButton.onClick.RemoveAllListeners();
-        materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
         StartCoroutine(RestoreScroll());
     }
 
@@ -167,6 +164,9 @@ public class HurufPanel : MonoBehaviour
 
     private IEnumerator RestoreScroll()
     {
+        materiPanel.closeButton.onClick.RemoveAllListeners();
+        materiPanel.closeButton.onClick.AddListener(delegate { materiPanel.BackToMateriPanel(true); });
+
         yield return null;
 
         materiPanel.scrollViewContent.normalizedPosition = scrollPosition;

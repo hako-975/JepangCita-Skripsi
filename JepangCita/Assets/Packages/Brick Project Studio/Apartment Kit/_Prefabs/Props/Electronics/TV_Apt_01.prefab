@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 736537399571118674}
   - component: {fileID: 1917261903843252856}
   - component: {fileID: 3902497717208192274}
-  - component: {fileID: 1528908885607391409}
   m_Layer: 0
   m_Name: Mount
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1528908885607391409
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845061296147831934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.046758655, y: 1.032907, z: 1.1979624}
-  m_Center: {x: 0.023379276, y: -0.000000059604645, z: 0}
 --- !u!1 &8564461849130234699
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +173,6 @@ GameObject:
   - component: {fileID: 968292777417071141}
   - component: {fileID: 6040610799573063317}
   - component: {fileID: 1984632464058045902}
-  - component: {fileID: 3612929411495994555}
   m_Layer: 0
   m_Name: TV_Apt_01
   m_TagString: Untagged
@@ -260,16 +245,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3612929411495994555
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8890821166399119553}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.054556806, y: 1.568917, z: 2.6430218}
-  m_Center: {x: 0.027278306, y: 0, z: 0}

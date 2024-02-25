@@ -67,14 +67,6 @@ public class BedAction : MonoBehaviour
 
         StartCoroutine(AnimationCloseSleepPanel());
 
-        actionButton.gameObject.SetActive(false);
-        canvas.GetComponent<CanvasGroup>().alpha = 0;
-        transition.gameObject.SetActive(true);
-        transition.SetTrigger("Close");
-
-        player.GetComponent<PlayerController>().canMove = false;
-        player.GetComponent<CharacterController>().enabled = false;
-
         StartCoroutine(WaitShowActionButton());
     }
 
@@ -108,6 +100,13 @@ public class BedAction : MonoBehaviour
 
     IEnumerator WaitShowActionButton()
     {
+        actionButton.gameObject.SetActive(false);
+        canvas.GetComponent<CanvasGroup>().alpha = 0;
+        transition.gameObject.SetActive(true);
+        transition.SetTrigger("Close");
+
+        player.GetComponent<PlayerController>().canMove = false;
+        player.GetComponent<CharacterController>().enabled = false;
         yield return new WaitForSeconds(3f);
         ChangeDate();
         player.GetComponentInChildren<Animator>().SetTrigger("IsYawning");

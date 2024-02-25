@@ -39,6 +39,11 @@ public class SofaAction : MonoBehaviour
 
     private void ActionButton()
     {
+        StartCoroutine(WaitShowActionButton());
+    }
+
+    IEnumerator WaitShowActionButton()
+    {
         actionButton.gameObject.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -51,12 +56,6 @@ public class SofaAction : MonoBehaviour
 
         if (sit == false)
         {
-            playerController.canMove = false;
-
-            player.GetComponent<CharacterController>().enabled = false;
-
-            playerTransform.SetPositionAndRotation(new Vector3(-7f, 0.1f, playerTransform.position.z), Quaternion.Euler(new Vector3(0f, 90f, 0f)));
-
             StartCoroutine(WaitAnimStandToSit());
 
             playerAnimator.SetBool("IsSitting", true);
@@ -71,12 +70,6 @@ public class SofaAction : MonoBehaviour
 
             sit = false;
         }
-
-        StartCoroutine(WaitShowActionButton());
-    }
-
-    IEnumerator WaitShowActionButton()
-    {
         yield return new WaitForSeconds(2f);
         actionButton.gameObject.SetActive(true);
     }
@@ -114,6 +107,12 @@ public class SofaAction : MonoBehaviour
 
     IEnumerator WaitAnimStandToSit()
     {
+        playerController.canMove = false;
+
+        player.GetComponent<CharacterController>().enabled = false;
+
+        playerTransform.SetPositionAndRotation(new Vector3(-7f, 0.1f, playerTransform.position.z), Quaternion.Euler(new Vector3(0f, 90f, 0f)));
+
         yield return new WaitForSeconds(1f);
         playerTransform.transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
         

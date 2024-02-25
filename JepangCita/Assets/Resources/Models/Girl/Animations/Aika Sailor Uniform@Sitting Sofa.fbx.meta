@@ -23,10 +23,10 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationCompression: 1
+    animationRotationError: 0.2
+    animationPositionError: 0.2
+    animationScaleError: 0.2
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []

@@ -173,19 +173,19 @@ public class GameController : MonoBehaviour
     private void MissionButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        missionPanel.SetActive(true);
         StartCoroutine(AnimationMission());
     }
 
     private void PauseButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        pausePanel.SetActive(true);
         StartCoroutine(AnimationPause());
     }
 
     private IEnumerator AnimationMission()
     {
+        missionPanel.SetActive(true);
+
         Time.timeScale = 0f;
         windowMission = true;
         missionPanel.GetComponent<Animator>().SetTrigger("Show");
@@ -195,6 +195,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator AnimationPause()
     {
+        pausePanel.SetActive(true);
+
         Time.timeScale = 0f;
         windowPause = true;
         pausePanel.GetComponent<Animator>().SetTrigger("Show");

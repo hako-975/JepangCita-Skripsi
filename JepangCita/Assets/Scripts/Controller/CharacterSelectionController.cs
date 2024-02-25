@@ -91,22 +91,6 @@ public class CharacterSelectionController : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
-        backButton.gameObject.SetActive(true);
-
-        if (currentGirl)
-        {
-            nameInputField.text = "Fulana";
-            cam.GetComponent<Animator>().SetTrigger("FromGirlToTv");
-        } 
-        else
-        {
-            nameInputField.text = "Fulan";
-            cam.GetComponent<Animator>().SetTrigger("FromBoyToLaptop");
-        }
-
-        leftButton.gameObject.SetActive(false);
-        rightButton.gameObject.SetActive(false);
-        selectCharacterButton.gameObject.SetActive(false);
         StartCoroutine(DelayDisplayForm());
     }
 
@@ -152,6 +136,22 @@ public class CharacterSelectionController : MonoBehaviour
     
     private IEnumerator DelayDisplayForm()
     {
+        backButton.gameObject.SetActive(true);
+
+        if (currentGirl)
+        {
+            nameInputField.text = "Fulana";
+            cam.GetComponent<Animator>().SetTrigger("FromGirlToTv");
+        }
+        else
+        {
+            nameInputField.text = "Fulan";
+            cam.GetComponent<Animator>().SetTrigger("FromBoyToLaptop");
+        }
+
+        leftButton.gameObject.SetActive(false);
+        rightButton.gameObject.SetActive(false);
+        selectCharacterButton.gameObject.SetActive(false);
         yield return new WaitForSeconds(1.1f);
         formInput.SetActive(true);
     }
