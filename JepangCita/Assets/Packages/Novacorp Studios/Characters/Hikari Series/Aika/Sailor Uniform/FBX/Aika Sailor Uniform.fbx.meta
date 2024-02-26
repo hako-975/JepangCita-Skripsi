@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c0205b681ae48a94c8fab219ba979b76
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 20300
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -12,7 +12,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: N00_000_00_Body_00_SKIN (Instance).002
+    second: {fileID: 2100000, guid: 0b6d655ebf27848479a4d69abecaeeeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: N00_000_00_EyeHighlight_00_EYE (Instance)
+    second: {fileID: 2100000, guid: 1b7969c1945b5f849be68609585af382, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_EyeHighlight_00_EYE (Instance).002
     second: {fileID: 2100000, guid: 1b7969c1945b5f849be68609585af382, type: 2}
   - first:
       type: UnityEngine:Material
@@ -22,7 +32,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: N00_000_00_EyeIris_00_EYE (Instance).002
+    second: {fileID: 2100000, guid: 60f2c92a720fbd34480851918892b71a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: N00_000_00_FaceBrow_00_FACE (Instance)
+    second: {fileID: 2100000, guid: ab07fec15b02e9644adb8b9836172ae4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_FaceBrow_00_FACE (Instance).002
     second: {fileID: 2100000, guid: ab07fec15b02e9644adb8b9836172ae4, type: 2}
   - first:
       type: UnityEngine:Material
@@ -32,7 +52,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: N00_000_00_FaceMouth_00_FACE (Instance).002
+    second: {fileID: 2100000, guid: 898e6489768bd8d4cb8fdfba05793c5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: N00_000_00_Face_00_SKIN (Instance)
+    second: {fileID: 2100000, guid: 53e948d1d402476448275ab7ab98a663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_000_00_Face_00_SKIN (Instance).002
     second: {fileID: 2100000, guid: 53e948d1d402476448275ab7ab98a663, type: 2}
   - first:
       type: UnityEngine:Material
@@ -42,12 +72,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: N00_000_00_HairBack_00_HAIR (Instance).002
+    second: {fileID: 2100000, guid: f1adea1007b98db4297ee08004f8bd51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: N00_000_Hair_00_HAIR (Instance)
     second: {fileID: 2100000, guid: 20f58d88b6846c64f92e82a49591680e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: N00_000_Hair_00_HAIR (Instance).002
+    second: {fileID: 2100000, guid: 20f58d88b6846c64f92e82a49591680e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: N00_001_01_Shoes_01_CLOTH (Instance)
+    second: {fileID: 2100000, guid: 41678485c122bca4586a357b9cd78115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: N00_001_01_Shoes_01_CLOTH (Instance).002
     second: {fileID: 2100000, guid: 41678485c122bca4586a357b9cd78115, type: 2}
   - first:
       type: UnityEngine:Texture2D
@@ -104,6 +149,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -113,6 +159,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -607,8 +656,7 @@ ModelImporter:
     - name: J_Sec_L_Bust2
       parentName: Breast_L
       position: {x: -3.7252902e-11, y: 0.00048783596, z: 2.0489097e-10}
-      rotation: {x: 0.00000007792551, y: 0.000000006752089, z: -0.000000019324943,
-        w: 1}
+      rotation: {x: 0.00000007792551, y: 0.000000006752089, z: -0.000000019324943, w: 1}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: J_Sec_L_Bust2_end
       parentName: J_Sec_L_Bust2
@@ -623,8 +671,7 @@ ModelImporter:
     - name: J_Sec_R_Bust2
       parentName: Breast_R
       position: {x: -1.8626451e-11, y: 0.00048783555, z: 0.0000000014621764}
-      rotation: {x: 0.000000060361344, y: -0.0000005753391, z: -0.0000000057043517,
-        w: 1}
+      rotation: {x: 0.000000060361344, y: -0.0000005753391, z: -0.0000000057043517, w: 1}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: J_Sec_R_Bust2_end
       parentName: J_Sec_R_Bust2
@@ -884,8 +931,7 @@ ModelImporter:
     - name: IndexFinger3_L
       parentName: IndexFinger2_L
       position: {x: 6.519258e-11, y: 0.00018476545, z: -4.6929925e-11}
-      rotation: {x: -0.0000000031723177, y: -0.0000000015425031, z: 0.00000012021339,
-        w: 1}
+      rotation: {x: -0.0000000031723177, y: -0.0000000015425031, z: 0.00000012021339, w: 1}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: IndexFinger3_L_end
       parentName: IndexFinger3_L
@@ -900,8 +946,7 @@ ModelImporter:
     - name: LittleFinger2_L
       parentName: LittleFinger1_L
       position: {x: 1.9762503e-12, y: 0.00028362888, z: -1.7002816e-11}
-      rotation: {x: -0.0000000037253094, y: -0.000000011175852, z: 0.0000003246094,
-        w: 1}
+      rotation: {x: -0.0000000037253094, y: -0.000000011175852, z: 0.0000003246094, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: LittleFinger3_L
       parentName: LittleFinger2_L
@@ -941,8 +986,7 @@ ModelImporter:
     - name: RingFinger2_L
       parentName: RingFinger1_L
       position: {x: 1.4830252e-11, y: 0.00031007713, z: -1.2325214e-10}
-      rotation: {x: -0.000000011175903, y: -0.00000001117587, z: 0.00000053575724,
-        w: 1}
+      rotation: {x: -0.000000011175903, y: -0.00000001117587, z: 0.00000053575724, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: RingFinger3_L
       parentName: RingFinger2_L
@@ -967,8 +1011,7 @@ ModelImporter:
     - name: Thumb2_L
       parentName: Thumb1_L
       position: {x: -1.11758706e-10, y: 0.00025896283, z: 5.0524246e-10}
-      rotation: {x: 0.000000003259629, y: 0.000000013969839, z: -0.00000020826701,
-        w: 1}
+      rotation: {x: 0.000000003259629, y: 0.000000013969839, z: -0.00000020826701, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Thumb2_L_end
       parentName: Thumb2_L
@@ -1008,8 +1051,7 @@ ModelImporter:
     - name: IndexFinger3_R
       parentName: IndexFinger2_R
       position: {x: -2.561137e-11, y: 0.00018476664, z: -0.0000000012346573}
-      rotation: {x: -0.0000000034051482, y: -2.9103836e-10, z: -0.00000011982047,
-        w: 1}
+      rotation: {x: -0.0000000034051482, y: -2.9103836e-10, z: -0.00000011982047, w: 1}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: IndexFinger3_R_end
       parentName: IndexFinger3_R
@@ -1024,8 +1066,7 @@ ModelImporter:
     - name: LittleFinger2_R
       parentName: LittleFinger1_R
       position: {x: -4.4636825e-12, y: 0.00028362867, z: 1.7688072e-14}
-      rotation: {x: -0.0000000037253116, y: 0.000000007450579, z: -0.00000021843869,
-        w: 1}
+      rotation: {x: -0.0000000037253116, y: 0.000000007450579, z: -0.00000021843869, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: LittleFinger3_R
       parentName: LittleFinger2_R
@@ -1090,8 +1131,7 @@ ModelImporter:
     - name: Thumb2_R
       parentName: Thumb1_R
       position: {x: 3.9115547e-10, y: 0.0002589626, z: -7.21775e-10}
-      rotation: {x: 0.0000000037252903, y: -0.0000000069849193, z: 0.00000011763768,
-        w: 1}
+      rotation: {x: 0.0000000037252903, y: -0.0000000069849193, z: 0.00000011763768, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Thumb2_R_end
       parentName: Thumb2_R
@@ -1230,6 +1270,8 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
