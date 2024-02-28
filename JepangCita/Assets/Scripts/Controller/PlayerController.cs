@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -34,6 +36,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        string[] separatedData = PlayerPrefsController.instance.GetPositionRotationCharacter().Split(new string[] { "?>?" }, StringSplitOptions.None);
+        
+        Vector3 startPosition = StringToVector3(separatedData[0]);
+        Quaternion startRotation = StringToQuaternion(separatedData[1]);
+
         cam = GameObject.FindGameObjectWithTag("MainCamera"); 
         cc = GetComponent<CharacterController>();
 
@@ -41,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         // set posisi awal karakter
         cc.enabled = false;
-        cc.transform.position = Vector3.up * 0.5f;
+        transform.SetPositionAndRotation(startPosition, startRotation);
         cc.enabled = true;
 
         joystick = FindAnyObjectByType<Joystick>();
@@ -55,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = -2f;
             cc.enabled = false;
-            cc.transform.position = Vector3.up * 0.5f;
+            transform.position = Vector3.up * 0.5f;
             cc.enabled = true;
         }
 
@@ -91,5 +98,29 @@ public class PlayerController : MonoBehaviour
         isWalking = hasHorizontalInput || hasVerticalInput;
 
         animator.SetBool("IsWalking", isWalking);
+
+        PlayerPrefsController.instance.SetPositionRotationCharacter(transform.position, transform.rotation);
+    }
+
+    private Vector3 StringToVector3(string s)
+    {
+        string[] components = s.Trim().Split(',');
+
+        float x = float.Parse(components[0].Trim(), CultureInfo.InvariantCulture);
+        float y = float.Parse(components[1].Trim(), CultureInfo.InvariantCulture);
+        float z = float.Parse(components[2].Trim(), CultureInfo.InvariantCulture);
+
+        return new Vector3(x, y, z);
+    }
+
+    private Quaternion StringToQuaternion(string s)
+    {
+        string[] components = s.Trim().Split(',');
+        float x = float.Parse(components[0].Trim(), CultureInfo.InvariantCulture);
+        float y = float.Parse(components[1].Trim(), CultureInfo.InvariantCulture);
+        float z = float.Parse(components[2].Trim(), CultureInfo.InvariantCulture);
+        float w = float.Parse(components[3].Trim(), CultureInfo.InvariantCulture);
+
+        return new Quaternion(x, y, z, w);
     }
 }

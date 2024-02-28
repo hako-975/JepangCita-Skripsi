@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -28,10 +29,10 @@ public class PlayerPrefsController : MonoBehaviour
         cinemachineFreeLook = FindObjectOfType<CinemachineFreeLook>();
         touchSensitivity = FindObjectOfType<CinemachineCoreInput>();
         
-        float calValueMusic = -50 + GetMusicVolume() / 2;
+        float calValueMusic = -80 + GetMusicVolume() / 1.25f;
         musicMixer.SetFloat("volume", calValueMusic);
         
-        float calValueSound = -50 + GetSoundVolume() / 2;
+        float calValueSound = -80 + GetSoundVolume() / 1.25f;
         soundMixer.SetFloat("volume", calValueSound);
 
         if (cinemachineFreeLook)
@@ -118,6 +119,20 @@ public class PlayerPrefsController : MonoBehaviour
     {
         return PlayerPrefs.HasKey("CharacterSelection");
     }
+
+    public void SetPositionRotationCharacter(Vector3 position, Quaternion rotation)
+    {
+        CultureInfo culture = CultureInfo.InvariantCulture;
+        PlayerPrefs.SetString("PositionRotationCharacter", 
+            position.x.ToString(culture) + ", " + position.y.ToString(culture) + ", " + position.z.ToString(culture) + "?>?" +
+            rotation.x.ToString(culture) + ", " + rotation.y.ToString(culture) + ", " + rotation.z.ToString(culture) + ", " + rotation.w.ToString(culture));
+    }
+
+    public string GetPositionRotationCharacter()
+    {
+        return PlayerPrefs.GetString("PositionRotationCharacter", "0.0, 0.0, 0.0?>?0.0, 0.0, 0.0, 1.0");
+    }
+
     #endregion
 
     #region Settings

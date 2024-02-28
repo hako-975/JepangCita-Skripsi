@@ -86,7 +86,7 @@ public class SettingsController : MonoBehaviour
         textValueZoom.SetText(percentageZoomText);
     }
 
-    public void SetMusicVolume(float musicVolume)
+    private void SetMusicVolume(float musicVolume)
     {
         soundController.PositiveButtonSound(gameObject);
 
@@ -95,7 +95,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
     }
 
-    public void SetSoundVolume(float soundVolume)
+    private void SetSoundVolume(float soundVolume)
     {
         soundController.PositiveButtonSound(gameObject);
 
@@ -104,7 +104,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefsController.instance.SetSoundVolume((int)soundVolume);
     }
 
-    public void SetSensitivityCamera(float sensitivityCamera)
+    private void SetSensitivityCamera(float sensitivityCamera)
     {
         soundController.PositiveButtonSound(gameObject);
 
@@ -112,7 +112,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefsController.instance.SetSensitivityCamera((int)sensitivityCamera);
     }
 
-    public void SetZoomCamera(float zoomCamera)
+    private void SetZoomCamera(float zoomCamera)
     {
         soundController.PositiveButtonSound(gameObject);
 
