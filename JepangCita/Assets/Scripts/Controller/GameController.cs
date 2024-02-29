@@ -74,7 +74,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject playerGirlPrefabs;
 
-    [Header("Mission Text")]
+    [Header("Mission")]
+    [SerializeField]
+    private RectTransform[] rectTransformMissionContent;
     [SerializeField]
     private TextMeshProUGUI[] titleMissionText;
     [SerializeField]
@@ -202,6 +204,10 @@ public class GameController : MonoBehaviour
         windowMission = true;
         missionPanel.GetComponent<Animator>().SetTrigger("Show");
         actionController.DeactiveCanvasAction();
+        for (int i = 0; i < rectTransformMissionContent.Length; i++)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransformMissionContent[i]);
+        }
         yield return null;
     }
 

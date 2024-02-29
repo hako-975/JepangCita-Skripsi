@@ -23050,8 +23050,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 734617711}
   m_HandleRect: {fileID: 734617710}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1.0000085
+  m_Size: 0.990727
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -52902,6 +52902,8 @@ MonoBehaviour:
   actionController: {fileID: 830759845}
   playerBoyPrefabs: {fileID: 9171612238106522598, guid: cd95f498a4c3a4048ba7d1302849796e, type: 3}
   playerGirlPrefabs: {fileID: 3724420680954849088, guid: 799be723d5d00a1478e9ee0d9d4183eb, type: 3}
+  rectTransformMissionContent:
+  - {fileID: 2141103798}
   titleMissionText:
   - {fileID: 1246055402}
   detailMissionText:
