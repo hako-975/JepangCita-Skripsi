@@ -47,8 +47,6 @@ public class GoHomeAction : MonoBehaviour
 
         actionButton.onClick.AddListener(ActionButton);
 
-        player = GameObject.FindGameObjectWithTag("Player");
-
         goHomeButton.onClick.AddListener(GoHomeButton);
         closeButton.onClick.AddListener(CloseButton);
         cancelButton.onClick.AddListener(CloseButton);
@@ -96,6 +94,8 @@ public class GoHomeAction : MonoBehaviour
 
     IEnumerator WaitShowActionButton()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         actionButton.gameObject.SetActive(false);
         canvas.GetComponent<CanvasGroup>().alpha = 0;
         transition.gameObject.SetActive(true);
@@ -107,6 +107,8 @@ public class GoHomeAction : MonoBehaviour
         player.GetComponent<PlayerController>().canMove = true;
         player.GetComponent<CharacterController>().enabled = true;
         PlayerPrefsController.instance.DeleteKey("PositionRotationCharacter");
+        PlayerPrefsController.instance.SetPositionRotationCharacter(new Vector3(-4.5f, 0.5f, 5.5f), new Quaternion(0f, 180f, 0f, 1f));
+
         PlayerPrefsController.instance.SetNextScene("Gameplay");
     }
 

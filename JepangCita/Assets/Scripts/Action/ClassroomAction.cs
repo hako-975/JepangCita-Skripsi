@@ -41,7 +41,6 @@ public class ClassroomAction : MonoBehaviour
 
         classroomCanvas.SetActive(false);
 
-        player = GameObject.FindGameObjectWithTag("Player");
 
         goButton.onClick.AddListener(GoButton);
         closeButton.onClick.AddListener(CloseButton);
@@ -61,6 +60,8 @@ public class ClassroomAction : MonoBehaviour
 
     IEnumerator AnimationGoButton()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         canvas.GetComponent<CanvasGroup>().alpha = 0;
         transition.gameObject.SetActive(true);
         transition.SetTrigger("Close");
@@ -68,7 +69,6 @@ public class ClassroomAction : MonoBehaviour
         player.GetComponent<PlayerController>().canMove = false;
         player.GetComponent<CharacterController>().enabled = false;
         yield return new WaitForSeconds(3f);
-        // go
         player.GetComponent<PlayerController>().canMove = true;
         player.GetComponent<CharacterController>().enabled = true;
         PlayerPrefsController.instance.DeleteKey("PositionRotationCharacter");
@@ -78,10 +78,10 @@ public class ClassroomAction : MonoBehaviour
     private void CloseButton()
     {
         soundController.NegativeButtonSound(gameObject);
-
+        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(AnimationCloseGoPanel());
         player.GetComponent<CharacterController>().enabled = false;
-        player.transform.position = new Vector3(-4.5f, 0.5f, 5f);
+        player.transform.position = new Vector3(-4.5f, 0.5f, 5.5f);
         player.GetComponent<CharacterController>().enabled = true;
         actionController.DeactiveCanvasAction();
     }

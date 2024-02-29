@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -44,6 +45,9 @@ public class GameController : MonoBehaviour
 
     [Header("Panels")]
     [SerializeField]
+    private Animator transitionPanel;
+
+    [SerializeField]
     private GameObject missionPanel;
 
     [SerializeField]
@@ -84,6 +88,8 @@ public class GameController : MonoBehaviour
     {
         Mission();
 
+        PlayerPrefsController.instance.SetLastScene(SceneManager.GetActiveScene().name);
+
         if (PlayerPrefsController.instance.GetCharacterSelection() == "Girl")
         {
             Instantiate(playerGirlPrefabs);
@@ -92,6 +98,8 @@ public class GameController : MonoBehaviour
         {
             Instantiate(playerBoyPrefabs);
         }
+
+        StartCoroutine(StartTransition());
 
         missionButton.onClick.AddListener(MissionButton);
         pauseButton.onClick.AddListener(PauseButton);
@@ -142,6 +150,15 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator StartTransition()
+    {
+        transitionPanel.gameObject.SetActive(true);
+        transitionPanel.SetTrigger("Open");
+
+        yield return new WaitForSeconds(3f);
+        transitionPanel.gameObject.SetActive(false);
     }
 
     private void Mission()

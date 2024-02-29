@@ -82,7 +82,7 @@ public class MainMenuController : MonoBehaviour
 
         if (PlayerPrefsController.instance.IsHasCharacterSelection())
         {
-            PlayerPrefsController.instance.SetNextScene("Gameplay");
+            PlayerPrefsController.instance.SetNextScene(PlayerPrefsController.instance.GetLastScene());
         }
         else
         {

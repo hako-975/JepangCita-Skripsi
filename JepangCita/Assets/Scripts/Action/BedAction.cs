@@ -51,8 +51,6 @@ public class BedAction : MonoBehaviour
 
         actionButton.onClick.AddListener(ActionButton);
 
-        player = GameObject.FindGameObjectWithTag("Player");
-
         sleepButton.onClick.AddListener(SleepButton);
         closeButton.onClick.AddListener(CloseButton);
         cancelButton.onClick.AddListener(CloseButton);
@@ -100,6 +98,8 @@ public class BedAction : MonoBehaviour
 
     IEnumerator WaitShowActionButton()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         actionButton.gameObject.SetActive(false);
         canvas.GetComponent<CanvasGroup>().alpha = 0;
         transition.gameObject.SetActive(true);

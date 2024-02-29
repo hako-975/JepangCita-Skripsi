@@ -146,6 +146,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0fb671384c866cd45b95cc28807e4cf7, type: 3}
   - {fileID: 8300000, guid: 5a9b94070d9b995418325ed73abf14ad, type: 3}
   - {fileID: 8300000, guid: 96c3c2c4af9143f47a47e6ad67f6bfdc, type: 3}
+  - {fileID: 8300000, guid: 3ac0b27e3c8801c4aa9ffaf1931633c5, type: 3}
   musicMixer: {fileID: 24100000, guid: 5a59fef7eb1411b4488bb11e7e261e51, type: 2}
   musicIndex: 0
   updateUI: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
 {
@@ -25,23 +26,34 @@ public class MusicController : MonoBehaviour
         {
             if (musicObj[0].GetComponent<AudioSource>().clip == musicObj[1].GetComponent<AudioSource>().clip)
             {
+                // lanjutin
                 Destroy(musicObj[1]);
             }
             else
             {
-                Destroy(musicObj[0]);
+                // loading scene
+                if (SceneManager.GetActiveScene().buildIndex == 0)
+                {
+                    // lanjutin
+                    Destroy(musicObj[1]);
+                }
+                else
+                {
+                    // ganti
+                    Destroy(musicObj[0]);
+                }
             }
         }
 
         DontDestroyOnLoad(gameObject);
 
-        GetComponent<AudioSource>().volume = 1f;
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.volume = 1f;
     }
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         musicVolume = PlayerPrefsController.instance.GetMusicVolume();
         float calValue = -80 + musicVolume / 1.25f;
         musicMixer.SetFloat("volume", calValue);
@@ -65,9 +77,12 @@ public class MusicController : MonoBehaviour
     {
         if (PlayerPrefsController.instance.GetBoolIsRepeatMusic() == 0)
         {
-            if (audioSource.time >= audioSource.clip.length - 1f)
+            if (audioSource.clip != null)
             {
-                NextMusic();
+                if (audioSource.time >= audioSource.clip.length - 1f)
+                {
+                    NextMusic();
+                }
             }
         }
     }
