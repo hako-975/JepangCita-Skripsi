@@ -45,4 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicMixer: {fileID: 24100000, guid: 5a59fef7eb1411b4488bb11e7e261e51, type: 2}
   soundMixer: {fileID: 24100000, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}
+  missionList:
+  - {fileID: 11400000, guid: ca70df788490e914ea7970000dbe2024, type: 2}
+  - {fileID: 11400000, guid: 171d24de12af57d479cd02455174ceec, type: 2}
+  - {fileID: 11400000, guid: 4cdf3b7c0fef641499a95f11c94062a3, type: 2}
+  - {fileID: 11400000, guid: ebd1c4b76d85cd841be910f6047d2e78, type: 2}
   localeName: id-ID

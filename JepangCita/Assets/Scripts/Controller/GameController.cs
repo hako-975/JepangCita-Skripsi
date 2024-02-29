@@ -79,11 +79,6 @@ public class GameController : MonoBehaviour
     string titleMission;
     string detailMission;
 
-
-    [Header("Mission List")]
-    [SerializeField]
-    private Mission[] missionList;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -153,12 +148,12 @@ public class GameController : MonoBehaviour
     {
         titleMission = "Tidak ada Misi";
         detailMission = "Tidak ada Misi";
-        for (int i = 0; i < missionList.Length; i++)
+        for (int i = 0; i < PlayerPrefsController.instance.missionList.Length; i++)
         {
             if (PlayerPrefsController.instance.GetMission() == i)
             {
-                titleMission = missionList[i].titleMission;
-                detailMission = missionList[i].detailMission;
+                titleMission = PlayerPrefsController.instance.missionList[i].titleMission;
+                detailMission = PlayerPrefsController.instance.missionList[i].detailMission;
                 break;
             }
         }

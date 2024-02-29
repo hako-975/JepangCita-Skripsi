@@ -22,7 +22,10 @@ public class PlayerPrefsController : MonoBehaviour
 
     CinemachineFreeLook cinemachineFreeLook;
     CinemachineCoreInput touchSensitivity;
-    
+
+    [Header("Mission List")]
+    public Mission[] missionList;
+
     // Start is called before the first frame update
     void Start()
     {
