@@ -227,7 +227,7 @@ public class MusicPanel : MonoBehaviour
 
     private void SetMusicVolume(float musicVolume)
     {
-        float calValue = -80 + musicVolume / 1.25f;
+        float calValue = 0.5f * musicVolume - 45f;
         musicController.musicMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
     }

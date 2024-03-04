@@ -90,18 +90,27 @@ public class SettingsController : MonoBehaviour
     {
         soundController.PositiveButtonSound(gameObject);
 
-        float calValue = -80 + musicVolume / 1.25f;
+        float calValue = 0.5f * musicVolume - 45f;
         musicMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetMusicVolume((int)musicVolume);
+
+        if (musicVolume == 0)
+        {
+            musicMixer.SetFloat("volume", -100f);
+        }
     }
 
     private void SetSoundVolume(float soundVolume)
     {
         soundController.PositiveButtonSound(gameObject);
 
-        float calValue = -80 + soundVolume / 1.25f;
+        float calValue = 0.5f * soundVolume - 45f;
         soundMixer.SetFloat("volume", calValue);
         PlayerPrefsController.instance.SetSoundVolume((int)soundVolume);
+        if (soundVolume == 0)
+        {
+            soundMixer.SetFloat("volume", -100f);
+        }
     }
 
     private void SetSensitivityCamera(float sensitivityCamera)

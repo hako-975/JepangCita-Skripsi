@@ -32,11 +32,21 @@ public class PlayerPrefsController : MonoBehaviour
         cinemachineFreeLook = FindObjectOfType<CinemachineFreeLook>();
         touchSensitivity = FindObjectOfType<CinemachineCoreInput>();
         
-        float calValueMusic = -80 + GetMusicVolume() / 1.25f;
+        float calValueMusic = 0.5f * GetMusicVolume() - 45f;
         musicMixer.SetFloat("volume", calValueMusic);
-        
-        float calValueSound = -80 + GetSoundVolume() / 1.25f;
+
+        if (GetMusicVolume() == 0)
+        {
+            musicMixer.SetFloat("volume", -100f);
+        }
+
+        float calValueSound = 0.5f * GetMusicVolume() - 45f;
         soundMixer.SetFloat("volume", calValueSound);
+
+        if (GetSoundVolume() == 0)
+        {
+            soundMixer.SetFloat("volume", -100f);
+        }
 
         if (cinemachineFreeLook)
         {

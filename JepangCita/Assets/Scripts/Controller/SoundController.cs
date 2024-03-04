@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -34,10 +35,13 @@ public class SoundController : MonoBehaviour
     [SerializeField]
     private AudioClip sitSound;
 
+    bool beingHandled = false;
 
     [SerializeField]
-    private AudioMixerGroup soundMixer;
-    
+    private AudioMixerGroup soundMixerGroup;
+    [SerializeField]
+    private AudioMixer soundMixer;
+
     private void AudioSourceComponent(GameObject gameObject, AudioClip audioClip)
     {
         if (gameObject.GetComponent<AudioSource>() == null)
@@ -45,7 +49,7 @@ public class SoundController : MonoBehaviour
             AudioSource audioSourceAdd = gameObject.AddComponent<AudioSource>();
             audioSourceAdd.playOnAwake = false;
             audioSourceAdd.volume = 1f;
-            audioSourceAdd.outputAudioMixerGroup = soundMixer;
+            audioSourceAdd.outputAudioMixerGroup = soundMixerGroup;
         }
 
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
@@ -106,6 +110,37 @@ public class SoundController : MonoBehaviour
     public void FootstepSound(GameObject gameObject)
     {
         AudioSourceComponent(gameObject, footstepSound);
+    }
+
+    public AudioSource WalkSound(GameObject gameObject)
+    {
+        if (gameObject.GetComponent<AudioSource>() == null)
+        {
+            AudioSource audioSourceAdd = gameObject.AddComponent<AudioSource>();
+            audioSourceAdd.playOnAwake = false;
+            audioSourceAdd.volume = 1f;
+            audioSourceAdd.outputAudioMixerGroup = soundMixerGroup;
+        }
+
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = footstepSound;
+        audioSource.volume = Random.Range(0.8f, 1f);
+        audioSource.pitch = Random.Range(0.8f, 1.1f);
+
+        if (!beingHandled)
+        {
+            StartCoroutine(DelayWalkSound(audioSource));
+        }
+
+        return audioSource;
+    }
+
+    IEnumerator DelayWalkSound(AudioSource audioSource)
+    {
+        beingHandled = true;
+        yield return new WaitForSeconds(0.5f);
+        audioSource.Play();
+        beingHandled = false;
     }
 
     public void SitSound(GameObject gameObject)

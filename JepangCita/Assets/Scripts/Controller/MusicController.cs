@@ -55,8 +55,12 @@ public class MusicController : MonoBehaviour
     void Start()
     {
         musicVolume = PlayerPrefsController.instance.GetMusicVolume();
-        float calValue = -80 + musicVolume / 1.25f;
+        float calValue = 0.5f * musicVolume - 45f;
         musicMixer.SetFloat("volume", calValue);
+        if (musicVolume == 0)
+        {
+            musicMixer.SetFloat("volume", -100f);
+        }
 
         if (!audioSource.isPlaying)
         {

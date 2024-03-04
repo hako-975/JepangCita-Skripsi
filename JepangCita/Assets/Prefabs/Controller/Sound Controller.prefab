@@ -55,4 +55,5 @@ MonoBehaviour:
   shutdownSound: {fileID: 8300000, guid: 9d37cc1f6edfd914f9a53ecee1e9cdeb, type: 3}
   footstepSound: {fileID: 8300000, guid: 21ab54d0102549e428c706b6bdea6751, type: 3}
   sitSound: {fileID: 8300000, guid: 0a21f4b02053cac4c871c58fe76a4d65, type: 3}
-  soundMixer: {fileID: 24300002, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}
+  soundMixerGroup: {fileID: 24300002, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}
+  soundMixer: {fileID: 24100000, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}

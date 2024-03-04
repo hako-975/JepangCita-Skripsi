@@ -33,9 +33,13 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
+    SoundController soundController;
+
     // Start is called before the first frame update
     void Start()
     {
+        soundController = FindFirstObjectByType<SoundController>();
+
         string[] separatedData = PlayerPrefsController.instance.GetPositionRotationCharacter().Split(new string[] { "?>?" }, StringSplitOptions.None);
         
         Vector3 startPosition = StringToVector3(separatedData[0]);
@@ -98,6 +102,10 @@ public class PlayerController : MonoBehaviour
         isWalking = hasHorizontalInput || hasVerticalInput;
 
         animator.SetBool("IsWalking", isWalking);
+        if (isWalking && soundController.WalkSound(gameObject).isPlaying == false)
+        {
+            soundController.WalkSound(gameObject);
+        }
 
         PlayerPrefsController.instance.SetPositionRotationCharacter(transform.position, transform.rotation);
     }
