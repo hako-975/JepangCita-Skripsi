@@ -158,9 +158,8 @@ public class GameController : MonoBehaviour
     {
         transitionPanel.gameObject.SetActive(true);
         transitionPanel.SetTrigger("Open");
-
         yield return new WaitForSeconds(3f);
-        transitionPanel.gameObject.SetActive(false);
+        transitionPanel.SetTrigger("Idle");
     }
 
     private void Mission()

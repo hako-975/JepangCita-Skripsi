@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2483685999063698019}
   - component: {fileID: 8386664973217228555}
   - component: {fileID: 5420474824328591165}
+  - component: {fileID: 3227509175384678772}
   m_Layer: 0
   m_Name: Cabinet_Wall_SD_01
   m_TagString: Untagged
@@ -163,6 +164,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3227509175384678772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743020621460257955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5749539, y: 1.1790826, z: 0.8873081}
+  m_Center: {x: 0.28747642, y: -0.000000029802322, z: -0.025406092}
 --- !u!1 &7480602527256307360
 GameObject:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ public class CharacterSelectionController : MonoBehaviour
         }
 
         transition.GetComponent<Animator>().SetTrigger("Show");
-        PlayerPrefsController.instance.SetNextScene("Gameplay");
+        PlayerPrefsController.instance.SetNextScene("Home");
     }
     
     private IEnumerator DelayDisplayForm()

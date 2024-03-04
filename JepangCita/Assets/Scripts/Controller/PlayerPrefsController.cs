@@ -85,7 +85,7 @@ public class PlayerPrefsController : MonoBehaviour
     #region Scene
     public string GetLastScene()
     {
-        return PlayerPrefs.GetString("LastScene", "Gameplay");
+        return PlayerPrefs.GetString("LastScene", "Home");
     }
 
     public string SetLastScene(string lastScene)

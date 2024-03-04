@@ -109,7 +109,7 @@ public class GoHomeAction : MonoBehaviour
         PlayerPrefsController.instance.DeleteKey("PositionRotationCharacter");
         PlayerPrefsController.instance.SetPositionRotationCharacter(new Vector3(-4.5f, 0.5f, 5.5f), new Quaternion(0f, 180f, 0f, 1f));
 
-        PlayerPrefsController.instance.SetNextScene("Gameplay");
+        PlayerPrefsController.instance.SetNextScene("Home");
     }
 
     private void OnTriggerEnter(Collider other)

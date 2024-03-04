@@ -13,11 +13,17 @@ public class ActionController : MonoBehaviour
     [HideInInspector]
     public bool deskIsActive = false;
 
+    [HideInInspector]
+    public bool isMiddleClass = false;
+
     public void ActiveCanvasAction()
     {
         if (canvasTrigger != null)
         {
-            canvasTrigger.SetActive(isTriggerEntered);
+            if (isMiddleClass == false)
+            {
+                canvasTrigger.SetActive(isTriggerEntered);
+            }
         }
     }
 

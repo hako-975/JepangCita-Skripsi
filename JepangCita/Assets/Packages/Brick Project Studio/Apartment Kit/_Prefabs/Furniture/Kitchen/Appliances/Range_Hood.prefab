@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 8282356357707883408}
   - component: {fileID: 6651193651640472653}
   - component: {fileID: 3244658251225968554}
+  - component: {fileID: 7934945200529187736}
   m_Layer: 0
   m_Name: Range_Hood
   m_TagString: Untagged
@@ -327,3 +328,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7934945200529187736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487948052559295814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78526455, y: 0.21503429, z: 1.1198168}
+  m_Center: {x: 0.10691565, y: -0.10751694, z: 0.00000008940697}
