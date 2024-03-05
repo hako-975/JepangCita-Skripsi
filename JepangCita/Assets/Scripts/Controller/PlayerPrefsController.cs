@@ -72,7 +72,6 @@ public class PlayerPrefsController : MonoBehaviour
         {
             // ubah misi saat ini menjadi misi
             PlayerPrefs.SetInt("Mission", missionTo+1);
-            Debug.Log(GetMission());
             SetUpdateMission(1);
             soundController.MissionSucceedSound(gameObject);
         }
@@ -465,6 +464,35 @@ public class PlayerPrefsController : MonoBehaviour
     public string GetAttendance(string date)
     {
         return PlayerPrefs.GetString("Attendance" + date);
+    }
+    #endregion
+
+    #region MateriClassroom
+    public string[] listMateri = new string[] 
+    { 
+        "Huruf Hiragana",
+        "Huruf Katakana",
+        "Angka",
+        "Waktu",
+        "Kata Ganti",
+        "Kata Benda",
+        "Kata Kerja",
+        "Kata Sifat",
+        "Kata Keterangan",
+        "Kata Tanya",
+        "Kata Hubung",
+        "Kata Seru",
+        "Perkenalan Diri"
+    };
+
+    public void SetCurrentMateri(int indexMateri)
+    {
+        PlayerPrefs.SetInt("CurrentMateri", indexMateri);
+    }
+
+    public int GetCurrentMateri()
+    {
+        return PlayerPrefs.GetInt("CurrentMateri", 0);
     }
     #endregion
 

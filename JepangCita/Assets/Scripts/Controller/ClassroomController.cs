@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -32,16 +32,21 @@ public class ClassroomController : MonoBehaviour
     private CinemachineFreeLook cinemachine;
 
     private bool isDialogPlayed = false;
-    bool isFinishedTyping = false;
+    private bool isDialogPlayedEndClass = false;
+    private bool isFinishedTyping = false;
+    private bool isStartedClass = false;
 
     [SerializeField]
     private ActionController actionController;
     [SerializeField]
     private GameObject joystick;
+    [SerializeField]
+    private TextMeshPro boardText;
 
     // Start is called before the first frame update
     void Start()
     {
+        isStartedClass = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         cinemachine = player.GetComponentInChildren<CinemachineFreeLook>();
@@ -79,63 +84,145 @@ public class ClassroomController : MonoBehaviour
 
             string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
             formattedDate = date.ToString("dd/MM/yyyy");
-            
-            // senin, jam 9 - jam 12
-            if (dayName == "Senin" || dayName == "Rabu")
+
+            StartClassroom(dayName);
+        }
+    }
+
+    private void StartClassroom(string currentDay)
+    {
+        // senin dan rabu, jam 9 - jam 12
+        if (currentDay == "Senin" || currentDay == "Rabu")
+        {
+            // set npc
+            if (PlayerPrefsController.instance.GetHour() >= 8)
             {
-                // set npc
-                if (PlayerPrefsController.instance.GetHour() >= 8)
+                //blm bikin npcGameObject.SetActive(true);
+            }
+
+            // mulai kelas
+            if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
+            {
+                // Hadir
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
+            }
+            else if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetMinute() > 5)
+            {
+                // Terlambat
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
+            }
+            else if (PlayerPrefsController.instance.GetHour() >= 12)
+            {
+                // bolos
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+            }
+
+            // silahkan duduk untuk memulai kelas jam 9 - jam 12
+            if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetHour() <= 12)
+            {
+                // dialog panel
+                if (isDialogPlayed == false)
                 {
-                    //blm bikin npcGameObject.SetActive(true);
+                    isDialogPlayed = true;
+                    StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
                 }
 
-                // mulai kelas
-                if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
+                // if duduk
+                if (playerController.canMove == false)
                 {
-                    // Hadir
-                    PlayerPrefsController.instance.SetAttendance(dayName, formattedDate, "Hadir");
-                }
-                else if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetMinute() > 5)
-                {
-                    // Terlambat
-                    PlayerPrefsController.instance.SetAttendance(dayName, formattedDate, "Terlambat");
-                }
-                else if (PlayerPrefsController.instance.GetHour() >= 12)
-                {
-                    // bolos
-                    PlayerPrefsController.instance.SetAttendance(dayName, formattedDate, "Bolos");
-                }
-
-                // silahkan duduk untuk memulai kelas
-                if (PlayerPrefsController.instance.GetHour() >= 9)
-                {
-                    // dialog panel
-                    if (isDialogPlayed == false)
+                    if (isStartedClass == false)
                     {
-                        isDialogPlayed = true;
-                        StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas."));
+                        isStartedClass = true;
+                        StartCoroutine(CloseTransitionAndStartClass(9));
                     }
+                }
+            }
 
-                    // if duduk
-                    if (playerController.canMove == false)
+            // jam pulang
+            if (PlayerPrefsController.instance.GetHour() == 12)
+            {
+                isHasClass = false;
+                if (isDialogPlayedEndClass == false)
+                {
+                    isDialogPlayedEndClass = true;
+                    StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
+                }
+            }
+        }
+
+        // selasa dan kamis, jam 13 - jam 16
+        if (currentDay == "Selasa" || currentDay == "Kamis")
+        {
+            // set npc
+            if (PlayerPrefsController.instance.GetHour() >= 12)
+            {
+                //blm bikin npcGameObject.SetActive(true);
+            }
+
+            // mulai kelas
+            if (PlayerPrefsController.instance.GetHour() == 13 && PlayerPrefsController.instance.GetMinute() == 0)
+            {
+                // Hadir
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
+            }
+            else if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetMinute() > 5)
+            {
+                // Terlambat
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
+            }
+            else if (PlayerPrefsController.instance.GetHour() >= 16)
+            {
+                // bolos
+                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+            }
+
+            // silahkan duduk untuk memulai kelas jam 13 - jam 16
+            if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() <= 16)
+            {
+                // dialog panel
+                if (isDialogPlayed == false)
+                {
+                    isDialogPlayed = true;
+                    StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
+                }
+
+                // if duduk
+                if (playerController.canMove == false)
+                {
+                    if (isStartedClass == false)
                     {
-                        StartCoroutine(CloseTransitionAndStartClass());
-                        isHasClass = false;
+                        isStartedClass = true;
+                        StartCoroutine(CloseTransitionAndStartClass(13));
                     }
+                }
+            }
+
+            // jam pulang
+            if (PlayerPrefsController.instance.GetHour() == 16)
+            {
+                isHasClass = false;
+
+                if (isDialogPlayedEndClass == false)
+                {
+                    isDialogPlayedEndClass = true;
+                    StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
                 }
             }
         }
     }
 
-    IEnumerator OpenDialogPanel(string nameText, string sentenceText)
+    IEnumerator OpenDialogPanel(string nameText, string sentenceText, bool autoClose, bool goHome)
     {
         dialogPanel.gameObject.SetActive(true);
+        dialogNameText.text = "";
+        dialogSentenceText.text = "";
         dialogPanel.SetTrigger("Show");
         yield return new WaitForSeconds(1f);
         dialogNameText.text = nameText;
         dialogSentenceText.text = "";
 
         int wordIndex = 0;
+        isFinishedTyping = false;
 
         while (isFinishedTyping == false)
         {
@@ -148,9 +235,32 @@ public class ClassroomController : MonoBehaviour
                 break;
             }
         }
+
+        if (autoClose)
+        {
+            yield return new WaitForSeconds(2f);
+
+            if (isFinishedTyping)
+            {
+                dialogPanel.SetTrigger("Hide");
+            }
+        }
+
+        if (goHome)
+        {
+            yield return new WaitForSeconds(2f);
+
+            transitionPanel.SetTrigger("Close");
+            yield return new WaitForSeconds(3f);
+
+            PlayerPrefsController.instance.DeleteKey("PositionRotationCharacter");
+            PlayerPrefsController.instance.SetPositionRotationCharacter(new Vector3(-4.5f, 0.5f, 5.5f), new Quaternion(0f, 180f, 0f, 1f));
+
+            PlayerPrefsController.instance.SetNextScene("Home");
+        }
     }
 
-    IEnumerator CloseTransitionAndStartClass()
+    IEnumerator CloseTransitionAndStartClass(int startHourClass)
     {
         dialogPanel.SetTrigger("Hide");
 
@@ -178,6 +288,21 @@ public class ClassroomController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         transitionPanel.SetTrigger("Open");
+        
+        string ucapan = "こんにちは みなさん！";
+        
+        if (startHourClass == 9)
+        {
+            ucapan = "おはようございます。";
+        }
+
+        StartCoroutine(OpenDialogPanel("Sensei", ucapan + " hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()], true, false));
+
+        yield return new WaitForSeconds(1f);
+        // board
+        boardText.text = "Kalian bisa melanjutkan materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
+        // update materi
+        PlayerPrefsController.instance.SetCurrentMateri(PlayerPrefsController.instance.GetCurrentMateri() + 1);
     }
 
 }
