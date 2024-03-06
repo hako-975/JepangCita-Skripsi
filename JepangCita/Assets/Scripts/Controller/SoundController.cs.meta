@@ -14,8 +14,11 @@ MonoImporter:
   - openSound: {fileID: 8300000, guid: 53a62cc0c102f79479c9ea77473277c5, type: 3}
   - closeSound: {fileID: 8300000, guid: 2cd18c9df7cd3e640a717d575adc26ce, type: 3}
   - shutdownSound: {fileID: 8300000, guid: 9d37cc1f6edfd914f9a53ecee1e9cdeb, type: 3}
+  - schoolBellSound: {fileID: 8300000, guid: 97f375a1cb63557408b6b335c60a323f, type: 3}
+  - roosterCrowingSound: {fileID: 8300000, guid: cad8f8fb9c2b66e448263ae9948f2543, type: 3}
   - footstepSound: {fileID: 8300000, guid: 21ab54d0102549e428c706b6bdea6751, type: 3}
   - sitSound: {fileID: 8300000, guid: 0a21f4b02053cac4c871c58fe76a4d65, type: 3}
+  - soundMixerGroup: {instanceID: 0}
   - soundMixer: {fileID: 24300002, guid: 22f86d7e9408bc14aa19fd34c500e137, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

@@ -6,6 +6,9 @@ using Cinemachine;
 
 public class ClassroomController : MonoBehaviour
 {
+    [SerializeField]
+    private SoundController soundController;
+
     private bool isHasClass = false;
 
     private int gameDay;
@@ -31,6 +34,7 @@ public class ClassroomController : MonoBehaviour
     private PlayerController playerController;
     private CinemachineFreeLook cinemachine;
 
+    private bool isAttended = false;
     private bool isDialogPlayed = false;
     private bool isDialogPlayedEndClass = false;
     private bool isFinishedTyping = false;
@@ -100,21 +104,28 @@ public class ClassroomController : MonoBehaviour
                 //blm bikin npcGameObject.SetActive(true);
             }
 
-            // mulai kelas
-            if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
+            if (isAttended == false)
             {
-                // Hadir
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
-            }
-            else if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetMinute() > 5)
-            {
-                // Terlambat
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
-            }
-            else if (PlayerPrefsController.instance.GetHour() >= 12)
-            {
-                // bolos
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+                // mulai kelas
+                if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
+                {
+                    soundController.SchoolBellSound(gameObject);
+                    // Hadir
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
+                    isAttended = true;
+                }
+                else if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetMinute() > 25)
+                {
+                    // Terlambat
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
+                    isAttended = true;
+                }
+                else if (PlayerPrefsController.instance.GetHour() >= 12)
+                {
+                    // Bolos
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+                    isAttended = true;
+                }
             }
 
             // silahkan duduk untuk memulai kelas jam 9 - jam 12
@@ -133,6 +144,8 @@ public class ClassroomController : MonoBehaviour
                     if (isStartedClass == false)
                     {
                         isStartedClass = true;
+                        // misi keempat
+                        PlayerPrefsController.instance.SetMission(3, soundController);
                         StartCoroutine(CloseTransitionAndStartClass(9));
                     }
                 }
@@ -144,8 +157,11 @@ public class ClassroomController : MonoBehaviour
                 isHasClass = false;
                 if (isDialogPlayedEndClass == false)
                 {
+                    soundController.SchoolBellSound(gameObject);
                     isDialogPlayedEndClass = true;
                     StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
+                    // board end
+                    boardText.text = "Kalian bisa melanjutkan pembelajaran materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
                 }
             }
         }
@@ -159,25 +175,33 @@ public class ClassroomController : MonoBehaviour
                 //blm bikin npcGameObject.SetActive(true);
             }
 
-            // mulai kelas
-            if (PlayerPrefsController.instance.GetHour() == 13 && PlayerPrefsController.instance.GetMinute() == 0)
-            {
-                // Hadir
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
-            }
-            else if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetMinute() > 5)
-            {
-                // Terlambat
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
-            }
-            else if (PlayerPrefsController.instance.GetHour() >= 16)
-            {
-                // bolos
-                PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+            if (isAttended == false) 
+            { 
+                // mulai kelas
+                if (PlayerPrefsController.instance.GetHour() == 13 && PlayerPrefsController.instance.GetMinute() == 0)
+                {
+                    soundController.SchoolBellSound(gameObject);
+
+                    // Hadir
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
+                    isAttended = true;
+                }
+                else if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetMinute() > 25)
+                {
+                    // Terlambat
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
+                    isAttended = true;
+                }
+                else if (PlayerPrefsController.instance.GetHour() >= 16)
+                {
+                    // Bolos
+                    PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Bolos");
+                    isAttended = true;
+                }
             }
 
-            // silahkan duduk untuk memulai kelas jam 13 - jam 16
-            if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() <= 16)
+        // silahkan duduk untuk memulai kelas jam 13 - jam 16
+        if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() <= 16)
             {
                 // dialog panel
                 if (isDialogPlayed == false)
@@ -192,6 +216,8 @@ public class ClassroomController : MonoBehaviour
                     if (isStartedClass == false)
                     {
                         isStartedClass = true;
+                        // misi keempat
+                        PlayerPrefsController.instance.SetMission(3, soundController);
                         StartCoroutine(CloseTransitionAndStartClass(13));
                     }
                 }
@@ -204,8 +230,11 @@ public class ClassroomController : MonoBehaviour
 
                 if (isDialogPlayedEndClass == false)
                 {
+                    soundController.SchoolBellSound(gameObject);
+
                     isDialogPlayedEndClass = true;
                     StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
+                    boardText.text = "Kalian bisa melanjutkan pembelajaran materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
                 }
             }
         }
@@ -248,7 +277,7 @@ public class ClassroomController : MonoBehaviour
 
         if (goHome)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
 
             transitionPanel.SetTrigger("Close");
             yield return new WaitForSeconds(3f);
@@ -276,7 +305,6 @@ public class ClassroomController : MonoBehaviour
         cinemachine.m_Orbits[1].m_Height = 1.35f;
         cinemachine.m_Orbits[1].m_Radius = 1.5f;
 
-
         cinemachine.GetRig(0).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.y = 1f;
         cinemachine.GetRig(0).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.z = 0.5f;
 
@@ -298,11 +326,11 @@ public class ClassroomController : MonoBehaviour
 
         StartCoroutine(OpenDialogPanel("Sensei", ucapan + " hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()], true, false));
 
-        yield return new WaitForSeconds(1f);
-        // board
-        boardText.text = "Kalian bisa melanjutkan materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
+        // board start
+        boardText.text = "Huruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar あ (a) sampai ん (n), 20 huruf teng-teng (\") yang disebut dengan Dakuon, 5 huruf maru(o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi ゃ(ya) -ゅ(yu) - ょ(yo) kecil yang disebut dengan Youon. \n Hiragana merupakan salah satu dari dua aksara Jepang yang berperan dalam menulis kata - kata asli Jepang, partikel, dan akhiran kata. Digunakan untuk membaca dan menyusun kalimat, Hiragana juga dipakai dalam penulisan nama pribadi dan tempat yang tidak memiliki karakter Kanji khusus. Sebagai bagian dari sistem penulisan Jepang yang kompleks, bersama dengan Katakana dan Kanji, Hiragana memainkan peran penting dalam memberikan ekspresi dan fleksibilitas dalam penulisan bahasa Jepang.";
+
         // update materi
-        PlayerPrefsController.instance.SetCurrentMateri(PlayerPrefsController.instance.GetCurrentMateri() + 1);
+        //PlayerPrefsController.instance.SetCurrentMateri(PlayerPrefsController.instance.GetCurrentMateri() + 1);
     }
 
 }

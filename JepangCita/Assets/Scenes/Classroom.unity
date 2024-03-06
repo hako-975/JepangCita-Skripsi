@@ -23326,8 +23326,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 734617711}
   m_HandleRect: {fileID: 734617710}
   m_Direction: 2
-  m_Value: 1.0000008
-  m_Size: 0.89848363
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -54150,6 +54150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47ffc32d30d8284c9a3df94108be4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundController: {fileID: 1106472377}
   transitionPanel: {fileID: 336882141}
   dialogPanel: {fileID: 1464628438}
   dialogNameText: {fileID: 750955998}

@@ -218,6 +218,17 @@ public class PlayerPrefsController : MonoBehaviour
     #region Calendar
     public string localeName = "id-ID";
 
+    public int GetTotalDay()
+    {
+        return PlayerPrefs.GetInt("TotalDay", 1);
+    }
+
+    public int SetTotalDay(int day)
+    {
+        PlayerPrefs.SetInt("TotalDay", day);
+        return GetTotalDay();
+    }
+
     public int GetDateDay()
     {
         return PlayerPrefs.GetInt("DateDay", 1);
@@ -250,8 +261,7 @@ public class PlayerPrefsController : MonoBehaviour
     {
         return PlayerPrefs.GetInt("DateYear", 2023);
     }
-
-   
+    
     public int GetHour()
     {
         return PlayerPrefs.GetInt("Hour", 6);
@@ -457,13 +467,13 @@ public class PlayerPrefsController : MonoBehaviour
     #region Attendance
     public void SetAttendance(string day, string date, string attendance)
     {
-        // attendance = hadir, bolos
+        // attendance = hadir, Bolos
         PlayerPrefs.SetString("Attendance" + date, day + "?>?" + date + "?>?" + attendance);
     }
 
     public string GetAttendance(string date)
     {
-        return PlayerPrefs.GetString("Attendance" + date);
+        return PlayerPrefs.GetString("Attendance" + date, "-" + "?>?" + "-" + "?>?" + "-");
     }
     #endregion
 

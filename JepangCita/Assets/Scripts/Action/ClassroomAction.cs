@@ -51,9 +51,6 @@ public class ClassroomAction : MonoBehaviour
     private void GoButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        // misi keempat
-        PlayerPrefsController.instance.SetMission(3, soundController);
-
         StartCoroutine(AnimationCloseGoPanel());
         StartCoroutine(AnimationGoButton());
     }

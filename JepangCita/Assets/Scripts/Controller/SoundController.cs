@@ -28,6 +28,10 @@ public class SoundController : MonoBehaviour
     private AudioClip closeSound;
     [SerializeField]
     private AudioClip shutdownSound;
+    [SerializeField]
+    private AudioClip schoolBellSound;
+    [SerializeField]
+    private AudioClip roosterCrowingSound;
 
     [Header("Human")]
     [SerializeField]
@@ -105,6 +109,16 @@ public class SoundController : MonoBehaviour
     public void ShutdownSound(GameObject gameObject)
     {
         AudioSourceComponent(gameObject, shutdownSound);
+    }
+
+    public void SchoolBellSound(GameObject gameObject)
+    {
+        AudioSourceComponent(gameObject, schoolBellSound);
+    }
+
+    public void RoosterCrowingSound(GameObject gameObject)
+    {
+        AudioSourceComponent(gameObject, roosterCrowingSound);
     }
 
     public void FootstepSound(GameObject gameObject)

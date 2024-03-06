@@ -66,7 +66,6 @@ public class DateTimeController : MonoBehaviour
                     gameHour = 0;
                     gameDay++;
 
-
                     // Check if the day exceeds 31
                     if (gameDay > DateTime.DaysInMonth(gameYear, gameMonth))
                     {

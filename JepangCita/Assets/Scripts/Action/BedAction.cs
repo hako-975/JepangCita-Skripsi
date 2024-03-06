@@ -108,6 +108,7 @@ public class BedAction : MonoBehaviour
         player.GetComponent<PlayerController>().canMove = false;
         player.GetComponent<CharacterController>().enabled = false;
         yield return new WaitForSeconds(3f);
+        soundController.RoosterCrowingSound(gameObject);
         ChangeDate();
         player.GetComponentInChildren<Animator>().SetTrigger("IsYawning");
 

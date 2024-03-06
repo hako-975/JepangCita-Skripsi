@@ -23,35 +23,13 @@ public class JadwalPanel : MonoBehaviour
     [SerializeField]
     private Sprite transparentIcon;
 
-    string formattedDate;
-    int gameDay;
-    int gameMonth;
-    int gameYear;
-
-    int tempDay;
-
     // Start is called before the first frame update
     void Start()
     {
-        gameDay = PlayerPrefsController.instance.GetDateDay();
-        gameMonth = PlayerPrefsController.instance.GetDateMonth();
-        gameYear = PlayerPrefsController.instance.GetDateYear();
-        
-        tempDay = PlayerPrefsController.instance.GetDateDay();
-
         RefreshTable();
     }
 
-    private void Update()
-    {
-        if (tempDay != PlayerPrefsController.instance.GetDateDay())
-        {
-            RefreshTable();
-            tempDay = PlayerPrefsController.instance.GetDateDay();
-        }
-    }
-
-    void RefreshTable()
+    private void RefreshTable()
     {
         // Clear existing table rows
         foreach (Transform child in tabelKehadiran.transform)
@@ -62,16 +40,25 @@ public class JadwalPanel : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < PlayerPrefsController.instance.GetDateDay(); i++)
+        DateTime startDate = new DateTime(2023, 1, 1);
+
+        for (int i = 0; i < 5; i++)
         {
-            DateTime date = new DateTime(gameYear, gameMonth, gameDay);
+            DateTime date = startDate.AddDays(i); // Increment the date by i days
+
+            // Check if the current date is valid
+            while (date.Day > DateTime.DaysInMonth(date.Year, date.Month))
+            {
+                date = date.AddMonths(1); // Increment the month
+                date = new DateTime(date.Year, date.Month, 1); // Reset the day to 1
+            }
+
             string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
 
             // Check if it's Monday, Tuesday, Wednesday, or Thursday
             if (dayName == "Senin" || dayName == "Selasa" || dayName == "Rabu" || dayName == "Kamis")
             {
-                formattedDate = date.ToString("dd/MM/yyyy");
-                PlayerPrefsController.instance.SetAttendance(dayName, formattedDate, "-");
+                string formattedDate = date.ToString("dd/MM/yyyy");
 
                 // Instantiate row
                 GameObject rowKehadiranInstantiate = Instantiate(kehadiranPrefabs, tabelKehadiran.transform);
@@ -80,12 +67,12 @@ public class JadwalPanel : MonoBehaviour
 
                 rowKehadiran.hariText.text = separatedData[0];
                 rowKehadiran.tanggalText.text = separatedData[1];
-                if (separatedData[2] == "hadir")
+                if (separatedData[2] == "Hadir")
                 {
                     rowKehadiran.kehadiranImage.sprite = checkIcon;
                     rowKehadiran.kehadiranImage.color = new Color(0.5882352941176471f, 0.788235294117647f, 0.06274509803921569f);
                 }
-                else if (separatedData[2] == "bolos")
+                else if (separatedData[2] == "Bolos")
                 {
                     rowKehadiran.kehadiranImage.sprite = crossIcon;
                     rowKehadiran.kehadiranImage.color = new Color(0.9607843137254902f, 0.2627450980392157f, 0.3254901960784314f);
@@ -97,28 +84,9 @@ public class JadwalPanel : MonoBehaviour
 
                 rowKehadiran.keteranganText.text = separatedData[2];
             }
-
-            IncreaseDay();
         }
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(content.GetComponent<RectTransform>());
     }
 
-
-    private void IncreaseDay()
-    {
-        gameDay++;
-
-        if (gameDay > DateTime.DaysInMonth(gameYear, gameMonth))
-        {
-            gameDay = 1;
-            gameMonth++;
-            // Check if the month exceeds 12
-            if (gameMonth > 12)
-            {
-                gameMonth = 1;
-                gameYear++;
-            }
-        }
-    }
 }
