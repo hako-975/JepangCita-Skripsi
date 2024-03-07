@@ -85,13 +85,8 @@ public class GameController : MonoBehaviour
     string titleMission;
     string detailMission;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Mission();
-
-        PlayerPrefsController.instance.SetLastScene(SceneManager.GetActiveScene().name);
-
         if (PlayerPrefsController.instance.GetCharacterSelection() == "Girl")
         {
             Instantiate(playerGirlPrefabs);
@@ -100,6 +95,14 @@ public class GameController : MonoBehaviour
         {
             Instantiate(playerBoyPrefabs);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Mission();
+
+        PlayerPrefsController.instance.SetLastScene(SceneManager.GetActiveScene().name);
 
         StartCoroutine(StartTransition());
 

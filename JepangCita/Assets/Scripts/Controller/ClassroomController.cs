@@ -47,6 +47,14 @@ public class ClassroomController : MonoBehaviour
     [SerializeField]
     private TextMeshPro boardText;
 
+    private string currentText = "";
+
+    private readonly float typingSpeed = 0.05f;
+
+    [Header("Materi")]
+    public Materi[] materiList;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,28 +139,32 @@ public class ClassroomController : MonoBehaviour
             // silahkan duduk untuk memulai kelas jam 9 - jam 12
             if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetHour() <= 12)
             {
-                // dialog panel
-                if (isDialogPlayed == false)
+                if (PlayerPrefsController.instance.GetHour() <= 12 && PlayerPrefsController.instance.GetMinute() <= 59)
                 {
-                    isDialogPlayed = true;
-                    StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
-                }
 
-                // if duduk
-                if (playerController.canMove == false)
-                {
-                    if (isStartedClass == false)
+                    // dialog panel
+                    if (isDialogPlayed == false)
                     {
-                        isStartedClass = true;
-                        // misi keempat
-                        PlayerPrefsController.instance.SetMission(3, soundController);
-                        StartCoroutine(CloseTransitionAndStartClass(9));
+                        isDialogPlayed = true;
+                        StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
+                    }
+
+                    // if duduk
+                    if (playerController.canMove == false)
+                    {
+                        if (isStartedClass == false)
+                        {
+                            isStartedClass = true;
+                            // misi keempat
+                            PlayerPrefsController.instance.SetMission(3, soundController);
+                            StartCoroutine(CloseTransitionAndStartClass(9));
+                        }
                     }
                 }
             }
 
             // jam pulang
-            if (PlayerPrefsController.instance.GetHour() == 12)
+            if (PlayerPrefsController.instance.GetHour() == 12 && PlayerPrefsController.instance.GetMinute() <= 10)
             {
                 isHasClass = false;
                 if (isDialogPlayedEndClass == false)
@@ -160,8 +172,6 @@ public class ClassroomController : MonoBehaviour
                     soundController.SchoolBellSound(gameObject);
                     isDialogPlayedEndClass = true;
                     StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
-                    // board end
-                    boardText.text = "Kalian bisa melanjutkan pembelajaran materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
                 }
             }
         }
@@ -203,28 +213,31 @@ public class ClassroomController : MonoBehaviour
         // silahkan duduk untuk memulai kelas jam 13 - jam 16
         if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() <= 16)
             {
-                // dialog panel
-                if (isDialogPlayed == false)
+                if (PlayerPrefsController.instance.GetHour() <= 16 && PlayerPrefsController.instance.GetMinute() <= 59)
                 {
-                    isDialogPlayed = true;
-                    StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
-                }
-
-                // if duduk
-                if (playerController.canMove == false)
-                {
-                    if (isStartedClass == false)
+                    // dialog panel
+                    if (isDialogPlayed == false)
                     {
-                        isStartedClass = true;
-                        // misi keempat
-                        PlayerPrefsController.instance.SetMission(3, soundController);
-                        StartCoroutine(CloseTransitionAndStartClass(13));
+                        isDialogPlayed = true;
+                        StartCoroutine(OpenDialogPanel("Sensei", PlayerPrefsController.instance.GetCharacterName() + ", silahkan duduk untuk memulai kelas.", false, false));
+                    }
+
+                    // if duduk
+                    if (playerController.canMove == false)
+                    {
+                        if (isStartedClass == false)
+                        {
+                            isStartedClass = true;
+                            // misi keempat
+                            PlayerPrefsController.instance.SetMission(3, soundController);
+                            StartCoroutine(CloseTransitionAndStartClass(13));
+                        }
                     }
                 }
             }
 
             // jam pulang
-            if (PlayerPrefsController.instance.GetHour() == 16)
+            if (PlayerPrefsController.instance.GetHour() == 16 && PlayerPrefsController.instance.GetMinute() <= 10)
             {
                 isHasClass = false;
 
@@ -234,7 +247,6 @@ public class ClassroomController : MonoBehaviour
 
                     isDialogPlayedEndClass = true;
                     StartCoroutine(OpenDialogPanel("Sensei", "Oke anak-anak kita akhiri pertemuan ini. じゃ、またあした。", true, true));
-                    boardText.text = "Kalian bisa melanjutkan pembelajaran materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + " melalui website JepangCita. \n (Untuk mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil login, buka menu Materi.)";
                 }
             }
         }
@@ -256,7 +268,7 @@ public class ClassroomController : MonoBehaviour
         while (isFinishedTyping == false)
         {
             dialogSentenceText.text += sentenceText[wordIndex];
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(typingSpeed);
 
             if (++wordIndex == sentenceText.Length)
             {
@@ -277,8 +289,9 @@ public class ClassroomController : MonoBehaviour
 
         if (goHome)
         {
+            // update materi
+            PlayerPrefsController.instance.SetCurrentMateri(PlayerPrefsController.instance.GetCurrentMateri() + 1);
             yield return new WaitForSeconds(4f);
-
             transitionPanel.SetTrigger("Close");
             yield return new WaitForSeconds(3f);
 
@@ -327,10 +340,20 @@ public class ClassroomController : MonoBehaviour
         StartCoroutine(OpenDialogPanel("Sensei", ucapan + " hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()], true, false));
 
         // board start
-        boardText.text = "Huruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar あ (a) sampai ん (n), 20 huruf teng-teng (\") yang disebut dengan Dakuon, 5 huruf maru(o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi ゃ(ya) -ゅ(yu) - ょ(yo) kecil yang disebut dengan Youon. \n Hiragana merupakan salah satu dari dua aksara Jepang yang berperan dalam menulis kata - kata asli Jepang, partikel, dan akhiran kata. Digunakan untuk membaca dan menyusun kalimat, Hiragana juga dipakai dalam penulisan nama pribadi dan tempat yang tidak memiliki karakter Kanji khusus. Sebagai bagian dari sistem penulisan Jepang yang kompleks, bersama dengan Katakana dan Kanji, Hiragana memainkan peran penting dalam memberikan ekspresi dan fleksibilitas dalam penulisan bahasa Jepang.";
+        boardText.text = "";
+        foreach (MaterialData materi in materiList[PlayerPrefsController.instance.GetCurrentMateri()].materialsData)
+        {
+            for (int i = 0; i < materi.materi.Length; i++)
+            {
+                currentText += materi.materi[i];
+                boardText.text = currentText;
+                yield return new WaitForSeconds(typingSpeed);
+            }
 
-        // update materi
-        //PlayerPrefsController.instance.SetCurrentMateri(PlayerPrefsController.instance.GetCurrentMateri() + 1);
+            yield return new WaitForSeconds(materi.intervalTimes);
+            currentText = "";
+            boardText.text = "";
+        }
     }
 
 }

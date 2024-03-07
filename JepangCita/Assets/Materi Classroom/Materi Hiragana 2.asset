@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: Materi Hiragana 2
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Hiragana Lanjutan
+  materialsData:
+  - materi: "Lanjutan dari materi Hiragana\r\nDakuon (20 Huruf):\r\nDakuon adalah
+      huruf hiragana yang memiliki tambahan dakuten di bagian kanan atas huruf. Tanda
+      baca tambahan ini berbentuk seperti dua buah garis kecil yang serong dari kiri
+      atas ke kanan bawah (\") dan disebut dakuten.\r\nContohnya:\r\n\u304B (ka)
+      + Dakuon = \u304C (ga)"
+    intervalTimes: 5
+  - materi: "Berikut adalah huruf lengkapnya:\r\n\u304C (ga)\t\u304E (gi)\t\u3050
+      (gu)\t\u3052 (ge)\t\u3054 (go)\r\n\u3056 (za)\t\u3058 (ji)\t\t\u305A (zu)\t\u305C
+      (ze)\t\u305E (zo)\r\n\u3060 (da)\t\u3062 (ji/dji)\t\u3065 (dzu)\t\u3067 (de)\t\u3069
+      (do)\r\n\u3070 (ba)\t\u3073 (bi)\t\u3076 (bu)\t\u3079 (be)\t\u307C (bo)"
+    intervalTimes: 20
+  - materi: "Handakuon (5 Huruf):\r\nHandakuon adalah huruf hiragana yang memiliki
+      tanda baca tambahan di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk
+      seperti lingkaran kecil (\u309C) dan disebut handakuten.\r\nContohnya:\r\n\u306F
+      (ha) + Handakuon = \u3071 (pa)"
+    intervalTimes: 5
+  - materi: "Berikut adalah huruf lengkapnya:\r\n\u3071 (pa)\t\u3074 (pi)\t\u3077
+      (pu)\t\u307A (pe)\t\u307D (po)"
+    intervalTimes: 5
+  - materi: "Youon (33 Huruf):\r\nYouon adalah kombinasi dari huruf kecil ya (\u3083),
+      yu (\u3085), dan yo (\u3087) dengan huruf dasar yang lain. \r\nContohnya:\r\n\u304D
+      (ki) + Youon ya = \u304D\u3083 (kya)"
+    intervalTimes: 5
+  - materi: "Berikut adalah huruf lengkapnya:\r\n\u304D\u3083 (kya)\t\u304D\u3085
+      (kyu)\t\u304D\u3087 (kyo)\r\n\u3057\u3083 (sha)\t\u3057\u3085 (shu)\t\u3057\u3087
+      (sho)\r\n\u3061\u3083 (cha)\t\u3061\u3085 (chu)\t\u3061\u3087 (cho)\r\n\u306B\u3083
+      (nya)\t\u306B\u3085 (nyu)\t\u306B\u3087 (nyo)\r\n\u3072\u3083 (hya)\t\u3072\u3085
+      (hyu)\t\u3072\u3087 (hyo)\r\n\u307F\u3083 (mya)\t\u307F\u3085 (myu)\t\u307F\u3087
+      (myo)\r"
+    intervalTimes: 20
+  - materi: "\u308A\u3083 (rya)\t\u308A\u3085 (ryu)\t\u308A\u3087 (ryo)\r\n\u304E\u3083
+      (gya)\t\u304E\u3085 (gyu)\t\u304E\u3087 (gyo)\r\n\u3058\u3083 (ja)\t\u3058\u3085
+      (ju)\t\u3058\u3087 (jo)\r\n\u3073\u3083 (bya)\t\u3073\u3085 (byu)\t\u3073\u3087
+      (byo)\r\n\u3074\u3083 (pya)\t\u3074\u3085 (pyu)\t\u3074\u3087 (pyo)"
+    intervalTimes: 20
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Hiragana melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

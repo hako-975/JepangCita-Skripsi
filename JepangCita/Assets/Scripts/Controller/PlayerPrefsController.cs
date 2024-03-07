@@ -29,9 +29,6 @@ public class PlayerPrefsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cinemachineFreeLook = FindObjectOfType<CinemachineFreeLook>();
-        touchSensitivity = FindObjectOfType<CinemachineCoreInput>();
-        
         float calValueMusic = 0.5f * GetMusicVolume() - 45f;
         musicMixer.SetFloat("volume", calValueMusic);
 
@@ -47,6 +44,9 @@ public class PlayerPrefsController : MonoBehaviour
         {
             soundMixer.SetFloat("volume", -100f);
         }
+
+        cinemachineFreeLook = FindObjectOfType<CinemachineFreeLook>();
+        touchSensitivity = FindObjectOfType<CinemachineCoreInput>();
 
         if (cinemachineFreeLook)
         {
@@ -328,16 +328,6 @@ public class PlayerPrefsController : MonoBehaviour
     #endregion
 
     #region JepangCitaDashboard
-    public void SetMateriNumberLearned(int number)
-    {
-        PlayerPrefs.SetInt("MateriNumberLearned", number);
-    }
-
-    public int GetMateriNumberLearned()
-    {
-        return PlayerPrefs.GetInt("MateriNumberLearned", 0);
-    }
-
     public void SetLatestScore(int number)
     {
         PlayerPrefs.SetInt("LatestScore", number);
@@ -481,6 +471,7 @@ public class PlayerPrefsController : MonoBehaviour
     public string[] listMateri = new string[] 
     { 
         "Huruf Hiragana",
+        "Huruf Hiragana Lanjutan",
         "Huruf Katakana",
         "Angka",
         "Waktu",

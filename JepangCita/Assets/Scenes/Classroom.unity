@@ -51672,7 +51672,7 @@ RectTransform:
   - {fileID: 1344401020}
   - {fileID: 1774396346}
   m_Father: {fileID: 1516152870}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -54077,8 +54077,8 @@ RectTransform:
   - {fileID: 96517952}
   - {fileID: 956750837}
   - {fileID: 1838674387}
-  - {fileID: 1872906201}
   - {fileID: 1464628437}
+  - {fileID: 1872906201}
   - {fileID: 336882142}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -54158,6 +54158,9 @@ MonoBehaviour:
   actionController: {fileID: 830759845}
   joystick: {fileID: 1313719528}
   boardText: {fileID: 2128594118}
+  materiList:
+  - {fileID: 11400000, guid: 7d49f271b9c1ae945b94c8e21fa79e89, type: 2}
+  - {fileID: 11400000, guid: d6f3fc1ba467de74fac542912d36cebb, type: 2}
 --- !u!1001 &1516846967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57201,10 +57204,10 @@ RectTransform:
   m_Father: {fileID: 2141103798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 0}
-  m_SizeDelta: {x: 1420, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 1420, y: 326.58}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1586084175
 PrefabInstance:
@@ -66965,7 +66968,7 @@ RectTransform:
   - {fileID: 1270964356}
   - {fileID: 1772486006}
   m_Father: {fileID: 1516152870}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -75135,8 +75138,8 @@ MonoBehaviour:
   m_fontSizeBase: 0.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 0.1
+  m_fontSizeMax: 0.2
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256

@@ -41,8 +41,13 @@ public class JadwalPanel : MonoBehaviour
         }
 
         DateTime startDate = new DateTime(2023, 1, 1);
-
-        for (int i = 0; i < 5; i++)
+        
+        DateTime playerDate = new DateTime(PlayerPrefsController.instance.GetDateYear(), 
+                                            PlayerPrefsController.instance.GetDateMonth(), 
+                                            PlayerPrefsController.instance.GetDateDay());
+        TimeSpan difference = playerDate - startDate;
+        
+        for (int i = 0; i < difference.Days+1; i++)
         {
             DateTime date = startDate.AddDays(i); // Increment the date by i days
 
@@ -77,6 +82,11 @@ public class JadwalPanel : MonoBehaviour
                     rowKehadiran.kehadiranImage.sprite = crossIcon;
                     rowKehadiran.kehadiranImage.color = new Color(0.9607843137254902f, 0.2627450980392157f, 0.3254901960784314f);
                 }
+                else if (separatedData[2] == "Terlambat")
+                {
+                    rowKehadiran.kehadiranImage.sprite = checkIcon;
+                    rowKehadiran.kehadiranImage.color = new Color(0.9607843137254902f, 0.2627450980392157f, 0.3254901960784314f);
+                }
                 else
                 {
                     rowKehadiran.kehadiranImage.sprite = transparentIcon;
@@ -88,5 +98,4 @@ public class JadwalPanel : MonoBehaviour
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(content.GetComponent<RectTransform>());
     }
-
 }

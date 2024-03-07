@@ -15,7 +15,7 @@ public class DashboardPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int materiNumber = PlayerPrefsController.instance.GetMateriNumberLearned();
+        int materiNumber = PlayerPrefsController.instance.GetCurrentMateri();
         materiNumberText.text = materiNumber.ToString();
 
         int latestScore = PlayerPrefsController.instance.GetLatestScore();
