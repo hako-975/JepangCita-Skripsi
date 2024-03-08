@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 5. Materi Angka
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Angka
+  materialsData:
+  - materi: "Angka 1-10:\r\n1 : \u4E00 (ichi)\r\n2 : \u4E8C (ni)\r\n3 : \u4E09 (san)\r\n4
+      : \u56DB (shi/yon)\r\n5 : \u4E94 (go)\r\n6 : \u516D (roku)\r\n7 : \u4E03 (shichi/nana)\r\n8
+      : \u516B (hachi)\r\n9 : \u4E5D (kyuu)\r\n10 : \u5341 (juu)"
+    intervalTimes: 10
+  - materi: "Angka belasan:\r\n11 : \u5341\u4E00 (juuichi)\r\n12 : \u5341\u4E8C (juuni)\r\n13
+      : \u5341\u4E09 (juusan)\r\n14 : \u5341\u56DB (juuyon)\r\n15 : \u5341\u4E94
+      (juugo)\r\n16 : \u5341\u516D (juuroku)\r\n17 : \u5341\u4E03 (juunana)\r\n18
+      : \u5341\u516B (juuhachi)\r\n19 : \u5341\u4E5D (juukyuu)"
+    intervalTimes: 10
+  - materi: "Angka puluhan:\r\n20 : \u4E8C\u5341 (nijuu)\r\n30 : \u4E09\u5341 (sanjuu)\r\n40
+      : \u56DB\u5341 (yonjuu)\r\n50 : \u4E94\u5341 (gojuu)\r\n60 : \u516D\u5341 (rokujuu)\r\n70
+      : \u4E03\u5341 (nanajuu)\r\n80 : \u516B\u5341 (hachijuu)\r\n90 : \u4E5D\u5341
+      (kyuujuu)"
+    intervalTimes: 10
+  - materi: "Angka ratusan:\r\n100 : \u767E (hyaku)\r\n200 : \u4E8C\u767E (nihyaku)\r\n300
+      : \u4E09\u767E (sanbyaku)\r\n400 : \u56DB\u767E (yonhyaku)\r\n500 : \u4E94\u767E
+      (gohyaku)\r\n600 : \u516D\u767E (roppyaku)\r\n700 : \u4E03\u767E (nanahyaku)
+      \r\n800 : \u516B\u767E (happyaku)\r\n900 : \u4E5D\u767E (kyuuhyaku)"
+    intervalTimes: 10
+  - materi: "Angka ribuan:\r\n1.000 : \u5343 (sen)\r\n2.000 : \u4E8C\u5343 (nisen)\r\n3.000
+      : \u4E09\u5343 (sanzen)\r\n4.000 : \u56DB\u5343 (yonsen) \r\n5.000 : \u4E94\u5343
+      (gosen)\r\n6.000 : \u516D\u5343 (rokusen)\r\n7.000 : \u4E03\u5343 (nanasen)\r\n8.000
+      : \u516B\u5343 (hassen)\r\n9.000 : \u4E5D\u5343 (kyuusen)"
+    intervalTimes: 10
+  - materi: "Angka Puluhan Ribuan:\r\n10.000 : \u4E00\u4E07 (ichiman)\r\n20.000 :
+      \u4E8C\u4E07 (niman)\r\n30.000 : \u4E09\u4E07 (sanman)\r\n40.000 : \u56DB\u4E07
+      (yonman)\r\n50.000 : \u4E94\u4E07 (goman)\r\n60.000 : \u516D\u4E07 (rokuman)\r\n70.000
+      : \u4E03\u4E07 (nanaman)\r\n80.000 : \u516B\u4E07 (hachiman)\r\n90.000 : \u4E5D\u4E07
+      (kyuuman)"
+    intervalTimes: 10
+  - materi: "Angka Ratusan Ribuan:\r\n100.000 : \u5341\u4E07 (juuman)\r\n200.000
+      : \u4E8C\u5341\u4E07 (nijuuman)\r\n300.000 : \u4E09\u5341\u4E07 (sanjuuman)\r\n400.000
+      : \u56DB\u5341\u4E07 (yonjuuman)\r\n500.000 : \u4E94\u5341\u4E07 (gojuuman)\r\n600.000
+      : \u516D\u5341\u4E07 (rokujuuman)\r\n700.000 : \u4E03\u5341\u4E07 (nanajuuman)\r\n800.000
+      : \u516B\u5341\u4E07 (hachijuuman)\r\n900.000 : \u4E5D\u5341\u4E07 (kyuujuuman)"
+    intervalTimes: 10
+  - materi: "Angka Sejuta:\r\n1.000.000 : \u767E\u4E07 (hyakuman)\r\n2.000.000 :
+      \u4E8C\u767E\u4E07 (nihyakuman)\r\n3.000.000 : \u4E09\u767E\u4E07 (sanbyakuman)\r\n4.000.000
+      : \u56DB\u767E\u4E07 (yonhyakuman)\r\n5.000.000 : \u4E94\u767E\u4E07 (gohyakuman)\r\n6.000.000
+      : \u516D\u767E\u4E07 (roppyakuman)\r\n7.000.000 : \u4E03\u767E\u4E07 (nanahyakuman)\r\n8.000.000
+      : \u516B\u767E\u4E07 (happyakuman)\r\n9.000.000 : \u4E5D\u767E\u4E07 (kyuuhyakuman)"
+    intervalTimes: 10
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Angka melalui website JepangCita.
+
+      (Untuk
+      mengakses materi, buka browser dan kunjungi situs JepangCita. Setelah berhasil
+      login, buka menu Materi)'
+    intervalTimes: 1000

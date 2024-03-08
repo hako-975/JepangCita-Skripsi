@@ -32,7 +32,6 @@ public class ClassroomController : MonoBehaviour
 
     private GameObject player;
     private PlayerController playerController;
-    private CinemachineFreeLook cinemachine;
 
     private bool isAttended = false;
     private bool isDialogPlayed = false;
@@ -46,6 +45,12 @@ public class ClassroomController : MonoBehaviour
     private GameObject joystick;
     [SerializeField]
     private TextMeshPro boardText;
+
+    [SerializeField]
+    private Camera mainCam;
+
+    [SerializeField]
+    private Camera actionCam;
 
     private string currentText = "";
 
@@ -61,7 +66,6 @@ public class ClassroomController : MonoBehaviour
         isStartedClass = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-        cinemachine = player.GetComponentInChildren<CinemachineFreeLook>();
 
         gameDay = PlayerPrefsController.instance.GetDateDay();
         gameMonth = PlayerPrefsController.instance.GetDateMonth();
@@ -137,9 +141,9 @@ public class ClassroomController : MonoBehaviour
             }
 
             // silahkan duduk untuk memulai kelas jam 9 - jam 12
-            if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetHour() <= 12)
+            if (PlayerPrefsController.instance.GetHour() >= 9 && PlayerPrefsController.instance.GetHour() < 12)
             {
-                if (PlayerPrefsController.instance.GetHour() <= 12 && PlayerPrefsController.instance.GetMinute() <= 59)
+                if (PlayerPrefsController.instance.GetHour() < 12 && PlayerPrefsController.instance.GetMinute() <= 59)
                 {
 
                     // dialog panel
@@ -211,9 +215,9 @@ public class ClassroomController : MonoBehaviour
             }
 
         // silahkan duduk untuk memulai kelas jam 13 - jam 16
-        if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() <= 16)
+        if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetHour() < 16)
             {
-                if (PlayerPrefsController.instance.GetHour() <= 16 && PlayerPrefsController.instance.GetMinute() <= 59)
+                if (PlayerPrefsController.instance.GetHour() < 16 && PlayerPrefsController.instance.GetMinute() <= 59)
                 {
                     // dialog panel
                     if (isDialogPlayed == false)
@@ -311,20 +315,8 @@ public class ClassroomController : MonoBehaviour
         actionController.DeactiveCanvasAction();
         actionController.isMiddleClass = true;
         yield return new WaitForSeconds(3f);
-
-        cinemachine.m_Orbits[0].m_Height = 2f;
-        cinemachine.m_Orbits[0].m_Radius = 0f;
-
-        cinemachine.m_Orbits[1].m_Height = 1.35f;
-        cinemachine.m_Orbits[1].m_Radius = 1.5f;
-
-        cinemachine.GetRig(0).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.y = 1f;
-        cinemachine.GetRig(0).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.z = 0.5f;
-
-        cinemachine.GetRig(1).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.y = 1.35f;
-
-        cinemachine.transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
-
+        mainCam.gameObject.SetActive(false);
+        actionCam.gameObject.SetActive(true);
         joystick.SetActive(false);
 
         yield return new WaitForSeconds(1f);
@@ -337,7 +329,7 @@ public class ClassroomController : MonoBehaviour
             ucapan = "おはようございます。";
         }
 
-        StartCoroutine(OpenDialogPanel("Sensei", ucapan + " hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()], true, false));
+        StartCoroutine(OpenDialogPanel("Sensei", ucapan + "Hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + ".", true, false));
 
         // board start
         boardText.text = "";

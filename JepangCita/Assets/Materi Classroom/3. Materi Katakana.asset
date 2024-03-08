@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 3. Materi Katakana
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Katakana
+  materialsData:
+  - materi: 'Katakana adalah aksara Jepang yang memiliki beberapa fungsi utama, termasuk
+      menulis kata-kata asing, nama asing, mengekspresikan suara atau onomatopeia,
+      memberikan penekanan dalam teks, digunakan dalam desain grafis, dan sebagai
+      alat untuk memberikan keterangan atau terjemahan singkat. '
+    intervalTimes: 10
+  - materi: Aksara ini memainkan peran penting dalam memfasilitasi penulisan kata-kata
+      asing dan memberikan variasi dalam penulisan teks Jepang.
+    intervalTimes: 10
+  - materi: "Berikut adalah 26 huruf hiragana dasar:\r\n\u30A2 (a)\t\t\u30A4 (i)\t\t\u30A6
+      (u)\t\t\u30A8 (e)\t\t\u30AA (o)\r\n\u30AB (ka)\t\u30AD (ki)\t\t\u30AF (ku)\t\u30B1
+      (ke)\t\u30B3 (ko)\r\n\u30B5 (sa)\t\u30B7 (shi)\t\u30B9 (su)\t\u30BB (se)\t\u30BD
+      (so)\r\n\u30BF (ta)\t\u30C1 (chi)\t\u30C4 (tsu)\t\u30C6 (te)\t\u30C8 (to)\r\n\u30CA
+      (na)\t\u30CB (ni)\t\u30CC (nu)\t\u30CD (ne)\t\u30CE (no)\r\n\u30CF (ha)\t\u30D2
+      (hi)\t\u30D5 (fu)\t\u30D8 (he)\t\u30DB (ho)"
+    intervalTimes: 20
+  - materi: "\u30DE (ma)\t\u30DF (mi)\t\u30E0 (mu)\t\u30E1 (me)\t\u30E2 (mo)\r\n\u30E4
+      (ya)\t\t\t\u30E6 (yu)\t\t\t\u30E8 (yo)\r\n\u30E9 (ra)\t\u30EA (ri)\t\t\u30EB
+      (ru)\t\u30EC (re)\t\u30ED (ro)\r\n\u30EF (wa)\t\t\t\t\t\t\t\u30F2 (wo)\r\n\u30F3
+      (n)"
+    intervalTimes: 20
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Katakana melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

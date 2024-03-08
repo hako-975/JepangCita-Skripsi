@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 1. Materi Hiragana
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Hiragana
+  materialsData:
+  - materi: "Huruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar
+      \u3042 (a) sampai \u3093 (n), 20 huruf teng-teng (\") yang disebut dengan Dakuon,
+      5 huruf maru (o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi
+      \u3083 (ya) - \u3085 (yu) - \u3087 (yo) kecil yang disebut dengan Youon. \r\nHiragana
+      merupakan salah satu dari dua aksara Jepang yang berperan dalam menulis kata-kata
+      asli Jepang, partikel, dan akhiran kata. Hiragana digunakan untuk membaca dan
+      menyusun kalimat, Hiragana juga dipakai dalam penulisan nama pribadi dan tempat
+      yang tidak memiliki karakter Kanji khusus. Sebagai bagian dari sistem penulisan
+      Jepang yang kompleks, bersama dengan Katakana dan Kanji, Hiragana memainkan
+      peran penting dalam memberikan ekspresi dan fleksibilitas dalam penulisan bahasa
+      Jepang.\r"
+    intervalTimes: 25
+  - materi: "Berikut adalah 26 huruf hiragana dasar:\r\n\u3042 (a)\t\t\u3044 (i)\t\t\u3046
+      (u)\t\t\u3048 (e)\t\t\u304A (o)\r\n\u304B (ka)\t\u304D (ki)\t\t\u304F (ku)\t\u3051
+      (ke)\t\u3053 (ko)\r\n\u3055 (sa)\t\u3057 (shi)\t\u3059 (su)\t\u305B (se)\t\u305D
+      (so)\r\n\u305F (ta)\t\u3061 (chi)\t\u3064 (tsu)\t\u3066 (te)\t\u3068 (to)\r\n\u306A
+      (na)\t\u306B (ni)\t\u306C (nu)\t\u306D (ne)\t\u306E (no)\r\n\u306F (ha)\t\u3072
+      (hi)\t\u3075 (fu)\t\u3078 (he)\t\u307B (ho)\n\u307E (ma)\t\u307F (mi)\t\u3080
+      (mu)\t\u3081 (me)\t\u3082 (mo)\r\n\u3084 (ya)\t\t\t\u3086 (yu)\t\t\t\t\u3088
+      (yo)\r"
+    intervalTimes: 25
+  - materi: "\u3089 (ra)\t\u308A (ri)\t\t\u308B (ru)\t\u308C (re)\t\u308D (ro)\r\n\u308F
+      (wa)\t\t\t\t\t\t\t\t\u3092 (wo)\r\n\u3093 (n)"
+    intervalTimes: 25
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Hiragana melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000
