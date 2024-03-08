@@ -2,7 +2,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using Cinemachine;
 
 public class ClassroomController : MonoBehaviour
 {
