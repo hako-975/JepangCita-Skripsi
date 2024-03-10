@@ -14,46 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Katakana Lanjutan
   materialsData:
-  - materi: "Lanjutan dari materi Katakana\nDakuon (20 Huruf):\r\nDakuon adalah huruf
+  - materi: "Materi Katakana Lanjutan\nDakuon (20 Huruf):\r\nDakuon adalah huruf
       katakana yang memiliki tambahan dakuten di bagian kanan atas huruf. Tanda baca
       tambahan ini berbentuk seperti dua buah garis kecil yang serong dari kiri atas
       ke kanan bawah (\") dan disebut dakuten.\r\nContohnya:\r\n\u30AB (ka) + Dakuon
       = \u30AC (ga)"
-    intervalTimes: 5
+    intervalTimes: 10
   - materi: "Berikut adalah huruf lengkapnya:\r\n\u30AC (ga)\t\u30AE (gi)\t\u30B0
       (gu)\t\u30B2 (ge)\t\u30B4 (go)\r\n\u30B6 (za)\t\u30B8 (ji)\t\u30BA (zu)\t\u30BC
       (ze)\t\u30BE (zo)\r\n\u30C0 (da)\t\u30C2 (ji/dji)\t\u30C5 (dzu)\t\u30C7 (de)\t\u30C9
       (do)\r\n\u30D0 (ba)\t\u30D3 (bi)\t\u30D6 (bu)\t\u30D9 (be)\t\u30DC (bo)\r"
-    intervalTimes: 20
+    intervalTimes: 15
   - materi: "Handakuon (5 Huruf):\r\nHandakuon adalah huruf katakana yang memiliki
       tanda baca tambahan di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk
       seperti lingkaran kecil (\u309C) dan disebut handakuten.\r\nContohnya:\r\n\u30CF
       (ha) + Handakuon = \u30D1 (pa)"
-    intervalTimes: 5
+    intervalTimes: 15
   - materi: "Berikut adalah huruf lengkapnya:\r\n\u30D1 (pa)\t\u30D4 (pi)\t\u30D7
       (pu)\t\u30DA (pe)\t\u30DD (po)"
     intervalTimes: 10
   - materi: "Youon (33 Huruf):\r\nYouon adalah kombinasi dari huruf kecil ya (\u3083),
       yu (\u3085), dan yo (\u3087) dengan huruf dasar yang lain. \r\nContohnya:\r\n\u30AD
       (ki) + Youon ya = \u30AD\u30E3 (kya)"
-    intervalTimes: 5
+    intervalTimes: 15
   - materi: "Berikut adalah huruf lengkapnya:\r\n\u30AD\u30E3 (kya)\t\u30AD\u30E5
       (kyu)\t\u30AD\u30E7 (kyo)\r\n\u30B7\u30E3 (sha)\t\u30B7\u30E5 (shu)\t\u30B7\u30E7
       (sho)\r\n\u30C1\u30E3 (cha)\t\u30C1\u30E5 (chu)\t\u30C1\u30E7 (cho)\r\n\u30CB\u30E3
       (nya)\t\u30CB\u30E5 (nyu)\t\u30CB\u30E7 (nyo)\r\n\u30D2\u30E3 (hya)\t\u30D2\u30E5
       (hyu)\t\u30D2\u30E7 (hyo)"
-    intervalTimes: 20
+    intervalTimes: 15
   - materi: "\u30DF\u30E3 (mya)\t\u30DF\u30E5 (myu)\t\u30DF\u30E7 (myo)\r\n\u30EA\u30E3
       (rya)\t\u30EA\u30E5 (ryu)\t\u30EA\u30E7 (ryo)\r\n\u30AE\u30E3 (gya)\t\u30AE\u30E5
       (gyu)\t\u30AE\u30E7 (gyo)\r\n\u30B8\u30E3 (ja)\t\u30B8\u30E5 (ju)\t\u30B8\u30E7
       (jo)\r\n\u30D3\u30E3 (bya)\t\u30D3\u30E5 (byu)\t\u30D3\u30E7 (byo)\r\n\u30D4\u30E3
       (pya)\t\u30D4\u30E5 (pyu)\t\u30D4\u30E7 (pyo)"
-    intervalTimes: 20
+    intervalTimes: 15
   - materi: "Katakana Khusus:\r\n\u30F4\u30A1 (va)\t\u30F4\u30A3 (vi)\t\u30F4 (vu)\t\u30F4\u30A7
       (ve)\t\u30F4\u30A9 (vo)\t\u30A4\u30A7 (ye)\r\n\u30A6\u30A3 (wi)\t\u30A6\u30A7
       (we)\t\u30A6\u30A9 (wo)\r\n\u30B7\u30A7 (she)\r\n\u30B8\u30A7 (je)\r\n\u30C1\u30A7
       (che)\r\n\u30C6\u30A3 (ti)\t\u30C8\u30A5 (tu)\t\u30C6\u30E5 (tyu)\r\n\u30C7\u30A3
-      (di)\t\u30C9\u30A5 (du)\t\u30C7\u30E5 (dyu)\r\n\u30C4\u30A1 (tsa)\t\u30C4\u30A3
-      (tsi)\t\u30C4\u30A7 (tse)\t\u30C4\u30A9 (tso)\r\n\u30D5\u30A1 (fa)\t\u30D5\u30A3
-      (fi)\t\u30D5\u30A7 (fe)\t\u30D5\u30A9 (fo)\t\u30D5\u30E5 (fyu)\r\n"
-    intervalTimes: 20
+      (di)\t\u30C9\u30A5 (du)\t\u30C7\u30E5 (dyu)\r\n"
+    intervalTimes: 15
+  - materi: "\u30C4\u30A1 (tsa)\t\u30C4\u30A3 (tsi)\t\u30C4\u30A7 (tse)\t\u30C4\u30A9
+      (tso)\r\n\u30D5\u30A1 (fa)\t\u30D5\u30A3 (fi)\t\u30D5\u30A7 (fe)\t\u30D5\u30A9
+      (fo)\t\u30D5\u30E5 (fyu)\r"
+    intervalTimes: 15
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Katakana melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

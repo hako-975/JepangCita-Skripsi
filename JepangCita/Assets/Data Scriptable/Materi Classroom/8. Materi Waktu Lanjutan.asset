@@ -14,29 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Waktu Lanjutan
   materialsData:
-  - materi: "Materi Waktu Lanjutan\nJam:\r\n1:00 - \u4E00\u6642 (ichiji)\r\n2:00
-      - \u4E8C\u6642 (niji)\r\n3:00 - \u4E09\u6642 (sanji)\r\n4:00 - \u56DB\u6642
-      (yoji)\r\n5:00 - \u4E94\u6642 (goji)\r\n6:00 - \u516D\u6642 (rokuji)\r\n7:00
-      - \u4E03\u6642 (shichiji/nanaji)\r\n8:00 - \u516B\u6642 (hachiji)\r\n9:00 -
-      \u4E5D\u6642 (kuji)\r\n10:00 - \u5341\u6642 (juuji)"
-    intervalTimes: 10
-  - materi: "Menit:\r\n1 menit - 1\u5206 (ippun)\r\n2 menit - 2\u5206 (nifun)\r\n3
-      menit - 3\u5206 (sanpun)\r\n4 menit - 4\u5206 (yonpun)\r\n5 menit - 5\u5206
-      (gofun)\r\n6 menit - 6\u5206 (roppun)\r\n7 menit - 7\u5206 (nanafun)\r\n8 menit
-      - 8\u5206 (happun)\r\n9 menit - 9\u5206 (kyuufun)\r\n10 menit - 10\u5206 (juppun)"
-    intervalTimes: 10
-  - materi: "11 menit - 11\u5206 (juuippun)\r\n12 menit - 12\u5206 (juunifun)\r\n13
-      menit - 13\u5206 (juusanpun)\r\n14 menit - 14\u5206 (juuyonpun)\r\n15 menit
-      - 15\u5206 (juugofun)\r\n16 menit - 16\u5206 (juuroppun)\r\n17 menit - 17\u5206
-      (juunanafun)\r\n18 menit - 18\u5206 (juuhappun)\r\n19 menit - 19\u5206 (juukyuufun)\r\n20
-      menit - 20\u5206 (nijuppun)"
-    intervalTimes: 10
-  - materi: "Waktu Yang Telah Berlalu:\r\nKemarin : \u6628\u65E5 (Kinou)\r\nKemarin
-      Lusa : \u4E00\u6628\u65E5 (Ototoi)\r\nMinggu Lalu : \u5148\u9031 (Senshuu)\r\nBulan
-      Lalu : \u5148\u6708 (Sengetsu)\r\nTahun Lalu : \u53BB\u5E74 (Kyonen)\r\n3 hari
-      lalu: \u4E09\u65E5\u524D (Mikka mae)\r\n2 bulan lalu: \u4E8C\u304B\u6708\u524D
-      (Nikagetsumae)\r\n2 tahun lalu: \u4E8C\u5E74\u524D (Ninenmae)"
-    intervalTimes: 10
+  - materi: "Materi Waktu Lanjutan\r\nJam:\r\n1:00 - \u4E00\u6642 (ichiji)\t\t7:00
+      - \u4E03\u6642 (shichiji/nanaji)\r\n2:00 - \u4E8C\u6642 (niji)\t\t8:00 - \u516B\u6642
+      (hachiji)\r\n3:00 - \u4E09\u6642 (sanji)\t\t9:00 - \u4E5D\u6642 (kuji)\r\n4:00
+      - \u56DB\u6642 (yoji)\t\t10:00 - \u5341\u6642 (juuji)\r\n5:00 - \u4E94\u6642
+      (goji)\r\n6:00 - \u516D\u6642 (rokuji)"
+    intervalTimes: 25
+  - materi: "Menit:\r\n1 menit - 1\u5206 (ippun)\t\t8 menit - 8\u5206 (happun)\r\n2
+      menit - 2\u5206 (nifun)\t\t9 menit - 9\u5206 (kyuufun)\r\n3 menit - 3\u5206
+      (sanpun)\t\t10 menit - 10\u5206 (juppun)\r\n4 menit - 4\u5206 (yonpun)\r\n5
+      menit - 5\u5206 (gofun)\r\n6 menit - 6\u5206 (roppun)\r\n7 menit - 7\u5206
+      (nanafun)"
+    intervalTimes: 25
+  - materi: "11 menit - 11\u5206 (juuippun)\t\t19 menit - 19\u5206 (juukyuufun)\r\n12
+      menit - 12\u5206 (juunifun)\t\t20 menit - 20\u5206 (nijuppun)\r\n13 menit -
+      13\u5206 (juusanpun)\r\n14 menit - 14\u5206 (juuyonpun)\r\n15 menit - 15\u5206
+      (juugofun)\r\n16 menit - 16\u5206 (juuroppun)\r\n17 menit - 17\u5206 (juunanafun)\r\n18
+      menit - 18\u5206 (juuhappun)"
+    intervalTimes: 25
+  - materi: "Waktu Yang Telah Berlalu:\r\nKemarin : \u6628\u65E5 (Kinou)\t\t\t\t2
+      tahun lalu: \u4E8C\u5E74\u524D (Ninenmae)\r\nKemarin Lusa : \u4E00\u6628\u65E5
+      (Ototoi)\r\nMinggu Lalu : \u5148\u9031 (Senshuu)\r\nBulan Lalu : \u5148\u6708
+      (Sengetsu)\r\nTahun Lalu : \u53BB\u5E74 (Kyonen)\r\n3 hari lalu: \u4E09\u65E5\u524D
+      (Mikka mae)\r\n2 bulan lalu: \u4E8C\u304B\u6708\u524D (Nikagetsumae)"
+    intervalTimes: 25
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Waktu melalui website JepangCita.
 
       (Untuk

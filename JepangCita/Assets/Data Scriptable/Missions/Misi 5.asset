@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e4c1b93a62daf408f19c52b038a764, type: 3}
   m_Name: Misi 5
   m_EditorClassIdentifier: 
-  titleMission: 'Misi 5:'
+  titleMission: 'Misi 5: Ikuti Ujian Hiragana'
   detailMission: 'Detail Misi:
 
-'
+    Setelah menyelesaikan materi Hiragana lanjutan,
+    ikuti ujian Hiragana pada pertemuan berikutnya.'

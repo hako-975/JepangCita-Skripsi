@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 14. Materi Kata Kerja Lanjutan
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Kerja Lanjutan
+  materialsData:
+  - materi: "Mengerti - \u5206\u304B\u308A\u307E\u3059 (wakarimasu)\r\nBentuk Dasar:
+      \u5206\u304B\u308A\u307E\u3059 (wakarimasu)\r\nContoh Penggunaan: \u79C1\u306F\u65E5\u672C\u8A9E\u304C\u308F\u304B\u308A\u307E\u3059
+      (Watashi wa nihongo ga wakarimasu) - Saya mengerti bahasa Jepang.\r\n\r\nBerbicara
+      - \u8A71\u3057\u307E\u3059 (hanashimasu)\r\nBentuk Dasar: \u8A71\u3057\u307E\u3059
+      (hanashimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u30D5\u30E9\u30F3\u30B9\u8A9E\u3092\u8A71\u3057\u307E\u3059
+      (Kare wa Furansugo o hanashimasu) - Dia berbicara bahasa Perancis."
+    intervalTimes: 5
+  - materi: "Melakukan - \u3057\u307E\u3059 (shimasu)\r\nBentuk Dasar: \u3057\u307E\u3059
+      (shimasu)\r\nContoh Penggunaan: \u79C1\u306F\u5BBF\u984C\u3092\u3057\u307E\u3059
+      (Watashi wa shukudai o shimasu) - Saya mengerjakan PR.\r\n\r\nBermain - \u904A\u3073\u307E\u3059
+      (asobimasu)\r\nBentuk Dasar: \u904A\u3073\u307E\u3059 (asobimasu)\r\nContoh
+      Penggunaan: \u5B50\u3069\u3082\u305F\u3061\u306F\u516C\u5712\u3067\u904A\u3073\u307E\u3059
+      (Kodomotachi wa kouen de asobimasu) - Anak-anak bermain di taman."
+    intervalTimes: 5
+  - materi: "Berjalan - \u6B69\u304D\u307E\u3059 (arukimasu)\r\nBentuk Dasar: \u6B69\u304D\u307E\u3059
+      (arukimasu)\r\nContoh Penggunaan: \u753A\u3092\u6B69\u304D\u307E\u3059 (Machi
+      o arukimasu) - Saya berjalan-jalan di kota.\r\n\r\nPulang - \u5E30\u308A\u307E\u3059
+      (kaerimasu)\r\nBentuk Dasar: \u5E30\u308A\u307E\u3059 (kaerimasu)\r\nContoh
+      Penggunaan: \u5F7C\u306F\u5915\u65B9\u306B\u3044\u3048\u306B\u5E30\u308A\u307E\u3059
+      (Kare wa yuugata ni ie ni kaerimasu) - Dia pulang ke rumah pada sore hari. "
+    intervalTimes: 5
+  - materi: "Membuang - \u6368\u3066\u307E\u3059 (sutemasu)\r\nBentuk Dasar: \u6368\u3066\u307E\u3059
+      (sutemasu)\r\nContoh Penggunaan: \u30B4\u30DF\u3092\u6368\u3066\u307E\u3059
+      (Gomi o sutemasu) - Saya membuang sampah. \r\n\r\nBerbicara (dengan santai)
+      - \u3057\u3083\u3079\u308A\u307E\u3059 (shaberimasu)\r\nBentuk Dasar: \u3057\u3083\u3079\u308A\u307E\u3059
+      (shaberimasu)\r\nContoh Penggunaan: \u53CB\u9054\u3068\u96D1\u8AC7\u3092\u558B\u308A\u307E\u3059
+      (Tomodachi to zatsudan o shaberimasu) - Saya berbicara santai dengan teman."
+    intervalTimes: 5
+  - materi: "Belajar - \u7FD2\u3044\u307E\u3059 (naraimasu)\r\nBentuk Dasar: \u7FD2\u3044\u307E\u3059
+      (naraimasu)\r\nContoh Penggunaan: \u5B66\u6821\u3067\u65E5\u672C\u8A9E\u3092\u7FD2\u3044\u307E\u3059
+      (Gakkou de nihongo o naraimasu) - Saya belajar bahasa Jepang di sekolah.\r\n\r\nBelajar
+      (secara umum) - \u52C9\u5F37\u3057\u307E\u3059 (benkyou shimasu)\r\nBentuk
+      Dasar: \u52C9\u5F37\u3057\u307E\u3059 (benkyou shimasu)\r\nContoh Penggunaan:
+      \u5927\u5B66\u3067\u6570\u5B66\u3092\u52C9\u5F37\u3057\u307E\u3059 (Daigaku
+      de suugaku o benkyou shimasu) - Saya belajar matematika di universitas."
+    intervalTimes: 5
+  - materi: "Tidur - \u5BDD\u307E\u3059 (nemasu)\r\nBentuk Dasar: \u5BDD\u307E\u3059
+      (nemasu)\r\nContoh Penggunaan: \u4ECA\u591C\u306F\u65E9\u304F\u5BDD\u307E\u3059
+      (Konya wa hayaku nemasu) - Saya akan tidur lebih awal malam ini.\r\n\r\nMengajar
+      - \u6559\u3048\u307E\u3059 (oshiemasu)\r\nBentuk Dasar: \u6559\u3048\u307E\u3059
+      (oshiemasu)\r\nContoh Penggunaan: \u5148\u751F\u306F\u751F\u5F92\u306B\u6570\u5B66\u3092\u6559\u3048\u307E\u3059
+      (Sensei wa seito ni suugaku o oshiemasu) - Guru mengajar matematika kepada
+      murid. "
+    intervalTimes: 5
+  - materi: "Berlari - \u8D70\u308A\u307E\u3059 (hashirimasu)\r\nBentuk Dasar: \u8D70\u308A\u307E\u3059
+      (hashirimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u6BCE\u671D\u516C\u5712\u3067\u8D70\u308A\u307E\u3059
+      (Kare wa maiasa kouen de hashirimasu) - Dia berlari di taman setiap pagi. \r\n\r\nBertemu
+      - \u4F1A\u3044\u307E\u3059 (aimasu)\r\nBentuk Dasar: \u4F1A\u3044\u307E\u3059
+      (aimasu)\r\nContoh Penggunaan: \u660E\u65E5\u53CB\u9054\u3068\u4F1A\u3044\u307E\u3059
+      (Ashita tomodachi to aimasu) - Saya bertemu dengan teman besok."
+    intervalTimes: 5
+  - materi: "Mengingat - \u899A\u3048\u307E\u3059 (oboemasu)\r\nBentuk Dasar: \u899A\u3048\u307E\u3059
+      (oboemasu)\r\nContoh Penggunaan: \u65B0\u3057\u3044\u5358\u8A9E\u3092\u899A\u3048\u307E\u3059
+      (Atarashii tango o oboemasu) - Saya mengingat kata-kata baru.\r\n\r\nBangun
+      (dari tidur) - \u8D77\u304D\u307E\u3059 (okimasu)\r\nBentuk Dasar: \u8D77\u304D\u307E\u3059
+      (okimasu)\r\nContoh Penggunaan: \u671D\u306F\u3086\u304F\u8D77\u304D\u307E\u3059
+      (Asa hayaku okimasu) - Saya bangun pagi-pagi sekali."
+    intervalTimes: 5
+  - materi: "Berenang - \u6CF3\u304E\u307E\u3059 (oyogimasu)\r\nBentuk Dasar: \u6CF3\u304E\u307E\u3059
+      (oyogimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u5DDD\u3067\u6CF3\u304E\u307E\u3059
+      (Kare wa kawa de oyogimasu) - Dia berenang di sungai.\r\n\r\nMembuat - \u4F5C\u308A\u307E\u3059
+      (tsukurimasu)\r\nBentuk Dasar: \u4F5C\u308A\u307E\u3059 (tsukurimasu)\r\nContoh
+      Penggunaan: \u5F7C\u5973\u306F\u7F8E\u5473\u3057\u3044\u6599\u7406\u3092\u4F5C\u308A\u307E\u3059
+      (Kanojo wa oishii ryouri o tsukurimasu) - Dia membuat masakan yang lezat."
+    intervalTimes: 5
+  - materi: "Memanggil - \u547C\u3073\u307E\u3059 (yobimasu)\r\nBentuk Dasar: \u547C\u3073\u307E\u3059
+      (yobimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u53CB\u9054\u3092\u547C\u3073\u307E\u3059
+      (Kare wa tomodachi o yobimasu) - Dia memanggil temannya. \r\n\r\nMengirim -
+      \u9001\u308A\u307E\u3059 (okurimasu)\r\nBentuk Dasar: \u9001\u308A\u307E\u3059
+      (okurimasu)\r\nContoh Penggunaan: \u624B\u7D19\u3092\u53CB\u9054\u306B\u9001\u308A\u307E\u3059
+      (Tegami o tomodachi ni okurimasu) - Saya mengirim surat kepada teman. "
+    intervalTimes: 5
+  - materi: "Permisi/Mohon maaf - \u5931\u793C\u3057\u307E\u3059 (shitsurei shimasu)\r\nBentuk
+      Dasar: \u5931\u793C\u3057\u307E\u3059 (shitsurei shimasu)\r\nContoh Penggunaan:
+      \u5931\u793C\u3057\u307E\u3059 (Shitsurei shimasu) - (Ruangan seminar sedang
+      berlangsung, seseorang memutuskan untuk masuk) Permisi. \r\n\r\nMengenakan
+      Baju - \u30B7\u30E3\u30C4\u3092\u7740\u308B (shatsu o kiru)\r\nBentuk Dasar:
+      \u7740\u308B (kiru)\r\nContoh Penggunaan: \u79C1\u306F\u767D\u3044\u30B7\u30E3\u30C4\u3092\u7740\u307E\u3059
+      - Saya mengenakan baju putih. "
+    intervalTimes: 5
+  - materi: "Mengenakan Celana - \u30BA\u30DC\u30F3\u3092\u5C65\u304F (zubon o haku)\r\nBentuk
+      Dasar: \u5C65\u304F (haku)\r\nContoh Penggunaan: \u5F7C\u306F\u9752\u3044\u30BA\u30DC\u30F3\u3092\u5C65\u304D\u307E\u3059
+      (Kare wa aoi zubon o hakimasu) - Dia mengenakan celana biru.\r\n\r\nMengenakan
+      Topi - \u5E3D\u5B50\u3092\u88AB\u308B (boushi o kaburu)\r\nBentuk Dasar: \u88AB\u308B
+      (kaburu)\r\nContoh Penggunaan: \u5F7C\u306F\u9ED2\u3044\u5E3D\u5B50\u3092\u88AB\u308A\u307E\u3059
+      (Kare wa kuroi boushi o kaburimasu) - Dia mengenakan topi hitam. "
+    intervalTimes: 5
+  - materi: "Mengenakan Kacamata - \u773C\u93E1\u3092\u304B\u3051\u308B (megane o
+      kakeru)\r\nBentuk Dasar: \u304B\u3051\u308B (kakeru)\r\nContoh Penggunaan:
+      \u79C1\u306F\u65B0\u3057\u3044\u30E1\u30AC\u30CD\u3092\u304B\u3051\u307E\u3059
+      (Watashi wa atarashii megane o kakemasu.) - Saya mengenakan kacamata baru.\r\n\r\nMengenakan
+      Anting - \u8033\u98FE\u308A\u3092\u3064\u3051\u308B (mimikazari o tsukeru)\r\nBentuk
+      Dasar: \u3064\u3051\u308B (tsukeru)\r\nContoh Penggunaan: \u5F7C\u306F\u91D1\u306E\u8033\u98FE\u308A\u3092\u3064\u3051\u307E\u3059
+      (Kare wa kin no mimikazari o tsukemasu) - Dia mengenakan anting emas. "
+    intervalTimes: 5
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Kerja melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

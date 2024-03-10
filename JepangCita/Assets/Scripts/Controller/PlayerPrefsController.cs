@@ -29,6 +29,8 @@ public class PlayerPrefsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         float calValueMusic = 0.5f * GetMusicVolume() - 45f;
         musicMixer.SetFloat("volume", calValueMusic);
 
@@ -328,14 +330,14 @@ public class PlayerPrefsController : MonoBehaviour
     #endregion
 
     #region JepangCitaDashboard
-    public void SetLatestScore(int number)
+    public void SetHiraganaScore(int number)
     {
-        PlayerPrefs.SetInt("LatestScore", number);
+        PlayerPrefs.SetInt("HiraganaScore", number);
     }
 
-    public int GetLatestScore()
+    public int GetHiraganaScore()
     {
-        return PlayerPrefs.GetInt("LatestScore", 0);
+        return PlayerPrefs.GetInt("HiraganaScore", 0);
     }
     #endregion
 
@@ -472,6 +474,7 @@ public class PlayerPrefsController : MonoBehaviour
     { 
         "Huruf Hiragana",
         "Huruf Hiragana Lanjutan",
+        "Ujian - Hiragana",
         "Huruf Katakana",
         "Huruf Katakana Lanjutan",
         "Angka",

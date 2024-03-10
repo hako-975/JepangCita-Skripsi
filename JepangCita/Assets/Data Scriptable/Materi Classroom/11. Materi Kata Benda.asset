@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 11. Materi Kata Benda
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Benda
+  materialsData:
+  - materi: "Kata benda dalam bahasa Jepang dikenal sebagai \"\u540D\u8A5E\" (meishi).
+      Ini mencakup segala sesuatu dari benda, tempat, orang, atau konsep yang dapat
+      diidentifikasi atau dirujuk dalam percakapan. Berikut adalah beberapa contoh
+      kata benda dalam bahasa Jepang:\r\nMusim:\r\nMusim : \u5B63\u7BC0 (Kisetsu)\r\nMusim
+      semi : \u6625 (Haru)\r\nMusim panas : \u590F (Natsu)\r\nMusim gugur : \u79CB
+      (Aki)\r\nMusim dingin : \u51AC (Fuyu)"
+    intervalTimes: 25
+  - materi: "Cuaca:\r\nCuaca : \u5929\u6C17 (Tenki)\t\tDingin : \u5BD2\u3044 (Samui)\r\nCerah
+      : \u6674\u308C (Hare)\r\nMendung : \u66C7\u308A (Kumori)\r\nHujan : \u96E8
+      (Ame)\r\nSalju : \u96EA (Yuki)\r\nAngin : \u98A8 (Kaze)\r\nPanas : \u6691\u3044
+      (Atsui)\r"
+    intervalTimes: 25
+  - materi: "Hewan:\r\nHewan : \u52D5\u7269 (Doubutsu)\tMonyet : \u733F (Saru)\r\nKucing
+      : \u732B (Neko)\t\tGajah : \u8C61 (Zou)\r\nHarimau : \u864E (Tora)\t\tSapi
+      : \u725B (Ushi)\r\nSinga : \u7345\u5B50 (Shishi)\t\tKuda : \u99AC (Uma)\r\nAnjing
+      : \u72AC (Inu)\t\t\tDomba : \u7F8A (Hitsuji)\r\nBurung : \u9CE5 (Tori)\t\t\tBabi
+      : \u8C5A (Buta)\r\nIkan : \u9B5A (Sakana)\t\t\tAyam : \u9D8F (Niwatori)"
+    intervalTimes: 25
+  - materi: "Kelinci : \u514E (Usagi)\t\tPenguin : \u30DA\u30F3\u30AE\u30F3 (Pengin)\r\nKupu-kupu
+      : \u8776 (Chou)\t\tLebah : \u871C\u8702 (Hachi)\r\nSemut : \u87FB (Ari)\t\t\tTikus
+      : \u9F20 (Nezumi)\r\nGurita : \u86F8 (Tako)\t\t\tBeruang : \u718A (Kuma)\r\nCumi-cumi
+      : \u70CF\u8CCA (Ika)\r\nTuna : \u9BAA (Maguro)\r\nUdang : \u6D77\u8001 (Ebi)\r\nKepiting
+      : \u87F9 (Kani)"
+    intervalTimes: 25
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Benda melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

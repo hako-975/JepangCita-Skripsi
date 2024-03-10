@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 10. Materi Kata Ganti Lanjutan
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Ganti Lanjutan
+  materialsData:
+  - materi: "Materi Kata Ganti Lanjutan\nOrang Pertama Jamak:\r\n\u79C1\u305F\u3061
+      (Watashitachi) - Kami (netral)\r\n\u50D5\u3089 (Bokura) - Kami (digunakan oleh
+      pria, lebih kasual)\r\n\u6211\u3005 (Wareware) - Kami (lebih formal)\r\n\u3046\u3061\u3089
+      (Uchira) - Kami (digunakan oleh wanita)"
+    intervalTimes: 20
+  - materi: "Orang Kedua Jamak:\r\n\u3042\u306A\u305F\u305F\u3061 (Anatatachi) -
+      Kalian (netral)\r\n\u541B\u305F\u3061 (Kimitachi) - Kalian (lebih kasual, jamak
+      dari \"kimi\")\r\n\u304A\u524D\u305F\u3061 (Omaetachi) - Kalian (kasual, jamak
+      dari \"omae\")"
+    intervalTimes: 20
+  - materi: "Orang Ketiga Jamak:\r\n\u5F7C\u3089 (Karera) - Mereka (laki-laki)\t\t\u3069\u308C\u3089
+      (Dorera) - Itu (tanya yang mana, jamak)\r\n\u5F7C\u5973\u3089 (Kanojora) -
+      Mereka (perempuan)\r\n\u3042\u306E\u4EBA\u305F\u3061 (Anohitotachi) - Mereka
+      (netral)\r\n\u3042\u306E\u65B9\u3005 (Anokatagata) - Mereka (sangat formal,
+      sopan)\r\n\u3042\u308C\u3089 (Arera) - Itu (netral, jamak)\r\n\u305D\u308C\u3089
+      (Sorera) - Itu (netral, jamak)\r\n\u3042\u3061\u3089 (Achira) - Itu (lebih
+      formal, jamak)"
+    intervalTimes: 20
+  - materi: "Kata Ganti Lainnya:\r\n\u3053\u306E (Kono) - Ini\t\t\u3069\u3061\u3089
+      (Dochira) - Yang mana (lebih formal)\r\n\u305D\u306E (Sono) - Itu\r\n\u3042\u306E
+      (Ano) - Itu (jauh)\r\n\u3069\u306E (Dono) - Yang mana (tanya)\r\n\u3053\u3061\u3089
+      (Kochira) - Ini (lebih formal)\r\n\u305D\u3061\u3089 (Sochira) - Itu (lebih
+      formal)\r\n\u3042\u3061\u3089 (Achira) - Itu (lebih formal)"
+    intervalTimes: 20
+  - materi: "\rKata Ganti Benda:\r\nKata ganti untuk merujuk pada benda atau hal
+      lainnya, misalnya \"\u3053\u308C\" (kore) untuk \"ini\" atau \"\u305D\u308C\"
+      (sore) untuk \"itu\" atau \"\u3042\u308C\" (are) untuk \"itu (posisi benda
+      jauh dari pembicara)\"."
+    intervalTimes: 20
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Ganti melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

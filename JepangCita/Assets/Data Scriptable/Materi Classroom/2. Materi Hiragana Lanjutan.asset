@@ -14,39 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Hiragana Lanjutan
   materialsData:
-  - materi: "Lanjutan dari materi Hiragana\r\nDakuon (20 Huruf):\r\nDakuon adalah
-      huruf hiragana yang memiliki tambahan dakuten di bagian kanan atas huruf. Tanda
-      baca tambahan ini berbentuk seperti dua buah garis kecil yang serong dari kiri
-      atas ke kanan bawah (\") dan disebut dakuten.\r\nContohnya:\r\n\u304B (ka)
-      + Dakuon = \u304C (ga)"
-    intervalTimes: 10
+  - materi: "Materi Hiragana Lanjutan\r\nDakuon (20 Huruf):\r\nDakuon adalah huruf
+      hiragana yang memiliki tambahan dakuten di bagian kanan atas huruf. Tanda baca
+      tambahan ini berbentuk seperti dua buah garis kecil yang serong dari kiri atas
+      ke kanan bawah (\") dan disebut dakuten.\r\nContohnya:\r\n\u304B (ka) + Dakuon
+      = \u304C (ga)"
+    intervalTimes: 15
   - materi: "Berikut adalah huruf lengkapnya:\r\n\u304C (ga)\t\u304E (gi)\t\u3050
       (gu)\t\u3052 (ge)\t\u3054 (go)\r\n\u3056 (za)\t\u3058 (ji)\t\t\u305A (zu)\t\u305C
       (ze)\t\u305E (zo)\r\n\u3060 (da)\t\u3062 (ji/dji)\t\u3065 (dzu)\t\u3067 (de)\t\u3069
       (do)\r\n\u3070 (ba)\t\u3073 (bi)\t\u3076 (bu)\t\u3079 (be)\t\u307C (bo)"
-    intervalTimes: 25
+    intervalTimes: 20
   - materi: "Handakuon (5 Huruf):\r\nHandakuon adalah huruf hiragana yang memiliki
       tanda baca tambahan di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk
       seperti lingkaran kecil (\u309C) dan disebut handakuten.\r\nContohnya:\r\n\u306F
       (ha) + Handakuon = \u3071 (pa)\n\nBerikut adalah huruf lengkapnya:\r\n\u3071
       (pa)\t\u3074 (pi)\t\u3077 (pu)\t\u307A (pe)\t\u307D (po)"
-    intervalTimes: 25
+    intervalTimes: 20
   - materi: "Youon (33 Huruf):\r\nYouon adalah kombinasi dari huruf kecil ya (\u3083),
       yu (\u3085), dan yo (\u3087) dengan huruf dasar yang lain. \r\nContohnya:\r\n\u304D
       (ki) + Youon ya = \u304D\u3083 (kya)"
-    intervalTimes: 10
+    intervalTimes: 15
   - materi: "Berikut adalah huruf lengkapnya:\r\n\u304D\u3083 (kya)\t\u304D\u3085
       (kyu)\t\u304D\u3087 (kyo)\r\n\u3057\u3083 (sha)\t\u3057\u3085 (shu)\t\u3057\u3087
       (sho)\r\n\u3061\u3083 (cha)\t\u3061\u3085 (chu)\t\u3061\u3087 (cho)\r\n\u306B\u3083
       (nya)\t\u306B\u3085 (nyu)\t\u306B\u3087 (nyo)\r\n\u3072\u3083 (hya)\t\u3072\u3085
       (hyu)\t\u3072\u3087 (hyo)\r\n\u307F\u3083 (mya)\t\u307F\u3085 (myu)\t\u307F\u3087
-      (myo)\r\n\u308A\u3083 (rya)\t\u308A\u3085 (ryu)\t\u308A\u3087 (ryo)\r\n\u304E\u3083
-      (gya)\t\u304E\u3085 (gyu)\t\u304E\u3087 (gyo)\r"
-    intervalTimes: 25
-  - materi: "\u3058\u3083 (ja)\t\u3058\u3085 (ju)\t\u3058\u3087 (jo)\r\n\u3073\u3083
-      (bya)\t\u3073\u3085 (byu)\t\u3073\u3087 (byo)\r\n\u3074\u3083 (pya)\t\u3074\u3085
-      (pyu)\t\u3074\u3087 (pyo)"
-    intervalTimes: 25
+      (myo)\r\n\u308A\u3083 (rya)\t\u308A\u3085 (ryu)\t\u308A\u3087 (ryo)\r\n\r\n"
+    intervalTimes: 20
+  - materi: "\u304E\u3083 (gya)\t\u304E\u3085 (gyu)\t\u304E\u3087 (gyo)\n\u3058\u3083
+      (ja)\t\u3058\u3085 (ju)\t\u3058\u3087 (jo)\r\n\u3073\u3083 (bya)\t\u3073\u3085
+      (byu)\t\u3073\u3087 (byo)\r\n\u3074\u3083 (pya)\t\u3074\u3085 (pyu)\t\u3074\u3087
+      (pyo)"
+    intervalTimes: 20
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Hiragana melalui website
       JepangCita.
 

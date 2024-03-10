@@ -18,7 +18,7 @@ public class DashboardPanel : MonoBehaviour
         int materiNumber = PlayerPrefsController.instance.GetCurrentMateri();
         materiNumberText.text = materiNumber.ToString();
 
-        int latestScore = PlayerPrefsController.instance.GetLatestScore();
+        int latestScore = PlayerPrefsController.instance.GetHiraganaScore();
         latestScoreText.text = latestScore + "%";
 
 

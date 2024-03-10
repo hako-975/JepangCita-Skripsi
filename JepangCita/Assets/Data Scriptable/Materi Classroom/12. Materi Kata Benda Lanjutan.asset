@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 12. Materi Kata Benda Lanjutan
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Benda Lanjutan
+  materialsData:
+  - materi: "Materi Kata Benda Lanjutan\nTempat Umum:\r\nTempat Umum : \u516C\u5171\u306E\u5834\u6240
+      (Koukyou no basho)\r\nBank : \u9280\u884C (Ginkou)\r\nRumah Sakit : \u75C5\u9662
+      (Byouin)\r\nSupermarket : \u30B9\u30FC\u30D1\u30FC (Suupaa)\r\nTaman : \u516C\u5712
+      (Kouen)\r\nSekolah : \u5B66\u6821 (Gakkou)\r\nRestoran : \u30EC\u30B9\u30C8\u30E9\u30F3
+      (Resutoran)"
+    intervalTimes: 25
+  - materi: "Bioskop : \u6620\u753B\u9928 (Eigakan)\t\tStreet Food : \u5C4B\u53F0\u98DF\u3079\u7269
+      (yataitabemono)\r\nBandara : \u7A7A\u6E2F (Kuukou)\r\nStasiun : \u99C5 (Eki)\r\nPerpustakaan
+      : \u56F3\u66F8\u9928 (Toshokan)\r\nHotel : \u30DB\u30C6\u30EB (hoteru)\r\nCafe
+      : \u55AB\u8336\u5E97 (kissaten)\r\nMuseum seni : \u7F8E\u8853\u9928 (bijutsukan)\r\nPasar
+      : \u5E02\u5834 (ichiba)"
+    intervalTimes: 25
+  - materi: "Anggota Tubuh:\r\nAnggota Tubuh : \u624B\u8DB3 (teashi)\t\tWajah : \u9854
+      (kao)\r\nKepala : \u982D (atama)\t\t\tLeher : \u9996 (kubi)\r\nMata : \u76EE
+      (me)\t\t\t\tLengan : \u8155 (ude)\r\nHidung : \u9F3B (hana)\t\t\tTangan : \u624B
+      (te)\r\nMulut : \u53E3 (kuchi)\t\t\t\tJari : \u6307 (yubi)\r\nTelinga : \u8033
+      (mimi)\t\t\tKaki : \u8DB3 (ashi)\r\nRambut : \u9AEA\u306E\u6BDB (kami no ke)\t\tJempol
+      kaki : \u8DB3\u306E\u89AA\u6307 (ashi no oyayubi)"
+    intervalTimes: 25
+  - materi: "Punggung : \u80CC\u4E2D (senaka)\t\t\tBahu : \u80A9 (kata)\r\nPerut
+      : \u8179 (hara)\r\nDada : \u80F8 (mune)\r\nPinggang : \u8170 (koshi)\r\nPaha
+      : \u817F (momogashira)\r\nLutut : \u819D (hiza)\r\nKaki : \u811A (ashi)\r\nTumit
+      : \u304B\u304B\u3068 (kakato)"
+    intervalTimes: 25
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Benda melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

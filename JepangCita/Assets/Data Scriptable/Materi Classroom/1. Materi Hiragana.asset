@@ -32,11 +32,11 @@ MonoBehaviour:
       (so)\r\n\u305F (ta)\t\u3061 (chi)\t\u3064 (tsu)\t\u3066 (te)\t\u3068 (to)\r\n\u306A
       (na)\t\u306B (ni)\t\u306C (nu)\t\u306D (ne)\t\u306E (no)\r\n\u306F (ha)\t\u3072
       (hi)\t\u3075 (fu)\t\u3078 (he)\t\u307B (ho)\n\u307E (ma)\t\u307F (mi)\t\u3080
-      (mu)\t\u3081 (me)\t\u3082 (mo)\r\n\u3084 (ya)\t\t\t\u3086 (yu)\t\t\t\t\u3088
-      (yo)\r"
+      (mu)\t\u3081 (me)\t\u3082 (mo)\r\n"
     intervalTimes: 25
-  - materi: "\u3089 (ra)\t\u308A (ri)\t\t\u308B (ru)\t\u308C (re)\t\u308D (ro)\r\n\u308F
-      (wa)\t\t\t\t\t\t\t\t\u3092 (wo)\r\n\u3093 (n)"
+  - materi: "\u3084 (ya)\t\t\t\u3086 (yu)\t\t\t\t\u3088 (yo)\r\n\u3089 (ra)\t\u308A
+      (ri)\t\t\u308B (ru)\t\u308C (re)\t\u308D (ro)\r\n\u308F (wa)\t\t\t\t\t\t\t\t\u3092
+      (wo)\r\n\u3093 (n)"
     intervalTimes: 25
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Hiragana melalui website
       JepangCita.

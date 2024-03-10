@@ -1,9 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class ExamPanel : MonoBehaviour
 {
+    [SerializeField]
+    private ExamList examList;
+
+    private ExamQuestion[] listExamQuestions;
+
+    [SerializeField]
+    private TextMeshProUGUI titleExamText;
     [SerializeField]
     private TextMeshProUGUI nameText;
     [SerializeField]
@@ -12,8 +19,6 @@ public class ExamPanel : MonoBehaviour
     private Button startButton;
     [SerializeField]
     private DetailQuestion detailQuestionPrefabs;
-    [SerializeField]
-    private ExamQuestion[] listExamQuestions;
     [SerializeField]
     private Button finishButton;
 
@@ -26,9 +31,31 @@ public class ExamPanel : MonoBehaviour
     int row;
     int column;
 
+    [SerializeField]
+    private ClassroomController classroomController;
+
+    bool isClicked = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+        {
+            listExamQuestions = examList.listHiraganaExam;
+        }
+        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
+        {
+            listExamQuestions = examList.listKatakanaExam;
+        }
+        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
+        {
+            listExamQuestions = examList.listAngkaExam;
+        }
+        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
+        {
+            listExamQuestions = examList.listWaktuExam;
+        }
+
         row = listExamQuestions.Length + 1;
         column = 5;
         answers = new bool[row, column];
@@ -79,18 +106,32 @@ public class ExamPanel : MonoBehaviour
         }
     }
 
-    private void FinishButtonClick()
+    public void FinishButtonClick()
     {
-        for (int i = 0; i < row; i++)
+        if (isClicked == false)
         {
-            for (int j = 0; j < column; j++)
+            isClicked = true;
+
+            finishButton.interactable = false;
+
+            for (int i = 0; i < row; i++)
             {
-                if (answers[i, j])
+                for (int j = 0; j < column; j++)
                 {
-                    score += 20;
+                    if (answers[i, j])
+                    {
+                        score += 20;
+                    }
                 }
             }
+            
+            GetComponent<Animator>().SetTrigger("Hide");
+
+            PlayerPrefsController.instance.SetHiraganaScore(Mathf.Clamp(score, 0, 100));
+            // misi kelima
+            PlayerPrefsController.instance.SetMission(4, classroomController.soundController);
+
+            StartCoroutine(classroomController.OpenDialogPanel("Sensei", "Oke みなさん waktu ujian sudah selesai, kalian bisa cek nilainya di situs JepangCita. じゃ、またあした。", true, true));
         }
-        Debug.Log("Score: " + score);
     }
 }

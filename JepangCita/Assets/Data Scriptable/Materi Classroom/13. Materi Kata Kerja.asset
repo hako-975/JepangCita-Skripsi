@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 13. Materi Kata Kerja
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Kerja
+  materialsData:
+  - materi: "Dalam bahasa Jepang, kata kerja disebut \"\u52D5\u8A5E\" (doushi). Kata
+      kerja ini memiliki fungsi yang mirip dengan kata kerja dalam bahasa lainnya,
+      yaitu untuk menyatakan tindakan, keadaan, atau peristiwa. Kata kerja dalam
+      bahasa Jepang sering digunakan untuk menyatakan aktivitas atau perbuatan yang
+      dilakukan oleh subjek dalam sebuah kalimat.\n\nKata kerja dapat memiliki berbagai
+      bentuk dan pola konjugasi tergantung pada waktu, keadaan, atau hubungannya
+      dengan subjek atau objek dalam kalimat. Pola konjugasi ini termasuk bentuk
+      dasar (masu), bentuk bentuk lampau (ta), bentuk negatif (nai), bentuk perintah
+      (nasai), dan bentuk lainnya yang mengindikasikan keadaan atau kejadian tertentu.\r\n"
+    intervalTimes: 5
+  - materi: "Contoh kata kerja dalam bahasa Jepang adalah \u884C\u304F (iku - pergi),
+      \u98DF\u3079\u308B (taberu - makan), \u6765\u308B (kuru - datang), dan sebagainya.
+      Dengan menggunakan kata kerja ini, kita dapat menyampaikan informasi tentang
+      aktivitas atau tindakan yang sedang dilakukan atau akan dilakukan oleh subjek
+      dalam suatu kalimat.\r\n\r\nDalam bahasa Jepang, kata kerja memiliki beberapa
+      bentuk yang berbeda tergantung pada konteks kalimatnya, termasuk waktu, keadaan,
+      atau hubungan dengan subjek dan objek. Berikut adalah beberapa bentuk umum
+      dari kata kerja dalam bahasa Jepang:"
+    intervalTimes: 5
+  - materi: "Bentuk Dasar (Masu-kei): Ini adalah bentuk standar dari kata kerja yang
+      digunakan dalam situasi formal. Bentuk ini sering digunakan dalam percakapan
+      sehari-hari. Contoh: \u98DF\u3079\u308B (taberu - makan) menjadi \u98DF\u3079\u307E\u3059
+      (tabemasu).\r\n\r\nBentuk Bentuk Lampau (Ta-kei): Ini adalah bentuk yang digunakan
+      untuk menyatakan tindakan yang telah terjadi di masa lampau. Contoh: \u98DF\u3079\u308B
+      (taberu - makan) menjadi \u98DF\u3079\u305F (tabeta).\r\n\r\nBentuk Negatif
+      (Nai-kei): Ini adalah bentuk yang digunakan untuk menyatakan ketiadaan atau
+      kegagalan melakukan tindakan. Contoh: \u98DF\u3079\u308B (taberu - makan) menjadi
+      \u98DF\u3079\u306A\u3044 (tabenai)."
+    intervalTimes: 5
+  - materi: "Bentuk Potensial (E-kei): Ini adalah bentuk yang digunakan untuk menyatakan
+      kemampuan atau kesempatan melakukan tindakan. Contoh: \u98DF\u3079\u308B (taberu
+      - makan) menjadi \u98DF\u3079\u3089\u308C\u308B (taberareru).\r\n\r\nBentuk
+      Perintah (Nasai-kei): Ini adalah bentuk yang digunakan untuk memberikan perintah
+      atau instruksi. Contoh: \u98DF\u3079\u308B (taberu - makan) menjadi \u98DF\u3079\u306A\u3055\u3044
+      (tabenasai).\r\n\r\nBentuk Permintaan (Te-kei): Ini adalah bentuk yang digunakan
+      untuk menyatakan permintaan atau ajakan. Contoh: \u884C\u304F (iku - pergi)
+      menjadi \u884C\u3063\u3066 (itte)."
+    intervalTimes: 5
+  - materi: "Bentuk Coba (Te-miru-kei): Ini adalah bentuk yang digunakan untuk menyatakan
+      percobaan atau mencoba melakukan tindakan. Contoh: \u98DF\u3079\u308B (taberu
+      - makan) menjadi \u98DF\u3079\u3066\u307F\u308B (tabete miru).\r\n\r\nBentuk
+      Berkelanjutan (Te-iru-kei): Ini adalah bentuk yang digunakan untuk menyatakan
+      tindakan yang sedang berlangsung atau keadaan yang masih berlanjut. Contoh:
+      \u98DF\u3079\u308B (taberu - makan) menjadi \u98DF\u3079\u3066\u3044\u308B
+      (tabete iru)."
+    intervalTimes: 5
+  - materi: "Berikut adalah contoh kata kerja yang sering digunakan:\r\r\nMakan -
+      \u98DF\u3079\u307E\u3059 (Tabemasu)\r\nBentuk Dasar: \u98DF\u3079\u307E\u3059
+      (tabemasu)\r\nContoh Penggunaan: \u79C1\u306F\u6BCE\u65E5\u671D\u3054\u306F\u3093\u3092\u98DF\u3079\u307E\u3059
+      (Watashi wa mainichi asagohan o tabemasu.) - Saya makan sarapan setiap hari.\r\n\r\nMinum
+      - \u98F2\u307F\u307E\u3059 (Nomimasu)\r\nBentuk Dasar: \u98F2\u307F\u307E\u3059
+      (nomimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u30B3\u30FC\u30D2\u30FC\u3092\u98F2\u307F\u307E\u3059
+      (Kare wa koohii o nomimasu.) - Dia minum kopi."
+    intervalTimes: 5
+  - materi: "Pergi - \u884C\u304D\u307E\u3059 (Ikimasu)\r\nBentuk Dasar: \u884C\u304D\u307E\u3059
+      (ikimasu)\r\nContoh Penggunaan: \u5F7C\u5973\u306F\u5B66\u6821\u306B\u884C\u304D\u307E\u3059
+      (Kanojo wa gakkou ni ikimasu.) - Dia pergi ke sekolah.\r\n\r\nDatang - \u6765\u307E\u3059
+      (Kimasu)\r\nBentuk Dasar: \u6765\u307E\u3059 (kimasu)\r\nContoh Penggunaan:
+      \u53CB\u9054\u304C\u5BB6\u306B\u6765\u307E\u3059 (Tomodachi ga ie ni kimasu.)
+      - Teman datang ke rumah."
+    intervalTimes: 5
+  - materi: "Ada (untuk benda tak hidup) - \u3042\u308A\u307E\u3059 (Arimasu)\r\nBentuk
+      Dasar: \u3042\u308A\u307E\u3059 (arimasu)\r\nContoh Penggunaan: \u516C\u5712\u306B\u6728\u304C\u3042\u308A\u307E\u3059
+      (Kouen ni ki ga arimasu.) - Ada pohon di taman.\r\n\r\nAda (untuk benda hidup)
+      - \u3044\u307E\u3059 (Imasu)\r\nBentuk Dasar: \u3044\u307E\u3059 (imasu)\r\nContoh
+      Penggunaan: \u732B\u304C\u5EAD\u306B\u3044\u307E\u3059 (Neko ga niwa ni imasu.)
+      - Ada kucing di halaman."
+    intervalTimes: 5
+  - materi: "Mendengarkan - \u805E\u304D\u307E\u3059 (Kikimasu)\r\nBentuk Dasar:
+      \u805E\u304D\u307E\u3059 (kikimasu)\r\nContoh Penggunaan: \u5148\u751F\u306E\u8A71\u3092\u805E\u304D\u307E\u3059
+      (Sensei no hanashi o kikimasu.) - Saya mendengarkan cerita guru.\r\n\r\nMembaca
+      - \u8AAD\u307F\u307E\u3059 (Yomimasu)\r\nBentuk Dasar: \u8AAD\u307F\u307E\u3059
+      (yomimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u65B0\u805E\u3092\u8AAD\u307F\u307E\u3059
+      (Kare wa shinbun o yomimasu.) - Dia membaca surat kabar."
+    intervalTimes: 5
+  - materi: "Menulis - \u66F8\u304D\u307E\u3059 (Kakimasu)\r\nBentuk Dasar: \u66F8\u304D\u307E\u3059
+      (kakimasu)\r\nContoh Penggunaan: \u624B\u7D19\u3092\u66F8\u304D\u307E\u3059
+      (Tegami o kakimasu) - Saya menulis surat.\r\n\r\nMeminjam - \u501F\u308A\u307E\u3059
+      (Karimasu)\r\nBentuk Dasar: \u501F\u308A\u307E\u3059 (karimasu)\r\nContoh Penggunaan:
+      \u672C\u3092\u56F3\u66F8\u9928\u304B\u3089\u501F\u308A\u307E\u3059 (Hon o toshokan
+      kara karimasu) - Saya meminjam buku dari perpustakaan."
+    intervalTimes: 5
+  - materi: "Meminjamkan - \u8CB8\u3057\u307E\u3059 (Kashimasu)\r\nBentuk Dasar:
+      \u8CB8\u3057\u307E\u3059 (kashimasu)\r\nContoh Penggunaan: \u30DA\u30F3\u3092\u53CB\u9054\u306B\u8CB8\u3057\u307E\u3059
+      (Pen o tomodachi ni kashimasu) - Saya meminjamkan pena kepada teman.\r\n\r\nMengembalikan
+      - \u8FD4\u3057\u307E\u3059 (Kaeshimasu)\r\nBentuk Dasar: \u8FD4\u3057\u307E\u3059
+      (kaeshimasu)\r\nContoh Penggunaan: \u672C\u3092\u56F3\u66F8\u9928\u306B\u8FD4\u3057\u307E\u3059
+      (Hon o toshokan ni kaeshimasu) - Saya mengembalikan buku ke perpustakaan."
+    intervalTimes: 5
+  - materi: "Membeli - \u8CB7\u3044\u307E\u3059 (Kaimasu)\r\nBentuk Dasar: \u8CB7\u3044\u307E\u3059
+      (kaimasu)\r\nContoh Penggunaan: \u30B7\u30E3\u30C4\u3092\u5E97\u3067\u8CB7\u3044\u307E\u3059
+      (Shatsu o mise de kaimasu) - Saya membeli kemeja di toko.\r\n\r\nBisa pergi
+      - \u884C\u3051\u307E\u3059 (ikemasu)\r\nBentuk Dasar: \u884C\u3051\u307E\u3059
+      (ikemasu)\r\nContoh Penggunaan: \u5F7C\u306F\u660E\u65E5\u6771\u4EAC\u306B\u3044\u3051\u307E\u3059
+      (Kare wa ashita Toukyou ni ikemasu) - Dia bisa pergi ke Tokyo besok.\r\n"
+    intervalTimes: 5
+  - materi: "Naik (transportasi) - \u4E57\u308A\u307E\u3059 (norimasu)\r\nBentuk
+      Dasar: \u4E57\u308A\u307E\u3059 (norimasu)\r\nContoh Penggunaan: \u5F7C\u306F\u96FB\u8ECA\u306B\u4E57\u308A\u307E\u3059
+      (Kare wa densha ni norimasu) - Dia naik kereta.\r\n\r\nBerdiri - \u7ACB\u3061\u307E\u3059
+      (tachimasu)\r\nBentuk Dasar: \u7ACB\u3061\u307E\u3059 (tachimasu)\r\nContoh
+      Penggunaan: \u5B50\u3069\u3082\u305F\u3061\u306F\u6559\u5BA4\u306B\u7ACB\u3061\u307E\u3059
+      (Kodomotachi wa kyoushitsu ni tachimasu) - Anak-anak berdiri di dalam kelas."
+    intervalTimes: 5
+  - materi: "Duduk - \u5EA7\u308A\u307E\u3059 (suwarimasu)\r\nBentuk Dasar: \u5EA7\u308A\u307E\u3059
+      (suwarimasu)\r\nContoh Penggunaan: \u79C1\u9054\u306F\u516C\u5712\u306B\u5EA7\u308A\u307E\u3059
+      (Watashitachi wa kouen ni suwarimasu) - Kami duduk di taman.\r\n\r\nMemasak
+      - \u6599\u7406\u3092\u3057\u307E\u3059 (ryouri o shimasu)\r\nBentuk Dasar:
+      \u6599\u7406\u3092\u3057\u307E\u3059 (ryouri o shimasu)\r\nContoh Penggunaan:
+      \u79C1\u306F\u6599\u7406\u3092\u3057\u307E\u3059 (Watashi wa ryouri o shimasu)
+      - Saya memasak."
+    intervalTimes: 5
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Kerja melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000
