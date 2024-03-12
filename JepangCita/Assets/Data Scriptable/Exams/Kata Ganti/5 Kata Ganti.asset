@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 5 Kata Ganti
+  m_EditorClassIdentifier: 
+  question: Kata ganti yang digunakan untuk merujuk pada "saya" dalam bahasa Jepang,
+    digunakan secara kasual oleh wanita adalah?
+  examData:
+  - answer: "\u3042\u305F\u3057 (Atashi)"
+    isRightAnswer: 1
+  - answer: "\u4ECA\u5E74 (Kotoshi)"
+    isRightAnswer: 0
+  - answer: "\u4FFA (Ore)"
+    isRightAnswer: 0
+  - answer: "\u50D5 (Boku)"
+    isRightAnswer: 0

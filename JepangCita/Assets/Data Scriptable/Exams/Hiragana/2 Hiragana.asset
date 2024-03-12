@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 2 Hiragana
   m_EditorClassIdentifier: 
-  question: Apa Hiragana dari romaji "Minasan"?
+  question: Huruf Hiragana yang memiliki tambahan dakuten di atasnya disebut?
   examData:
-  - answer: "\u307F\u3093\u306A\u3056\u3093"
-    isRightAnswer: 0
-  - answer: "\u307F\u3093\u306A\u3055\u3093"
-    isRightAnswer: 0
-  - answer: "\u307F\u306A\u3055\u3093"
+  - answer: Dakuon
     isRightAnswer: 1
-  - answer: "\u307F\u306A\u3056\u3093"
+  - answer: Youon
+    isRightAnswer: 0
+  - answer: Handakuon
+    isRightAnswer: 0
+  - answer: Dakutenon
     isRightAnswer: 0

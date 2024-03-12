@@ -23559,8 +23559,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 734617711}
   m_HandleRect: {fileID: 734617710}
   m_Direction: 2
-  m_Value: 1.0000011
-  m_Size: 0.92209667
+  m_Value: 1.0000005
+  m_Size: 0.6688843
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -32081,6 +32081,16 @@ MonoBehaviour:
   listKatakanaExam: []
   listAngkaExam: []
   listWaktuExam: []
+  listKataGantiExam: []
+  listKataBendaExam: []
+  listKataKerjaExam: []
+  listKataSifatExam: []
+  listKataKeteranganExam: []
+  listKataTanyaExam: []
+  listKataHubungExam: []
+  listKataSeruExam: []
+  listPerkenalanDiriExam: []
+  listFinalExam: []
 --- !u!4 &896988802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4379673244704792, guid: 1be61187b5d765449be824463642cb0f, type: 3}
@@ -77318,7 +77328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: -0.000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2141103799

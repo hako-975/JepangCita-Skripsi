@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 8 Kata Ganti
+  m_EditorClassIdentifier: 
+  question: Kata ganti yang digunakan untuk merujuk pada "mereka" dalam bahasa Jepang,
+    dengan tingkat formalitas yang tinggi, adalah?
+  examData:
+  - answer: "\u3042\u308C\u3089 (Arera)"
+    isRightAnswer: 0
+  - answer: "\u305D\u308C\u3089 (Sorera)"
+    isRightAnswer: 0
+  - answer: "\u3042\u3061\u3089 (Achira)"
+    isRightAnswer: 0
+  - answer: "\u3042\u306E\u65B9\u3005 (Anokatagata)"
+    isRightAnswer: 1

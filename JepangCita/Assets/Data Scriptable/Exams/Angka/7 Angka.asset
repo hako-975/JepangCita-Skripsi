@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 7 Angka
+  m_EditorClassIdentifier: 
+  question: "Berapa total angka dari \"\u767E\u4E07\" dan \"\u4E00\u4E07\"?"
+  examData:
+  - answer: 1.100.000
+    isRightAnswer: 0
+  - answer: 1.100.100
+    isRightAnswer: 0
+  - answer: 1.010.000
+    isRightAnswer: 1
+  - answer: 1.000.100
+    isRightAnswer: 0

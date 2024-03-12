@@ -470,6 +470,7 @@ public class PlayerPrefsController : MonoBehaviour
     #endregion
 
     #region MateriClassroom
+    [HideInInspector]
     public string[] listMateri = new string[] 
     { 
         "Huruf Hiragana",
@@ -477,19 +478,32 @@ public class PlayerPrefsController : MonoBehaviour
         "Ujian - Hiragana",
         "Huruf Katakana",
         "Huruf Katakana Lanjutan",
+        "Ujian - Katakana",
         "Angka",
         "Angka Lanjutan",
+        "Ujian - Angka",
         "Waktu",
         "Waktu Lanjutan",
+        "Ujian - Waktu",
         "Kata Ganti",
+        "Ujian - Kata Ganti",
         "Kata Benda",
+        "Ujian - Kata Benda",
         "Kata Kerja",
+        "Ujian - Kata Kerja",
         "Kata Sifat",
+        "Ujian - Kata Sifat",
         "Kata Keterangan",
+        "Ujian - Kata Keterangan",
         "Kata Tanya",
+        "Ujian - Kata Tanya",
         "Kata Hubung",
+        "Ujian - Kata Hubung",
         "Kata Seru",
-        "Perkenalan Diri"
+        "Ujian - Kata Seru",
+        "Perkenalan Diri",
+        "Ujian - Perkenalan Diri",
+        "Ujian Akhir"
     };
 
     public void SetCurrentMateri(int indexMateri)

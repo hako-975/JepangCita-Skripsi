@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 3 Hiragana
   m_EditorClassIdentifier: 
-  question: "Apa romaji dari Hiragana \"\u3042\u3081\u304C\u3075\u308B\"?"
+  question: "Jika huruf \"\u306F\" ditambah dengan Handakuon, menjadi huruf apa?"
   examData:
-  - answer: Ame Ka Furu
-    isRightAnswer: 0
-  - answer: Ame Ga Furu
+  - answer: pa
     isRightAnswer: 1
-  - answer: Ome Ga Furu
+  - answer: hi
     isRightAnswer: 0
-  - answer: Ame Ka Buru
+  - answer: po
+    isRightAnswer: 0
+  - answer: pe
     isRightAnswer: 0

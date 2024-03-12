@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 4 Hiragana
   m_EditorClassIdentifier: 
-  question: Apa Hiragana dari romaji "Ogenki Desuka"?
+  question: Berapakah jumlah huruf Dakuon dalam Hiragana?
   examData:
-  - answer: "\u3042\u3052\u3093\u304D\u3067\u3059\u304B"
+  - answer: 5
     isRightAnswer: 0
-  - answer: "\u304A\u3051\u3093\u304D\u3067\u3059\u304B"
-    isRightAnswer: 0
-  - answer: "\u304A\u3052\u3093\u304E\u3067\u3059\u304B"
-    isRightAnswer: 0
-  - answer: "\u304A\u3052\u3093\u304D\u3067\u3059\u304B"
+  - answer: 20
     isRightAnswer: 1
+  - answer: 33
+    isRightAnswer: 0
+  - answer: 46
+    isRightAnswer: 0

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 5 Hiragana
   m_EditorClassIdentifier: 
-  question: "Apa romaji dari Hiragana \"\u3072\u308B\u3054\u306F\u3093\"?"
+  question: "Apakah huruf Hiragana yang memiliki kombinasi dengan \"\u3083\", \"\u3085\",
+    dan \"\u3087\"?"
   examData:
-  - answer: Hiru Gohan
+  - answer: Youon
     isRightAnswer: 1
-  - answer: Biru Gohan
+  - answer: Dakuon
     isRightAnswer: 0
-  - answer: Hiru Kohan
+  - answer: Handakuon
     isRightAnswer: 0
-  - answer: Hiro Gohan
+  - answer: Hiraganaon
     isRightAnswer: 0

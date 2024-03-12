@@ -10,4 +10,24 @@ public class ExamList : MonoBehaviour
     public ExamQuestion[] listAngkaExam;
     [Header("Waktu Exam")]
     public ExamQuestion[] listWaktuExam;
+    [Header("Kata Ganti Exam")]
+    public ExamQuestion[] listKataGantiExam;
+    [Header("Kata Benda Exam")]
+    public ExamQuestion[] listKataBendaExam;
+    [Header("Kata Kerja Exam")]
+    public ExamQuestion[] listKataKerjaExam;
+    [Header("Kata Sifat Exam")]
+    public ExamQuestion[] listKataSifatExam;
+    [Header("Kata Keterangan Exam")]
+    public ExamQuestion[] listKataKeteranganExam;
+    [Header("Kata Tanya Exam")]
+    public ExamQuestion[] listKataTanyaExam;
+    [Header("Kata Hubung Exam")]
+    public ExamQuestion[] listKataHubungExam;
+    [Header("Kata Seru Exam")]
+    public ExamQuestion[] listKataSeruExam;
+    [Header("Perkenalan Diri Exam")]
+    public ExamQuestion[] listPerkenalanDiriExam;
+    [Header("Final Exam")]
+    public ExamQuestion[] listFinalExam;
 }

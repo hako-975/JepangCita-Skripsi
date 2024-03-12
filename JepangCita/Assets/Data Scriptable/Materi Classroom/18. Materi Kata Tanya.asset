@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 18. Materi Kata Tanya
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Tanya
+  materialsData:
+  - materi: "Dalam bahasa Jepang, kata tanya sering disebut sebagai \"\u7591\u554F\u8A5E\"
+      (gimonshi) adalah kata-kata yang digunakan untuk membentuk pertanyaan dalam
+      bahasa Jepang. Mereka mencakup kata-kata seperti \"siapa\", \"apa\", \"kapan\",
+      \"mengapa\", \"di mana\", \"bagaimana\", dan seterusnya. "
+    intervalTimes: 15
+  - materi: "Berikut adalah beberapa contoh kata tanya dalam bahasa Jepang beserta
+      artinya:\r\nSiapa - \u8AB0 (dare)\r\nContoh penggunaan: \u5F7C\u306F\u8AB0\u3067\u3059\u304B\uFF1F
+      (Kare wa dare desu ka?) - Siapa dia?\r\n\r\nApa - \u4F55 (nani)\r\nContoh penggunaan:
+      \u3053\u308C\u306F\u4F55\u3067\u3059\u304B\uFF1F (Kore wa nani desu ka?) -
+      Apa ini?"
+    intervalTimes: 15
+  - materi: "Kapan - \u3044\u3064 (itsu)\r\nContoh penggunaan: \u3042\u306A\u305F\u306E\u8A95\u751F\u65E5\u306F\u3044\u3064\u3067\u3059\u304B\uFF1F
+      (Anata no tanjoubi wa itsu desu ka?) - Kapan ulang tahun Anda?\r\n\r\nDi mana
+      - \u3069\u3053 (doko)\r\nContoh penggunaan: \u3042\u306A\u305F\u306E\u5BB6\u306F\u3069\u3053\u3067\u3059\u304B\uFF1F
+      (Anata no ie wa doko desu ka?) - Di mana rumah Anda?"
+    intervalTimes: 15
+  - materi: "Mengapa - \u306A\u305C (naze)\r\nContoh penggunaan: \u306A\u305C\u5F7C\u306F\u9045\u308C\u3066\u3044\u307E\u3059\u304B\uFF1F
+      (Naze kare wa okurete imasu ka?) - Mengapa dia terlambat?\r\n\r\nBagaimana
+      - \u3069\u3046 (dou)\r\nContoh penggunaan: \u3053\u306E\u6A5F\u68B0\u3092\u4F7F\u3046\u65B9\u6CD5\u306F\u3069\u3046\u3067\u3059\u304B\uFF1F
+      (Kono kikai o tsukau houhou wa dou desu ka?) - Bagaimana cara menggunakan mesin
+      ini?"
+    intervalTimes: 15
+  - materi: "Berapa - \u3044\u304F\u3064 (ikutsu)\r\nContoh penggunaan: \u305D\u306E\u672C\u306F\u3044\u304F\u3089\u3067\u3059\u304B\uFF1F
+      (Sono hon wa ikura desu ka?) - Berapa harga buku itu?\r\n\r\nBerapa lama -
+      \u3069\u306E\u304F\u3089\u3044 (donokurai)\r\nContoh penggunaan: \u3042\u306A\u305F\u306F\u3069\u306E\u304F\u3089\u3044\u3053\u3053\u306B\u3044\u307E\u3057\u305F\u304B\uFF1F
+      (Anata wa donokurai koko ni imashita ka?) - Berapa lama Anda berada di sini?"
+    intervalTimes: 15
+  - materi: "Siapa yang - \u8AB0\u304C (dare ga)\r\nContoh penggunaan: \u3053\u306E\u6620\u753B\u3092\u6F14\u3058\u305F\u306E\u306F\u8AB0\u3067\u3059\u304B\uFF1F
+      (Kono eiga o enjita no wa dare desu ka?) - Siapa yang memainkan film ini?\r\n\r\nApa
+      yang - \u4F55\u304C (nani ga)\r\nContoh penggunaan: \u5F7C\u5973\u306E\u8A71\u306E\u4E2D\u3067\u4E00\u756A\u9762\u767D\u3044\u306E\u306F\u4F55\u3067\u3059\u304B\uFF1F
+      (Kanojo no hanashi no naka de ichiban omoshiroi no wa nani desu ka?) - Apa
+      yang paling menarik dalam ceritanya?\r\n"
+    intervalTimes: 15
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Tanya melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

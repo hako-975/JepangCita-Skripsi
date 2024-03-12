@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 19. Materi Kata Hubung
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Hubung
+  materialsData:
+  - materi: "Dalam bahasa Jepang, \"\u63A5\u7D9A\u8A5E\" (setsuzokushi) mengacu pada
+      kata-kata atau frasa yang digunakan untuk menghubungkan klausa atau frase dalam
+      sebuah kalimat. Fungsinya mirip dengan konjungsi dalam bahasa Inggris. \r"
+    intervalTimes: 15
+  - materi: "Berikut adalah beberapa contoh \"\u63A5\u7D9A\u8A5E\" (setsuzokushi)
+      yang umum digunakan:\r\n\r\nDan - \u305D\u3057\u3066 (soshite)\r\nContoh penggunaan:
+      \u5F7C\u306F\u52C9\u5F37\u3092\u3057\u3066\u3001\u8A66\u9A13\u306B\u5408\u683C\u3057\u307E\u3057\u305F
+      (Kare wa benkyou o shite, shiken ni goukaku shimashita) - Dia belajar dan lulus
+      ujian.\r\n\r\nTetapi - \u3057\u304B\u3057 (shikashi)\r\nContoh penggunaan:
+      \u79C1\u306F\u30B3\u30FC\u30D2\u30FC\u304C\u597D\u304D\u3067\u3059\u304C\u3001\u7D05\u8336\u306F\u5ACC\u3044\u3067\u3059
+      (Watashi wa koohii ga suki desu ga, koucha wa kirai desu) - Saya suka kopi
+      tetapi tidak suka teh."
+    intervalTimes: 15
+  - materi: "Oleh karena itu, Jadi - \u3060\u304B\u3089 (dakara)\r\nContoh penggunaan:
+      \u96E8\u304C\u964D\u308B\u304B\u3089\u3001\u5098\u3092\u6301\u3063\u3066\u884C\u304D\u307E\u3059
+      (Ame ga furu kara, kasa o motte ikimasu) - Karena hujan, saya membawa payung.\r\n\r\nDi
+      atas itu, Selain itu - \u305D\u306E\u4E0A (sono ue)\r\nContoh penggunaan: \u5F7C\u306F\u30B9\u30DD\u30FC\u30C4\u304C\u597D\u304D\u3067\u3059\u305D\u306E\u4E0A\u3001\u6BCE\u65E5\u30B8\u30E7\u30AE\u30F3\u30B0\u3092\u3057\u3066\u3044\u307E\u3059
+      (Kare wa supootsu ga suki desu. Sono ue, mainichi jogingu o shiteimasu) - Dia
+      suka olahraga. Di atas itu, dia jogging setiap hari."
+    intervalTimes: 15
+  - materi: "Atau - \u307E\u305F\u306F (matawa)\r\nContoh penggunaan: \u30B3\u30FC\u30D2\u30FC\u307E\u305F\u306F\u7D05\u8336\u3092\u98F2\u307F\u307E\u3059\u304B\uFF1F
+      (Koohii matawa koucha o nomimasu ka?) - Apakah Anda ingin minum kopi atau teh?\r\n\r\nOleh
+      karena itu, Karena itu - \u305D\u306E\u305F\u3081 (sono tame)\r\nContoh penggunaan:
+      \u9053\u304C\u6DF7\u3093\u3067\u3044\u308B\u306E\u3067\u3001\u305D\u306E\u305F\u3081\u9045\u308C\u307E\u3059
+      (Michi ga konde iru node, sono tame okuremasu) - Karena jalan macet, saya terlambat."
+    intervalTimes: 15
+  - materi: "Kemudian, Setelah itu - \u305D\u306E\u5F8C (sonogo)\r\nContoh penggunaan:
+      \u30DF\u30FC\u30C6\u30A3\u30F3\u30B0\u304C\u7D42\u308F\u3063\u305F\u3089\u3001\u305D\u306E\u5F8C\u663C\u3054\u98EF\u3092\u98DF\u3079\u307E\u3059
+      (Miitingu ga owattara, sonogo hirugohan o tabemasu) - Setelah rapat selesai,
+      saya akan makan siang.\r\n\r\nDi sisi lain - \u4E00\u65B9 (ippou)\r\nContoh
+      penggunaan: \u5F7C\u306F\u5BE1\u9ED9\u3067\u3059\u304C\u3001\u4E00\u65B9\u3067\u975E\u5E38\u306B\u512A\u79C0\u3067\u3059
+      (Kare wa kamoku desu ga, ippou de hijou ni yuushuu desu) - Dia pendiam, tetapi
+      di sisi lain, dia sangat berbakat."
+    intervalTimes: 15
+  - materi: "Karena, Sebab - \u306A\u305C\u306A\u3089 (nazenara)\r\nContoh penggunaan:
+      \u306A\u305C\u306A\u3089\u5F7C\u306F\u75C5\u6C17\u3060\u304B\u3089\u3067\u3059
+      (Nazenara kare wa byouki dakara desu) - Karena dia sakit.\r\n\r\nDengan demikian
+      - \u3068\u3044\u3046\u308F\u3051\u3067 (to iu wake de)\r\nContoh penggunaan:
+      \u305F\u304F\u3055\u3093\u306E\u5FDC\u52DF\u304C\u3042\u3063\u305F\u3002\u3068\u3044\u3046\u308F\u3051\u3067\u3001\u9078\u8003\u304C\u96E3\u3057\u304F\u306A\u308A\u307E\u3057\u305F
+      (Takusan no oubo ga atta. To iu wake de, senkou ga muzukashiku narimashita)
+      - Ada banyak pendaftar. Dengan demikian, proses seleksi menjadi sulit."
+    intervalTimes: 15
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Hubung melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

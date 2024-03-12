@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 20. Materi Kata Seru
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Seru
+  materialsData:
+  - materi: "Dalam bahasa Jepang, \"\u611F\u52D5\u8A5E\" (kandoushi) adalah kata-kata
+      yang digunakan untuk mengekspresikan perasaan atau emosi seseorang dalam berbagai
+      situasi. Mereka seringkali tidak mempunyai makna yang konkret atau definitif,
+      tetapi digunakan untuk menyatakan perasaan seperti kejutan, sukacita, kekecewaan,
+      atau ketakutan."
+    intervalTimes: 15
+  - materi: "Berikut adalah beberapa contoh \"\u611F\u52D5\u8A5E\" (kandoushi) dalam
+      bahasa Jepang:\r\nWah! - \u308F\u3042 (waa)\r\nContoh penggunaan: \u308F\u3042\u3001\u305D\u308C\u306F\u672C\u5F53\u306B\u7D20\u6674\u3089\u3057\u3044\u3067\u3059\u306D\uFF01
+      (Waa, sore wa hontou ni subarashii desu ne!) - Wah, itu sungguh luar biasa!\r\n\r\nYaay!
+      - \u3088\u3063\u3057\u3083 (yossha)\r\nContoh penggunaan: \u3088\u3063\u3057\u3083\u3001\u79C1\u305F\u3061\u306E\u30C1\u30FC\u30E0\u304C\u52DD\u3061\u307E\u3057\u305F\uFF01
+      (Yossha, watashitachi no chiimu ga kachimashita!) - Yaay, tim kita menang!"
+    intervalTimes: 15
+  - materi: "Wow! - \u3046\u308F\u30FC (uwaa)\r\nContoh penggunaan: \u3046\u308F\u30FC\u3001\u3053\u306E\u666F\u8272\u306F\u4FE1\u3058\u3089\u308C\u306A\u3044\uFF01
+      (Uwaa, kono keshiki wa shinjirarenai!) - Wow, pemandangan ini luar biasa!\r\n\r\nLuar
+      biasa! - \u3059\u3054\u3044 (sugoi)\r\nContoh penggunaan: \u3059\u3054\u3044\u3001\u541B\u306F\u3059\u3054\u3044\u624D\u80FD\u3092\u6301\u3063\u3066\u3044\u308B\u3088\uFF01
+      (Sugoi, kimi wa sugoi sainou o motte iru yo!) - Luar biasa, kamu memiliki bakat
+      yang luar biasa!"
+    intervalTimes: 15
+  - materi: "Selamat! - \u304A\u3081\u3067\u3068\u3046 (omedetou)\r\nContoh penggunaan:
+      \u304A\u3081\u3067\u3068\u3046\u3001\u65B0\u3057\u3044\u4ED5\u4E8B\u306E\u6210\u529F\u3092\u795D\u3044\u307E\u3059\uFF01
+      (Omedetou, atarashii shigoto no seikou o iwaimasu!) - Selamat, aku merayakan
+      kesuksesan pekerjaan baru!\r\n\r\nSemangat! - \u304C\u3093\u3070\u3063\u3066
+      (ganbatte)\r\nContoh penggunaan: \u304C\u3093\u3070\u3063\u3066\u3001\u8A66\u9A13\u306F\u9806\u8ABF\u306B\u884C\u304F\u3088\uFF01
+      (Ganbatte, shiken wa junchou ni iku yo!) - Semangat, ujian akan berjalan lancar!"
+    intervalTimes: 15
+  - materi: "Oh! - \u3042\u3089 (ara)\r\nContoh penggunaan: \u3042\u3089\u3001\u305D\u308C\u306F\u3061\u3087\u3063\u3068\u9A5A\u304D\u3067\u3059\u306D\u3002
+      (Ara, sore wa chotto odoroki desu ne.) - Oh, itu agak mengejutkan.\r\n\r\nEh?
+      - \u304A\u3084 (oya)\r\nContoh penggunaan: \u304A\u3084\u3001\u4F55\u304B\u554F\u984C\u304C\u3042\u308A\u307E\u3059\u304B\uFF1F
+      (Oya, nanika mondai ga arimasu ka?) - Eh, apakah ada masalah?"
+    intervalTimes: 15
+  - materi: "Phew! - \u3084\u308C\u3084\u308C (yareyare)\r\nContoh penggunaan: \u3084\u308C\u3084\u308C\u3001\u4ECA\u65E5\u306F\u672C\u5F53\u306B\u75B2\u308C\u307E\u3057\u305F\u3002
+      (Yareyare, kyou wa hontou ni tsukaremashita.) - Phew, hari ini benar-benar
+      melelahkan.\r\n\r\nOops! - \u304A\u3063\u3068 (otto)\r\nContoh penggunaan:
+      \u304A\u3063\u3068\u3001\u3076\u3064\u304B\u3063\u3066\u3057\u307E\u3044\u307E\u3057\u305F\u3001\u3059\u307F\u307E\u305B\u3093\u3002
+      (Otto, butsukatte shimaimashita, sumimasen.) - Oops, saya menabrak, maafkan
+      saya."
+    intervalTimes: 15
+  - materi: "\"eto\" (\u3048\u3068) dan \"ano\" (\u3042\u306E) adalah contoh dari
+      \"\u611F\u52D5\u8A5E\" (kandoushi) yang umum digunakan dalam bahasa Jepang.
+      Mereka digunakan untuk mengekspresikan keraguan, kebingungan, atau untuk memberikan
+      jeda dalam percakapan. Berikut ini adalah contohnya:\r\n\r\nEto - \u3048\u3068\r\nContoh
+      penggunaan: \u3048\u3068\u3001\u3061\u3087\u3063\u3068\u5F85\u3063\u3066\u304F\u3060\u3055\u3044\u3002
+      (Eto, chotto matte kudasai.) - Eto, tunggu sebentar, tolong."
+    intervalTimes: 15
+  - materi: "Ano - \u3042\u306E\r\nContoh penggunaan: \u3042\u306E\u3001\u3053\u308C\u306F\u4F55\u3067\u3059\u304B\uFF1F
+      (Ano, kore wa nan desu ka?) - Ano, ini apa?"
+    intervalTimes: 10
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Seru melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

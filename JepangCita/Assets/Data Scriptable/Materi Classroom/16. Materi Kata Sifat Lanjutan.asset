@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579d8de21a5bf1e4e93ecf029ec06599, type: 3}
+  m_Name: 16. Materi Kata Sifat Lanjutan
+  m_EditorClassIdentifier: 
+  titleMateri: Materi Kata Sifat Lanjutan
+  materialsData:
+  - materi: "Materi Kata Sifat Lanjutan\nWarna - \u8272 (iro)\r\nBentuk Dasar: \u8272
+      (iro)\r\nContoh Penggunaan: \u671D\u306E\u7A7A\u306E\u8272\u306F\u3068\u3066\u3082\u7F8E\u3057\u3044\u3067\u3059
+      (Asa no sora no iro wa totemo utsukushii desu) - Warna langit di pagi hari
+      sangat indah. \r\n\nMerah - \u8D64\u3044 (akai)\r\nBentuk dasar: \u8D64 (aka)\r\nContoh
+      penggunaan: \u305D\u306E\u30EA\u30F3\u30B4\u306F\u8D64\u3044\u3067\u3059 (Sono
+      ringo wa akai desu) - Apel itu merah."
+    intervalTimes: 10
+  - materi: "Biru - \u9752\u3044 (aoi)\r\nBentuk dasar: \u9752 (ao)\r\nContoh penggunaan:
+      \u6D77\u306F\u9752\u3044\u3067\u3059 (Umi wa aoi desu) - Laut itu biru.\r\n\r\nHijau
+      - \u7DD1 (midori)\r\nBentuk dasar: \u7DD1 (midori)\r\nContoh penggunaan: \u305D\u306E\u8349\u306F\u7DD1\u3067\u3059
+      (Sono kusa wa midori desu) - Rumput itu hijau."
+    intervalTimes: 10
+  - materi: "Kuning - \u9EC4\u8272\u3044 (kiiro)\r\nBentuk dasar: \u9EC4 (ki)\r\nContoh
+      penggunaan: \u305D\u306E\u30D0\u30CA\u30CA\u306F\u9EC4\u8272\u3067\u3059 (Sono
+      banana wa kiiro desu) - Pisang itu kuning.\r\n\r\nHitam - \u9ED2\u3044 (kuroi)\r\nBentuk
+      dasar: \u9ED2 (kuro)\r\nContoh penggunaan: \u591C\u7A7A\u306F\u9ED2\u3044\u3067\u3059
+      (Yozora wa kuroi desu) - Langit malam itu hitam."
+    intervalTimes: 10
+  - materi: "Putih - \u767D\u3044 (shiroi)\r\nBentuk dasar: \u767D (shiro)\r\nContoh
+      penggunaan: \u96F2\u306F\u767D\u3044\u3067\u3059 (Kumo wa shiroi desu) - Awan
+      itu putih.\r\n\r\nUngu - \u7D2B (murasaki)\r\nBentuk dasar: \u7D2B (murasaki)\r\nContoh
+      penggunaan: \u3042\u306E\u82B1\u306F\u7D2B\u3067\u3059 (Ano hana wa murasaki
+      desu) - Bunga itu ungu."
+    intervalTimes: 10
+  - materi: "Oranye - \u30AA\u30EC\u30F3\u30B8 (orenji)\r\nBentuk dasar: \u30AA\u30EC\u30F3\u30B8
+      (orenji)\r\nContoh penggunaan: \u305D\u306E\u30AB\u30DC\u30C1\u30E3\u306F\u30AA\u30EC\u30F3\u30B8\u8272\u3067\u3059
+      (Sono kabocha wa orenji iro desu) - Labu itu oranye.\r\n\r\nAbu-abu - \u7070\u8272
+      (haiiro)\r\nBentuk dasar: \u7070 (hai)\r\nContoh penggunaan: \u5F7C\u306E\u8ECA\u306F\u7070\u8272\u3067\u3059
+      (Kare no kuruma wa haiiro desu) - Mobilnya abu-abu."
+    intervalTimes: 10
+  - materi: "Pink - \u30D4\u30F3\u30AF (pinku)\r\nBentuk dasar: \u30D4\u30F3\u30AF
+      (pinku)\r\nContoh penggunaan: \u5F7C\u5973\u306E\u30C9\u30EC\u30B9\u306F\u30D4\u30F3\u30AF\u8272\u3067\u3059
+      (Kanojo no doresu wa pinku iro desu) - Gaunnya berwarna pink.\r\n\r\nTerang
+      - \u660E\u308B\u3044 (akarui)\r\nBentuk Dasar: \u660E\u308B\u3044 (akarui)\r\nContoh
+      Penggunaan: \u3042\u306E\u90E8\u5C4B\u306E\u96FB\u6C17\u306F\u3068\u3066\u3082\u660E\u308B\u3044\u3067\u3059
+      (Ano heya no denki wa totemo akarui desu) - Lampu di ruangan itu sangat terang. "
+    intervalTimes: 10
+  - materi: 'Kalian bisa melanjutkan pembelajaran materi Kata Sifat melalui website
+      JepangCita.
+
+      (Untuk mengakses materi, buka browser dan kunjungi situs
+      JepangCita. Setelah berhasil login, buka menu Materi)'
+    intervalTimes: 1000

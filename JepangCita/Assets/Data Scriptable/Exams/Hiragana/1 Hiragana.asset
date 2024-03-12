@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 1 Hiragana
   m_EditorClassIdentifier: 
-  question: "Apa romaji dari Hiragana \"\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\"?"
+  question: "Apakah huruf Hiragana yang memiliki bentuk seperti \"\u3042\"?\r"
   examData:
-  - answer: Ohayou Gozaimasu
+  - answer: ka
+    isRightAnswer: 0
+  - answer: sa
+    isRightAnswer: 0
+  - answer: a
     isRightAnswer: 1
-  - answer: Ohayo Gozaimasu
-    isRightAnswer: 0
-  - answer: Ohayou kosaimasu
-    isRightAnswer: 0
-  - answer: Ohayo kosaimasu
+  - answer: ta
     isRightAnswer: 0
