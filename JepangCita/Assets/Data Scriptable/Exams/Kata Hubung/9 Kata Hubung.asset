@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 9 Kata Hubung
+  m_EditorClassIdentifier: 
+  question: Arti "Dengan demikian" dalam bahasa Jepang adalah?
+  examData:
+  - answer: "\u305D\u308C\u3067\u3082 (Soredemo)"
+    isRightAnswer: 0
+  - answer: "\u305D\u306E\u5F8C (Sonogo)"
+    isRightAnswer: 0
+  - answer: "\u3068\u3044\u3046\u308F\u3051\u3067 (Toiuwakede)"
+    isRightAnswer: 1
+  - answer: "\u3060\u304B\u3089 (Dakara)"
+    isRightAnswer: 0

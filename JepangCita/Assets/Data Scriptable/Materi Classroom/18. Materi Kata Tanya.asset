@@ -36,9 +36,9 @@ MonoBehaviour:
       (Kono kikai o tsukau houhou wa dou desu ka?) - Bagaimana cara menggunakan mesin
       ini?"
     intervalTimes: 15
-  - materi: "Berapa - \u3044\u304F\u3064 (ikutsu)\r\nContoh penggunaan: \u305D\u306E\u672C\u306F\u3044\u304F\u3089\u3067\u3059\u304B\uFF1F
-      (Sono hon wa ikura desu ka?) - Berapa harga buku itu?\r\n\r\nBerapa lama -
-      \u3069\u306E\u304F\u3089\u3044 (donokurai)\r\nContoh penggunaan: \u3042\u306A\u305F\u306F\u3069\u306E\u304F\u3089\u3044\u3053\u3053\u306B\u3044\u307E\u3057\u305F\u304B\uFF1F
+  - materi: "Berapa - \u3044\u304F\u3089 (ikura)\r\nContoh penggunaan: \u305D\u306E\u672C\u306F\u3044\u304F\u3089\u3067\u3059\u304B\uFF1F
+      (Sono hon wa ikura desu ka?) - Berapa harga buku itu?\n\r\nBerapa lama - \u3069\u306E\u304F\u3089\u3044
+      (donokurai)\r\nContoh penggunaan: \u3042\u306A\u305F\u306F\u3069\u306E\u304F\u3089\u3044\u3053\u3053\u306B\u3044\u307E\u3057\u305F\u304B\uFF1F
       (Anata wa donokurai koko ni imashita ka?) - Berapa lama Anda berada di sini?"
     intervalTimes: 15
   - materi: "Siapa yang - \u8AB0\u304C (dare ga)\r\nContoh penggunaan: \u3053\u306E\u6620\u753B\u3092\u6F14\u3058\u305F\u306E\u306F\u8AB0\u3067\u3059\u304B\uFF1F

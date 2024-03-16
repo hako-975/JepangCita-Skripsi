@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 4 Kata Benda
+  m_EditorClassIdentifier: 
+  question: '"Bandara" dalam bahasa Jepang disebut?'
+  examData:
+  - answer: "\u5B66\u6821 (Gakkou)"
+    isRightAnswer: 0
+  - answer: "\u99C5 (Eki)"
+    isRightAnswer: 0
+  - answer: "\u7A7A\u6E2F (Kuukou)"
+    isRightAnswer: 1
+  - answer: "\u516C\u5712 (Kouen)"
+    isRightAnswer: 0

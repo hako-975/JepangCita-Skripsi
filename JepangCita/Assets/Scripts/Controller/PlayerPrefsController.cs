@@ -502,8 +502,7 @@ public class PlayerPrefsController : MonoBehaviour
         "Kata Seru",
         "Ujian - Kata Seru",
         "Perkenalan Diri",
-        "Ujian - Perkenalan Diri",
-        "Ujian Akhir"
+        "Ujian - Perkenalan Diri"
     };
 
     public void SetCurrentMateri(int indexMateri)

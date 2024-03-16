@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 10 Kata Benda
+  m_EditorClassIdentifier: 
+  question: Kata benda untuk "Restoran" dalam bahasa Jepang adalah?
+  examData:
+  - answer: "\u55AB\u8336\u5E97 (Kissaten)"
+    isRightAnswer: 0
+  - answer: "\u56F3\u66F8\u9928 (Toshokan)"
+    isRightAnswer: 0
+  - answer: "\u30EC\u30B9\u30C8\u30E9\u30F3 (Resutoran)"
+    isRightAnswer: 1
+  - answer: "\u6620\u753B\u9928 (Eigakan)"
+    isRightAnswer: 0

@@ -28,6 +28,4 @@ public class ExamList : MonoBehaviour
     public ExamQuestion[] listKataSeruExam;
     [Header("Perkenalan Diri Exam")]
     public ExamQuestion[] listPerkenalanDiriExam;
-    [Header("Final Exam")]
-    public ExamQuestion[] listFinalExam;
 }

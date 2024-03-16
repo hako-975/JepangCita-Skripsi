@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
+  m_Name: 4 Perkenalan Diri
+  m_EditorClassIdentifier: 
+  question: "Apa arti \"\u30B8\u30E3\u30AB\u30EB\u30BF\u304B\u3089\u6765\u307E\u3057\u305F\"
+    (Jakaruta kara kimashita)?"
+  examData:
+  - answer: Saya tinggal di Jakarta
+    isRightAnswer: 0
+  - answer: Saya suka Jakarta
+    isRightAnswer: 0
+  - answer: Saya pergi ke Jakarta
+    isRightAnswer: 0
+  - answer: Saya datang dari Jakarta
+    isRightAnswer: 1
