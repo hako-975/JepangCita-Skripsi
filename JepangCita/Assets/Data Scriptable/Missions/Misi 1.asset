@@ -15,7 +15,7 @@ MonoBehaviour:
   titleMission: 'Misi 1: Registrasi & Login Akun Jepang Cita'
   detailMission: "Detail Misi:\r\nUntuk memulai proses registrasi, langkah pertama
     adalah membuka laptop dan mengakses aplikasi browser. Kemudian, di kolom pencarian
-    ketikkan kata kunci \"JepangCita\". Lalu, klik menu \"registrasi\". Setelah formulir
+    ketikkan kata kunci \"JepangCita\". Lalu, klik menu \"Registrasi\". Setelah formulir
     terisi lengkap, klik tombol registrasi untuk menyelesaikan proses pendaftaran.
-    Setelah berhasil mendaftar, klik menu \"login\" lalu, masukkan email dan password
+    Setelah berhasil mendaftar, klik menu \"Login\" lalu, masukkan email dan password
     yang telah dibuat saat proses registrasi untuk masuk ke halaman dashboard JepangCita.\r"

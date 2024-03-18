@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Hiragana
   materialsData:
+  - materi: 
+    intervalTimes: 5
   - materi: "Huruf Hiragana Jepang terdiri dari 104 huruf, yaitu: 46 huruf dasar
       \u3042 (a) sampai \u3093 (n), 20 huruf teng-teng (\") yang disebut dengan Dakuon,
       5 huruf maru (o) yang disebut dengan Handakuon, dan 33 huruf dengan kombinasi
@@ -26,7 +28,7 @@ MonoBehaviour:
       peran penting dalam memberikan ekspresi dan fleksibilitas dalam penulisan bahasa
       Jepang.\r"
     intervalTimes: 25
-  - materi: "Berikut adalah 26 huruf hiragana dasar:\r\n\u3042 (a)\t\t\u3044 (i)\t\t\u3046
+  - materi: "Berikut adalah 46 huruf hiragana dasar:\r\n\u3042 (a)\t\t\u3044 (i)\t\t\u3046
       (u)\t\t\u3048 (e)\t\t\u304A (o)\r\n\u304B (ka)\t\u304D (ki)\t\t\u304F (ku)\t\u3051
       (ke)\t\u3053 (ko)\r\n\u3055 (sa)\t\u3057 (shi)\t\u3059 (su)\t\u305B (se)\t\u305D
       (so)\r\n\u305F (ta)\t\u3061 (chi)\t\u3064 (tsu)\t\u3066 (te)\t\u3068 (to)\r\n\u306A

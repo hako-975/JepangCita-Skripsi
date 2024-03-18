@@ -16,7 +16,7 @@ MonoBehaviour:
   examData:
   - answer: pa
     isRightAnswer: 1
-  - answer: hi
+  - answer: ba
     isRightAnswer: 0
   - answer: po
     isRightAnswer: 0

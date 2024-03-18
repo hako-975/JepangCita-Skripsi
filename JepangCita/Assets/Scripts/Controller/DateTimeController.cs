@@ -85,6 +85,8 @@ public class DateTimeController : MonoBehaviour
                     PlayerPrefsController.instance.SetDateDay(gameDay);
 
                     UpdateDateText(gameYear, gameMonth, gameDay, gameHour, gameMinute);
+                    // alternative misi ketiga
+                    PlayerPrefsController.instance.SetMission(2, soundController);
                 }
 
                 PlayerPrefsController.instance.SetHour(gameHour);
@@ -106,8 +108,6 @@ public class DateTimeController : MonoBehaviour
         CultureInfo cultureInfo = new CultureInfo(PlayerPrefsController.instance.localeName);
         dateDayText.text = specificDate.ToString("dd dddd", cultureInfo);
         timeText.text = string.Format("{0:D2}:{1:D2}", gameHour, gameMinute);
-        // alternative misi ketiga
-        PlayerPrefsController.instance.SetMission(2, soundController);
     }
 
     public void UpdateSunRotation(bool isReset = false)

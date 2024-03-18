@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e4c1b93a62daf408f19c52b038a764, type: 3}
   m_Name: Misi 5
   m_EditorClassIdentifier: 
-  titleMission: 'Misi 5: Ikuti Ujian Hiragana'
-  detailMission: 'Detail Misi:
-
-    Setelah menyelesaikan materi Hiragana lanjutan,
-    ikuti ujian Hiragana pada pertemuan berikutnya.'
+  titleMission: 'Misi 5: Akses Materi melalui website'
+  detailMission: "Detail Misi:\nSetelah menyelesaikan materi di kelas, pelajari lebih
+    lanjut pada website JepangCita. \nUntuk mengakses website JepangCita, langkah
+    pertama adalah membuka laptop dan mengakses aplikasi browser. Kemudian, di kolom
+    pencarian ketikkan kata kunci \"JepangCita\". Lalu, klik menu \"Login\".  Masukan
+    username dan password yang telah dibuat sebelumnya. Setelah login, buka menu
+    Materi."

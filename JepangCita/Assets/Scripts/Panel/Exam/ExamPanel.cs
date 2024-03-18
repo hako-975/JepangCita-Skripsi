@@ -78,7 +78,7 @@ public class ExamPanel : MonoBehaviour
         {
             detailQuestion = Instantiate(detailQuestionPrefabs, content.transform);
 
-            detailQuestion.questionText.text = listExamQuestions[i].question;
+            detailQuestion.questionText.text = i + 1 + ". " + listExamQuestions[i].question;
 
             int j = 0;
             foreach (ExamData examData in listExamQuestions[i].examData)
@@ -128,8 +128,8 @@ public class ExamPanel : MonoBehaviour
             GetComponent<Animator>().SetTrigger("Hide");
 
             PlayerPrefsController.instance.SetHiraganaScore(Mathf.Clamp(score, 0, 100));
-            // misi kelima
-            PlayerPrefsController.instance.SetMission(4, classroomController.soundController);
+            // misi keenam
+            PlayerPrefsController.instance.SetMission(5, classroomController.soundController);
 
             StartCoroutine(classroomController.OpenDialogPanel("Sensei", "Oke みなさん waktu ujian sudah selesai, kalian bisa cek nilainya di situs JepangCita. じゃ、またあした。", true, true));
         }

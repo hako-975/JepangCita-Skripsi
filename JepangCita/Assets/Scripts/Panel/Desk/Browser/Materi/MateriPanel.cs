@@ -85,6 +85,238 @@ public class MateriPanel : MonoBehaviour
         closeButton.onClick.AddListener(delegate { BackToMateriPanel(true); });
     }
 
+    void Update()
+    {
+        InteractableButton();
+    }
+
+    void InteractableButton()
+    {
+        if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana")
+        {
+            btnHuruf.interactable = false;
+            btnAngka.interactable = false;
+            btnWaktu.interactable = false;
+            btnKataGanti.interactable = false;
+            btnKataBenda.interactable = false;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana Lanjutan" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana Lanjutan" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = false;
+            btnWaktu.interactable = false;
+            btnKataGanti.interactable = false;
+            btnKataBenda.interactable = false;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka Lanjutan" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = false;
+            btnKataGanti.interactable = false;
+            btnKataBenda.interactable = false;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu Lanjutan" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = false;
+            btnKataBenda.interactable = false;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Ganti" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Ganti")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = false;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Benda" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Benda")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = false;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Kerja" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Kerja")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = false;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Sifat" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Sifat")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = false;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Keterangan" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Keterangan")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = true;
+            btnKataTanya.interactable = false;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Tanya" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Tanya")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = true;
+            btnKataTanya.interactable = true;
+            btnKataHubung.interactable = false;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Hubung" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Hubung")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = true;
+            btnKataTanya.interactable = true;
+            btnKataHubung.interactable = true;
+            btnKataSeru.interactable = false;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Seru" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Seru")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = true;
+            btnKataTanya.interactable = true;
+            btnKataHubung.interactable = true;
+            btnKataSeru.interactable = true;
+            btnPerkenalanDiri.interactable = false;
+        }
+        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Perkenalan Diri" ||
+            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Perkenalan Diri")
+        {
+            btnHuruf.interactable = true;
+            btnAngka.interactable = true;
+            btnWaktu.interactable = true;
+            btnKataGanti.interactable = true;
+            btnKataBenda.interactable = true;
+            btnKataKerja.interactable = true;
+            btnKataSifat.interactable = true;
+            btnKataKeterangan.interactable = true;
+            btnKataTanya.interactable = true;
+            btnKataHubung.interactable = true;
+            btnKataSeru.interactable = true;
+            btnPerkenalanDiri.interactable = true;
+        }
+    }
+
     private void OpenPanel(GameObject panel)
     {
         soundController.PositiveButtonSound(gameObject);

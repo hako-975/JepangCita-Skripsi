@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4cdf3b7c0fef641499a95f11c94062a3, type: 2}
   - {fileID: 11400000, guid: ebd1c4b76d85cd841be910f6047d2e78, type: 2}
   - {fileID: 11400000, guid: bd48dacf36ff4d24496ea0b84443dab6, type: 2}
+  - {fileID: 11400000, guid: f40965adc5c9da94d8e95af4230a9bac, type: 2}
   localeName: id-ID
   listMateri:
   - Huruf Hiragana

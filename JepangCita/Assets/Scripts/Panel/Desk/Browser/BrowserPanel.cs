@@ -131,6 +131,8 @@ public class BrowserPanel : MonoBehaviour
 
             if (PlayerPrefsController.instance.GetCredentialJepangCita() == 1)
             {
+                // misi kelima
+                PlayerPrefsController.instance.SetMission(4, soundController);
                 panelToShow = jepangCitaMateriPanel;
                 materiPanel.BackToMateriPanel();
             }
