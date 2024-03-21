@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea84044068d2331478550fff4a186f11, type: 3}
   m_Name: 8 Katakana
   m_EditorClassIdentifier: 
-  question: "Huruf Katakana yang memiliki tidak tambahan Handakuten adalah?\r"
+  question: "Huruf Katakana yang merupakan Handakuten, kecuali?\r"
   examData:
   - answer: "\u30D1"
     isRightAnswer: 0

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ExamPanel : MonoBehaviour
 {
@@ -34,24 +35,27 @@ public class ExamPanel : MonoBehaviour
     [SerializeField]
     private ClassroomController classroomController;
 
+    [SerializeField]
+    private DateTimeController dateTimeController;
+
     bool isClicked = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+        if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
         {
             listExamQuestions = examList.listHiraganaExam;
         }
-        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
         {
             listExamQuestions = examList.listKatakanaExam;
         }
-        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
         {
             listExamQuestions = examList.listAngkaExam;
         }
-        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
         {
             listExamQuestions = examList.listWaktuExam;
         }
@@ -112,6 +116,25 @@ public class ExamPanel : MonoBehaviour
         {
             isClicked = true;
 
+            int gameDay = PlayerPrefsController.instance.GetDateDay();
+            int gameMonth = PlayerPrefsController.instance.GetDateMonth();
+            int gameYear = PlayerPrefsController.instance.GetDateYear();
+
+            DateTime date = new DateTime(gameYear, gameMonth, gameDay);
+
+            string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
+            // Check if it's Monday or wednesday
+            if (dayName == "Senin" || dayName == "Rabu")
+            {
+                PlayerPrefsController.instance.SetHour(dateTimeController.gameHour = 12);
+                PlayerPrefsController.instance.SetMinute(dateTimeController.gameMinute = 0);
+            }
+            else if (dayName == "Jumat")
+            {
+                PlayerPrefsController.instance.SetHour(dateTimeController.gameHour = 16);
+                PlayerPrefsController.instance.SetMinute(dateTimeController.gameMinute = 0);
+            }
+
             finishButton.interactable = false;
 
             for (int i = 0; i < row; i++)
@@ -124,13 +147,66 @@ public class ExamPanel : MonoBehaviour
                     }
                 }
             }
-            
+
             GetComponent<Animator>().SetTrigger("Hide");
 
-            PlayerPrefsController.instance.SetHiraganaScore(Mathf.Clamp(score, 0, 100));
-            // misi keenam
-            PlayerPrefsController.instance.SetMission(5, classroomController.soundController);
-
+            if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+            {
+                PlayerPrefsController.instance.SetHiraganaScore(Mathf.Clamp(score, 0, 100));
+                // misi keenam
+                PlayerPrefsController.instance.SetMission(5, classroomController.soundController);
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
+            {
+                PlayerPrefsController.instance.SetKatakanaScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
+            {
+                PlayerPrefsController.instance.SetAngkaScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
+            {
+                PlayerPrefsController.instance.SetWaktuScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Ganti")
+            {
+                PlayerPrefsController.instance.SetKataGantiScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Benda")
+            {
+                PlayerPrefsController.instance.SetKataBendaScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Kerja")
+            {
+                PlayerPrefsController.instance.SetKataKerjaScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Sifat")
+            {
+                PlayerPrefsController.instance.SetKataSifatScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Keterangan")
+            {
+                PlayerPrefsController.instance.SetKataKeteranganScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Tanya")
+            {
+                PlayerPrefsController.instance.SetKataTanyaScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Hubung")
+            {
+                PlayerPrefsController.instance.SetKataHubungScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Seru")
+            {
+                PlayerPrefsController.instance.SetKataSeruScore(Mathf.Clamp(score, 0, 100));
+            }
+            else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Perkenalan Diri")
+            {
+                PlayerPrefsController.instance.SetPerkenalanDiriScore(Mathf.Clamp(score, 0, 100));
+                // misi ketujuh
+                PlayerPrefsController.instance.SetMission(6, classroomController.soundController);
+            }
+                
             StartCoroutine(classroomController.OpenDialogPanel("Sensei", "Oke みなさん waktu ujian sudah selesai, kalian bisa cek nilainya di situs JepangCita. じゃ、またあした。", true, true));
         }
     }

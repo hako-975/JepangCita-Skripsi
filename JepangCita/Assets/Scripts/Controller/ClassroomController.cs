@@ -61,6 +61,8 @@ public class ClassroomController : MonoBehaviour
     [SerializeField]
     private Animator examPanel;
 
+    [SerializeField]
+    private DateTimeController dateTimeController;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +83,7 @@ public class ClassroomController : MonoBehaviour
 
             string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
 
-            // Check if it's Monday, Tuesday, Wednesday, or Thursday
+            // Check if it's Monday, wednesday or friday
             if (dayName == "Senin" || dayName == "Rabu" || dayName == "Jumat")
             {
                 isHasClass = true;
@@ -120,9 +122,11 @@ public class ClassroomController : MonoBehaviour
 
             if (isAttended == false)
             {
+                
                 // mulai kelas
                 if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
                 {
+                    
                     soundController.SchoolBellSound(gameObject);
                     // Hadir
                     PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Hadir");
@@ -156,10 +160,12 @@ public class ClassroomController : MonoBehaviour
                     }
 
                     // if duduk
-                    if (playerController.canMove == false)
+                    if (playerController.GetComponentInChildren<Animator>().GetBool("IsSitting"))
                     {
                         if (isStartedClass == false)
                         {
+                            dateTimeController.realSecondsPerGameMinute = 1;
+
                             isStartedClass = true;
                             // misi keempat
                             PlayerPrefsController.instance.SetMission(3, soundController);
@@ -178,7 +184,7 @@ public class ClassroomController : MonoBehaviour
                     soundController.SchoolBellSound(gameObject);
                     isDialogPlayedEndClass = true;
                     // hari ujian
-                    if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+                    if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()].Contains("Ujian"))
                     {
                         examPanel.GetComponent<ExamPanel>().FinishButtonClick();
                     }
@@ -204,6 +210,7 @@ public class ClassroomController : MonoBehaviour
                 // mulai kelas
                 if (PlayerPrefsController.instance.GetHour() == 13 && PlayerPrefsController.instance.GetMinute() == 0)
                 {
+
                     soundController.SchoolBellSound(gameObject);
 
                     // Hadir
@@ -212,6 +219,7 @@ public class ClassroomController : MonoBehaviour
                 }
                 else if (PlayerPrefsController.instance.GetHour() >= 13 && PlayerPrefsController.instance.GetMinute() > 25)
                 {
+
                     // Terlambat
                     PlayerPrefsController.instance.SetAttendance(currentDay, formattedDate, "Terlambat");
                     isAttended = true;
@@ -237,11 +245,12 @@ public class ClassroomController : MonoBehaviour
                     }
 
                     // if duduk
-                    if (playerController.canMove == false)
+                    if (playerController.GetComponentInChildren<Animator>().GetBool("IsSitting"))
                     {
                         if (isStartedClass == false)
                         {
                             isStartedClass = true;
+                            dateTimeController.realSecondsPerGameMinute = 1;
                             // misi keempat
                             PlayerPrefsController.instance.SetMission(3, soundController);
                             StartCoroutine(CloseTransitionAndStartClass(13));
@@ -261,7 +270,7 @@ public class ClassroomController : MonoBehaviour
 
                     isDialogPlayedEndClass = true;
                     // hari ujian
-                    if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+                    if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()].Contains("Ujian"))
                     {
                         examPanel.GetComponent<ExamPanel>().FinishButtonClick();
                     }
@@ -350,34 +359,32 @@ public class ClassroomController : MonoBehaviour
         }
 
         // hari ujian
-        if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana")
+        if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()].Contains("Ujian"))
         {
-            StartCoroutine(OpenDialogPanel("Sensei", ucapan + "Hari ini kita akan ada " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + ".", true, false));
+            StartCoroutine(OpenDialogPanel("Sensei", ucapan + "Hari ini kita akan ada " + PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] + ".", true, false));
+            examPanel.gameObject.SetActive(true);
+            examPanel.SetTrigger("Show");
         }
         // hari biasa
         else
         {
-            StartCoroutine(OpenDialogPanel("Sensei", ucapan + "Hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] + ".", true, false));
-
-            // board start
-            boardText.text = "";
-            foreach (MaterialData materi in materiList[PlayerPrefsController.instance.GetCurrentMateri()].materialsData)
-            {
-                for (int i = 0; i < materi.materi.Length; i++)
-                {
-                    currentText += materi.materi[i];
-                    boardText.text = currentText;
-                    yield return new WaitForSeconds(typingSpeed);
-                }
-
-                yield return new WaitForSeconds(materi.intervalTimes);
-                currentText = "";
-                boardText.text = "";
-            }
+            StartCoroutine(OpenDialogPanel("Sensei", ucapan + "Hari ini kita akan mempelajari materi " + PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] + ".", true, false));
         }
 
-        examPanel.gameObject.SetActive(true);
-        examPanel.SetTrigger("Show");
+        // board start
+        boardText.text = "";
+        foreach (MaterialData materi in materiList[PlayerPrefsController.instance.GetCurrentMateri()].materialsData)
+        {
+            for (int i = 0; i < materi.materi.Length; i++)
+            {
+                currentText += materi.materi[i];
+                boardText.text = currentText;
+                yield return new WaitForSeconds(typingSpeed);
+            }
 
+            yield return new WaitForSeconds(materi.intervalTimes);
+            currentText = "";
+            boardText.text = "";
+        }
     }
 }

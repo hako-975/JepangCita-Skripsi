@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Katakana
   materialsData:
-  - materi: 'Katakana adalah aksara Jepang yang memiliki beberapa fungsi utama, termasuk
+  - materi: Katakana adalah aksara Jepang yang memiliki beberapa fungsi utama, termasuk
       menulis kata-kata asing, nama asing, mengekspresikan suara atau onomatopeia,
       memberikan penekanan dalam teks, digunakan dalam desain grafis, dan sebagai
-      alat untuk memberikan keterangan atau terjemahan singkat. '
-    intervalTimes: 15
-  - materi: Aksara ini memainkan peran penting dalam memfasilitasi penulisan kata-kata
-      asing dan memberikan variasi dalam penulisan teks Jepang.
-    intervalTimes: 15
+      alat untuk memberikan keterangan atau terjemahan singkat. Aksara ini memainkan
+      peran penting dalam memfasilitasi penulisan kata-kata asing dan memberikan
+      variasi dalam penulisan teks Jepang.
+    intervalTimes: 10
   - materi: "Berikut adalah 46 huruf katakana dasar:\r\n\u30A2 (a)\t\t\u30A4 (i)\t\t\u30A6
       (u)\t\t\u30A8 (e)\t\t\u30AA (o)\r\n\u30AB (ka)\t\u30AD (ki)\t\t\u30AF (ku)\t\u30B1
       (ke)\t\u30B3 (ko)\r\n\u30B5 (sa)\t\u30B7 (shi)\t\u30B9 (su)\t\u30BB (se)\t\u30BD
@@ -30,9 +29,19 @@ MonoBehaviour:
       (hi)\t\u30D5 (fu)\t\u30D8 (he)\t\u30DB (ho)"
     intervalTimes: 20
   - materi: "\u30DE (ma)\t\u30DF (mi)\t\u30E0 (mu)\t\u30E1 (me)\t\u30E2 (mo)\r\n\u30E4
-      (ya)\t\t\t\u30E6 (yu)\t\t\t\u30E8 (yo)\r\n\u30E9 (ra)\t\u30EA (ri)\t\t\u30EB
-      (ru)\t\u30EC (re)\t\u30ED (ro)\r\n\u30EF (wa)\t\t\t\t\t\t\t\u30F2 (wo)\r\n\u30F3
+      (ya)\t\t\t\u30E6 (yu)\t\t\t\t\u30E8 (yo)\r\n\u30E9 (ra)\t\u30EA (ri)\t\t\u30EB
+      (ru)\t\u30EC (re)\t\u30ED (ro)\r\n\u30EF (wa)\t\t\t\t\t\t\t\t\u30F2 (wo)\r\n\u30F3
       (n)"
+    intervalTimes: 20
+  - materi: "Dakuon (20 Huruf):\r\nDakuon adalah huruf katakana yang memiliki tambahan
+      dakuten di bagian kanan atas huruf. Tanda baca tambahan ini berbentuk seperti
+      dua buah garis kecil yang serong dari kiri atas ke kanan bawah (\") dan disebut
+      dakuten.\r\nContohnya:\r\n\u30AB (ka) + Dakuon = \u30AC (ga)"
+    intervalTimes: 20
+  - materi: "Berikut adalah huruf lengkapnya:\r\n\u30AC (ga)\t\u30AE (gi)\t\u30B0
+      (gu)\t\u30B2 (ge)\t\u30B4 (go)\r\n\u30B6 (za)\t\u30B8 (ji)\t\t\u30BA (zu)\t\u30BC
+      (ze)\t\u30BE (zo)\r\n\u30C0 (da)\t\u30C2 (ji/dji)\t\u30C5 (dzu)\t\u30C7 (de)\t\u30C9
+      (do)\r\n\u30D0 (ba)\t\u30D3 (bi)\t\u30D6 (bu)\t\u30D9 (be)\t\u30DC (bo)\r"
     intervalTimes: 20
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Katakana melalui website
       JepangCita.

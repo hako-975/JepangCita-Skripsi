@@ -92,7 +92,7 @@ public class MateriPanel : MonoBehaviour
 
     void InteractableButton()
     {
-        if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana")
+        if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana")
         {
             btnHuruf.interactable = false;
             btnAngka.interactable = false;
@@ -108,11 +108,11 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana Lanjutan" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana Lanjutan" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Hiragana Lanjutan" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Hiragana" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Huruf Katakana Lanjutan" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Katakana")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = false;
@@ -128,9 +128,9 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka Lanjutan" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Angka Lanjutan" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Angka")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -146,9 +146,9 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu Lanjutan" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Waktu Lanjutan" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Waktu")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -164,8 +164,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Ganti" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Ganti")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Ganti" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Ganti")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -181,8 +181,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Benda" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Benda")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Benda" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Benda")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -198,8 +198,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Kerja" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Kerja")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Kerja" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Kerja")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -215,8 +215,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Sifat" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Sifat")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Sifat" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Sifat")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -232,8 +232,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Keterangan" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Keterangan")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Keterangan" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Keterangan")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -249,8 +249,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Tanya" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Tanya")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Tanya" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Tanya")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -266,8 +266,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Hubung" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Hubung")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Hubung" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Hubung")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -283,8 +283,8 @@ public class MateriPanel : MonoBehaviour
             btnPerkenalanDiri.interactable = false;
         }
         else if (
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Seru" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Seru")
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Kata Seru" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Seru")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;
@@ -299,8 +299,8 @@ public class MateriPanel : MonoBehaviour
             btnKataSeru.interactable = true;
             btnPerkenalanDiri.interactable = false;
         }
-        else if (PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Perkenalan Diri" ||
-            PlayerPrefsController.instance.listMateri[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Perkenalan Diri")
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Perkenalan Diri" ||
+            PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Perkenalan Diri")
         {
             btnHuruf.interactable = true;
             btnAngka.interactable = true;

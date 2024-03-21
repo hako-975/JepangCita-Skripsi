@@ -56,8 +56,6 @@ public class GoHomeAction : MonoBehaviour
     private void GoHomeButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        /*// misi ketiga
-        PlayerPrefsController.instance.SetMission(2, soundController);*/
 
         StartCoroutine(AnimationCloseGoHomePanel());
 

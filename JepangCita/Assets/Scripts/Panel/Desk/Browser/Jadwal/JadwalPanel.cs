@@ -60,8 +60,8 @@ public class JadwalPanel : MonoBehaviour
 
             string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
 
-            // Check if it's Monday, Tuesday, Wednesday, or Thursday
-            if (dayName == "Senin" || dayName == "Selasa" || dayName == "Rabu" || dayName == "Kamis")
+            // Check if it's Monday, Wednesday, or Friday
+            if (dayName == "Senin" || dayName == "Rabu" || dayName == "Jumat")
             {
                 string formattedDate = date.ToString("dd/MM/yyyy");
 

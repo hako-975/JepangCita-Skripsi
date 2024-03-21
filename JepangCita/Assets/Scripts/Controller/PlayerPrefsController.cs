@@ -339,6 +339,126 @@ public class PlayerPrefsController : MonoBehaviour
     {
         return PlayerPrefs.GetInt("HiraganaScore", 0);
     }
+
+    public void SetKatakanaScore(int number)
+    {
+        PlayerPrefs.SetInt("KatakanaScore", number);
+    }
+
+    public int GetKatakanaScore()
+    {
+        return PlayerPrefs.GetInt("KatakanaScore", 0);
+    }
+
+    public void SetAngkaScore(int number)
+    {
+        PlayerPrefs.SetInt("AngkaScore", number);
+    }
+
+    public int GetAngkaScore()
+    {
+        return PlayerPrefs.GetInt("AngkaScore", 0);
+    }
+
+    public void SetWaktuScore(int number)
+    {
+        PlayerPrefs.SetInt("WaktuScore", number);
+    }
+
+    public int GetWaktuScore()
+    {
+        return PlayerPrefs.GetInt("WaktuScore", 0);
+    }
+
+    public void SetKataGantiScore(int number)
+    {
+        PlayerPrefs.SetInt("KataGantiScore", number);
+    }
+
+    public int GetKataGantiScore()
+    {
+        return PlayerPrefs.GetInt("KataGantiScore", 0);
+    }
+
+    public void SetKataBendaScore(int number)
+    {
+        PlayerPrefs.SetInt("KataBendaScore", number);
+    }
+
+    public int GetKataBendaScore()
+    {
+        return PlayerPrefs.GetInt("KataBendaScore", 0);
+    }
+
+    public void SetKataKerjaScore(int number)
+    {
+        PlayerPrefs.SetInt("KataKerjaScore", number);
+    }
+
+    public int GetKataKerjaScore()
+    {
+        return PlayerPrefs.GetInt("KataKerjaScore", 0);
+    }
+
+    public void SetKataSifatScore(int number)
+    {
+        PlayerPrefs.SetInt("KataSifatScore", number);
+    }
+
+    public int GetKataSifatScore()
+    {
+        return PlayerPrefs.GetInt("KataSifatScore", 0);
+    }
+
+    public void SetKataKeteranganScore(int number)
+    {
+        PlayerPrefs.SetInt("KataKeteranganScore", number);
+    }
+
+    public int GetKataKeteranganScore()
+    {
+        return PlayerPrefs.GetInt("KataKeteranganScore", 0);
+    }
+
+    public void SetKataTanyaScore(int number)
+    {
+        PlayerPrefs.SetInt("KataTanyaScore", number);
+    }
+
+    public int GetKataTanyaScore()
+    {
+        return PlayerPrefs.GetInt("KataTanyaScore", 0);
+    }
+
+    public void SetKataHubungScore(int number)
+    {
+        PlayerPrefs.SetInt("KataHubungScore", number);
+    }
+
+    public int GetKataHubungScore()
+    {
+        return PlayerPrefs.GetInt("KataHubungScore", 0);
+    }
+
+    public void SetKataSeruScore(int number)
+    {
+        PlayerPrefs.SetInt("KataSeruScore", number);
+    }
+
+    public int GetKataSeruScore()
+    {
+        return PlayerPrefs.GetInt("KataSeruScore", 0);
+    }
+
+    public void SetPerkenalanDiriScore(int number)
+    {
+        PlayerPrefs.SetInt("PerkenalanDiriScore", number);
+    }
+
+    public int GetPerkenalanDiriScore()
+    {
+        return PlayerPrefs.GetInt("PerkenalanDiriScore", 0);
+    }
     #endregion
 
     #region SentMail
@@ -471,7 +591,7 @@ public class PlayerPrefsController : MonoBehaviour
 
     #region MateriClassroom
     [HideInInspector]
-    public string[] listMateri = new string[] 
+    public string[] listMaterials = new string[] 
     { 
         "Huruf Hiragana",
         "Huruf Hiragana Lanjutan",
@@ -486,12 +606,16 @@ public class PlayerPrefsController : MonoBehaviour
         "Waktu Lanjutan",
         "Ujian - Waktu",
         "Kata Ganti",
+        "Kata Ganti Lanjutan",
         "Ujian - Kata Ganti",
         "Kata Benda",
+        "Kata Benda Lanjutan",
         "Ujian - Kata Benda",
         "Kata Kerja",
+        "Kata Kerja Lanjutan",
         "Ujian - Kata Kerja",
         "Kata Sifat",
+        "Kata Sifat Lanjutan",
         "Ujian - Kata Sifat",
         "Kata Keterangan",
         "Ujian - Kata Keterangan",
