@@ -19,7 +19,7 @@ MonoBehaviour:
       : \u516B\u3064 (yattsu)\r\n3 buah : \u4E09\u3064 (mittsu)\t\t9 buah : \u4E5D\u3064
       (kokonotsu)\r\n4 buah : \u56DB\u3064 (yottsu)\r\n5 buah : \u4E94\u3064 (itsutsu)\r\n6
       buah : \u516D\u3064 (muttsu)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Jika sudah mencapai 10, maka beralih ke penggunaan \"\u500B\" (ko) yang
       berarti \"buah\".\r\n10 buah : \u5341\u500B (juukko)\t\t\t17 buah : \u5341\u4E03\u500B
       (juushichiko)\t\r\n11 buah : \u5341\u4E00\u500B (juuikko)\t\t18 buah : \u5341\u516B\u500B
@@ -27,33 +27,33 @@ MonoBehaviour:
       (juukyuuko)\r\n13 buah : \u5341\u4E09\u500B (juusanko)\t\t20 buah : \u4E8C\u5341\u500B
       (nijukko)\r\n14 buah : \u5341\u56DB\u500B (juuyonko)\r\n15 buah : \u5341\u4E94\u500B
       (juugoko)\r\n16 buah : \u5341\u516D\u500B (juurokko)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Lembar:\r\n1 lembar : \u4E00\u679A (ichimai)\t\t8 lembar : \u516B\u679A
       (hachimai)\r\n2 lembar : \u4E8C\u679A (nimai)\t\t9 lembar : \u4E5D\u679A (kyuu/kumai)\r\n3
       lembar : \u4E09\u679A (sanmai)\t10 lembar : \u5341\u679A (juumai)\r\n4 lembar
       : \u56DB\u679A (shi/yonmai)\r\n5 lembar : \u4E94\u679A (gomai)\r\n6 lembar
       : \u516D\u679A (rokumai)\r\n7 lembar : \u4E03\u679A (shichi/nanamai)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "11 lembar : \u5341\u4E00\u679A (juuichimai)\t\t19 lembar : \u5341\u4E5D\u679A
       (juukumai)\r\n12 lembar : \u5341\u4E8C\u679A (juunimai)\t\t20 lembar : \u4E8C\u5341\u679A
       (nijuumai)\r\n13 lembar : \u5341\u4E09\u679A (juusanmai)\r\n14 lembar : \u5341\u56DB\u679A
       (juushimai)\r\n15 lembar : \u5341\u4E94\u679A (juugomai)\r\n16 lembar : \u5341\u516D\u679A
       (juurokumai)\r\n17 lembar : \u5341\u4E03\u679A (juushichimai)\r\n18 lembar
       : \u5341\u516B\u679A (juuhachimai)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Lantai:\r\nlantai 1 : \u4E00\u968E (ikkai)\t\tlantai 8 : \u516B\u968E
       (hachikai)\r\nlantai 2 : \u4E8C\u968E (nikai)\t\tlantai 9 : \u4E5D\u968E (kyuukai)\r\nlantai
       3 : \u4E09\u968E (sankai)\t\tlantai 10 : \u5341\u968E (jukkai)\r\nlantai 4
       : \u56DB\u968E (yonkai)\r\nlantai 5 : \u4E94\u968E (gokai)\r\nlantai 6 : \u516D\u968E
       (rokukai)\r\nlantai 7 : \u4E03\u968E (shichikai)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "lantai 11 : \u5341\u4E00\u968E (juuikkai)\t\tlantai 19 : \u5341\u4E5D\u968E
       (juukyuukai)\r\nlantai 12 : \u5341\u4E8C\u968E (juunikai)\t\tlantai 20 : \u4E8C\u5341\u968E
       (nijuukai)\r\nlantai 13 : \u5341\u4E09\u968E (juusankai)\r\nlantai 14 : \u5341\u56DB\u968E
       (juuyonkai)\r\nlantai 15 : \u5341\u4E94\u968E (juugokai)\r\nlantai 16 : \u5341\u516D\u968E
       (juurokukai)\r\nlantai 17 : \u5341\u4E03\u968E (juunanakai)\r\nlantai 18 :
       \u5341\u516B\u968E (juuhachikai)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Angka melalui website JepangCita.
 
       (Untuk

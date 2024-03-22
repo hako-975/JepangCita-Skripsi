@@ -14,48 +14,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleMateri: Materi Angka
   materialsData:
-  - materi: "Angka 1-10:\r\n1 : \u4E00 (ichi)\t \t6 : \u516D (roku)\r\n2 : \u4E8C
-      (ni)\t\t 7 : \u4E03 (shichi/nana)\r\n3 : \u4E09 (san)\t\t 8 : \u516B (hachi)\r\n4
-      : \u56DB (shi/yon)\t 9 : \u4E5D (kyuu)\r\n5 : \u4E94 (go)\t\t 10 : \u5341 (juu)"
-    intervalTimes: 10
-  - materi: "Angka belasan:\r\n11 : \u5341\u4E00 (juuichi)\t\t16 : \u5341\u516D (juuroku)\r\n12
-      : \u5341\u4E8C (juuni)\t\t17 : \u5341\u4E03 (juunana)\r\n13 : \u5341\u4E09
-      (juusan)\t\t18 : \u5341\u516B (juuhachi)\r\n14 : \u5341\u56DB (juuyon)\t\t19
-      : \u5341\u4E5D (juukyuu)\r\n15 : \u5341\u4E94 (juugo)"
-    intervalTimes: 10
+  - materi: "Angka 1-10:\r\n1 : \u4E00 (ichi)\t\t\t8 : \u516B (hachi)\t \t\n2 : \u4E8C
+      (ni)\t\t\t9 : \u4E5D (kyuu)\r\t \r\n3 : \u4E09 (san)\t\t\t10 : \u5341 (juu)\t\t
+      \r\n4 : \u56DB (shi/yon)\t \n5 : \u4E94 (go)\t\t \n6 : \u516D (roku)\r\n7 :
+      \u4E03 (shichi/nana)\n"
+    intervalTimes: 8
+  - materi: "Angka belasan:\r\n11 : \u5341\u4E00 (juuichi)\t\t18 : \u5341\u516B (juuhachi)\r\t\n12
+      : \u5341\u4E8C (juuni)\t\t19 : \u5341\u4E5D (juukyuu)\t\n13 : \u5341\u4E09
+      (juusan)\t\t\n14 : \u5341\u56DB (juuyon)\t\t\r\n15 : \u5341\u4E94 (juugo)\n16
+      : \u5341\u516D (juuroku)\r\n17 : \u5341\u4E03 (juunana)\r"
+    intervalTimes: 8
   - materi: "Angka puluhan:\r\n20 : \u4E8C\u5341 (nijuu)\t\t90 : \u4E5D\u5341 (kyuujuu)\r\n30
       : \u4E09\u5341 (sanjuu)\r\n40 : \u56DB\u5341 (yonjuu)\r\n50 : \u4E94\u5341
       (gojuu)\r\n60 : \u516D\u5341 (rokujuu)\r\n70 : \u4E03\u5341 (nanajuu)\r\n80
       : \u516B\u5341 (hachijuu)\r"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Angka ratusan:\r\n100 : \u767E (hyaku)\t\t\t800 : \u516B\u767E (happyaku)\r\n200
       : \u4E8C\u767E (nihyaku)\t\t900 : \u4E5D\u767E (kyuuhyaku)\r\n300 : \u4E09\u767E
       (sanbyaku)\r\n400 : \u56DB\u767E (yonhyaku)\r\n500 : \u4E94\u767E (gohyaku)\r\n600
       : \u516D\u767E (roppyaku)\r\n700 : \u4E03\u767E (nanahyaku) \r\n\r"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Angka ribuan:\r\n1.000 : \u5343 (sen)\t\t\t8.000 : \u516B\u5343 (hassen)\r\n2.000
       : \u4E8C\u5343 (nisen)\t\t9.000 : \u4E5D\u5343 (kyuusen)\r\n3.000 : \u4E09\u5343
       (sanzen)\r\n4.000 : \u56DB\u5343 (yonsen) \r\n5.000 : \u4E94\u5343 (gosen)\r\n6.000
       : \u516D\u5343 (rokusen)\r\n7.000 : \u4E03\u5343 (nanasen)\r\n\r\n"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Angka Puluhan Ribuan:\r\n10.000 : \u4E00\u4E07 (ichiman)\t\t80.000 :
       \u516B\u4E07 (hachiman)\r\n20.000 : \u4E8C\u4E07 (niman)\t\t90.000 : \u4E5D\u4E07
       (kyuuman)\r\n30.000 : \u4E09\u4E07 (sanman)\r\n40.000 : \u56DB\u4E07 (yonman)\r\n50.000
       : \u4E94\u4E07 (goman)\r\n60.000 : \u516D\u4E07 (rokuman)\r\n70.000 : \u4E03\u4E07
       (nanaman)\r\n\r\n"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Angka Ratusan Ribuan:\r\n100.000 : \u5341\u4E07 (juuman)\t\t\t800.000
       : \u516B\u5341\u4E07 (hachijuuman)\r\n200.000 : \u4E8C\u5341\u4E07 (nijuuman)\t\t900.000
       : \u4E5D\u5341\u4E07 (kyuujuuman)\r\n300.000 : \u4E09\u5341\u4E07 (sanjuuman)\r\n400.000
       : \u56DB\u5341\u4E07 (yonjuuman)\r\n500.000 : \u4E94\u5341\u4E07 (gojuuman)\r\n600.000
       : \u516D\u5341\u4E07 (rokujuuman)\r\n700.000 : \u4E03\u5341\u4E07 (nanajuuman)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Angka Sejuta:\r\n1.000.000 : \u767E\u4E07 (hyakuman)\t\t\t8.000.000
       : \u516B\u767E\u4E07 (happyakuman)\r\n2.000.000 : \u4E8C\u767E\u4E07 (nihyakuman)\t\t9.000.000
       : \u4E5D\u767E\u4E07 (kyuuhyakuman)\r\n3.000.000 : \u4E09\u767E\u4E07 (sanbyakuman)\r\n4.000.000
       : \u56DB\u767E\u4E07 (yonhyakuman)\r\n5.000.000 : \u4E94\u767E\u4E07 (gohyakuman)\r\n6.000.000
       : \u516D\u767E\u4E07 (roppyakuman)\r\n7.000.000 : \u4E03\u767E\u4E07 (nanahyakuman)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Angka melalui website JepangCita.
 
       (Untuk

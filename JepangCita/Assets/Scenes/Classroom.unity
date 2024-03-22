@@ -32281,6 +32281,7 @@ MonoBehaviour:
   detailQuestionPrefabs: {fileID: 218722332653115905, guid: 0c5748cd6e85eab478092f3332169bd6, type: 3}
   finishButton: {fileID: 758429671}
   classroomController: {fileID: 1516152873}
+  dateTimeController: {fileID: 1074218339}
 --- !u!114 &895538183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55708,7 +55709,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4221390acfe7a114ca93cf08011e7a29, type: 2}
   - {fileID: 11400000, guid: bf15cce99d76de5489f5e2a65ddabd45, type: 2}
   examPanel: {fileID: 895538178}
-  dayName: 
   dateTimeController: {fileID: 1074218339}
 --- !u!1001 &1516846967
 PrefabInstance:
@@ -58862,10 +58862,10 @@ RectTransform:
   m_Father: {fileID: 2141103798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -30}
-  m_SizeDelta: {x: 1420, y: 326.58}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: 1420, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1586084175
 PrefabInstance:
