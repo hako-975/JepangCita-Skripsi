@@ -59,11 +59,48 @@ public class ExamPanel : MonoBehaviour
         {
             listExamQuestions = examList.listWaktuExam;
         }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Ganti")
+        {
+            listExamQuestions = examList.listKataGantiExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Benda")
+        {
+            listExamQuestions = examList.listKataBendaExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Kerja")
+        {
+            listExamQuestions = examList.listKataKerjaExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Sifat")
+        {
+            listExamQuestions = examList.listKataSifatExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Keterangan")
+        {
+            listExamQuestions = examList.listKataKeteranganExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Tanya")
+        {
+            listExamQuestions = examList.listKataTanyaExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Hubung")
+        {
+            listExamQuestions = examList.listKataHubungExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Kata Seru")
+        {
+            listExamQuestions = examList.listKataSeruExam;
+        }
+        else if (PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()] == "Ujian - Perkenalan Diri")
+        {
+            listExamQuestions = examList.listPerkenalanDiriExam;
+        }
 
         row = listExamQuestions.Length + 1;
         column = 5;
         answers = new bool[row, column];
 
+        titleExamText.text = PlayerPrefsController.instance.listMaterials[PlayerPrefsController.instance.GetCurrentMateri()];
         nameText.text = "Nama: " + PlayerPrefsController.instance.GetCharacterName();
         startButton.onClick.AddListener(StartButtonClick);
         finishButton.onClick.AddListener(FinishButtonClick);

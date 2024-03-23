@@ -6,7 +6,7 @@ OcclusionCullingSettings:
   serializedVersion: 2
   m_OcclusionBakeSettings:
     smallestOccluder: 0.25
-    smallestHole: 0.25
+    smallestHole: 0.0125
     backfaceThreshold: 100
   m_SceneGUID: b47905f0d40375a4e86b77a7ec357bef
   m_OcclusionCullingData: {fileID: 36300000, guid: 2116872494a548f45882f6570de4839c, type: 2}
@@ -58862,10 +58862,10 @@ RectTransform:
   m_Father: {fileID: 2141103798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 0}
-  m_SizeDelta: {x: 1420, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 1420, y: 326.58}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1586084175
 PrefabInstance:
