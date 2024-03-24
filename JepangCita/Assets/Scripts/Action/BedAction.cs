@@ -104,6 +104,7 @@ public class BedAction : MonoBehaviour
         canvas.GetComponent<CanvasGroup>().alpha = 0;
         transition.gameObject.SetActive(true);
         transition.SetTrigger("Close");
+        PlayerPrefsController.instance.SetHour(dateTimeController.gameHour = 23);
 
         player.GetComponent<PlayerController>().canMove = false;
         player.GetComponent<CharacterController>().enabled = false;

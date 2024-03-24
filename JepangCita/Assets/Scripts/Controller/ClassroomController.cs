@@ -13,8 +13,6 @@ public class ClassroomController : MonoBehaviour
     private int gameMonth;
     private int gameYear;
 
-    private int gameDayTemp;
-
     private string formattedDate;
 
     [SerializeField]
@@ -70,39 +68,30 @@ public class ClassroomController : MonoBehaviour
         isStartedClass = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-
-        gameDay = PlayerPrefsController.instance.GetDateDay();
-        gameMonth = PlayerPrefsController.instance.GetDateMonth();
-        gameYear = PlayerPrefsController.instance.GetDateYear();
-
-        gameDayTemp = gameDay;
-
-        for (int i = 0; i < 6; i++)
-        {
-            DateTime date = new DateTime(gameYear, gameMonth, gameDayTemp);
-
-            string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
-
-            // Check if it's Monday, wednesday or friday
-            if (dayName == "Senin" || dayName == "Rabu" || dayName == "Jumat")
-            {
-                isHasClass = true;
-            }
-
-            gameDayTemp++;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameDay = PlayerPrefsController.instance.GetDateDay();
+        gameMonth = PlayerPrefsController.instance.GetDateMonth();
+        gameYear = PlayerPrefsController.instance.GetDateYear();
+        DateTime date = new DateTime(gameYear, gameMonth, gameDay);
+        string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
+
+        if (PlayerPrefsController.instance.GetHour() > 23)
+        {
+            isAttended = false;
+        }
+
+        // Check if it's Monday, wednesday or friday
+        if (dayName == "Senin" || dayName == "Rabu" || dayName == "Jumat")
+        {
+            isHasClass = true;
+        }
+
         if (isHasClass)
         {
-            gameDay = PlayerPrefsController.instance.GetDateDay();
-
-            DateTime date = new DateTime(gameYear, gameMonth, gameDay);
-
-            string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
             formattedDate = date.ToString("dd/MM/yyyy");
 
             StartClassroom(dayName);
@@ -122,7 +111,6 @@ public class ClassroomController : MonoBehaviour
 
             if (isAttended == false)
             {
-                
                 // mulai kelas
                 if (PlayerPrefsController.instance.GetHour() == 9 && PlayerPrefsController.instance.GetMinute() == 0)
                 {

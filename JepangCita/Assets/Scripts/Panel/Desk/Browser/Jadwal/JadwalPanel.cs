@@ -42,29 +42,19 @@ public class JadwalPanel : MonoBehaviour
 
         DateTime startDate = new DateTime(2023, 1, 1);
         
-        DateTime playerDate = new DateTime(PlayerPrefsController.instance.GetDateYear(), 
-                                            PlayerPrefsController.instance.GetDateMonth(), 
-                                            PlayerPrefsController.instance.GetDateDay());
+        DateTime playerDate = new DateTime(PlayerPrefsController.instance.GetDateYear(), PlayerPrefsController.instance.GetDateMonth(), PlayerPrefsController.instance.GetDateDay());
+
         TimeSpan difference = playerDate - startDate;
         
         for (int i = 0; i < difference.Days+1; i++)
         {
-            DateTime date = startDate.AddDays(i); // Increment the date by i days
-
-            // Check if the current date is valid
-            while (date.Day > DateTime.DaysInMonth(date.Year, date.Month))
-            {
-                date = date.AddMonths(1); // Increment the month
-                date = new DateTime(date.Year, date.Month, 1); // Reset the day to 1
-            }
-
+            DateTime date = startDate.AddDays(i);
             string dayName = date.ToString("dddd", new System.Globalization.CultureInfo("id-ID"));
 
             // Check if it's Monday, Wednesday, or Friday
             if (dayName == "Senin" || dayName == "Rabu" || dayName == "Jumat")
             {
                 string formattedDate = date.ToString("dd/MM/yyyy");
-
                 // Instantiate row
                 GameObject rowKehadiranInstantiate = Instantiate(kehadiranPrefabs, tabelKehadiran.transform);
                 Kehadiran rowKehadiran = rowKehadiranInstantiate.GetComponent<Kehadiran>();

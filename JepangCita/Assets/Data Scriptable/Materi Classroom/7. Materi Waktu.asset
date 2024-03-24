@@ -16,24 +16,22 @@ MonoBehaviour:
   materialsData:
   - materi: "Dalam bahasa Jepang, ekspresi waktu dapat diekspresikan menggunakan
       beberapa kata kunci. Berikut adalah beberapa materi waktu yang umum digunakan
-      dalam bahasa Jepang:\r"
-    intervalTimes: 10
-  - materi: "Waktu:\r\nWaktu : \u6642\u9593 (Jikan)\r\nMenit : \u5206 (Fun/Pun)\r\nDetik
-      : \u79D2 (Byou)\r\nHari : \u65E5 (Hi/Nichi)\r\nBulan : \u6708 (Tsuki/Getsu)\r\nTahun
-      : \u5E74 (Toshi/Nen)"
-    intervalTimes: 10
+      dalam bahasa Jepang:\r\nWaktu:\r\nWaktu : \u6642\u9593 (Jikan)\r\nMenit : \u5206
+      (Fun/Pun)\r\nDetik : \u79D2 (Byou)\r\nHari : \u65E5 (Hi/Nichi)\r\nBulan : \u6708
+      (Tsuki/Getsu)\r\nTahun : \u5E74 (Toshi/Nen)"
+    intervalTimes: 12
   - materi: "Hari-hari dalam Seminggu:\r\nSenin : \u6708\u66DC\u65E5 (Getsuyoubi)\r\nSelasa
       : \u706B\u66DC\u65E5 (Kayoubi)\r\nRabu : \u6C34\u66DC\u65E5 (Suiyoubi)\r\nKamis
       : \u6728\u66DC\u65E5 (Mokuyoubi)\r\nJumat : \u91D1\u66DC\u65E5 (Kinyoubi)\r\nSabtu
       : \u571F\u66DC\u65E5 (Doyoubi)\r\nMinggu : \u65E5\u66DC\u65E5 (Nichiyoubi)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Bulan dalam Tahun:\r\nJanuari : \u4E00\u6708 (Ichigatsu)\tAgustus :
       \u516B\u6708 (Hachigatsu)\r\nFebruari : \u4E8C\u6708 (Nigatsu)\tSeptember :
       \u4E5D\u6708 (Kugatsu)\r\nMaret : \u4E09\u6708 (Sangatsu)\t\tOktober : \u5341\u6708
       (Juugatsu)\r\nApril : \u56DB\u6708 (Shigatsu)\t\tNovember : \u5341\u4E00\u6708
       (Juuichigatsu)\r\nMei : \u4E94\u6708 (Gogatsu)\t\tDesember : \u5341\u4E8C\u6708
       (Juunigatsu)\r\nJuni : \u516D\u6708 (Rokugatsu)\r\nJuli : \u4E03\u6708 (Shichigatsu)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Hari dalam Sebulan:\r\n1 : \u4E00\u65E5 (Tsuitachi)\t8 : \u516B\u65E5
       (Youka)\t\t\t31 : \u4E09\u5341\u4E00\u65E5 (Sanjuuichinichi)\r\n2 : \u4E8C\u65E5
       (Futsuka)\t\t9 : \u4E5D\u65E5 (Kokonoka)\r\n3 : \u4E09\u65E5 (Mikka)\t\t10
@@ -41,23 +39,23 @@ MonoBehaviour:
       (Juuichinichi)\r\n5 : \u4E94\u65E5 (Itsuka)\t\t12 : \u5341\u4E8C\u65E5 (Juuninichi)\r\n6
       : \u516D\u65E5 (Muika)\t\t20 : \u4E8C\u5341\u65E5 (Hatsuka)\r\n7 : \u4E03\u65E5
       (Nanoka)\t\t30 : \u4E09\u5341\u65E5 (Sanjuunichi)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Waktu Saat Ini:\r\nSekarang : \u4ECA (Ima)\r\nHari Ini : \u4ECA\u65E5
       (Kyou)\r\nMinggu Ini : \u4ECA\u9031 (Konshuu)\r\nBulan Ini : \u4ECA\u6708 (Kongetsu)\r\nTahun
       Ini : \u4ECA\u5E74 (Kotoshi)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Waktu Yang Akan Datang:\r\nBesok : \u660E\u65E5 (Ashita)\t\t\t\t\t\t2
       tahun akan datang: \u4E8C\u5E74\u5F8C (Ninengo)\r\nLusa : \u660E\u5F8C\u65E5
       (Asatte)\r\nMinggu Depan : \u6765\u9031 (Raishuu)\r\nBulan Depan : \u6765\u6708
       (Raigetsu)\r\nTahun Depan : \u6765\u5E74 (Rainen)\r\n3 hari akan datang: \u4E09\u65E5\u5F8C
       (Mikkago)\r\n2 bulan akan datang: \u4E8C\u304B\u6708\u5F8C (Nikagetsugo)"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: "Waktu Yang Telah Berlalu:\r\nKemarin : \u6628\u65E5 (Kinou)\t\t\t\t\t2
       tahun lalu: \u4E8C\u5E74\u524D (Ninenmae)\r\nKemarin Lusa : \u4E00\u6628\u65E5
       (Ototoi)\r\nMinggu Lalu : \u5148\u9031 (Senshuu)\r\nBulan Lalu : \u5148\u6708
       (Sengetsu)\r\nTahun Lalu : \u53BB\u5E74 (Kyonen)\r\n3 hari lalu: \u4E09\u65E5\u524D
       (Mikka mae)\r\n2 bulan lalu: \u4E8C\u304B\u6708\u524D (Nikagetsumae)\r\n"
-    intervalTimes: 10
+    intervalTimes: 8
   - materi: 'Kalian bisa melanjutkan pembelajaran materi Waktu melalui website JepangCita.
 
       (Untuk
