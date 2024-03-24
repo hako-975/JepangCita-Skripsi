@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class DeskAction : MonoBehaviour
 {
     [SerializeField]
+    private AdsController adsController;
+
+    [SerializeField]
     private SoundController soundController;
 
     [SerializeField]
@@ -112,6 +115,7 @@ public class DeskAction : MonoBehaviour
         yield return new WaitForSeconds(1f);
         deskCanvas.SetActive(true);
         deskPanel.SetActive(true);
+        adsController.ShowAd();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class GoHomeAction : MonoBehaviour
 {
     [SerializeField]
+    private AdsController adsController;
+
+    [SerializeField]
     private SoundController soundController;
 
     [SerializeField]
@@ -50,7 +53,6 @@ public class GoHomeAction : MonoBehaviour
         goHomeButton.onClick.AddListener(GoHomeButton);
         closeButton.onClick.AddListener(CloseButton);
         cancelButton.onClick.AddListener(CloseButton);
-
     }
 
     private void GoHomeButton()
@@ -72,7 +74,7 @@ public class GoHomeAction : MonoBehaviour
     private void ActionButton()
     {
         soundController.PositiveButtonSound(gameObject);
-
+        adsController.ShowAd();
         StartCoroutine(AnimationGoHomePanel());
     }
 

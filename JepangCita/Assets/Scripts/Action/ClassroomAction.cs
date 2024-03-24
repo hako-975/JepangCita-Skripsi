@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class ClassroomAction : MonoBehaviour
 {
     [SerializeField]
+    private AdsController adsController;
+
+    [SerializeField]
     private SoundController soundController;
 
     [SerializeField]
@@ -102,6 +105,7 @@ public class ClassroomAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             classroomCanvas.SetActive(true);
+            adsController.ShowAd();
             actionController.canvasTrigger = classroomCanvas;
             actionController.isTriggerEntered = true;
             StartCoroutine(AnimationGoPanel());

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
+    private AdsController adsController;
+
+    [SerializeField]
     private SoundController soundController;
 
     [Header("Buttons")]
@@ -126,6 +129,7 @@ public class MainMenuController : MonoBehaviour
     private void QuitButton()
     {
         soundController.PositiveButtonSound(gameObject);
+        adsController.ShowAd();
         StartCoroutine(AnimationQuit());
     }
 
