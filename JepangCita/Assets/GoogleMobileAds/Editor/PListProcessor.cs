@@ -33,8 +33,6 @@ public static class PListProcessor
 
     private const string SKADNETWORKS_RELATIVE_PATH = "GoogleMobileAds/Editor/GoogleMobileAdsSKAdNetworkItems.xml";
 
-    private const string SKADNETWORKS_FILE_NAME = "GoogleMobileAdsSKAdNetworkItems.xml";
-
     [PostProcessBuild]
     public static void OnPostProcessBuild(BuildTarget buildTarget, string path)
     {
@@ -71,12 +69,6 @@ public static class PListProcessor
             AddSKAdNetworkIdentifier(plist, skNetworkIds);
         }
 
-        string unityVersion = Application.unityVersion;
-        if (!string.IsNullOrEmpty(unityVersion))
-        {
-            plist.root.SetString("GADUUnityVersion", unityVersion);
-        }
-
         File.WriteAllText(plistPath, plist.WriteToString());
     }
 
@@ -111,15 +103,9 @@ public static class PListProcessor
         List<string> skAdNetworkItems = new List<string>();
 
         string path = Path.Combine(Application.dataPath, SKADNETWORKS_RELATIVE_PATH);
-
-        /*
-         * Handle importing GMA via Unity Package Manager.
-         */
-        EditorPathUtils pathUtils = ScriptableObject.CreateInstance<EditorPathUtils>();
-        if (pathUtils.IsPackageRootPath())
+        if (AssetDatabase.IsValidFolder("Packages/com.google.ads.mobile"))
         {
-            string parentDirectoryPath = pathUtils.GetDirectoryAssetPath();
-            path = Path.Combine(parentDirectoryPath, SKADNETWORKS_FILE_NAME);
+            path = Path.Combine("Packages/com.google.ads.mobile", SKADNETWORKS_RELATIVE_PATH);
         }
 
         try

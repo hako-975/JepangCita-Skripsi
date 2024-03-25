@@ -1,18 +1,18 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
-using System;
+using UnityEngine.SceneManagement;
 
 public class AdsController : MonoBehaviour
 {
-    private InterstitialAd _interstitialAd;
+    private InterstitialAd interstitialAd;
 
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-5686375069444098/8466761265";
+    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
 #elif UNITY_IPHONE
-    private string _adUnitId = "ca-app-pub-5686375069444098/8466761265";
+    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
 #else
-  private string _adUnitId = "ca-app-pub-5686375069444098/8466761265";
+  private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
 #endif
 
     void Start()
@@ -23,118 +23,65 @@ public class AdsController : MonoBehaviour
             // This callback is called once the MobileAds SDK is initialized.
         });
 
-        LoadAd();
+        LoadInterstitialAd();
     }
 
-
     /// <summary>
-    /// Loads the ad.
+    /// Loads the interstitial ad.
     /// </summary>
-    public void LoadAd()
+    public void LoadInterstitialAd()
     {
         // Clean up the old ad before loading a new one.
-        if (_interstitialAd != null)
+        if (interstitialAd != null)
         {
-            DestroyAd();
+            interstitialAd.Destroy();
+            interstitialAd = null;
         }
 
-        Debug.Log("Loading interstitial ad.");
+        Debug.Log("Loading the interstitial ad.");
 
-        // Create our request used to load the ad.
-        var adRequest = new AdRequest();
+        // create our request used to load the ad.
+        var adRequest = new AdRequest.Builder()
+                .AddKeyword("unity-admob-sample")
+                .Build();
 
-        // Send the request to load the ad.
-        InterstitialAd.Load(_adUnitId, adRequest, (InterstitialAd ad, LoadAdError error) =>
-        {
-            // If the operation failed with a reason.
-            if (error != null)
+        // send the request to load the ad.
+        InterstitialAd.Load(_adUnitInterstitialId, adRequest,
+            (InterstitialAd ad, LoadAdError error) =>
             {
-                Debug.LogError("Interstitial ad failed to load an ad with error : " + error);
-                return;
-            }
-            // If the operation failed for unknown reasons.
-            // This is an unexpected error, please report this bug if it happens.
-            if (ad == null)
-            {
-                Debug.LogError("Unexpected error: Interstitial load event fired with null ad and null error.");
-                return;
-            }
+                // if error is not null, the load request failed.
+                if (error != null || ad == null)
+                {
+                    Debug.LogError("interstitial ad failed to load an ad " +
+                                   "with error : " + error);
+                    return;
+                }
 
-            // The operation completed successfully.
-            Debug.Log("Interstitial ad loaded with response : " + ad.GetResponseInfo());
-            _interstitialAd = ad;
+                Debug.Log("Interstitial ad loaded with response : "
+                          + ad.GetResponseInfo());
 
-            // Register to ad events to extend functionality.
-            RegisterEventHandlers(ad);
-        });
+                interstitialAd = ad;
+            });
     }
 
-    /// <summary>
-    /// Shows the ad.
-    /// </summary>
-    public void ShowAd()
+    public void ShowInterstitialAd()
     {
-        if (_interstitialAd != null && _interstitialAd.CanShowAd())
+        if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             Debug.Log("Showing interstitial ad.");
-            _interstitialAd.Show();
+            interstitialAd.Show();
         }
         else
         {
-            LoadAd();
-            ShowAd();
+            Debug.LogError("Interstitial ad is not ready yet.");
         }
-    }
 
-    /// <summary>
-    /// Destroys the ad.
-    /// </summary>
-    public void DestroyAd()
-    {
-        if (_interstitialAd != null)
-        {
-            Debug.Log("Destroying interstitial ad.");
-            _interstitialAd.Destroy();
-            _interstitialAd = null;
-        }
-    }
-
-    /// <summary>
-    /// Logs the ResponseInfo.
-    /// </summary>
-    public void LogResponseInfo()
-    {
-        if (_interstitialAd != null)
-        {
-            var responseInfo = _interstitialAd.GetResponseInfo();
-            UnityEngine.Debug.Log(responseInfo);
-        }
+        RegisterEventHandlers(interstitialAd);
+        RegisterReloadHandler(interstitialAd);
     }
 
     private void RegisterEventHandlers(InterstitialAd ad)
     {
-        // Raised when the ad is estimated to have earned money.
-        ad.OnAdPaid += (AdValue adValue) =>
-        {
-            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
-        };
-        // Raised when an impression is recorded for an ad.
-        ad.OnAdImpressionRecorded += () =>
-        {
-            Debug.Log("Interstitial ad recorded an impression.");
-        };
-        // Raised when a click is recorded for an ad.
-        ad.OnAdClicked += () =>
-        {
-            Debug.Log("Interstitial ad was clicked.");
-        };
-        // Raised when an ad opened full screen content.
-        ad.OnAdFullScreenContentOpened += () =>
-        {
-            Debug.Log("Interstitial ad full screen content opened.");
-        };
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
         {
@@ -143,8 +90,29 @@ public class AdsController : MonoBehaviour
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError("Interstitial ad failed to open full screen content with error : "
-                + error);
+            Debug.LogError("Interstitial ad failed to open full screen content " +
+                           "with error : " + error);
+        };
+    }
+
+    private void RegisterReloadHandler(InterstitialAd ad)
+    {
+        // Raised when the ad closed full screen content.
+        ad.OnAdFullScreenContentClosed += () =>
+        {
+            Debug.Log("Interstitial Ad full screen content closed.");
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadInterstitialAd();
+        };
+        // Raised when the ad failed to open full screen content.
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError("Interstitial ad failed to open full screen content " +
+                           "with error : " + error);
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadInterstitialAd();
         };
     }
 }

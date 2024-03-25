@@ -129,7 +129,7 @@ public class MainMenuController : MonoBehaviour
     private void QuitButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        adsController.ShowAd();
+        adsController.ShowInterstitialAd();
         StartCoroutine(AnimationQuit());
     }
 

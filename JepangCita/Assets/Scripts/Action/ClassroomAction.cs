@@ -105,7 +105,7 @@ public class ClassroomAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             classroomCanvas.SetActive(true);
-            adsController.ShowAd();
+            adsController.ShowInterstitialAd();
             actionController.canvasTrigger = classroomCanvas;
             actionController.isTriggerEntered = true;
             StartCoroutine(AnimationGoPanel());

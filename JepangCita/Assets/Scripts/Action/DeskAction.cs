@@ -115,7 +115,7 @@ public class DeskAction : MonoBehaviour
         yield return new WaitForSeconds(1f);
         deskCanvas.SetActive(true);
         deskPanel.SetActive(true);
-        adsController.ShowAd();
+        adsController.ShowInterstitialAd();
     }
 
     private void OnTriggerEnter(Collider other)
