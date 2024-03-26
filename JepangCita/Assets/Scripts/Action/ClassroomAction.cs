@@ -91,6 +91,7 @@ public class ClassroomAction : MonoBehaviour
         Time.timeScale = 0f;
         goPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
+        adsController.ShowInterstitialAd();
     }
 
     private IEnumerator AnimationCloseGoPanel()
@@ -105,7 +106,6 @@ public class ClassroomAction : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             classroomCanvas.SetActive(true);
-            adsController.ShowInterstitialAd();
             actionController.canvasTrigger = classroomCanvas;
             actionController.isTriggerEntered = true;
             StartCoroutine(AnimationGoPanel());

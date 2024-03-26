@@ -108,6 +108,7 @@ public class MainMenuController : MonoBehaviour
         settingsPanel.SetActive(true);
         settingsPanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
+        adsController.ShowInterstitialAd();
     }
 
     private void CreditsButton()
@@ -124,12 +125,12 @@ public class MainMenuController : MonoBehaviour
         panel.GetComponent<Animator>().SetTrigger("Show");
         creditsPanel.SetActive(true);
         yield return null;
+        adsController.ShowInterstitialAd();
     }
 
     private void QuitButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        adsController.ShowInterstitialAd();
         StartCoroutine(AnimationQuit());
     }
 
@@ -141,6 +142,7 @@ public class MainMenuController : MonoBehaviour
         panel.GetComponent<Animator>().SetTrigger("Show");
         quitPanel.SetActive(true);
         yield return null;
+        adsController.ShowInterstitialAd();
     }
 
     private void CloseButton()

@@ -92,7 +92,6 @@ public class DeskAction : MonoBehaviour
     private void ActionButton()
     {
         soundController.OpenSound(gameObject);
-
         StartCoroutine(WaitDeskPanelOpen());
     }
 

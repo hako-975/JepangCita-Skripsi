@@ -1,19 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using System;
 using UnityEngine.SceneManagement;
 
 public class AdsController : MonoBehaviour
 {
     private InterstitialAd interstitialAd;
-
-    // These ad units are configured to always serve test ads.
-#if UNITY_ANDROID
-    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
-#elif UNITY_IPHONE
-    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
-#else
-  private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
-#endif
 
     void Start()
     {
@@ -25,6 +20,15 @@ public class AdsController : MonoBehaviour
 
         LoadInterstitialAd();
     }
+
+    // These ad units are configured to always serve test ads.
+#if UNITY_ANDROID
+    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
+#elif UNITY_IPHONE
+    private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
+#else
+  private string _adUnitInterstitialId = "ca-app-pub-5686375069444098/8466761265";
+#endif
 
     /// <summary>
     /// Loads the interstitial ad.

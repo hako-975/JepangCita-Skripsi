@@ -74,7 +74,6 @@ public class GoHomeAction : MonoBehaviour
     private void ActionButton()
     {
         soundController.PositiveButtonSound(gameObject);
-        adsController.ShowInterstitialAd();
         StartCoroutine(AnimationGoHomePanel());
     }
 
@@ -83,6 +82,7 @@ public class GoHomeAction : MonoBehaviour
         Time.timeScale = 0f;
         goHomePanel.GetComponent<Animator>().SetTrigger("Show");
         yield return null;
+        adsController.ShowInterstitialAd();
     }
 
     private IEnumerator AnimationCloseGoHomePanel()

@@ -62,6 +62,13 @@ public class ClassroomController : MonoBehaviour
     [SerializeField]
     private DateTimeController dateTimeController;
 
+    [SerializeField]
+    private GameObject senseiPrefabs;
+
+    private Animator senseiAnimator;
+
+    bool isInstantiateSensei = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,9 +111,20 @@ public class ClassroomController : MonoBehaviour
         if (currentDay == "Senin" || currentDay == "Rabu")
         {
             // set npc
-            if (PlayerPrefsController.instance.GetHour() >= 8)
+            if (PlayerPrefsController.instance.GetHour() >= 8 && PlayerPrefsController.instance.GetMinute() <= 50)
             {
-                //blm bikin npcGameObject.SetActive(true);
+                if (isInstantiateSensei == false)
+                {
+                    isInstantiateSensei = true;
+                    GameObject sensei = Instantiate(senseiPrefabs);
+                    senseiAnimator = sensei.GetComponent<Animator>();
+                    senseiAnimator.SetBool("IsWalking", true);
+                }
+
+            }
+            else if(PlayerPrefsController.instance.GetHour() >= 8 && PlayerPrefsController.instance.GetMinute() <= 60)
+            {
+
             }
 
             if (isAttended == false)

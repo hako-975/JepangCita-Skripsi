@@ -59,6 +59,7 @@ public class SofaAction : MonoBehaviour
             StartCoroutine(WaitAnimStandToSit());
 
             playerAnimator.SetBool("IsSitting", true);
+            playerAnimator.SetTrigger("IsSittingSofa");
 
             sit = true;
         }
