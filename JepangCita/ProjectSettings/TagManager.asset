@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MusicController
+  - NPC
   layers:
   - Default
   - TransparentFX

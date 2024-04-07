@@ -111,20 +111,28 @@ public class ClassroomController : MonoBehaviour
         if (currentDay == "Senin" || currentDay == "Rabu")
         {
             // set npc
-            if (PlayerPrefsController.instance.GetHour() >= 8 && PlayerPrefsController.instance.GetMinute() <= 50)
+            if (PlayerPrefsController.instance.GetHour() == 8 && PlayerPrefsController.instance.GetMinute() >= 30 && PlayerPrefsController.instance.GetMinute() <= 59)
             {
                 if (isInstantiateSensei == false)
                 {
                     isInstantiateSensei = true;
                     GameObject sensei = Instantiate(senseiPrefabs);
+                    sensei.transform.position = new Vector3(-1f, 0.1f, 2f);
                     senseiAnimator = sensei.GetComponent<Animator>();
                     senseiAnimator.SetBool("IsWalking", true);
                 }
 
             }
-            else if(PlayerPrefsController.instance.GetHour() >= 8 && PlayerPrefsController.instance.GetMinute() <= 60)
-            {
-
+            else if (PlayerPrefsController.instance.GetHour() == 9)
+            { 
+                if (isInstantiateSensei == false)
+                {
+                    isInstantiateSensei = true;
+                    GameObject sensei = Instantiate(senseiPrefabs);
+                    senseiAnimator = sensei.GetComponent<Animator>();
+                    sensei.transform.position = new Vector3(-1f, 0.1f, -5f);
+                    senseiAnimator.SetBool("IsWalking", true);
+                }
             }
 
             if (isAttended == false)
@@ -205,10 +213,28 @@ public class ClassroomController : MonoBehaviour
         // jumat, jam 13 - jam 16
         if (currentDay == "Jumat")
         {
-            // set npc
-            if (PlayerPrefsController.instance.GetHour() >= 12)
+            if (PlayerPrefsController.instance.GetHour() == 12 && PlayerPrefsController.instance.GetMinute() >= 30 && PlayerPrefsController.instance.GetMinute() <= 59)
             {
-                //blm bikin npcGameObject.SetActive(true);
+                if (isInstantiateSensei == false)
+                {
+                    isInstantiateSensei = true;
+                    GameObject sensei = Instantiate(senseiPrefabs);
+                    sensei.transform.position = new Vector3(-1f, 0.1f, 2f);
+                    senseiAnimator = sensei.GetComponent<Animator>();
+                    senseiAnimator.SetBool("IsWalking", true);
+                }
+
+            }
+            else if (PlayerPrefsController.instance.GetHour() == 13)
+            {
+                if (isInstantiateSensei == false)
+                {
+                    isInstantiateSensei = true;
+                    GameObject sensei = Instantiate(senseiPrefabs);
+                    senseiAnimator = sensei.GetComponent<Animator>();
+                    sensei.transform.position = new Vector3(-1f, 0.1f, -5f);
+                    senseiAnimator.SetBool("IsWalking", true);
+                }
             }
 
             if (isAttended == false)
