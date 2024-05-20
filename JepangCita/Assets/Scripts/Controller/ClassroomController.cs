@@ -419,4 +419,16 @@ public class ClassroomController : MonoBehaviour
             boardText.text = "";
         }
     }
+
+    public void SkipTimeToNine()
+    {
+        PlayerPrefsController.instance.SetHour(dateTimeController.gameHour = 8);
+        PlayerPrefsController.instance.SetMinute(dateTimeController.gameMinute = 50);
+    }
+
+    public void SkipTimeToThirteen()
+    {
+        PlayerPrefsController.instance.SetHour(dateTimeController.gameHour = 11);
+        PlayerPrefsController.instance.SetMinute(dateTimeController.gameMinute = 50);
+    }
 }

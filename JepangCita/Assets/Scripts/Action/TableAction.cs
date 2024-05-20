@@ -47,6 +47,7 @@ public class TableAction : MonoBehaviour
         actionButton.gameObject.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponentInChildren<Animator>().SetBool("IsIdle", false);
 
         playerController = player.GetComponent<PlayerController>();
 
@@ -56,7 +57,7 @@ public class TableAction : MonoBehaviour
 
         if (sit == false)
         {
-            StartCoroutine(WaitAnimStandToSit());
+            StartCoroutine(WaitStandToSit());
 
             playerAnimator.SetBool("IsSitting", true);
 
@@ -101,13 +102,17 @@ public class TableAction : MonoBehaviour
             yield return null;
         }
 
+        playerAnimator.SetBool("IsIdle", true);
+
         playerController.canMove = true;
 
         playerTransform.position = targetPosition;
     }
 
-    IEnumerator WaitAnimStandToSit()
+    IEnumerator WaitStandToSit()
     {
+        playerAnimator.SetBool("IsIdle", false);
+
         playerController.canMove = false;
 
         player.GetComponent<CharacterController>().enabled = false;

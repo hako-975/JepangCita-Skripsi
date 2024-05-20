@@ -47,7 +47,7 @@ public class CharacterSelectionController : MonoBehaviour
     void Start()
     {
         boyCharacter.GetComponent<Animator>().SetTrigger("IsSittingDesk");
-        girlCharacter.GetComponent<Animator>().SetTrigger("IsSittingSofa");
+        girlCharacter.GetComponent<Animator>().SetTrigger("IsSittingSofaCS");
 
         leftButton.onClick.AddListener(OnLeftButtonClick);
         rightButton.onClick.AddListener(OnRightButtonClick);

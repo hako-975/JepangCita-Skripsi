@@ -99,6 +99,7 @@ public class BedAction : MonoBehaviour
     IEnumerator WaitShowActionButton()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponentInChildren<Animator>().SetBool("IsIdle", false);
 
         actionButton.gameObject.SetActive(false);
         canvas.GetComponent<CanvasGroup>().alpha = 0;
@@ -116,6 +117,8 @@ public class BedAction : MonoBehaviour
         transition.SetTrigger("Open");
 
         yield return new WaitForSeconds(4f);
+        player.GetComponentInChildren<Animator>().SetBool("IsIdle", true);
+
         transition.gameObject.SetActive(false);
 
         canvas.GetComponent<CanvasGroup>().alpha = 1;

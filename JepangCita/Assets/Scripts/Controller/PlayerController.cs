@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         isWalking = hasHorizontalInput || hasVerticalInput;
 
         animator.SetBool("IsWalking", isWalking);
+
         if (isWalking && soundController.WalkSound(gameObject).isPlaying == false)
         {
             soundController.WalkSound(gameObject);
